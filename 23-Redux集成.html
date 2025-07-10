@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redux集成 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">Redux集成</span>
+            </div>
+            <h1 class="doc-title">Redux集成</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #a8edea">
+                📦 状态管理
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>23-Redux集成</h1>
+<p>Redux是React应用中最流行的状态管理库之一。它提供了可预测的状态管理模式，特别适用于大型、复杂的应用程序。</p>
+<h2>Redux基础概念</h2>
+<h3>核心概念</h3>
+<ul>
+<li><strong>Store</strong>: 存储应用状态的地方</li>
+<li><strong>Action</strong>: 描述发生了什么的纯对象</li>
+<li><strong>Reducer</strong>: 指定应用状态如何响应action的函数</li>
+<li><strong>Dispatch</strong>: 发送action的方法</li>
+</ul>
+<h3>数据流</h3>
+<pre><code>View -&gt; Action -&gt; Reducer -&gt; Store -&gt; View
+</code></pre>
+<h2>环境搭建</h2>
+<h3>安装依赖</h3>
+<pre><code class="language-bash"># Redux Toolkit (推荐)
+npm install @reduxjs/toolkit react-redux
+
+# 或传统Redux
+npm install redux react-redux
+</code></pre>
+<h3>基础配置</h3>
+<pre><code class="language-jsx">// store.js
+import { configureStore } from &#39;@reduxjs/toolkit&#39;;
+import counterReducer from &#39;./features/counter/counterSlice&#39;;
+
+export const store = configureStore({
+  reducer: {
+    counter: counterReducer,
+  },
+});
+
+export type RootState = ReturnType&lt;typeof store.getState&gt;;
+export type AppDispatch = typeof store.dispatch;
+</code></pre>
+<pre><code class="language-jsx">// index.js
+import React from &#39;react&#39;;
+import ReactDOM from &#39;react-dom/client&#39;;
+import { Provider } from &#39;react-redux&#39;;
+import { store } from &#39;./store&#39;;
+import App from &#39;./App&#39;;
+
+const root = ReactDOM.createRoot(document.getElementById(&#39;root&#39;));
+root.render(
+  &lt;Provider store={store}&gt;
+    &lt;App /&gt;
+  &lt;/Provider&gt;
+);
+</code></pre>
+<h2>Redux Toolkit (RTK)</h2>
+<h3>创建Slice</h3>
+<pre><code class="language-jsx">// features/counter/counterSlice.js
+import { createSlice } from &#39;@reduxjs/toolkit&#39;;
+
+const initialState = {
+  value: 0,
+  loading: false,
+  error: null
+};
+
+export const counterSlice = createSlice({
+  name: &#39;counter&#39;,
+  initialState,
+  reducers: {
+    increment: (state) =&gt; {
+      state.value += 1;
+    },
+    decrement: (state) =&gt; {
+      state.value -= 1;
+    },
+    incrementByAmount: (state, action) =&gt; {
+      state.value += action.payload;
+    },
+    reset: (state) =&gt; {
+      state.value = 0;
+    }
+  }
+});
+
+export const { increment, decrement, incrementByAmount, reset } = counterSlice.actions;
+export default counterSlice.reducer;
+</code></pre>
+<h3>异步Action (createAsyncThunk)</h3>
+<pre><code class="language-jsx">// features/posts/postsSlice.js
+import { createSlice, createAsyncThunk } from &#39;@reduxjs/toolkit&#39;;
+
+// 异步thunk
+export const fetchPosts = createAsyncThunk(
+  &#39;posts/fetchPosts&#39;,
+  async (_, { rejectWithValue }) =&gt; {
+    try {
+      const response = await fetch(&#39;/api/posts&#39;);
+      if (!response.ok) {
+        throw new Error(&#39;Failed to fetch posts&#39;);
+      }
+      return await response.json();
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const createPost = createAsyncThunk(
+  &#39;posts/createPost&#39;,
+  async (postData, { rejectWithValue }) =&gt; {
+    try {
+      const response = await fetch(&#39;/api/posts&#39;, {
+        method: &#39;POST&#39;,
+        headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },
+        body: JSON.stringify(postData)
+      });
+      
+      if (!response.ok) {
+        throw new Error(&#39;Failed to create post&#39;);
+      }
+      
+      return await response.json();
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+const postsSlice = createSlice({
+  name: &#39;posts&#39;,
+  initialState: {
+    items: [],
+    loading: false,
+    error: null,
+    currentPage: 1,
+    totalPages: 1
+  },
+  reducers: {
+    clearError: (state) =&gt; {
+      state.error = null;
+    },
+    setCurrentPage: (state, action) =&gt; {
+      state.currentPage = action.payload;
+    }
+  },
+  extraReducers: (builder) =&gt; {
+    builder
+      // fetchPosts
+      .addCase(fetchPosts.pending, (state) =&gt; {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchPosts.fulfilled, (state, action) =&gt; {
+        state.loading = false;
+        state.items = action.payload.posts;
+        state.totalPages = action.payload.totalPages;
+      })
+      .addCase(fetchPosts.rejected, (state, action) =&gt; {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      // createPost
+      .addCase(createPost.pending, (state) =&gt; {
+        state.loading = true;
+      })
+      .addCase(createPost.fulfilled, (state, action) =&gt; {
+        state.loading = false;
+        state.items.unshift(action.payload);
+      })
+      .addCase(createPost.rejected, (state, action) =&gt; {
+        state.loading = false;
+        state.error = action.payload;
+      });
+  }
+});
+
+export const { clearError, setCurrentPage } = postsSlice.actions;
+export default postsSlice.reducer;
+</code></pre>
+<h2>在组件中使用</h2>
+<h3>useSelector和useDispatch</h3>
+<pre><code class="language-jsx">// components/Counter.jsx
+import React from &#39;react&#39;;
+import { useSelector, useDispatch } from &#39;react-redux&#39;;
+import { increment, decrement, incrementByAmount, reset } from &#39;../features/counter/counterSlice&#39;;
+
+function Counter() {
+  const count = useSelector((state) =&gt; state.counter.value);
+  const dispatch = useDispatch();
+
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;计数器: {count}&lt;/h2&gt;
+      &lt;div&gt;
+        &lt;button onClick={() =&gt; dispatch(increment())}&gt;
+          +1
+        &lt;/button&gt;
+        &lt;button onClick={() =&gt; dispatch(decrement())}&gt;
+          -1
+        &lt;/button&gt;
+        &lt;button onClick={() =&gt; dispatch(incrementByAmount(5))}&gt;
+          +5
+        &lt;/button&gt;
+        &lt;button onClick={() =&gt; dispatch(reset())}&gt;
+          重置
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default Counter;
+</code></pre>
+<h3>异步操作组件</h3>
+<pre><code class="language-jsx">// components/PostsList.jsx
+import React, { useEffect, useState } from &#39;react&#39;;
+import { useSelector, useDispatch } from &#39;react-redux&#39;;
+import { fetchPosts, createPost, clearError } from &#39;../features/posts/postsSlice&#39;;
+
+function PostsList() {
+  const dispatch = useDispatch();
+  const { items: posts, loading, error } = useSelector((state) =&gt; state.posts);
+  const [newPostTitle, setNewPostTitle] = useState(&#39;&#39;);
+
+  useEffect(() =&gt; {
+    dispatch(fetchPosts());
+  }, [dispatch]);
+
+  const handleCreatePost = (e) =&gt; {
+    e.preventDefault();
+    if (newPostTitle.trim()) {
+      dispatch(createPost({
+        title: newPostTitle,
+        content: &#39;新文章内容...&#39;
+      }));
+      setNewPostTitle(&#39;&#39;);
+    }
+  };
+
+  if (loading) return &lt;div&gt;加载中...&lt;/div&gt;;
+
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;文章列表&lt;/h2&gt;
+      
+      {error &amp;&amp; (
+        &lt;div className=&quot;error&quot;&gt;
+          错误: {error}
+          &lt;button onClick={() =&gt; dispatch(clearError())}&gt;
+            清除错误
+          &lt;/button&gt;
+        &lt;/div&gt;
+      )}
+
+      &lt;form onSubmit={handleCreatePost}&gt;
+        &lt;input
+          type=&quot;text&quot;
+          value={newPostTitle}
+          onChange={(e) =&gt; setNewPostTitle(e.target.value)}
+          placeholder=&quot;文章标题&quot;
+        /&gt;
+        &lt;button type=&quot;submit&quot;&gt;创建文章&lt;/button&gt;
+      &lt;/form&gt;
+
+      &lt;ul&gt;
+        {posts.map(post =&gt; (
+          &lt;li key={post.id}&gt;
+            &lt;h3&gt;{post.title}&lt;/h3&gt;
+            &lt;p&gt;{post.content}&lt;/p&gt;
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default PostsList;
+</code></pre>
+<h2>自定义Hooks</h2>
+<h3>类型安全的Hooks</h3>
+<pre><code class="language-jsx">// hooks/redux.js
+import { useDispatch, useSelector, TypedUseSelectorHook } from &#39;react-redux&#39;;
+import type { RootState, AppDispatch } from &#39;../store&#39;;
+
+export const useAppDispatch = () =&gt; useDispatch&lt;AppDispatch&gt;();
+export const useAppSelector: TypedUseSelectorHook&lt;RootState&gt; = useSelector;
+</code></pre>
+<h3>业务逻辑Hooks</h3>
+<pre><code class="language-jsx">// hooks/usePosts.js
+import { useEffect } from &#39;react&#39;;
+import { useAppSelector, useAppDispatch } from &#39;./redux&#39;;
+import { fetchPosts, createPost, setCurrentPage } from &#39;../features/posts/postsSlice&#39;;
+
+export function usePosts() {
+  const dispatch = useAppDispatch();
+  const posts = useAppSelector((state) =&gt; state.posts);
+
+  const loadPosts = (page = 1) =&gt; {
+    dispatch(setCurrentPage(page));
+    dispatch(fetchPosts({ page }));
+  };
+
+  const addPost = (postData) =&gt; {
+    return dispatch(createPost(postData));
+  };
+
+  useEffect(() =&gt; {
+    if (posts.items.length === 0) {
+      loadPosts();
+    }
+  }, []);
+
+  return {
+    posts: posts.items,
+    loading: posts.loading,
+    error: posts.error,
+    currentPage: posts.currentPage,
+    totalPages: posts.totalPages,
+    loadPosts,
+    addPost
+  };
+}
+
+// 使用示例
+function PostsComponent() {
+  const { posts, loading, error, loadPosts, addPost } = usePosts();
+
+  if (loading) return &lt;div&gt;加载中...&lt;/div&gt;;
+  if (error) return &lt;div&gt;错误: {error}&lt;/div&gt;;
+
+  return (
+    &lt;div&gt;
+      {posts.map(post =&gt; (
+        &lt;div key={post.id}&gt;{post.title}&lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>复杂状态管理</h2>
+<h3>用户认证</h3>
+<pre><code class="language-jsx">// features/auth/authSlice.js
+import { createSlice, createAsyncThunk } from &#39;@reduxjs/toolkit&#39;;
+
+export const loginUser = createAsyncThunk(
+  &#39;auth/loginUser&#39;,
+  async ({ email, password }, { rejectWithValue }) =&gt; {
+    try {
+      const response = await fetch(&#39;/api/auth/login&#39;, {
+        method: &#39;POST&#39;,
+        headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message);
+      }
+
+      const data = await response.json();
+      localStorage.setItem(&#39;token&#39;, data.token);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const logoutUser = createAsyncThunk(
+  &#39;auth/logoutUser&#39;,
+  async (_, { dispatch }) =&gt; {
+    localStorage.removeItem(&#39;token&#39;);
+    dispatch(clearUserData());
+  }
+);
+
+export const checkAuthStatus = createAsyncThunk(
+  &#39;auth/checkAuthStatus&#39;,
+  async (_, { rejectWithValue }) =&gt; {
+    try {
+      const token = localStorage.getItem(&#39;token&#39;);
+      if (!token) {
+        throw new Error(&#39;No token found&#39;);
+      }
+
+      const response = await fetch(&#39;/api/auth/me&#39;, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      if (!response.ok) {
+        throw new Error(&#39;Token invalid&#39;);
+      }
+
+      return await response.json();
+    } catch (error) {
+      localStorage.removeItem(&#39;token&#39;);
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+const authSlice = createSlice({
+  name: &#39;auth&#39;,
+  initialState: {
+    user: null,
+    token: localStorage.getItem(&#39;token&#39;),
+    loading: false,
+    error: null,
+    isAuthenticated: false
+  },
+  reducers: {
+    clearError: (state) =&gt; {
+      state.error = null;
+    },
+    clearUserData: (state) =&gt; {
+      state.user = null;
+      state.token = null;
+      state.isAuthenticated = false;
+    }
+  },
+  extraReducers: (builder) =&gt; {
+    builder
+      // login
+      .addCase(loginUser.pending, (state) =&gt; {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(loginUser.fulfilled, (state, action) =&gt; {
+        state.loading = false;
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isAuthenticated = true;
+      })
+      .addCase(loginUser.rejected, (state, action) =&gt; {
+        state.loading = false;
+        state.error = action.payload;
+      })
+      // check auth
+      .addCase(checkAuthStatus.fulfilled, (state, action) =&gt; {
+        state.user = action.payload;
+        state.isAuthenticated = true;
+      })
+      .addCase(checkAuthStatus.rejected, (state) =&gt; {
+        state.token = null;
+        state.isAuthenticated = false;
+      });
+  }
+});
+
+export const { clearError, clearUserData } = authSlice.actions;
+export default authSlice.reducer;
+</code></pre>
+<h3>购物车管理</h3>
+<pre><code class="language-jsx">// features/cart/cartSlice.js
+import { createSlice } from &#39;@reduxjs/toolkit&#39;;
+
+const cartSlice = createSlice({
+  name: &#39;cart&#39;,
+  initialState: {
+    items: [],
+    total: 0,
+    itemCount: 0
+  },
+  reducers: {
+    addItem: (state, action) =&gt; {
+      const newItem = action.payload;
+      const existingItem = state.items.find(item =&gt; item.id === newItem.id);
+
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        state.items.push({ ...newItem, quantity: 1 });
+      }
+
+      state.itemCount += 1;
+      state.total += newItem.price;
+    },
+    removeItem: (state, action) =&gt; {
+      const id = action.payload;
+      const existingItem = state.items.find(item =&gt; item.id === id);
+
+      if (existingItem) {
+        state.total -= existingItem.price * existingItem.quantity;
+        state.itemCount -= existingItem.quantity;
+        state.items = state.items.filter(item =&gt; item.id !== id);
+      }
+    },
+    updateQuantity: (state, action) =&gt; {
+      const { id, quantity } = action.payload;
+      const existingItem = state.items.find(item =&gt; item.id === id);
+
+      if (existingItem &amp;&amp; quantity &gt; 0) {
+        const quantityDiff = quantity - existingItem.quantity;
+        existingItem.quantity = quantity;
+        state.itemCount += quantityDiff;
+        state.total += existingItem.price * quantityDiff;
+      } else if (existingItem &amp;&amp; quantity === 0) {
+        state.total -= existingItem.price * existingItem.quantity;
+        state.itemCount -= existingItem.quantity;
+        state.items = state.items.filter(item =&gt; item.id !== id);
+      }
+    },
+    clearCart: (state) =&gt; {
+      state.items = [];
+      state.total = 0;
+      state.itemCount = 0;
+    }
+  }
+});
+
+export const { addItem, removeItem, updateQuantity, clearCart } = cartSlice.actions;
+export default cartSlice.reducer;
+</code></pre>
+<h2>中间件</h2>
+<h3>Redux Logger</h3>
+<pre><code class="language-jsx">// store.js
+import { configureStore } from &#39;@reduxjs/toolkit&#39;;
+import logger from &#39;redux-logger&#39;;
+
+export const store = configureStore({
+  reducer: {
+    // reducers
+  },
+  middleware: (getDefaultMiddleware) =&gt;
+    getDefaultMiddleware().concat(logger),
+  devTools: process.env.NODE_ENV !== &#39;production&#39;
+});
+</code></pre>
+<h3>自定义中间件</h3>
+<pre><code class="language-jsx">// middleware/errorMiddleware.js
+export const errorMiddleware = (store) =&gt; (next) =&gt; (action) =&gt; {
+  try {
+    return next(action);
+  } catch (error) {
+    console.error(&#39;Redux Error:&#39;, error);
+    // 可以dispatch错误action
+    store.dispatch({
+      type: &#39;global/setError&#39;,
+      payload: error.message
+    });
+    throw error;
+  }
+};
+
+// middleware/analyticsMiddleware.js
+export const analyticsMiddleware = (store) =&gt; (next) =&gt; (action) =&gt; {
+  // 记录特定actions的分析数据
+  const analyticsActions = [&#39;user/login&#39;, &#39;cart/addItem&#39;, &#39;order/complete&#39;];
+  
+  if (analyticsActions.includes(action.type)) {
+    // 发送分析数据
+    analytics.track(action.type, action.payload);
+  }
+
+  return next(action);
+};
+</code></pre>
+<h2>RTK Query</h2>
+<h3>配置API</h3>
+<pre><code class="language-jsx">// services/api.js
+import { createApi, fetchBaseQuery } from &#39;@reduxjs/toolkit/query/react&#39;;
+
+export const api = createApi({
+  reducerPath: &#39;api&#39;,
+  baseQuery: fetchBaseQuery({
+    baseUrl: &#39;/api/&#39;,
+    prepareHeaders: (headers, { getState }) =&gt; {
+      const token = getState().auth.token;
+      if (token) {
+        headers.set(&#39;authorization&#39;, `Bearer ${token}`);
+      }
+      return headers;
+    },
+  }),
+  tagTypes: [&#39;Post&#39;, &#39;User&#39;],
+  endpoints: (builder) =&gt; ({
+    // 查询
+    getPosts: builder.query({
+      query: ({ page = 1, limit = 10 } = {}) =&gt; 
+        `posts?page=${page}&amp;limit=${limit}`,
+      providesTags: [&#39;Post&#39;]
+    }),
+    getPost: builder.query({
+      query: (id) =&gt; `posts/${id}`,
+      providesTags: (result, error, id) =&gt; [{ type: &#39;Post&#39;, id }]
+    }),
+    // 变更
+    createPost: builder.mutation({
+      query: (newPost) =&gt; ({
+        url: &#39;posts&#39;,
+        method: &#39;POST&#39;,
+        body: newPost
+      }),
+      invalidatesTags: [&#39;Post&#39;]
+    }),
+    updatePost: builder.mutation({
+      query: ({ id, ...patch }) =&gt; ({
+        url: `posts/${id}`,
+        method: &#39;PATCH&#39;,
+        body: patch
+      }),
+      invalidatesTags: (result, error, { id }) =&gt; [{ type: &#39;Post&#39;, id }]
+    }),
+    deletePost: builder.mutation({
+      query: (id) =&gt; ({
+        url: `posts/${id}`,
+        method: &#39;DELETE&#39;
+      }),
+      invalidatesTags: [&#39;Post&#39;]
+    })
+  })
+});
+
+export const {
+  useGetPostsQuery,
+  useGetPostQuery,
+  useCreatePostMutation,
+  useUpdatePostMutation,
+  useDeletePostMutation
+} = api;
+</code></pre>
+<h3>使用RTK Query</h3>
+<pre><code class="language-jsx">// components/PostsWithRTK.jsx
+import React, { useState } from &#39;react&#39;;
+import {
+  useGetPostsQuery,
+  useCreatePostMutation,
+  useDeletePostMutation
+} from &#39;../services/api&#39;;
+
+function PostsWithRTK() {
+  const [page, setPage] = useState(1);
+  const { 
+    data: postsData, 
+    error, 
+    isLoading, 
+    isFetching 
+  } = useGetPostsQuery({ page });
+
+  const [createPost, { isLoading: isCreating }] = useCreatePostMutation();
+  const [deletePost] = useDeletePostMutation();
+
+  const handleCreatePost = async () =&gt; {
+    try {
+      await createPost({
+        title: &#39;新文章&#39;,
+        content: &#39;文章内容&#39;
+      }).unwrap();
+    } catch (error) {
+      console.error(&#39;创建失败:&#39;, error);
+    }
+  };
+
+  const handleDeletePost = async (id) =&gt; {
+    try {
+      await deletePost(id).unwrap();
+    } catch (error) {
+      console.error(&#39;删除失败:&#39;, error);
+    }
+  };
+
+  if (isLoading) return &lt;div&gt;加载中...&lt;/div&gt;;
+  if (error) return &lt;div&gt;错误: {error.message}&lt;/div&gt;;
+
+  return (
+    &lt;div&gt;
+      &lt;div&gt;
+        &lt;button onClick={handleCreatePost} disabled={isCreating}&gt;
+          {isCreating ? &#39;创建中...&#39; : &#39;创建文章&#39;}
+        &lt;/button&gt;
+        {isFetching &amp;&amp; &lt;span&gt;刷新中...&lt;/span&gt;}
+      &lt;/div&gt;
+
+      &lt;ul&gt;
+        {postsData?.posts.map(post =&gt; (
+          &lt;li key={post.id}&gt;
+            &lt;h3&gt;{post.title}&lt;/h3&gt;
+            &lt;p&gt;{post.content}&lt;/p&gt;
+            &lt;button onClick={() =&gt; handleDeletePost(post.id)}&gt;
+              删除
+            &lt;/button&gt;
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+
+      &lt;div&gt;
+        &lt;button 
+          onClick={() =&gt; setPage(p =&gt; Math.max(1, p - 1))}
+          disabled={page === 1}
+        &gt;
+          上一页
+        &lt;/button&gt;
+        &lt;span&gt;第 {page} 页&lt;/span&gt;
+        &lt;button 
+          onClick={() =&gt; setPage(p =&gt; p + 1)}
+          disabled={!postsData?.hasMore}
+        &gt;
+          下一页
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default PostsWithRTK;
+</code></pre>
+<h2>测试</h2>
+<h3>测试Reducers</h3>
+<pre><code class="language-jsx">// features/counter/counterSlice.test.js
+import counterReducer, { increment, decrement, incrementByAmount } from &#39;./counterSlice&#39;;
+
+describe(&#39;counter reducer&#39;, () =&gt; {
+  const initialState = {
+    value: 0,
+    loading: false,
+    error: null
+  };
+
+  it(&#39;should handle initial state&#39;, () =&gt; {
+    expect(counterReducer(undefined, { type: &#39;unknown&#39; })).toEqual(initialState);
+  });
+
+  it(&#39;should handle increment&#39;, () =&gt; {
+    const actual = counterReducer(initialState, increment());
+    expect(actual.value).toEqual(1);
+  });
+
+  it(&#39;should handle decrement&#39;, () =&gt; {
+    const actual = counterReducer(initialState, decrement());
+    expect(actual.value).toEqual(-1);
+  });
+
+  it(&#39;should handle incrementByAmount&#39;, () =&gt; {
+    const actual = counterReducer(initialState, incrementByAmount(2));
+    expect(actual.value).toEqual(2);
+  });
+});
+</code></pre>
+<h3>测试组件</h3>
+<pre><code class="language-jsx">// components/Counter.test.jsx
+import React from &#39;react&#39;;
+import { render, screen, fireEvent } from &#39;@testing-library/react&#39;;
+import { Provider } from &#39;react-redux&#39;;
+import { configureStore } from &#39;@reduxjs/toolkit&#39;;
+import counterReducer from &#39;../features/counter/counterSlice&#39;;
+import Counter from &#39;./Counter&#39;;
+
+function renderWithProviders(
+  ui,
+  {
+    preloadedState = {},
+    store = configureStore({
+      reducer: { counter: counterReducer },
+      preloadedState
+    }),
+    ...renderOptions
+  } = {}
+) {
+  function Wrapper({ children }) {
+    return &lt;Provider store={store}&gt;{children}&lt;/Provider&gt;;
+  }
+  return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
+}
+
+describe(&#39;Counter component&#39;, () =&gt; {
+  it(&#39;renders with initial value&#39;, () =&gt; {
+    renderWithProviders(&lt;Counter /&gt;);
+    expect(screen.getByText(&#39;计数器: 0&#39;)).toBeInTheDocument();
+  });
+
+  it(&#39;increments value when plus button is clicked&#39;, () =&gt; {
+    renderWithProviders(&lt;Counter /&gt;);
+    
+    fireEvent.click(screen.getByText(&#39;+1&#39;));
+    expect(screen.getByText(&#39;计数器: 1&#39;)).toBeInTheDocument();
+  });
+
+  it(&#39;decrements value when minus button is clicked&#39;, () =&gt; {
+    renderWithProviders(&lt;Counter /&gt;);
+    
+    fireEvent.click(screen.getByText(&#39;-1&#39;));
+    expect(screen.getByText(&#39;计数器: -1&#39;)).toBeInTheDocument();
+  });
+});
+</code></pre>
+<h2>最佳实践</h2>
+<h3>状态结构设计</h3>
+<pre><code class="language-jsx">// ✅ 好的状态结构
+{
+  entities: {
+    users: {
+      byId: {
+        1: { id: 1, name: &#39;John&#39; },
+        2: { id: 2, name: &#39;Jane&#39; }
+      },
+      allIds: [1, 2]
+    },
+    posts: {
+      byId: {
+        1: { id: 1, title: &#39;Post 1&#39;, userId: 1 },
+        2: { id: 2, title: &#39;Post 2&#39;, userId: 2 }
+      },
+      allIds: [1, 2]
+    }
+  },
+  ui: {
+    currentUserId: 1,
+    loading: false,
+    error: null
+  }
+}
+
+// ❌ 避免的状态结构
+{
+  users: [
+    { 
+      id: 1, 
+      name: &#39;John&#39;,
+      posts: [{ id: 1, title: &#39;Post 1&#39; }] // 嵌套数据
+    }
+  ],
+  loading: false,
+  error: null
+}
+</code></pre>
+<h3>Selector优化</h3>
+<pre><code class="language-jsx">// selectors/postsSelectors.js
+import { createSelector } from &#39;@reduxjs/toolkit&#39;;
+
+// 基础selectors
+const selectPosts = (state) =&gt; state.posts.entities;
+const selectPostIds = (state) =&gt; state.posts.ids;
+const selectUsers = (state) =&gt; state.users.entities;
+
+// 记忆化selectors
+export const selectAllPosts = createSelector(
+  [selectPosts, selectPostIds],
+  (posts, postIds) =&gt; postIds.map(id =&gt; posts[id])
+);
+
+export const selectPostsByUser = createSelector(
+  [selectAllPosts, (state, userId) =&gt; userId],
+  (posts, userId) =&gt; posts.filter(post =&gt; post.userId === userId)
+);
+
+export const selectPostsWithAuthors = createSelector(
+  [selectAllPosts, selectUsers],
+  (posts, users) =&gt; posts.map(post =&gt; ({
+    ...post,
+    author: users[post.userId]
+  }))
+);
+</code></pre>
+<h2>总结</h2>
+<p>Redux/Redux Toolkit的核心要点：</p>
+<ol>
+<li><strong>状态管理</strong>: 集中管理应用状态</li>
+<li><strong>可预测性</strong>: 纯函数和不可变更新</li>
+<li><strong>调试友好</strong>: 时间旅行调试</li>
+<li><strong>生态系统</strong>: 丰富的中间件和工具</li>
+</ol>
+<p>使用建议：</p>
+<ul>
+<li>优先使用Redux Toolkit而非原生Redux</li>
+<li>合理设计状态结构，避免过度嵌套</li>
+<li>使用RTK Query处理服务器状态</li>
+<li>编写充分的测试</li>
+</ul>
+<p>Redux适用于需要复杂状态管理的大型应用，对于简单应用可以考虑使用Context API或其他轻量级状态管理方案。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="22-Context-API.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">Context-API</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="24-Zustand状态管理.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">Zustand状态管理</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

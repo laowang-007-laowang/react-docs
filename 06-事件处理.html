@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>事件处理 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">事件处理</span>
+            </div>
+            <h1 class="doc-title">事件处理</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #f093fb">
+                🧩 组件开发
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>06-事件处理</h1>
+<p>React 中的事件处理是构建交互式用户界面的核心。React 使用合成事件(SyntheticEvent)来处理用户交互，提供了跨浏览器的一致性体验。</p>
+<h2>基础事件处理</h2>
+<h3>点击事件</h3>
+<pre><code class="language-jsx">function Button() {
+  const handleClick = () =&gt; {
+    console.log(&#39;按钮被点击了！&#39;);
+  };
+
+  return &lt;button onClick={handleClick}&gt;点击我&lt;/button&gt;;
+}
+</code></pre>
+<h3>内联事件处理</h3>
+<pre><code class="language-jsx">function Button() {
+  return (
+    &lt;button onClick={() =&gt; console.log(&#39;内联点击事件&#39;)}&gt;
+      点击我
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<h2>常见事件类型</h2>
+<h3>鼠标事件</h3>
+<pre><code class="language-jsx">function MouseEvents() {
+  return (
+    &lt;div
+      onClick={() =&gt; console.log(&#39;点击&#39;)}
+      onDoubleClick={() =&gt; console.log(&#39;双击&#39;)}
+      onMouseDown={() =&gt; console.log(&#39;鼠标按下&#39;)}
+      onMouseUp={() =&gt; console.log(&#39;鼠标抬起&#39;)}
+      onMouseEnter={() =&gt; console.log(&#39;鼠标进入&#39;)}
+      onMouseLeave={() =&gt; console.log(&#39;鼠标离开&#39;)}
+      onMouseMove={() =&gt; console.log(&#39;鼠标移动&#39;)}
+    &gt;
+      鼠标事件测试区域
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>键盘事件</h3>
+<pre><code class="language-jsx">function KeyboardEvents() {
+  const handleKeyDown = (e) =&gt; {
+    console.log(&#39;按键按下:&#39;, e.key);
+    if (e.key === &#39;Enter&#39;) {
+      console.log(&#39;回车键被按下&#39;);
+    }
+  };
+
+  return (
+    &lt;input
+      type=&quot;text&quot;
+      onKeyDown={handleKeyDown}
+      onKeyUp={(e) =&gt; console.log(&#39;按键抬起:&#39;, e.key)}
+      onKeyPress={(e) =&gt; console.log(&#39;按键按下:&#39;, e.key)}
+      placeholder=&quot;按下任意键&quot;
+    /&gt;
+  );
+}
+</code></pre>
+<h3>表单事件</h3>
+<pre><code class="language-jsx">function FormEvents() {
+  const [value, setValue] = useState(&#39;&#39;);
+
+  const handleSubmit = (e) =&gt; {
+    e.preventDefault();
+    console.log(&#39;表单提交:&#39;, value);
+  };
+
+  const handleChange = (e) =&gt; {
+    setValue(e.target.value);
+  };
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input
+        type=&quot;text&quot;
+        value={value}
+        onChange={handleChange}
+        onFocus={() =&gt; console.log(&#39;输入框获得焦点&#39;)}
+        onBlur={() =&gt; console.log(&#39;输入框失去焦点&#39;)}
+      /&gt;
+      &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+</code></pre>
+<h2>事件对象</h2>
+<h3>SyntheticEvent</h3>
+<p>React 的合成事件对象包装了原生事件，提供一致的API：</p>
+<pre><code class="language-jsx">function EventObject() {
+  const handleClick = (e) =&gt; {
+    console.log(&#39;事件类型:&#39;, e.type);
+    console.log(&#39;目标元素:&#39;, e.target);
+    console.log(&#39;当前元素:&#39;, e.currentTarget);
+    console.log(&#39;鼠标坐标:&#39;, e.clientX, e.clientY);
+    
+    // 访问原生事件
+    console.log(&#39;原生事件:&#39;, e.nativeEvent);
+  };
+
+  return &lt;button onClick={handleClick}&gt;查看事件对象&lt;/button&gt;;
+}
+</code></pre>
+<h3>阻止默认行为</h3>
+<pre><code class="language-jsx">function PreventDefault() {
+  const handleLinkClick = (e) =&gt; {
+    e.preventDefault();
+    console.log(&#39;链接点击被阻止&#39;);
+  };
+
+  const handleFormSubmit = (e) =&gt; {
+    e.preventDefault();
+    console.log(&#39;表单提交被阻止&#39;);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;a href=&quot;https://example.com&quot; onClick={handleLinkClick}&gt;
+        点击链接（不会跳转）
+      &lt;/a&gt;
+      &lt;form onSubmit={handleFormSubmit}&gt;
+        &lt;button type=&quot;submit&quot;&gt;提交（不会刷新页面）&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>阻止事件冒泡</h3>
+<pre><code class="language-jsx">function StopPropagation() {
+  const handleParentClick = () =&gt; {
+    console.log(&#39;父元素被点击&#39;);
+  };
+
+  const handleChildClick = (e) =&gt; {
+    e.stopPropagation();
+    console.log(&#39;子元素被点击（阻止冒泡）&#39;);
+  };
+
+  return (
+    &lt;div onClick={handleParentClick} style={{padding: &#39;20px&#39;, background: &#39;#f0f0f0&#39;}}&gt;
+      父元素
+      &lt;button onClick={handleChildClick}&gt;
+        子元素（点击不会触发父元素事件）
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>传递参数</h2>
+<h3>使用箭头函数</h3>
+<pre><code class="language-jsx">function ParameterPassing() {
+  const handleItemClick = (id, name) =&gt; {
+    console.log(`点击了项目: ${id} - ${name}`);
+  };
+
+  const items = [
+    { id: 1, name: &#39;项目1&#39; },
+    { id: 2, name: &#39;项目2&#39; },
+    { id: 3, name: &#39;项目3&#39; }
+  ];
+
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;li key={item.id}&gt;
+          &lt;button onClick={() =&gt; handleItemClick(item.id, item.name)}&gt;
+            {item.name}
+          &lt;/button&gt;
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h3>使用bind方法</h3>
+<pre><code class="language-jsx">function BindMethod() {
+  const handleItemClick = (id, name, e) =&gt; {
+    console.log(`点击了项目: ${id} - ${name}`, e);
+  };
+
+  return (
+    &lt;button onClick={this.handleItemClick.bind(this, 1, &#39;项目1&#39;)}&gt;
+      点击我
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<h3>使用data属性</h3>
+<pre><code class="language-jsx">function DataAttribute() {
+  const handleClick = (e) =&gt; {
+    const id = e.target.dataset.id;
+    const name = e.target.dataset.name;
+    console.log(`点击了项目: ${id} - ${name}`);
+  };
+
+  return (
+    &lt;button
+      data-id=&quot;1&quot;
+      data-name=&quot;项目1&quot;
+      onClick={handleClick}
+    &gt;
+      点击我
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<h2>条件事件处理</h2>
+<pre><code class="language-jsx">function ConditionalEvents() {
+  const [isEnabled, setIsEnabled] = useState(true);
+
+  const handleClick = () =&gt; {
+    if (isEnabled) {
+      console.log(&#39;按钮可用，执行点击事件&#39;);
+    }
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;button
+        onClick={isEnabled ? handleClick : undefined}
+        disabled={!isEnabled}
+      &gt;
+        {isEnabled ? &#39;可点击&#39; : &#39;不可点击&#39;}
+      &lt;/button&gt;
+      &lt;button onClick={() =&gt; setIsEnabled(!isEnabled)}&gt;
+        切换状态
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>自定义事件</h2>
+<pre><code class="language-jsx">function CustomEvent() {
+  const buttonRef = useRef(null);
+
+  const dispatchCustomEvent = () =&gt; {
+    const customEvent = new CustomEvent(&#39;myCustomEvent&#39;, {
+      detail: { message: &#39;自定义事件数据&#39; }
+    });
+    buttonRef.current.dispatchEvent(customEvent);
+  };
+
+  const handleCustomEvent = (e) =&gt; {
+    console.log(&#39;自定义事件触发:&#39;, e.detail.message);
+  };
+
+  useEffect(() =&gt; {
+    const button = buttonRef.current;
+    button.addEventListener(&#39;myCustomEvent&#39;, handleCustomEvent);
+
+    return () =&gt; {
+      button.removeEventListener(&#39;myCustomEvent&#39;, handleCustomEvent);
+    };
+  }, []);
+
+  return (
+    &lt;div&gt;
+      &lt;button ref={buttonRef}&gt;监听自定义事件的按钮&lt;/button&gt;
+      &lt;button onClick={dispatchCustomEvent}&gt;触发自定义事件&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>事件委托</h2>
+<pre><code class="language-jsx">function EventDelegation() {
+  const handleListClick = (e) =&gt; {
+    if (e.target.tagName === &#39;BUTTON&#39;) {
+      const itemId = e.target.closest(&#39;li&#39;).dataset.id;
+      console.log(`点击了按钮，项目ID: ${itemId}`);
+    }
+  };
+
+  const items = Array.from({length: 100}, (_, i) =&gt; ({
+    id: i + 1,
+    name: `项目 ${i + 1}`
+  }));
+
+  return (
+    &lt;ul onClick={handleListClick}&gt;
+      {items.map(item =&gt; (
+        &lt;li key={item.id} data-id={item.id}&gt;
+          {item.name}
+          &lt;button&gt;点击&lt;/button&gt;
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h2>性能优化</h2>
+<h3>使用useCallback避免重复创建函数</h3>
+<pre><code class="language-jsx">function OptimizedEvents() {
+  const [count, setCount] = useState(0);
+
+  // 使用useCallback缓存事件处理函数
+  const handleIncrement = useCallback(() =&gt; {
+    setCount(prev =&gt; prev + 1);
+  }, []);
+
+  const handleDecrement = useCallback(() =&gt; {
+    setCount(prev =&gt; prev - 1);
+  }, []);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;计数: {count}&lt;/p&gt;
+      &lt;ExpensiveButton onClick={handleIncrement} text=&quot;增加&quot; /&gt;
+      &lt;ExpensiveButton onClick={handleDecrement} text=&quot;减少&quot; /&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 使用React.memo优化子组件
+const ExpensiveButton = React.memo(({ onClick, text }) =&gt; {
+  console.log(`${text} 按钮重新渲染`);
+  return &lt;button onClick={onClick}&gt;{text}&lt;/button&gt;;
+});
+</code></pre>
+<h3>避免在render中创建函数</h3>
+<pre><code class="language-jsx">// ❌ 不推荐：每次渲染都创建新函数
+function BadExample() {
+  const [items, setItems] = useState([]);
+
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;li key={item.id}&gt;
+          &lt;button onClick={() =&gt; handleDelete(item.id)}&gt;
+            删除
+          &lt;/button&gt;
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+// ✅ 推荐：使用useCallback或提取到组件外部
+function GoodExample() {
+  const [items, setItems] = useState([]);
+
+  const handleDelete = useCallback((id) =&gt; {
+    setItems(prev =&gt; prev.filter(item =&gt; item.id !== id));
+  }, []);
+
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;ListItem key={item.id} item={item} onDelete={handleDelete} /&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+const ListItem = React.memo(({ item, onDelete }) =&gt; (
+  &lt;li&gt;
+    &lt;button onClick={() =&gt; onDelete(item.id)}&gt;
+      删除
+    &lt;/button&gt;
+  &lt;/li&gt;
+));
+</code></pre>
+<h2>移动端事件</h2>
+<pre><code class="language-jsx">function TouchEvents() {
+  const [touchInfo, setTouchInfo] = useState(&#39;&#39;);
+
+  const handleTouchStart = (e) =&gt; {
+    const touch = e.touches[0];
+    setTouchInfo(`触摸开始: (${touch.clientX}, ${touch.clientY})`);
+  };
+
+  const handleTouchMove = (e) =&gt; {
+    e.preventDefault(); // 阻止页面滚动
+    const touch = e.touches[0];
+    setTouchInfo(`触摸移动: (${touch.clientX}, ${touch.clientY})`);
+  };
+
+  const handleTouchEnd = () =&gt; {
+    setTouchInfo(&#39;触摸结束&#39;);
+  };
+
+  return (
+    &lt;div
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      style={{
+        width: &#39;200px&#39;,
+        height: &#39;200px&#39;,
+        background: &#39;#f0f0f0&#39;,
+        display: &#39;flex&#39;,
+        alignItems: &#39;center&#39;,
+        justifyContent: &#39;center&#39;
+      }}
+    &gt;
+      &lt;p&gt;{touchInfo || &#39;触摸此区域&#39;}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>最佳实践</h2>
+<h3>1. 事件处理函数命名</h3>
+<pre><code class="language-jsx">// ✅ 推荐：使用handle前缀
+const handleClick = () =&gt; {};
+const handleSubmit = () =&gt; {};
+const handleChange = () =&gt; {};
+
+// ❌ 不推荐：不清晰的命名
+const click = () =&gt; {};
+const doSomething = () =&gt; {};
+</code></pre>
+<h3>2. 解构事件对象</h3>
+<pre><code class="language-jsx">// ✅ 推荐：解构需要的属性
+const handleChange = ({ target: { value } }) =&gt; {
+  setInputValue(value);
+};
+
+// ❌ 不推荐：使用整个事件对象
+const handleChange = (e) =&gt; {
+  setInputValue(e.target.value);
+};
+</code></pre>
+<h3>3. 使用TypeScript增强类型安全</h3>
+<pre><code class="language-tsx">interface ButtonProps {
+  onClick: (e: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; void;
+  children: React.ReactNode;
+}
+
+const Button: React.FC&lt;ButtonProps&gt; = ({ onClick, children }) =&gt; {
+  return &lt;button onClick={onClick}&gt;{children}&lt;/button&gt;;
+};
+</code></pre>
+<h2>常见问题</h2>
+<h3>问题1：事件处理函数中的this指向</h3>
+<pre><code class="language-jsx">class ClassComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    // 绑定this
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    console.log(&#39;this:&#39;, this);
+  }
+
+  // 或者使用箭头函数
+  handleClick = () =&gt; {
+    console.log(&#39;this:&#39;, this);
+  }
+
+  render() {
+    return &lt;button onClick={this.handleClick}&gt;点击&lt;/button&gt;;
+  }
+}
+</code></pre>
+<h3>问题2：事件处理函数中的异步操作</h3>
+<pre><code class="language-jsx">function AsyncEventHandler() {
+  const handleClick = async (e) =&gt; {
+    // 如果需要在异步操作中使用事件对象，需要持久化
+    e.persist();
+    
+    try {
+      const response = await fetch(&#39;/api/data&#39;);
+      const data = await response.json();
+      console.log(&#39;数据:&#39;, data);
+    } catch (error) {
+      console.error(&#39;错误:&#39;, error);
+    }
+  };
+
+  return &lt;button onClick={handleClick}&gt;异步点击&lt;/button&gt;;
+}
+</code></pre>
+<h3>问题3：频繁触发的事件优化</h3>
+<pre><code class="language-jsx">function ThrottledEvent() {
+  const [scrollY, setScrollY] = useState(0);
+
+  const throttledScrollHandler = useMemo(
+    () =&gt; throttle((e) =&gt; {
+      setScrollY(window.scrollY);
+    }, 100),
+    []
+  );
+
+  useEffect(() =&gt; {
+    window.addEventListener(&#39;scroll&#39;, throttledScrollHandler);
+    return () =&gt; {
+      window.removeEventListener(&#39;scroll&#39;, throttledScrollHandler);
+    };
+  }, [throttledScrollHandler]);
+
+  return &lt;div&gt;滚动位置: {scrollY}&lt;/div&gt;;
+}
+
+// 简单的节流函数
+function throttle(func, limit) {
+  let inThrottle;
+  return function() {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() =&gt; inThrottle = false, limit);
+    }
+  };
+}
+</code></pre>
+<h2>总结</h2>
+<p>React 的事件处理提供了：</p>
+<ol>
+<li><strong>合成事件系统</strong> - 跨浏览器兼容性</li>
+<li><strong>声明式处理</strong> - 直接在JSX中绑定事件</li>
+<li><strong>性能优化</strong> - 事件委托和池化</li>
+<li><strong>类型安全</strong> - TypeScript支持</li>
+</ol>
+<p>掌握这些事件处理技巧，能够帮助你构建更加交互性强、性能优秀的React应用。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="05-Props与State.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">Props与State</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="07-条件渲染.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">条件渲染</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常见问题 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">常见问题</span>
+            </div>
+            <h1 class="doc-title">常见问题</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #84fab0">
+                💡 最佳实践
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>38-常见问题</h1>
+<p>本文档汇总了React开发中的常见问题及解决方案，帮助开发者快速解决遇到的问题。</p>
+<h2>基础问题</h2>
+<h3>1. 为什么组件不重新渲染？</h3>
+<p><strong>问题描述：</strong><br>修改了state但组件没有重新渲染。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：直接修改state
+function App() {
+  const [users, setUsers] = useState([])
+  
+  const addUser = (newUser) =&gt; {
+    users.push(newUser) // 错误！直接修改原数组
+    setUsers(users)
+  }
+  
+  return (
+    &lt;div&gt;
+      {users.map(user =&gt; &lt;div key={user.id}&gt;{user.name}&lt;/div&gt;)}
+    &lt;/div&gt;
+  )
+}
+
+// 错误：修改对象属性
+function UserProfile() {
+  const [user, setUser] = useState({ name: &#39;John&#39;, age: 25 })
+  
+  const updateAge = () =&gt; {
+    user.age = 26 // 错误！直接修改对象
+    setUser(user)
+  }
+  
+  return &lt;div&gt;{user.name} - {user.age}&lt;/div&gt;
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：创建新数组
+function App() {
+  const [users, setUsers] = useState([])
+  
+  const addUser = (newUser) =&gt; {
+    setUsers([...users, newUser]) // 正确！创建新数组
+  }
+  
+  return (
+    &lt;div&gt;
+      {users.map(user =&gt; &lt;div key={user.id}&gt;{user.name}&lt;/div&gt;)}
+    &lt;/div&gt;
+  )
+}
+
+// 正确：创建新对象
+function UserProfile() {
+  const [user, setUser] = useState({ name: &#39;John&#39;, age: 25 })
+  
+  const updateAge = () =&gt; {
+    setUser({ ...user, age: 26 }) // 正确！创建新对象
+  }
+  
+  return &lt;div&gt;{user.name} - {user.age}&lt;/div&gt;
+}
+</code></pre>
+<h3>2. 为什么useEffect无限循环？</h3>
+<p><strong>问题描述：</strong><br>useEffect不断执行，导致无限循环。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：依赖数组中的对象或数组
+function App() {
+  const [user, setUser] = useState({})
+  
+  useEffect(() =&gt; {
+    fetchUser()
+  }, [user]) // 错误！每次渲染都会创建新的user对象
+  
+  const fetchUser = async () =&gt; {
+    const data = await api.getUser()
+    setUser(data)
+  }
+}
+
+// 错误：依赖数组中的函数
+function App() {
+  const [data, setData] = useState([])
+  
+  const fetchData = async () =&gt; {
+    const result = await api.getData()
+    setData(result)
+  }
+  
+  useEffect(() =&gt; {
+    fetchData()
+  }, [fetchData]) // 错误！fetchData每次渲染都是新函数
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：使用useCallback缓存函数
+function App() {
+  const [data, setData] = useState([])
+  
+  const fetchData = useCallback(async () =&gt; {
+    const result = await api.getData()
+    setData(result)
+  }, [])
+  
+  useEffect(() =&gt; {
+    fetchData()
+  }, [fetchData])
+}
+
+// 正确：将函数移到useEffect内部
+function App() {
+  const [data, setData] = useState([])
+  
+  useEffect(() =&gt; {
+    const fetchData = async () =&gt; {
+      const result = await api.getData()
+      setData(result)
+    }
+    
+    fetchData()
+  }, [])
+}
+
+// 正确：使用useMemo缓存复杂对象
+function App() {
+  const [user, setUser] = useState({})
+  
+  const userConfig = useMemo(() =&gt; ({
+    id: user.id,
+    settings: user.settings
+  }), [user.id, user.settings])
+  
+  useEffect(() =&gt; {
+    // 使用userConfig
+  }, [userConfig])
+}
+</code></pre>
+<h3>3. 为什么Key警告？</h3>
+<p><strong>问题描述：</strong><br>控制台出现&quot;Warning: Each child in a list should have a unique key prop&quot;。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：没有key
+function TodoList({ todos }) {
+  return (
+    &lt;ul&gt;
+      {todos.map(todo =&gt; (
+        &lt;li&gt;{todo.text}&lt;/li&gt; // 错误！缺少key
+      ))}
+    &lt;/ul&gt;
+  )
+}
+
+// 错误：使用索引作为key
+function TodoList({ todos }) {
+  return (
+    &lt;ul&gt;
+      {todos.map((todo, index) =&gt; (
+        &lt;li key={index}&gt;{todo.text}&lt;/li&gt; // 可能有问题！
+      ))}
+    &lt;/ul&gt;
+  )
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：使用唯一标识符
+function TodoList({ todos }) {
+  return (
+    &lt;ul&gt;
+      {todos.map(todo =&gt; (
+        &lt;li key={todo.id}&gt;{todo.text}&lt;/li&gt; // 正确！使用唯一id
+      ))}
+    &lt;/ul&gt;
+  )
+}
+
+// 正确：如果没有id，创建稳定的key
+function TodoList({ todos }) {
+  return (
+    &lt;ul&gt;
+      {todos.map(todo =&gt; (
+        &lt;li key={`${todo.text}-${todo.createdAt}`}&gt;
+          {todo.text}
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  )
+}
+</code></pre>
+<h2>Hook问题</h2>
+<h3>1. Hook规则违反</h3>
+<p><strong>问题描述：</strong><br>&quot;React Hook is called conditionally&quot;或&quot;React Hook is called in function that is neither a React function component nor a custom React Hook function&quot;。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：条件调用Hook
+function App() {
+  const [count, setCount] = useState(0)
+  
+  if (count &gt; 0) {
+    const [message, setMessage] = useState(&#39;&#39;) // 错误！条件调用
+  }
+  
+  return &lt;div&gt;{count}&lt;/div&gt;
+}
+
+// 错误：在普通函数中调用Hook
+function handleClick() {
+  const [state, setState] = useState(0) // 错误！不在组件或Hook中
+}
+
+// 错误：在循环中调用Hook
+function App() {
+  const [data, setData] = useState([])
+  
+  data.forEach(item =&gt; {
+    const [selected, setSelected] = useState(false) // 错误！在循环中
+  })
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：在组件顶层调用Hook
+function App() {
+  const [count, setCount] = useState(0)
+  const [message, setMessage] = useState(&#39;&#39;)
+  
+  useEffect(() =&gt; {
+    if (count &gt; 0) {
+      setMessage(&#39;Count is positive&#39;)
+    }
+  }, [count])
+  
+  return &lt;div&gt;{count} - {message}&lt;/div&gt;
+}
+
+// 正确：在自定义Hook中调用
+function useCounter() {
+  const [count, setCount] = useState(0)
+  
+  const increment = () =&gt; setCount(c =&gt; c + 1)
+  const decrement = () =&gt; setCount(c =&gt; c - 1)
+  
+  return { count, increment, decrement }
+}
+</code></pre>
+<h3>2. 闭包陷阱</h3>
+<p><strong>问题描述：</strong><br>Hook中访问到的是过期的状态值。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：闭包捕获了过期的state
+function App() {
+  const [count, setCount] = useState(0)
+  
+  useEffect(() =&gt; {
+    const timer = setInterval(() =&gt; {
+      setCount(count + 1) // 错误！count始终是0
+    }, 1000)
+    
+    return () =&gt; clearInterval(timer)
+  }, [])
+  
+  return &lt;div&gt;{count}&lt;/div&gt;
+}
+
+// 错误：事件处理器中的过期状态
+function App() {
+  const [count, setCount] = useState(0)
+  
+  useEffect(() =&gt; {
+    const handleClick = () =&gt; {
+      console.log(count) // 可能是过期的值
+    }
+    
+    document.addEventListener(&#39;click&#39;, handleClick)
+    return () =&gt; document.removeEventListener(&#39;click&#39;, handleClick)
+  }, [])
+  
+  return &lt;div&gt;{count}&lt;/div&gt;
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：使用函数式更新
+function App() {
+  const [count, setCount] = useState(0)
+  
+  useEffect(() =&gt; {
+    const timer = setInterval(() =&gt; {
+      setCount(c =&gt; c + 1) // 正确！使用函数式更新
+    }, 1000)
+    
+    return () =&gt; clearInterval(timer)
+  }, [])
+  
+  return &lt;div&gt;{count}&lt;/div&gt;
+}
+
+// 正确：使用ref保存最新值
+function App() {
+  const [count, setCount] = useState(0)
+  const countRef = useRef(count)
+  
+  useEffect(() =&gt; {
+    countRef.current = count
+  }, [count])
+  
+  useEffect(() =&gt; {
+    const handleClick = () =&gt; {
+      console.log(countRef.current) // 总是最新的值
+    }
+    
+    document.addEventListener(&#39;click&#39;, handleClick)
+    return () =&gt; document.removeEventListener(&#39;click&#39;, handleClick)
+  }, [])
+  
+  return &lt;div&gt;{count}&lt;/div&gt;
+}
+</code></pre>
+<h2>性能问题</h2>
+<h3>1. 不必要的重新渲染</h3>
+<p><strong>问题描述：</strong><br>组件频繁重新渲染导致性能问题。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：在渲染中创建新对象
+function App() {
+  const [users, setUsers] = useState([])
+  
+  return (
+    &lt;div&gt;
+      {users.map(user =&gt; (
+        &lt;UserCard 
+          key={user.id}
+          user={user}
+          style={{ padding: &#39;10px&#39; }} // 错误！每次都创建新对象
+          onClick={() =&gt; handleClick(user.id)} // 错误！每次都创建新函数
+        /&gt;
+      ))}
+    &lt;/div&gt;
+  )
+}
+
+// 错误：没有使用memo优化
+function ExpensiveComponent({ data }) {
+  const result = heavyCalculation(data)
+  return &lt;div&gt;{result}&lt;/div&gt;
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：使用useMemo和useCallback
+function App() {
+  const [users, setUsers] = useState([])
+  
+  const cardStyle = useMemo(() =&gt; ({ padding: &#39;10px&#39; }), [])
+  
+  const handleClick = useCallback((userId) =&gt; {
+    // 处理点击
+  }, [])
+  
+  return (
+    &lt;div&gt;
+      {users.map(user =&gt; (
+        &lt;UserCard 
+          key={user.id}
+          user={user}
+          style={cardStyle}
+          onClick={() =&gt; handleClick(user.id)}
+        /&gt;
+      ))}
+    &lt;/div&gt;
+  )
+}
+
+// 正确：使用React.memo优化
+const ExpensiveComponent = React.memo(({ data }) =&gt; {
+  const result = useMemo(() =&gt; heavyCalculation(data), [data])
+  return &lt;div&gt;{result}&lt;/div&gt;
+})
+</code></pre>
+<h3>2. 内存泄漏</h3>
+<p><strong>问题描述：</strong><br>组件卸载后仍有定时器或事件监听器运行。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：没有清理定时器
+function App() {
+  const [time, setTime] = useState(new Date())
+  
+  useEffect(() =&gt; {
+    const timer = setInterval(() =&gt; {
+      setTime(new Date())
+    }, 1000)
+    
+    // 错误！没有清理定时器
+  }, [])
+  
+  return &lt;div&gt;{time.toLocaleTimeString()}&lt;/div&gt;
+}
+
+// 错误：没有清理事件监听器
+function App() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  
+  useEffect(() =&gt; {
+    const handleResize = () =&gt; {
+      setWindowWidth(window.innerWidth)
+    }
+    
+    window.addEventListener(&#39;resize&#39;, handleResize)
+    
+    // 错误！没有清理事件监听器
+  }, [])
+  
+  return &lt;div&gt;Width: {windowWidth}&lt;/div&gt;
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：清理定时器
+function App() {
+  const [time, setTime] = useState(new Date())
+  
+  useEffect(() =&gt; {
+    const timer = setInterval(() =&gt; {
+      setTime(new Date())
+    }, 1000)
+    
+    return () =&gt; clearInterval(timer) // 正确！清理定时器
+  }, [])
+  
+  return &lt;div&gt;{time.toLocaleTimeString()}&lt;/div&gt;
+}
+
+// 正确：清理事件监听器
+function App() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  
+  useEffect(() =&gt; {
+    const handleResize = () =&gt; {
+      setWindowWidth(window.innerWidth)
+    }
+    
+    window.addEventListener(&#39;resize&#39;, handleResize)
+    
+    return () =&gt; {
+      window.removeEventListener(&#39;resize&#39;, handleResize) // 正确！清理监听器
+    }
+  }, [])
+  
+  return &lt;div&gt;Width: {windowWidth}&lt;/div&gt;
+}
+</code></pre>
+<h2>表单问题</h2>
+<h3>1. 受控组件vs非受控组件</h3>
+<p><strong>问题描述：</strong><br>表单元素的值无法控制或警告信息。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：undefined值导致非受控组件
+function App() {
+  const [user, setUser] = useState({}) // name是undefined
+  
+  return (
+    &lt;input 
+      value={user.name} // 错误！undefined值
+      onChange={(e) =&gt; setUser({...user, name: e.target.value})}
+    /&gt;
+  )
+}
+
+// 错误：在受控和非受控间切换
+function App() {
+  const [controlled, setControlled] = useState(true)
+  const [value, setValue] = useState(&#39;&#39;)
+  
+  return (
+    &lt;input 
+      value={controlled ? value : undefined} // 错误！切换控制模式
+      onChange={(e) =&gt; setValue(e.target.value)}
+    /&gt;
+  )
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：确保值不为undefined
+function App() {
+  const [user, setUser] = useState({ name: &#39;&#39; }) // 提供默认值
+  
+  return (
+    &lt;input 
+      value={user.name || &#39;&#39;} // 确保不为undefined
+      onChange={(e) =&gt; setUser({...user, name: e.target.value})}
+    /&gt;
+  )
+}
+
+// 正确：保持一致的控制模式
+function App() {
+  const [value, setValue] = useState(&#39;&#39;)
+  
+  return (
+    &lt;input 
+      value={value}
+      onChange={(e) =&gt; setValue(e.target.value)}
+    /&gt;
+  )
+}
+</code></pre>
+<h3>2. 表单验证问题</h3>
+<p><strong>问题描述：</strong><br>表单验证时机或逻辑错误。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：每次输入都验证
+function LoginForm() {
+  const [email, setEmail] = useState(&#39;&#39;)
+  const [emailError, setEmailError] = useState(&#39;&#39;)
+  
+  const handleEmailChange = (e) =&gt; {
+    const value = e.target.value
+    setEmail(value)
+    
+    // 错误！每次输入都验证
+    if (!isValidEmail(value)) {
+      setEmailError(&#39;Invalid email&#39;)
+    } else {
+      setEmailError(&#39;&#39;)
+    }
+  }
+  
+  return (
+    &lt;div&gt;
+      &lt;input 
+        value={email}
+        onChange={handleEmailChange}
+      /&gt;
+      {emailError &amp;&amp; &lt;div&gt;{emailError}&lt;/div&gt;}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：失去焦点时验证
+function LoginForm() {
+  const [email, setEmail] = useState(&#39;&#39;)
+  const [emailError, setEmailError] = useState(&#39;&#39;)
+  const [touched, setTouched] = useState(false)
+  
+  const handleEmailChange = (e) =&gt; {
+    setEmail(e.target.value)
+    
+    // 如果已经touched，实时验证
+    if (touched &amp;&amp; !isValidEmail(e.target.value)) {
+      setEmailError(&#39;Invalid email&#39;)
+    } else {
+      setEmailError(&#39;&#39;)
+    }
+  }
+  
+  const handleEmailBlur = () =&gt; {
+    setTouched(true)
+    if (!isValidEmail(email)) {
+      setEmailError(&#39;Invalid email&#39;)
+    }
+  }
+  
+  return (
+    &lt;div&gt;
+      &lt;input 
+        value={email}
+        onChange={handleEmailChange}
+        onBlur={handleEmailBlur}
+      /&gt;
+      {emailError &amp;&amp; &lt;div&gt;{emailError}&lt;/div&gt;}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>状态管理问题</h2>
+<h3>1. 状态更新异步问题</h3>
+<p><strong>问题描述：</strong><br>setState后立即访问状态得到旧值。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：期望setState立即生效
+function App() {
+  const [count, setCount] = useState(0)
+  
+  const handleClick = () =&gt; {
+    setCount(count + 1)
+    console.log(count) // 错误！仍然是旧值
+  }
+  
+  return &lt;button onClick={handleClick}&gt;Count: {count}&lt;/button&gt;
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：使用useEffect监听状态变化
+function App() {
+  const [count, setCount] = useState(0)
+  
+  useEffect(() =&gt; {
+    console.log(&#39;Count updated:&#39;, count)
+  }, [count])
+  
+  const handleClick = () =&gt; {
+    setCount(count + 1)
+  }
+  
+  return &lt;button onClick={handleClick}&gt;Count: {count}&lt;/button&gt;
+}
+
+// 正确：使用ref存储回调
+function App() {
+  const [count, setCount] = useState(0)
+  
+  const handleClick = () =&gt; {
+    const newCount = count + 1
+    setCount(newCount)
+    console.log(&#39;New count:&#39;, newCount)
+  }
+  
+  return &lt;button onClick={handleClick}&gt;Count: {count}&lt;/button&gt;
+}
+</code></pre>
+<h3>2. 状态结构设计问题</h3>
+<p><strong>问题描述：</strong><br>状态结构复杂，更新困难。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：过度嵌套的状态
+function App() {
+  const [state, setState] = useState({
+    user: {
+      profile: {
+        personal: {
+          name: &#39;&#39;,
+          age: 0
+        },
+        contact: {
+          email: &#39;&#39;,
+          phone: &#39;&#39;
+        }
+      }
+    }
+  })
+  
+  const updateName = (name) =&gt; {
+    setState({
+      ...state,
+      user: {
+        ...state.user,
+        profile: {
+          ...state.user.profile,
+          personal: {
+            ...state.user.profile.personal,
+            name
+          }
+        }
+      }
+    })
+  }
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：扁平化状态结构
+function App() {
+  const [name, setName] = useState(&#39;&#39;)
+  const [age, setAge] = useState(0)
+  const [email, setEmail] = useState(&#39;&#39;)
+  const [phone, setPhone] = useState(&#39;&#39;)
+  
+  const updateName = (newName) =&gt; {
+    setName(newName)
+  }
+  
+  // 或者使用useReducer
+  const [state, dispatch] = useReducer(userReducer, initialState)
+  
+  const updateName = (name) =&gt; {
+    dispatch({ type: &#39;UPDATE_NAME&#39;, payload: name })
+  }
+}
+</code></pre>
+<h2>组件问题</h2>
+<h3>1. Props传递问题</h3>
+<p><strong>问题描述：</strong><br>Props drilling或props类型错误。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：Props drilling
+function App() {
+  const [user, setUser] = useState({})
+  
+  return (
+    &lt;Layout user={user}&gt;
+      &lt;Header user={user}&gt;
+        &lt;UserMenu user={user} /&gt;
+      &lt;/Header&gt;
+      &lt;Content user={user}&gt;
+        &lt;UserProfile user={user} /&gt;
+      &lt;/Content&gt;
+    &lt;/Layout&gt;
+  )
+}
+
+// 错误：Props类型不匹配
+function UserCard({ user }) {
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;{user.name}&lt;/h3&gt;
+      &lt;p&gt;{user.age}&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+
+// 传递错误的props类型
+&lt;UserCard user=&quot;John&quot; /&gt; // 错误！应该是对象
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：使用Context避免Props drilling
+const UserContext = createContext()
+
+function App() {
+  const [user, setUser] = useState({})
+  
+  return (
+    &lt;UserContext.Provider value={user}&gt;
+      &lt;Layout&gt;
+        &lt;Header&gt;
+          &lt;UserMenu /&gt;
+        &lt;/Header&gt;
+        &lt;Content&gt;
+          &lt;UserProfile /&gt;
+        &lt;/Content&gt;
+      &lt;/Layout&gt;
+    &lt;/UserContext.Provider&gt;
+  )
+}
+
+// 正确：使用PropTypes验证props
+import PropTypes from &#39;prop-types&#39;
+
+function UserCard({ user }) {
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;{user.name}&lt;/h3&gt;
+      &lt;p&gt;{user.age}&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+
+UserCard.propTypes = {
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number.isRequired
+  }).isRequired
+}
+</code></pre>
+<h3>2. 组件生命周期问题</h3>
+<p><strong>问题描述：</strong><br>组件挂载/卸载时的副作用处理。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：没有正确处理组件卸载
+function App() {
+  const [data, setData] = useState(null)
+  
+  useEffect(() =&gt; {
+    fetchData().then(setData)
+  }, [])
+  
+  const fetchData = async () =&gt; {
+    const response = await fetch(&#39;/api/data&#39;)
+    return response.json()
+  }
+  
+  return &lt;div&gt;{data ? data.name : &#39;Loading...&#39;}&lt;/div&gt;
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：使用清理函数和取消令牌
+function App() {
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  
+  useEffect(() =&gt; {
+    let cancelled = false
+    
+    const fetchData = async () =&gt; {
+      try {
+        const response = await fetch(&#39;/api/data&#39;)
+        const result = await response.json()
+        
+        if (!cancelled) {
+          setData(result)
+          setLoading(false)
+        }
+      } catch (error) {
+        if (!cancelled) {
+          console.error(&#39;Fetch error:&#39;, error)
+          setLoading(false)
+        }
+      }
+    }
+    
+    fetchData()
+    
+    return () =&gt; {
+      cancelled = true
+    }
+  }, [])
+  
+  if (loading) return &lt;div&gt;Loading...&lt;/div&gt;
+  
+  return &lt;div&gt;{data ? data.name : &#39;No data&#39;}&lt;/div&gt;
+}
+</code></pre>
+<h2>路由问题</h2>
+<h3>1. 路由导航问题</h3>
+<p><strong>问题描述：</strong><br>导航时状态丢失或路由不匹配。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：直接使用window.location
+function App() {
+  const handleNavigation = () =&gt; {
+    window.location.href = &#39;/dashboard&#39; // 错误！会刷新页面
+  }
+  
+  return &lt;button onClick={handleNavigation}&gt;Go to Dashboard&lt;/button&gt;
+}
+
+// 错误：路由配置错误
+&lt;Routes&gt;
+  &lt;Route path=&quot;/users/:id&quot; element={&lt;UserProfile /&gt;} /&gt;
+  &lt;Route path=&quot;/users&quot; element={&lt;UserList /&gt;} /&gt;
+&lt;/Routes&gt;
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：使用React Router的导航方法
+import { useNavigate } from &#39;react-router-dom&#39;
+
+function App() {
+  const navigate = useNavigate()
+  
+  const handleNavigation = () =&gt; {
+    navigate(&#39;/dashboard&#39;) // 正确！使用React Router导航
+  }
+  
+  return &lt;button onClick={handleNavigation}&gt;Go to Dashboard&lt;/button&gt;
+}
+
+// 正确：路由配置顺序
+&lt;Routes&gt;
+  &lt;Route path=&quot;/users&quot; element={&lt;UserList /&gt;} /&gt;
+  &lt;Route path=&quot;/users/:id&quot; element={&lt;UserProfile /&gt;} /&gt;
+&lt;/Routes&gt;
+</code></pre>
+<h3>2. 路由参数问题</h3>
+<p><strong>问题描述：</strong><br>路由参数获取或类型转换错误。</p>
+<p><strong>常见原因：</strong></p>
+<pre><code class="language-jsx">// 错误：没有处理参数不存在的情况
+function UserProfile() {
+  const { id } = useParams()
+  
+  const [user, setUser] = useState(null)
+  
+  useEffect(() =&gt; {
+    fetchUser(id).then(setUser) // 错误！id可能为undefined
+  }, [id])
+  
+  return &lt;div&gt;{user.name}&lt;/div&gt;
+}
+</code></pre>
+<p><strong>解决方案：</strong></p>
+<pre><code class="language-jsx">// 正确：验证和处理路由参数
+function UserProfile() {
+  const { id } = useParams()
+  const navigate = useNavigate()
+  
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  
+  useEffect(() =&gt; {
+    if (!id) {
+      navigate(&#39;/users&#39;)
+      return
+    }
+    
+    const fetchUser = async () =&gt; {
+      try {
+        const userData = await api.getUserById(id)
+        setUser(userData)
+      } catch (err) {
+        setError(err.message)
+      } finally {
+        setLoading(false)
+      }
+    }
+    
+    fetchUser()
+  }, [id, navigate])
+  
+  if (loading) return &lt;div&gt;Loading...&lt;/div&gt;
+  if (error) return &lt;div&gt;Error: {error}&lt;/div&gt;
+  if (!user) return &lt;div&gt;User not found&lt;/div&gt;
+  
+  return &lt;div&gt;{user.name}&lt;/div&gt;
+}
+</code></pre>
+<h2>调试技巧</h2>
+<h3>1. 使用React DevTools</h3>
+<pre><code class="language-jsx">// 添加displayName便于调试
+const MyComponent = () =&gt; {
+  return &lt;div&gt;My Component&lt;/div&gt;
+}
+
+MyComponent.displayName = &#39;MyComponent&#39;
+
+// 使用useDebugValue为Hook添加调试信息
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue)
+  
+  useDebugValue(count &gt; 5 ? &#39;High&#39; : &#39;Low&#39;)
+  
+  return [count, setCount]
+}
+</code></pre>
+<h3>2. 错误边界</h3>
+<pre><code class="language-jsx">class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { hasError: false, error: null }
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error }
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error(&#39;Error caught by boundary:&#39;, error, errorInfo)
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        &lt;div&gt;
+          &lt;h2&gt;Something went wrong.&lt;/h2&gt;
+          &lt;details&gt;
+            &lt;summary&gt;Error details&lt;/summary&gt;
+            &lt;pre&gt;{this.state.error.toString()}&lt;/pre&gt;
+          &lt;/details&gt;
+        &lt;/div&gt;
+      )
+    }
+
+    return this.props.children
+  }
+}
+
+// 使用错误边界
+function App() {
+  return (
+    &lt;ErrorBoundary&gt;
+      &lt;MyComponent /&gt;
+    &lt;/ErrorBoundary&gt;
+  )
+}
+</code></pre>
+<h2>最佳实践总结</h2>
+<h3>1. 状态管理</h3>
+<ul>
+<li>保持状态结构简单</li>
+<li>使用不可变更新</li>
+<li>避免不必要的状态</li>
+</ul>
+<h3>2. 组件设计</h3>
+<ul>
+<li>单一职责原则</li>
+<li>合理的Props设计</li>
+<li>正确使用memo和callback</li>
+</ul>
+<h3>3. 性能优化</h3>
+<ul>
+<li>避免不必要的重渲染</li>
+<li>使用懒加载</li>
+<li>正确的依赖数组</li>
+</ul>
+<h3>4. 错误处理</h3>
+<ul>
+<li>使用错误边界</li>
+<li>验证props和数据</li>
+<li>提供友好的错误信息</li>
+</ul>
+<h3>5. 代码质量</h3>
+<ul>
+<li>使用TypeScript</li>
+<li>编写测试</li>
+<li>保持代码简洁</li>
+</ul>
+<p>通过了解这些常见问题和解决方案，可以避免大多数React开发中的坑，写出更健壮的代码。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="37-项目架构.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">项目架构</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="React-Hooks完整参考.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">React-Hooks完整参考</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

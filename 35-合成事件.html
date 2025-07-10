@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>合成事件 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">合成事件</span>
+            </div>
+            <h1 class="doc-title">合成事件</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #fbc2eb">
+                📖 API参考
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>35-合成事件</h1>
+<p>React合成事件（SyntheticEvent）是React对原生DOM事件的封装，提供了跨浏览器的统一事件接口。本文档详细介绍React合成事件的原理和使用方法。</p>
+<h2>基础概念</h2>
+<h3>什么是合成事件</h3>
+<p>合成事件是React创建的事件对象，它包装了原生事件，提供了统一的API接口。</p>
+<pre><code class="language-jsx">function BasicEventExample() {
+  const handleClick = (event) =&gt; {
+    console.log(&#39;事件类型:&#39;, event.type)           // &#39;click&#39;
+    console.log(&#39;事件目标:&#39;, event.target)         // 被点击的元素
+    console.log(&#39;当前目标:&#39;, event.currentTarget)   // 绑定事件的元素
+    console.log(&#39;原生事件:&#39;, event.nativeEvent)     // 原生DOM事件
+    console.log(&#39;是否合成事件:&#39;, event.isSynthetic) // true
+  }
+
+  return (
+    &lt;button onClick={handleClick}&gt;
+      点击我
+    &lt;/button&gt;
+  )
+}
+</code></pre>
+<h3>合成事件的优势</h3>
+<ol>
+<li><strong>跨浏览器兼容</strong> - 统一的API接口</li>
+<li><strong>性能优化</strong> - 事件委托机制</li>
+<li><strong>内存管理</strong> - 自动回收事件对象</li>
+<li><strong>扩展性</strong> - 可以添加自定义属性</li>
+</ol>
+<h2>事件处理</h2>
+<h3>基础事件处理</h3>
+<pre><code class="language-jsx">function EventHandling() {
+  const handleClick = (event) =&gt; {
+    event.preventDefault()  // 阻止默认行为
+    event.stopPropagation() // 阻止事件冒泡
+    
+    console.log(&#39;按钮被点击了&#39;)
+  }
+
+  const handleSubmit = (event) =&gt; {
+    event.preventDefault()
+    
+    const formData = new FormData(event.target)
+    console.log(&#39;表单数据:&#39;, Object.fromEntries(formData))
+  }
+
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &#39;Enter&#39;) {
+      console.log(&#39;回车键被按下&#39;)
+    }
+    
+    if (event.ctrlKey &amp;&amp; event.key === &#39;s&#39;) {
+      event.preventDefault()
+      console.log(&#39;Ctrl+S 保存快捷键&#39;)
+    }
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={handleClick}&gt;点击按钮&lt;/button&gt;
+      
+      &lt;form onSubmit={handleSubmit}&gt;
+        &lt;input name=&quot;username&quot; type=&quot;text&quot; /&gt;
+        &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+      &lt;/form&gt;
+      
+      &lt;input
+        type=&quot;text&quot;
+        onKeyDown={handleKeyDown}
+        placeholder=&quot;按回车或Ctrl+S&quot;
+      /&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>传递参数</h3>
+<pre><code class="language-jsx">function EventParameters() {
+  const handleClick = (id, event) =&gt; {
+    console.log(&#39;ID:&#39;, id)
+    console.log(&#39;事件:&#39;, event)
+  }
+
+  const handleClickWithBind = (id, event) =&gt; {
+    console.log(&#39;ID:&#39;, id)
+    console.log(&#39;事件:&#39;, event)
+  }
+
+  return (
+    &lt;div&gt;
+      {/* 方法1: 箭头函数 */}
+      &lt;button onClick={(e) =&gt; handleClick(1, e)}&gt;
+        按钮1
+      &lt;/button&gt;
+
+      {/* 方法2: bind方法 */}
+      &lt;button onClick={handleClickWithBind.bind(null, 2)}&gt;
+        按钮2
+      &lt;/button&gt;
+
+      {/* 方法3: 使用数据属性 */}
+      &lt;button
+        data-id=&quot;3&quot;
+        onClick={(e) =&gt; handleClick(e.target.dataset.id, e)}
+      &gt;
+        按钮3
+      &lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>鼠标事件</h2>
+<h3>基础鼠标事件</h3>
+<pre><code class="language-jsx">function MouseEvents() {
+  const handleClick = (event) =&gt; {
+    console.log(&#39;点击事件:&#39;, {
+      button: event.button,      // 0=左键, 1=中键, 2=右键
+      buttons: event.buttons,    // 当前按下的按钮
+      clientX: event.clientX,    // 相对于视口的X坐标
+      clientY: event.clientY,    // 相对于视口的Y坐标
+      pageX: event.pageX,        // 相对于文档的X坐标
+      pageY: event.pageY,        // 相对于文档的Y坐标
+      screenX: event.screenX,    // 相对于屏幕的X坐标
+      screenY: event.screenY,    // 相对于屏幕的Y坐标
+      ctrlKey: event.ctrlKey,    // Ctrl键是否按下
+      shiftKey: event.shiftKey,  // Shift键是否按下
+      altKey: event.altKey,      // Alt键是否按下
+      metaKey: event.metaKey     // Meta键是否按下
+    })
+  }
+
+  return (
+    &lt;div
+      onClick={handleClick}
+      onDoubleClick={(e) =&gt; console.log(&#39;双击事件&#39;, e)}
+      onMouseDown={(e) =&gt; console.log(&#39;鼠标按下&#39;, e)}
+      onMouseUp={(e) =&gt; console.log(&#39;鼠标释放&#39;, e)}
+      onMouseMove={(e) =&gt; console.log(&#39;鼠标移动&#39;, e.clientX, e.clientY)}
+      onMouseEnter={(e) =&gt; console.log(&#39;鼠标进入&#39;, e)}
+      onMouseLeave={(e) =&gt; console.log(&#39;鼠标离开&#39;, e)}
+      onMouseOver={(e) =&gt; console.log(&#39;鼠标悬停&#39;, e)}
+      onMouseOut={(e) =&gt; console.log(&#39;鼠标移出&#39;, e)}
+      onContextMenu={(e) =&gt; console.log(&#39;右键菜单&#39;, e)}
+      style={{
+        width: &#39;200px&#39;,
+        height: &#39;200px&#39;,
+        backgroundColor: &#39;#f0f0f0&#39;,
+        border: &#39;1px solid #ccc&#39;
+      }}
+    &gt;
+      鼠标事件测试区域
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>拖拽事件</h3>
+<pre><code class="language-jsx">function DragEvents() {
+  const [draggedItem, setDraggedItem] = useState(null)
+
+  const handleDragStart = (event) =&gt; {
+    setDraggedItem(event.target.textContent)
+    event.dataTransfer.setData(&#39;text/plain&#39;, event.target.textContent)
+    event.dataTransfer.effectAllowed = &#39;move&#39;
+  }
+
+  const handleDragOver = (event) =&gt; {
+    event.preventDefault()
+    event.dataTransfer.dropEffect = &#39;move&#39;
+  }
+
+  const handleDrop = (event) =&gt; {
+    event.preventDefault()
+    const data = event.dataTransfer.getData(&#39;text/plain&#39;)
+    console.log(&#39;拖拽数据:&#39;, data)
+    setDraggedItem(null)
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;div
+        draggable
+        onDragStart={handleDragStart}
+        onDrag={(e) =&gt; console.log(&#39;拖拽中&#39;, e)}
+        onDragEnd={(e) =&gt; console.log(&#39;拖拽结束&#39;, e)}
+        style={{
+          padding: &#39;10px&#39;,
+          backgroundColor: &#39;#e0e0e0&#39;,
+          cursor: &#39;move&#39;,
+          marginBottom: &#39;10px&#39;
+        }}
+      &gt;
+        拖拽我
+      &lt;/div&gt;
+
+      &lt;div
+        onDragOver={handleDragOver}
+        onDragEnter={(e) =&gt; console.log(&#39;拖拽进入&#39;, e)}
+        onDragLeave={(e) =&gt; console.log(&#39;拖拽离开&#39;, e)}
+        onDrop={handleDrop}
+        style={{
+          width: &#39;200px&#39;,
+          height: &#39;100px&#39;,
+          border: &#39;2px dashed #ccc&#39;,
+          padding: &#39;10px&#39;,
+          textAlign: &#39;center&#39;
+        }}
+      &gt;
+        拖拽目标区域
+        {draggedItem &amp;&amp; &lt;div&gt;正在拖拽: {draggedItem}&lt;/div&gt;}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>键盘事件</h2>
+<h3>键盘事件处理</h3>
+<pre><code class="language-jsx">function KeyboardEvents() {
+  const [keys, setKeys] = useState([])
+
+  const handleKeyDown = (event) =&gt; {
+    console.log(&#39;键盘按下:&#39;, {
+      key: event.key,           // 按键值 (如 &#39;a&#39;, &#39;Enter&#39;, &#39;ArrowUp&#39;)
+      code: event.code,         // 物理按键代码 (如 &#39;KeyA&#39;, &#39;Enter&#39;, &#39;ArrowUp&#39;)
+      keyCode: event.keyCode,   // 已废弃，使用 key 或 code
+      which: event.which,       // 已废弃，使用 key 或 code
+      ctrlKey: event.ctrlKey,   // Ctrl键状态
+      shiftKey: event.shiftKey, // Shift键状态
+      altKey: event.altKey,     // Alt键状态
+      metaKey: event.metaKey,   // Meta键状态
+      repeat: event.repeat      // 是否重复按键
+    })
+
+    // 处理特殊按键
+    switch (event.key) {
+      case &#39;Enter&#39;:
+        console.log(&#39;回车键&#39;)
+        break
+      case &#39;Escape&#39;:
+        console.log(&#39;退出键&#39;)
+        break
+      case &#39;ArrowUp&#39;:
+      case &#39;ArrowDown&#39;:
+      case &#39;ArrowLeft&#39;:
+      case &#39;ArrowRight&#39;:
+        console.log(&#39;方向键:&#39;, event.key)
+        break
+      case &#39;Tab&#39;:
+        console.log(&#39;Tab键&#39;)
+        break
+      default:
+        break
+    }
+
+    // 处理快捷键
+    if (event.ctrlKey) {
+      switch (event.key) {
+        case &#39;s&#39;:
+          event.preventDefault()
+          console.log(&#39;保存快捷键&#39;)
+          break
+        case &#39;c&#39;:
+          console.log(&#39;复制快捷键&#39;)
+          break
+        case &#39;v&#39;:
+          console.log(&#39;粘贴快捷键&#39;)
+          break
+        case &#39;z&#39;:
+          console.log(&#39;撤销快捷键&#39;)
+          break
+        default:
+          break
+      }
+    }
+  }
+
+  const handleKeyUp = (event) =&gt; {
+    console.log(&#39;键盘释放:&#39;, event.key)
+    setKeys(prev =&gt; prev.filter(k =&gt; k !== event.key))
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;input
+        type=&quot;text&quot;
+        onKeyDown={handleKeyDown}
+        onKeyUp={handleKeyUp}
+        placeholder=&quot;按键盘任意键&quot;
+        style={{ padding: &#39;10px&#39;, fontSize: &#39;16px&#39; }}
+      /&gt;
+      
+      &lt;div&gt;
+        &lt;h3&gt;按键历史:&lt;/h3&gt;
+        &lt;div&gt;{keys.join(&#39;, &#39;)}&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>输入事件</h3>
+<pre><code class="language-jsx">function InputEvents() {
+  const [inputValue, setInputValue] = useState(&#39;&#39;)
+  const [composition, setComposition] = useState(false)
+
+  const handleCompositionStart = (event) =&gt; {
+    console.log(&#39;输入法开始:&#39;, event)
+    setComposition(true)
+  }
+
+  const handleCompositionUpdate = (event) =&gt; {
+    console.log(&#39;输入法更新:&#39;, event.data)
+  }
+
+  const handleCompositionEnd = (event) =&gt; {
+    console.log(&#39;输入法结束:&#39;, event.data)
+    setComposition(false)
+  }
+
+  const handleInput = (event) =&gt; {
+    console.log(&#39;输入事件:&#39;, event.target.value)
+    if (!composition) {
+      setInputValue(event.target.value)
+    }
+  }
+
+  const handleChange = (event) =&gt; {
+    console.log(&#39;变化事件:&#39;, event.target.value)
+    setInputValue(event.target.value)
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;input
+        type=&quot;text&quot;
+        value={inputValue}
+        onChange={handleChange}
+        onInput={handleInput}
+        onCompositionStart={handleCompositionStart}
+        onCompositionUpdate={handleCompositionUpdate}
+        onCompositionEnd={handleCompositionEnd}
+        placeholder=&quot;输入文本（支持中文输入法）&quot;
+        style={{ padding: &#39;10px&#39;, fontSize: &#39;16px&#39; }}
+      /&gt;
+      
+      &lt;div&gt;
+        &lt;p&gt;当前值: {inputValue}&lt;/p&gt;
+        &lt;p&gt;输入法状态: {composition ? &#39;激活&#39; : &#39;未激活&#39;}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>表单事件</h2>
+<h3>表单处理</h3>
+<pre><code class="language-jsx">function FormEvents() {
+  const [formData, setFormData] = useState({
+    username: &#39;&#39;,
+    email: &#39;&#39;,
+    password: &#39;&#39;,
+    gender: &#39;&#39;,
+    interests: []
+  })
+
+  const handleSubmit = (event) =&gt; {
+    event.preventDefault()
+    console.log(&#39;表单提交:&#39;, formData)
+    
+    // 表单验证
+    if (!formData.username) {
+      alert(&#39;用户名不能为空&#39;)
+      return
+    }
+    
+    if (!formData.email) {
+      alert(&#39;邮箱不能为空&#39;)
+      return
+    }
+    
+    console.log(&#39;表单验证通过&#39;)
+  }
+
+  const handleReset = (event) =&gt; {
+    console.log(&#39;表单重置&#39;, event)
+    setFormData({
+      username: &#39;&#39;,
+      email: &#39;&#39;,
+      password: &#39;&#39;,
+      gender: &#39;&#39;,
+      interests: []
+    })
+  }
+
+  const handleInputChange = (event) =&gt; {
+    const { name, value, type, checked } = event.target
+    
+    if (type === &#39;checkbox&#39;) {
+      setFormData(prev =&gt; ({
+        ...prev,
+        interests: checked
+          ? [...prev.interests, value]
+          : prev.interests.filter(item =&gt; item !== value)
+      }))
+    } else {
+      setFormData(prev =&gt; ({
+        ...prev,
+        [name]: value
+      }))
+    }
+  }
+
+  const handleFocus = (event) =&gt; {
+    console.log(&#39;获得焦点:&#39;, event.target.name)
+    event.target.style.backgroundColor = &#39;#e6f3ff&#39;
+  }
+
+  const handleBlur = (event) =&gt; {
+    console.log(&#39;失去焦点:&#39;, event.target.name)
+    event.target.style.backgroundColor = &#39;&#39;
+  }
+
+  return (
+    &lt;form onSubmit={handleSubmit} onReset={handleReset}&gt;
+      &lt;div&gt;
+        &lt;label&gt;用户名:&lt;/label&gt;
+        &lt;input
+          type=&quot;text&quot;
+          name=&quot;username&quot;
+          value={formData.username}
+          onChange={handleInputChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          required
+        /&gt;
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;label&gt;邮箱:&lt;/label&gt;
+        &lt;input
+          type=&quot;email&quot;
+          name=&quot;email&quot;
+          value={formData.email}
+          onChange={handleInputChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          required
+        /&gt;
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;label&gt;密码:&lt;/label&gt;
+        &lt;input
+          type=&quot;password&quot;
+          name=&quot;password&quot;
+          value={formData.password}
+          onChange={handleInputChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+        /&gt;
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;label&gt;性别:&lt;/label&gt;
+        &lt;label&gt;
+          &lt;input
+            type=&quot;radio&quot;
+            name=&quot;gender&quot;
+            value=&quot;male&quot;
+            checked={formData.gender === &#39;male&#39;}
+            onChange={handleInputChange}
+          /&gt;
+          男
+        &lt;/label&gt;
+        &lt;label&gt;
+          &lt;input
+            type=&quot;radio&quot;
+            name=&quot;gender&quot;
+            value=&quot;female&quot;
+            checked={formData.gender === &#39;female&#39;}
+            onChange={handleInputChange}
+          /&gt;
+          女
+        &lt;/label&gt;
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;label&gt;兴趣:&lt;/label&gt;
+        &lt;label&gt;
+          &lt;input
+            type=&quot;checkbox&quot;
+            name=&quot;interests&quot;
+            value=&quot;reading&quot;
+            checked={formData.interests.includes(&#39;reading&#39;)}
+            onChange={handleInputChange}
+          /&gt;
+          阅读
+        &lt;/label&gt;
+        &lt;label&gt;
+          &lt;input
+            type=&quot;checkbox&quot;
+            name=&quot;interests&quot;
+            value=&quot;music&quot;
+            checked={formData.interests.includes(&#39;music&#39;)}
+            onChange={handleInputChange}
+          /&gt;
+          音乐
+        &lt;/label&gt;
+        &lt;label&gt;
+          &lt;input
+            type=&quot;checkbox&quot;
+            name=&quot;interests&quot;
+            value=&quot;sports&quot;
+            checked={formData.interests.includes(&#39;sports&#39;)}
+            onChange={handleInputChange}
+          /&gt;
+          运动
+        &lt;/label&gt;
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+        &lt;button type=&quot;reset&quot;&gt;重置&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  )
+}
+</code></pre>
+<h2>焦点事件</h2>
+<pre><code class="language-jsx">function FocusEvents() {
+  const [focusedElement, setFocusedElement] = useState(null)
+
+  const handleFocus = (event) =&gt; {
+    console.log(&#39;获得焦点:&#39;, event.target.name)
+    setFocusedElement(event.target.name)
+  }
+
+  const handleBlur = (event) =&gt; {
+    console.log(&#39;失去焦点:&#39;, event.target.name)
+    setFocusedElement(null)
+  }
+
+  const handleFocusIn = (event) =&gt; {
+    console.log(&#39;焦点进入:&#39;, event.target.name)
+  }
+
+  const handleFocusOut = (event) =&gt; {
+    console.log(&#39;焦点离开:&#39;, event.target.name)
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;当前焦点: {focusedElement || &#39;无&#39;}&lt;/p&gt;
+      
+      &lt;input
+        type=&quot;text&quot;
+        name=&quot;input1&quot;
+        placeholder=&quot;输入框1&quot;
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onFocusIn={handleFocusIn}
+        onFocusOut={handleFocusOut}
+      /&gt;
+      
+      &lt;input
+        type=&quot;text&quot;
+        name=&quot;input2&quot;
+        placeholder=&quot;输入框2&quot;
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+      /&gt;
+      
+      &lt;textarea
+        name=&quot;textarea&quot;
+        placeholder=&quot;文本域&quot;
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+      /&gt;
+      
+      &lt;select
+        name=&quot;select&quot;
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+      &gt;
+        &lt;option value=&quot;&quot;&gt;选择选项&lt;/option&gt;
+        &lt;option value=&quot;option1&quot;&gt;选项1&lt;/option&gt;
+        &lt;option value=&quot;option2&quot;&gt;选项2&lt;/option&gt;
+      &lt;/select&gt;
+      
+      &lt;button
+        name=&quot;button&quot;
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+      &gt;
+        按钮
+      &lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>剪贴板事件</h2>
+<pre><code class="language-jsx">function ClipboardEvents() {
+  const [clipboardData, setClipboardData] = useState(&#39;&#39;)
+
+  const handleCopy = (event) =&gt; {
+    console.log(&#39;复制事件:&#39;, event.clipboardData.getData(&#39;text&#39;))
+    setClipboardData(&#39;已复制内容&#39;)
+  }
+
+  const handleCut = (event) =&gt; {
+    console.log(&#39;剪切事件:&#39;, event.clipboardData.getData(&#39;text&#39;))
+    setClipboardData(&#39;已剪切内容&#39;)
+  }
+
+  const handlePaste = (event) =&gt; {
+    const pastedData = event.clipboardData.getData(&#39;text&#39;)
+    console.log(&#39;粘贴事件:&#39;, pastedData)
+    setClipboardData(pastedData)
+    
+    // 可以阻止默认粘贴行为并自定义处理
+    // event.preventDefault()
+    // 自定义粘贴逻辑
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;input
+        type=&quot;text&quot;
+        placeholder=&quot;在此输入框中测试复制、剪切、粘贴&quot;
+        onCopy={handleCopy}
+        onCut={handleCut}
+        onPaste={handlePaste}
+        style={{ width: &#39;300px&#39;, padding: &#39;10px&#39; }}
+      /&gt;
+      
+      &lt;div&gt;
+        &lt;p&gt;剪贴板操作: {clipboardData}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>触摸事件</h2>
+<pre><code class="language-jsx">function TouchEvents() {
+  const [touchInfo, setTouchInfo] = useState({})
+
+  const handleTouchStart = (event) =&gt; {
+    const touch = event.touches[0]
+    console.log(&#39;触摸开始:&#39;, {
+      touches: event.touches.length,
+      clientX: touch.clientX,
+      clientY: touch.clientY
+    })
+    
+    setTouchInfo({
+      type: &#39;触摸开始&#39;,
+      touches: event.touches.length,
+      x: touch.clientX,
+      y: touch.clientY
+    })
+  }
+
+  const handleTouchMove = (event) =&gt; {
+    const touch = event.touches[0]
+    console.log(&#39;触摸移动:&#39;, {
+      touches: event.touches.length,
+      clientX: touch.clientX,
+      clientY: touch.clientY
+    })
+    
+    setTouchInfo({
+      type: &#39;触摸移动&#39;,
+      touches: event.touches.length,
+      x: touch.clientX,
+      y: touch.clientY
+    })
+  }
+
+  const handleTouchEnd = (event) =&gt; {
+    console.log(&#39;触摸结束:&#39;, {
+      touches: event.touches.length,
+      changedTouches: event.changedTouches.length
+    })
+    
+    setTouchInfo({
+      type: &#39;触摸结束&#39;,
+      touches: event.touches.length
+    })
+  }
+
+  return (
+    &lt;div
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onTouchCancel={(e) =&gt; console.log(&#39;触摸取消&#39;, e)}
+      style={{
+        width: &#39;300px&#39;,
+        height: &#39;200px&#39;,
+        backgroundColor: &#39;#f0f0f0&#39;,
+        border: &#39;1px solid #ccc&#39;,
+        display: &#39;flex&#39;,
+        flexDirection: &#39;column&#39;,
+        justifyContent: &#39;center&#39;,
+        alignItems: &#39;center&#39;,
+        touchAction: &#39;none&#39;
+      }}
+    &gt;
+      &lt;div&gt;触摸事件测试区域&lt;/div&gt;
+      &lt;div&gt;
+        &lt;p&gt;事件类型: {touchInfo.type}&lt;/p&gt;
+        &lt;p&gt;触摸点数: {touchInfo.touches}&lt;/p&gt;
+        &lt;p&gt;坐标: ({touchInfo.x}, {touchInfo.y})&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>滚动事件</h2>
+<pre><code class="language-jsx">function ScrollEvents() {
+  const [scrollInfo, setScrollInfo] = useState({})
+
+  const handleScroll = (event) =&gt; {
+    const target = event.target
+    
+    setScrollInfo({
+      scrollTop: target.scrollTop,
+      scrollLeft: target.scrollLeft,
+      scrollWidth: target.scrollWidth,
+      scrollHeight: target.scrollHeight,
+      clientWidth: target.clientWidth,
+      clientHeight: target.clientHeight
+    })
+  }
+
+  const handleWheel = (event) =&gt; {
+    console.log(&#39;滚轮事件:&#39;, {
+      deltaX: event.deltaX,
+      deltaY: event.deltaY,
+      deltaZ: event.deltaZ,
+      deltaMode: event.deltaMode
+    })
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;div
+        onScroll={handleScroll}
+        onWheel={handleWheel}
+        style={{
+          width: &#39;300px&#39;,
+          height: &#39;200px&#39;,
+          border: &#39;1px solid #ccc&#39;,
+          overflow: &#39;auto&#39;
+        }}
+      &gt;
+        &lt;div style={{ width: &#39;500px&#39;, height: &#39;400px&#39;, padding: &#39;20px&#39; }}&gt;
+          &lt;p&gt;这是一个可滚动的内容区域&lt;/p&gt;
+          &lt;p&gt;滚动位置: {scrollInfo.scrollTop}, {scrollInfo.scrollLeft}&lt;/p&gt;
+          &lt;p&gt;内容尺寸: {scrollInfo.scrollWidth} x {scrollInfo.scrollHeight}&lt;/p&gt;
+          &lt;p&gt;可见尺寸: {scrollInfo.clientWidth} x {scrollInfo.clientHeight}&lt;/p&gt;
+          &lt;p&gt;继续滚动查看更多内容...&lt;/p&gt;
+          &lt;div style={{ height: &#39;100px&#39;, backgroundColor: &#39;#e0e0e0&#39; }}&gt;
+            内容区域1
+          &lt;/div&gt;
+          &lt;div style={{ height: &#39;100px&#39;, backgroundColor: &#39;#d0d0d0&#39; }}&gt;
+            内容区域2
+          &lt;/div&gt;
+          &lt;div style={{ height: &#39;100px&#39;, backgroundColor: &#39;#c0c0c0&#39; }}&gt;
+            内容区域3
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>媒体事件</h2>
+<pre><code class="language-jsx">function MediaEvents() {
+  const [mediaInfo, setMediaInfo] = useState({})
+
+  const handleLoadStart = (event) =&gt; {
+    console.log(&#39;开始加载:&#39;, event.target.src)
+    setMediaInfo(prev =&gt; ({ ...prev, status: &#39;开始加载&#39; }))
+  }
+
+  const handleLoadedMetadata = (event) =&gt; {
+    const { duration, videoWidth, videoHeight } = event.target
+    console.log(&#39;元数据加载完成:&#39;, { duration, videoWidth, videoHeight })
+    setMediaInfo(prev =&gt; ({ 
+      ...prev, 
+      status: &#39;元数据加载完成&#39;,
+      duration,
+      width: videoWidth,
+      height: videoHeight
+    }))
+  }
+
+  const handleLoadedData = (event) =&gt; {
+    console.log(&#39;数据加载完成&#39;)
+    setMediaInfo(prev =&gt; ({ ...prev, status: &#39;数据加载完成&#39; }))
+  }
+
+  const handleCanPlay = (event) =&gt; {
+    console.log(&#39;可以播放&#39;)
+    setMediaInfo(prev =&gt; ({ ...prev, status: &#39;可以播放&#39; }))
+  }
+
+  const handleCanPlayThrough = (event) =&gt; {
+    console.log(&#39;可以流畅播放&#39;)
+    setMediaInfo(prev =&gt; ({ ...prev, status: &#39;可以流畅播放&#39; }))
+  }
+
+  const handlePlay = (event) =&gt; {
+    console.log(&#39;开始播放&#39;)
+    setMediaInfo(prev =&gt; ({ ...prev, playing: true }))
+  }
+
+  const handlePause = (event) =&gt; {
+    console.log(&#39;暂停播放&#39;)
+    setMediaInfo(prev =&gt; ({ ...prev, playing: false }))
+  }
+
+  const handleTimeUpdate = (event) =&gt; {
+    const { currentTime, duration } = event.target
+    setMediaInfo(prev =&gt; ({ 
+      ...prev, 
+      currentTime: currentTime.toFixed(2),
+      progress: ((currentTime / duration) * 100).toFixed(1)
+    }))
+  }
+
+  const handleVolumeChange = (event) =&gt; {
+    const { volume, muted } = event.target
+    console.log(&#39;音量变化:&#39;, { volume, muted })
+    setMediaInfo(prev =&gt; ({ ...prev, volume, muted }))
+  }
+
+  const handleEnded = (event) =&gt; {
+    console.log(&#39;播放结束&#39;)
+    setMediaInfo(prev =&gt; ({ ...prev, playing: false, ended: true }))
+  }
+
+  const handleError = (event) =&gt; {
+    console.error(&#39;媒体错误:&#39;, event.target.error)
+    setMediaInfo(prev =&gt; ({ ...prev, error: event.target.error.message }))
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;video
+        width=&quot;400&quot;
+        height=&quot;300&quot;
+        controls
+        onLoadStart={handleLoadStart}
+        onLoadedMetadata={handleLoadedMetadata}
+        onLoadedData={handleLoadedData}
+        onCanPlay={handleCanPlay}
+        onCanPlayThrough={handleCanPlayThrough}
+        onPlay={handlePlay}
+        onPause={handlePause}
+        onTimeUpdate={handleTimeUpdate}
+        onVolumeChange={handleVolumeChange}
+        onEnded={handleEnded}
+        onError={handleError}
+        onSeeking={(e) =&gt; console.log(&#39;跳转中&#39;, e.target.currentTime)}
+        onSeeked={(e) =&gt; console.log(&#39;跳转完成&#39;, e.target.currentTime)}
+        onWaiting={(e) =&gt; console.log(&#39;等待数据&#39;, e)}
+        onStalled={(e) =&gt; console.log(&#39;数据延迟&#39;, e)}
+        onSuspend={(e) =&gt; console.log(&#39;数据挂起&#39;, e)}
+        onAbort={(e) =&gt; console.log(&#39;加载中断&#39;, e)}
+        onEmptied={(e) =&gt; console.log(&#39;媒体清空&#39;, e)}
+        onRateChange={(e) =&gt; console.log(&#39;播放速率变化&#39;, e.target.playbackRate)}
+        onDurationChange={(e) =&gt; console.log(&#39;时长变化&#39;, e.target.duration)}
+        onProgress={(e) =&gt; console.log(&#39;下载进度&#39;, e.target.buffered)}
+      &gt;
+        &lt;source src=&quot;/path/to/video.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+        您的浏览器不支持视频播放
+      &lt;/video&gt;
+
+      &lt;div&gt;
+        &lt;h3&gt;媒体信息:&lt;/h3&gt;
+        &lt;p&gt;状态: {mediaInfo.status}&lt;/p&gt;
+        &lt;p&gt;播放中: {mediaInfo.playing ? &#39;是&#39; : &#39;否&#39;}&lt;/p&gt;
+        &lt;p&gt;当前时间: {mediaInfo.currentTime}s&lt;/p&gt;
+        &lt;p&gt;进度: {mediaInfo.progress}%&lt;/p&gt;
+        &lt;p&gt;音量: {mediaInfo.volume}&lt;/p&gt;
+        &lt;p&gt;静音: {mediaInfo.muted ? &#39;是&#39; : &#39;否&#39;}&lt;/p&gt;
+        &lt;p&gt;尺寸: {mediaInfo.width} x {mediaInfo.height}&lt;/p&gt;
+        &lt;p&gt;时长: {mediaInfo.duration}s&lt;/p&gt;
+        {mediaInfo.error &amp;&amp; &lt;p style={{ color: &#39;red&#39; }}&gt;错误: {mediaInfo.error}&lt;/p&gt;}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>事件池化</h2>
+<h3>事件池化原理</h3>
+<pre><code class="language-jsx">function EventPooling() {
+  const handleClick = (event) =&gt; {
+    console.log(&#39;事件类型:&#39;, event.type)
+    console.log(&#39;事件目标:&#39;, event.target)
+    
+    // 异步访问事件属性会失败（在React 17之前）
+    setTimeout(() =&gt; {
+      console.log(&#39;异步访问事件类型:&#39;, event.type) // 可能为null
+    }, 0)
+    
+    // 使用 persist() 保持事件对象
+    event.persist()
+    setTimeout(() =&gt; {
+      console.log(&#39;持久化后的事件类型:&#39;, event.type) // 正常访问
+    }, 0)
+  }
+
+  return (
+    &lt;button onClick={handleClick}&gt;
+      测试事件池化
+    &lt;/button&gt;
+  )
+}
+</code></pre>
+<h3>事件对象保存</h3>
+<pre><code class="language-jsx">function EventPersistence() {
+  const [savedEvent, setSavedEvent] = useState(null)
+
+  const handleClick = (event) =&gt; {
+    // 保存事件对象的属性
+    const eventData = {
+      type: event.type,
+      target: event.target,
+      currentTarget: event.currentTarget,
+      clientX: event.clientX,
+      clientY: event.clientY,
+      timeStamp: event.timeStamp
+    }
+    
+    setSavedEvent(eventData)
+    
+    // 或者使用 persist() 保持整个事件对象
+    event.persist()
+    setSavedEvent(event)
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={handleClick}&gt;
+        保存事件对象
+      &lt;/button&gt;
+      
+      {savedEvent &amp;&amp; (
+        &lt;div&gt;
+          &lt;h3&gt;保存的事件信息:&lt;/h3&gt;
+          &lt;p&gt;类型: {savedEvent.type}&lt;/p&gt;
+          &lt;p&gt;时间戳: {savedEvent.timeStamp}&lt;/p&gt;
+          &lt;p&gt;坐标: ({savedEvent.clientX}, {savedEvent.clientY})&lt;/p&gt;
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>自定义事件</h2>
+<h3>创建自定义事件</h3>
+<pre><code class="language-jsx">function CustomEvents() {
+  const divRef = useRef(null)
+
+  const dispatchCustomEvent = () =&gt; {
+    const customEvent = new CustomEvent(&#39;myCustomEvent&#39;, {
+      detail: { message: &#39;这是自定义事件数据&#39; },
+      bubbles: true,
+      cancelable: true
+    })
+    
+    divRef.current.dispatchEvent(customEvent)
+  }
+
+  const handleCustomEvent = (event) =&gt; {
+    console.log(&#39;自定义事件:&#39;, event.detail)
+  }
+
+  useEffect(() =&gt; {
+    const element = divRef.current
+    element.addEventListener(&#39;myCustomEvent&#39;, handleCustomEvent)
+    
+    return () =&gt; {
+      element.removeEventListener(&#39;myCustomEvent&#39;, handleCustomEvent)
+    }
+  }, [])
+
+  return (
+    &lt;div&gt;
+      &lt;div ref={divRef}&gt;
+        自定义事件容器
+      &lt;/div&gt;
+      &lt;button onClick={dispatchCustomEvent}&gt;
+        触发自定义事件
+      &lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>事件最佳实践</h2>
+<h3>1. 性能优化</h3>
+<pre><code class="language-jsx">function OptimizedEvents() {
+  // 使用 useCallback 缓存事件处理器
+  const handleClick = useCallback((event) =&gt; {
+    console.log(&#39;优化的点击处理器&#39;)
+  }, [])
+
+  // 事件委托
+  const handleListClick = (event) =&gt; {
+    if (event.target.tagName === &#39;BUTTON&#39;) {
+      const action = event.target.dataset.action
+      console.log(&#39;执行操作:&#39;, action)
+    }
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={handleClick}&gt;
+        优化的按钮
+      &lt;/button&gt;
+
+      &lt;ul onClick={handleListClick}&gt;
+        &lt;li&gt;&lt;button data-action=&quot;edit&quot;&gt;编辑&lt;/button&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;button data-action=&quot;delete&quot;&gt;删除&lt;/button&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;button data-action=&quot;view&quot;&gt;查看&lt;/button&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>2. 错误处理</h3>
+<pre><code class="language-jsx">function ErrorHandling() {
+  const handleClick = (event) =&gt; {
+    try {
+      // 可能出错的操作
+      someRiskyOperation()
+    } catch (error) {
+      console.error(&#39;事件处理出错:&#39;, error)
+      // 阻止错误传播
+      event.preventDefault()
+      event.stopPropagation()
+    }
+  }
+
+  return (
+    &lt;button onClick={handleClick}&gt;
+      带错误处理的按钮
+    &lt;/button&gt;
+  )
+}
+</code></pre>
+<h3>3. 事件清理</h3>
+<pre><code class="language-jsx">function EventCleanup() {
+  useEffect(() =&gt; {
+    const handleKeyDown = (event) =&gt; {
+      if (event.key === &#39;Escape&#39;) {
+        console.log(&#39;全局ESC键处理&#39;)
+      }
+    }
+
+    const handleResize = () =&gt; {
+      console.log(&#39;窗口尺寸变化&#39;)
+    }
+
+    // 添加全局事件监听器
+    document.addEventListener(&#39;keydown&#39;, handleKeyDown)
+    window.addEventListener(&#39;resize&#39;, handleResize)
+
+    // 清理事件监听器
+    return () =&gt; {
+      document.removeEventListener(&#39;keydown&#39;, handleKeyDown)
+      window.removeEventListener(&#39;resize&#39;, handleResize)
+    }
+  }, [])
+
+  return &lt;div&gt;全局事件监听组件&lt;/div&gt;
+}
+</code></pre>
+<h2>总结</h2>
+<p>React合成事件系统提供了：</p>
+<ol>
+<li><strong>统一的API</strong> - 跨浏览器的一致性</li>
+<li><strong>性能优化</strong> - 事件委托和池化</li>
+<li><strong>丰富的事件类型</strong> - 涵盖所有常用事件</li>
+<li><strong>扩展性</strong> - 支持自定义事件处理</li>
+</ol>
+<p>掌握合成事件的使用方法，可以帮助你构建更好的用户交互体验。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="34-DOM元素属性.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">DOM元素属性</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="36-编码规范.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">编码规范</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

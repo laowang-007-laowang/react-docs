@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>条件渲染 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">条件渲染</span>
+            </div>
+            <h1 class="doc-title">条件渲染</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #f093fb">
+                🧩 组件开发
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>07-条件渲染</h1>
+<p>在React中，你可以创建不同的组件来封装各种你需要的行为。然后，依据应用的不同状态，你可以只渲染对应状态下的部分内容。</p>
+<h2>基础条件渲染</h2>
+<h3>使用 if 语句</h3>
+<pre><code class="language-jsx">function Greeting({ isLoggedIn }) {
+  if (isLoggedIn) {
+    return &lt;h1&gt;欢迎回来！&lt;/h1&gt;;
+  }
+  return &lt;h1&gt;请先登录。&lt;/h1&gt;;
+}
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Greeting isLoggedIn={true} /&gt;
+      &lt;Greeting isLoggedIn={false} /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>元素变量</h3>
+<p>你可以使用变量来储存元素。这可以帮助你有条件地渲染组件的一部分，而其他的渲染部分并不会因此改变。</p>
+<pre><code class="language-jsx">function LoginControl() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLoginClick = () =&gt; {
+    setIsLoggedIn(true);
+  };
+
+  const handleLogoutClick = () =&gt; {
+    setIsLoggedIn(false);
+  };
+
+  let button;
+  if (isLoggedIn) {
+    button = &lt;button onClick={handleLogoutClick}&gt;退出&lt;/button&gt;;
+  } else {
+    button = &lt;button onClick={handleLoginClick}&gt;登录&lt;/button&gt;;
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;Greeting isLoggedIn={isLoggedIn} /&gt;
+      {button}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>逻辑与运算符 &amp;&amp;</h2>
+<pre><code class="language-jsx">function Mailbox({ unreadMessages }) {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello!&lt;/h1&gt;
+      {unreadMessages.length &gt; 0 &amp;&amp;
+        &lt;h2&gt;
+          您有 {unreadMessages.length} 条未读消息。
+        &lt;/h2&gt;
+      }
+    &lt;/div&gt;
+  );
+}
+
+const messages = [&#39;React&#39;, &#39;Re: React&#39;, &#39;Re:Re: React&#39;];
+// 渲染结果会显示未读消息提示
+
+const emptyMessages = [];
+// 不会显示未读消息提示
+</code></pre>
+<h3>注意事项</h3>
+<pre><code class="language-jsx">function CountDisplay({ count }) {
+  return (
+    &lt;div&gt;
+      {/* ❌ 错误：当count为0时会显示0 */}
+      {count &amp;&amp; &lt;p&gt;消息数量: {count}&lt;/p&gt;}
+      
+      {/* ✅ 正确：明确比较 */}
+      {count &gt; 0 &amp;&amp; &lt;p&gt;消息数量: {count}&lt;/p&gt;}
+      
+      {/* ✅ 正确：转换为布尔值 */}
+      {Boolean(count) &amp;&amp; &lt;p&gt;消息数量: {count}&lt;/p&gt;}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>三目运算符</h2>
+<h3>基础用法</h3>
+<pre><code class="language-jsx">function LoginButton({ isLoggedIn }) {
+  return (
+    &lt;button&gt;
+      {isLoggedIn ? &#39;退出&#39; : &#39;登录&#39;}
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<h3>条件渲染组件</h3>
+<pre><code class="language-jsx">function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return (
+    &lt;div&gt;
+      {isLoggedIn ? (
+        &lt;UserDashboard /&gt;
+      ) : (
+        &lt;LoginForm /&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>复杂条件渲染</h3>
+<pre><code class="language-jsx">function UserProfile({ user, isLoading, error }) {
+  return (
+    &lt;div&gt;
+      {error ? (
+        &lt;ErrorMessage error={error} /&gt;
+      ) : isLoading ? (
+        &lt;LoadingSpinner /&gt;
+      ) : user ? (
+        &lt;UserInfo user={user} /&gt;
+      ) : (
+        &lt;NoUserMessage /&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>阻止组件渲染</h2>
+<p>在极少数情况下，你可能希望能隐藏组件，即使它已经被其他组件渲染。若要完成此操作，你可以让 render 方法直接返回 null，而不进行任何渲染。</p>
+<pre><code class="language-jsx">function WarningBanner({ warn }) {
+  if (!warn) {
+    return null;
+  }
+
+  return (
+    &lt;div className=&quot;warning&quot;&gt;
+      警告！
+    &lt;/div&gt;
+  );
+}
+
+function App() {
+  const [showWarning, setShowWarning] = useState(true);
+
+  const handleToggleClick = () =&gt; {
+    setShowWarning(prevShowWarning =&gt; !prevShowWarning);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;WarningBanner warn={showWarning} /&gt;
+      &lt;button onClick={handleToggleClick}&gt;
+        {showWarning ? &#39;隐藏&#39; : &#39;显示&#39;} 警告
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>多条件渲染</h2>
+<h3>使用 switch 语句</h3>
+<pre><code class="language-jsx">function StatusIndicator({ status }) {
+  const renderStatus = () =&gt; {
+    switch (status) {
+      case &#39;loading&#39;:
+        return &lt;div className=&quot;spinner&quot;&gt;加载中...&lt;/div&gt;;
+      case &#39;success&#39;:
+        return &lt;div className=&quot;success&quot;&gt;✓ 成功&lt;/div&gt;;
+      case &#39;error&#39;:
+        return &lt;div className=&quot;error&quot;&gt;✗ 失败&lt;/div&gt;;
+      case &#39;idle&#39;:
+        return &lt;div className=&quot;idle&quot;&gt;等待中&lt;/div&gt;;
+      default:
+        return &lt;div&gt;未知状态&lt;/div&gt;;
+    }
+  };
+
+  return &lt;div&gt;{renderStatus()}&lt;/div&gt;;
+}
+</code></pre>
+<h3>使用对象映射</h3>
+<pre><code class="language-jsx">function StatusIndicator({ status }) {
+  const statusComponents = {
+    loading: &lt;div className=&quot;spinner&quot;&gt;加载中...&lt;/div&gt;,
+    success: &lt;div className=&quot;success&quot;&gt;✓ 成功&lt;/div&gt;,
+    error: &lt;div className=&quot;error&quot;&gt;✗ 失败&lt;/div&gt;,
+    idle: &lt;div className=&quot;idle&quot;&gt;等待中&lt;/div&gt;
+  };
+
+  return statusComponents[status] || &lt;div&gt;未知状态&lt;/div&gt;;
+}
+</code></pre>
+<h3>使用函数映射</h3>
+<pre><code class="language-jsx">function NotificationList({ notifications }) {
+  const getNotificationIcon = (type) =&gt; {
+    const icons = {
+      info: &#39;🔵&#39;,
+      warning: &#39;🟡&#39;, 
+      error: &#39;🔴&#39;,
+      success: &#39;🟢&#39;
+    };
+    return icons[type] || &#39;⚪&#39;;
+  };
+
+  return (
+    &lt;ul&gt;
+      {notifications.map(notification =&gt; (
+        &lt;li key={notification.id}&gt;
+          {getNotificationIcon(notification.type)}
+          {notification.message}
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h2>条件CSS类名</h2>
+<h3>使用模板字符串</h3>
+<pre><code class="language-jsx">function Button({ isPrimary, isDisabled, children }) {
+  return (
+    &lt;button 
+      className={`
+        btn 
+        ${isPrimary ? &#39;btn-primary&#39; : &#39;btn-secondary&#39;} 
+        ${isDisabled ? &#39;btn-disabled&#39; : &#39;&#39;}
+      `}
+      disabled={isDisabled}
+    &gt;
+      {children}
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<h3>使用classnames库</h3>
+<pre><code class="language-jsx">import classNames from &#39;classnames&#39;;
+
+function Button({ isPrimary, isDisabled, size, children }) {
+  const buttonClass = classNames(&#39;btn&#39;, {
+    &#39;btn-primary&#39;: isPrimary,
+    &#39;btn-secondary&#39;: !isPrimary,
+    &#39;btn-disabled&#39;: isDisabled,
+    [`btn-${size}`]: size
+  });
+
+  return (
+    &lt;button className={buttonClass} disabled={isDisabled}&gt;
+      {children}
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<h2>条件样式</h2>
+<h3>内联样式条件</h3>
+<pre><code class="language-jsx">function ProgressBar({ progress, isComplete }) {
+  const barStyle = {
+    width: `${progress}%`,
+    backgroundColor: isComplete ? &#39;#4CAF50&#39; : &#39;#2196F3&#39;,
+    transition: &#39;all 0.3s ease&#39;
+  };
+
+  return (
+    &lt;div className=&quot;progress-container&quot;&gt;
+      &lt;div 
+        className=&quot;progress-bar&quot; 
+        style={barStyle}
+      /&gt;
+      {isComplete &amp;&amp; &lt;span className=&quot;complete-icon&quot;&gt;✓&lt;/span&gt;}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>CSS变量条件</h3>
+<pre><code class="language-jsx">function ThemeProvider({ darkMode, children }) {
+  const themeStyle = {
+    &#39;--bg-color&#39;: darkMode ? &#39;#1a1a1a&#39; : &#39;#ffffff&#39;,
+    &#39;--text-color&#39;: darkMode ? &#39;#ffffff&#39; : &#39;#000000&#39;,
+    &#39;--border-color&#39;: darkMode ? &#39;#333333&#39; : &#39;#cccccc&#39;
+  };
+
+  return (
+    &lt;div className=&quot;theme-provider&quot; style={themeStyle}&gt;
+      {children}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>渲染列表中的条件</h2>
+<h3>过滤渲染</h3>
+<pre><code class="language-jsx">function TodoList({ todos, filter }) {
+  const getFilteredTodos = () =&gt; {
+    switch (filter) {
+      case &#39;active&#39;:
+        return todos.filter(todo =&gt; !todo.completed);
+      case &#39;completed&#39;:
+        return todos.filter(todo =&gt; todo.completed);
+      default:
+        return todos;
+    }
+  };
+
+  return (
+    &lt;ul&gt;
+      {getFilteredTodos().map(todo =&gt; (
+        &lt;li key={todo.id}&gt;
+          &lt;TodoItem todo={todo} /&gt;
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h3>条件渲染列表项</h3>
+<pre><code class="language-jsx">function MessageList({ messages, currentUserId }) {
+  return (
+    &lt;div&gt;
+      {messages.map(message =&gt; (
+        &lt;div 
+          key={message.id}
+          className={`message ${
+            message.userId === currentUserId ? &#39;message-own&#39; : &#39;message-other&#39;
+          }`}
+        &gt;
+          {message.userId !== currentUserId &amp;&amp; (
+            &lt;div className=&quot;message-author&quot;&gt;{message.authorName}&lt;/div&gt;
+          )}
+          &lt;div className=&quot;message-content&quot;&gt;{message.content}&lt;/div&gt;
+          {message.isEdited &amp;&amp; (
+            &lt;span className=&quot;message-edited&quot;&gt;(已编辑)&lt;/span&gt;
+          )}
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>高阶组件中的条件渲染</h2>
+<h3>权限控制HOC</h3>
+<pre><code class="language-jsx">function withAuth(WrappedComponent, requiredRole) {
+  return function AuthComponent(props) {
+    const { user } = useAuth();
+
+    if (!user) {
+      return &lt;LoginPrompt /&gt;;
+    }
+
+    if (requiredRole &amp;&amp; !user.roles.includes(requiredRole)) {
+      return &lt;AccessDenied /&gt;;
+    }
+
+    return &lt;WrappedComponent {...props} /&gt;;
+  };
+}
+
+// 使用
+const AdminPanel = withAuth(AdminPanelComponent, &#39;admin&#39;);
+const UserProfile = withAuth(UserProfileComponent);
+</code></pre>
+<h3>加载状态HOC</h3>
+<pre><code class="language-jsx">function withLoading(WrappedComponent) {
+  return function LoadingComponent({ isLoading, ...props }) {
+    if (isLoading) {
+      return &lt;LoadingSpinner /&gt;;
+    }
+
+    return &lt;WrappedComponent {...props} /&gt;;
+  };
+}
+
+// 使用
+const DataListWithLoading = withLoading(DataList);
+</code></pre>
+<h2>自定义Hook中的条件渲染</h2>
+<pre><code class="language-jsx">function useConditionalRender() {
+  const [conditions, setConditions] = useState({});
+
+  const when = (condition, component) =&gt; {
+    return condition ? component : null;
+  };
+
+  const unless = (condition, component) =&gt; {
+    return !condition ? component : null;
+  };
+
+  const ifElse = (condition, trueComponent, falseComponent) =&gt; {
+    return condition ? trueComponent : falseComponent;
+  };
+
+  return { when, unless, ifElse };
+}
+
+// 使用
+function MyComponent() {
+  const { when, unless, ifElse } = useConditionalRender();
+  const [isVisible, setIsVisible] = useState(false);
+
+  return (
+    &lt;div&gt;
+      {when(isVisible, &lt;p&gt;内容可见&lt;/p&gt;)}
+      {unless(isVisible, &lt;p&gt;内容隐藏&lt;/p&gt;)}
+      {ifElse(isVisible, &lt;SuccessMessage /&gt;, &lt;ErrorMessage /&gt;)}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>性能优化</h2>
+<h3>避免不必要的重新渲染</h3>
+<pre><code class="language-jsx">// ❌ 每次都会创建新的JSX元素
+function BadExample({ showDetails, user }) {
+  return (
+    &lt;div&gt;
+      &lt;UserCard user={user} /&gt;
+      {showDetails &amp;&amp; &lt;UserDetails user={user} /&gt;}
+    &lt;/div&gt;
+  );
+}
+
+// ✅ 使用useMemo缓存条件渲染的结果
+function GoodExample({ showDetails, user }) {
+  const userDetails = useMemo(() =&gt; 
+    showDetails ? &lt;UserDetails user={user} /&gt; : null,
+    [showDetails, user.id] // 只在这些依赖改变时重新计算
+  );
+
+  return (
+    &lt;div&gt;
+      &lt;UserCard user={user} /&gt;
+      {userDetails}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>使用React.memo优化条件组件</h3>
+<pre><code class="language-jsx">const ExpensiveComponent = React.memo(({ data }) =&gt; {
+  console.log(&#39;ExpensiveComponent渲染&#39;);
+  return &lt;div&gt;{/* 复杂的渲染逻辑 */}&lt;/div&gt;;
+});
+
+function ConditionalWrapper({ shouldShow, data }) {
+  // 只有在shouldShow为true时才渲染ExpensiveComponent
+  return shouldShow ? &lt;ExpensiveComponent data={data} /&gt; : null;
+}
+</code></pre>
+<h2>错误边界中的条件渲染</h2>
+<pre><code class="language-jsx">class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error(&#39;ErrorBoundary caught an error:&#39;, error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // 自定义错误UI
+      return this.props.fallback ? (
+        this.props.fallback(this.state.error)
+      ) : (
+        &lt;div className=&quot;error-boundary&quot;&gt;
+          &lt;h2&gt;出现了错误&lt;/h2&gt;
+          &lt;details&gt;
+            {this.state.error &amp;&amp; this.state.error.toString()}
+          &lt;/details&gt;
+        &lt;/div&gt;
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+// 使用
+function App() {
+  return (
+    &lt;ErrorBoundary fallback={(error) =&gt; &lt;CustomErrorPage error={error} /&gt;}&gt;
+      &lt;MyComponent /&gt;
+    &lt;/ErrorBoundary&gt;
+  );
+}
+</code></pre>
+<h2>最佳实践</h2>
+<h3>1. 保持条件简单明了</h3>
+<pre><code class="language-jsx">// ✅ 好的实践
+function UserGreeting({ user }) {
+  if (!user) return &lt;div&gt;请登录&lt;/div&gt;;
+  if (user.isBlocked) return &lt;div&gt;账号已被封禁&lt;/div&gt;;
+  
+  return &lt;div&gt;欢迎，{user.name}！&lt;/div&gt;;
+}
+
+// ❌ 避免过于复杂的嵌套
+function UserGreeting({ user }) {
+  return (
+    &lt;div&gt;
+      {user ? (
+        user.isBlocked ? (
+          &lt;div&gt;账号已被封禁&lt;/div&gt;
+        ) : (
+          &lt;div&gt;欢迎，{user.name}！&lt;/div&gt;
+        )
+      ) : (
+        &lt;div&gt;请登录&lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>2. 提取条件到变量</h3>
+<pre><code class="language-jsx">function ProductCard({ product, user }) {
+  const canPurchase = user &amp;&amp; user.isVerified &amp;&amp; product.inStock;
+  const showDiscount = product.discountPercent &gt; 0;
+  const isNew = Date.now() - product.createdAt &lt; 7 * 24 * 60 * 60 * 1000;
+
+  return (
+    &lt;div className=&quot;product-card&quot;&gt;
+      &lt;h3&gt;{product.name}&lt;/h3&gt;
+      {isNew &amp;&amp; &lt;span className=&quot;badge-new&quot;&gt;新品&lt;/span&gt;}
+      {showDiscount &amp;&amp; (
+        &lt;span className=&quot;discount&quot;&gt;-{product.discountPercent}%&lt;/span&gt;
+      )}
+      {canPurchase ? (
+        &lt;BuyButton product={product} /&gt;
+      ) : (
+        &lt;OutOfStockButton /&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>3. 使用TypeScript增强类型安全</h3>
+<pre><code class="language-tsx">type LoadingState = &#39;idle&#39; | &#39;loading&#39; | &#39;success&#39; | &#39;error&#39;;
+
+interface DataComponentProps {
+  state: LoadingState;
+  data?: any;
+  error?: string;
+}
+
+function DataComponent({ state, data, error }: DataComponentProps) {
+  switch (state) {
+    case &#39;loading&#39;:
+      return &lt;LoadingSpinner /&gt;;
+    case &#39;success&#39;:
+      return &lt;DataDisplay data={data!} /&gt;;
+    case &#39;error&#39;:
+      return &lt;ErrorMessage message={error!} /&gt;;
+    case &#39;idle&#39;:
+    default:
+      return &lt;div&gt;准备加载数据&lt;/div&gt;;
+  }
+}
+</code></pre>
+<h2>常见问题</h2>
+<h3>问题1：条件渲染导致的状态丢失</h3>
+<pre><code class="language-jsx">// ❌ 问题：组件卸载时状态会丢失
+function BadTabPanel({ activeTab }) {
+  return (
+    &lt;div&gt;
+      {activeTab === &#39;tab1&#39; &amp;&amp; &lt;Tab1Component /&gt;}
+      {activeTab === &#39;tab2&#39; &amp;&amp; &lt;Tab2Component /&gt;}
+    &lt;/div&gt;
+  );
+}
+
+// ✅ 解决：使用CSS控制显示隐藏
+function GoodTabPanel({ activeTab }) {
+  return (
+    &lt;div&gt;
+      &lt;div style={{ display: activeTab === &#39;tab1&#39; ? &#39;block&#39; : &#39;none&#39; }}&gt;
+        &lt;Tab1Component /&gt;
+      &lt;/div&gt;
+      &lt;div style={{ display: activeTab === &#39;tab2&#39; ? &#39;block&#39; : &#39;none&#39; }}&gt;
+        &lt;Tab2Component /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>问题2：条件渲染中的key问题</h3>
+<pre><code class="language-jsx">// ❌ 可能导致组件状态错乱
+function UserList({ users, sortBy }) {
+  const sortedUsers = sortBy === &#39;name&#39; 
+    ? users.sort((a, b) =&gt; a.name.localeCompare(b.name))
+    : users.sort((a, b) =&gt; a.age - b.age);
+
+  return (
+    &lt;div&gt;
+      {sortedUsers.map((user, index) =&gt; (
+        &lt;UserCard key={index} user={user} /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+
+// ✅ 使用稳定的key
+function UserList({ users, sortBy }) {
+  const sortedUsers = sortBy === &#39;name&#39; 
+    ? users.sort((a, b) =&gt; a.name.localeCompare(b.name))
+    : users.sort((a, b) =&gt; a.age - b.age);
+
+  return (
+    &lt;div&gt;
+      {sortedUsers.map(user =&gt; (
+        &lt;UserCard key={user.id} user={user} /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>总结</h2>
+<p>条件渲染是React中的核心概念，掌握以下要点：</p>
+<ol>
+<li><strong>多种方式</strong>：if语句、三目运算符、逻辑与运算符</li>
+<li><strong>性能考虑</strong>：避免不必要的重新渲染和组件创建</li>
+<li><strong>可读性</strong>：保持条件逻辑简单清晰</li>
+<li><strong>类型安全</strong>：使用TypeScript增强条件渲染的可靠性</li>
+</ol>
+<p>选择合适的条件渲染方式，能让你的React应用更加灵活和高效。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="06-事件处理.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">事件处理</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="08-列表渲染.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">列表渲染</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

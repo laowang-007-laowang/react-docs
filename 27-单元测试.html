@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>单元测试 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">单元测试</span>
+            </div>
+            <h1 class="doc-title">单元测试</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #fad0c4">
+                🧪 测试
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>27-单元测试</h1>
+<p>单元测试是React开发中的重要环节，它可以帮助我们确保组件的功能正确性，提高代码质量，并在重构时提供安全保障。本文将介绍React组件测试的完整指南。</p>
+<h2>测试环境搭建</h2>
+<h3>基础依赖</h3>
+<pre><code class="language-bash"># 使用Create React App（已内置）
+npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
+
+# 或者手动安装
+npm install --save-dev jest @testing-library/react @testing-library/jest-dom @testing-library/user-event
+</code></pre>
+<h3>测试配置</h3>
+<pre><code class="language-javascript">// jest.config.js
+module.exports = {
+  testEnvironment: &#39;jsdom&#39;,
+  setupFilesAfterEnv: [&#39;&lt;rootDir&gt;/src/setupTests.js&#39;],
+  moduleNameMapping: {
+    &#39;\\.(css|less|scss|sass)$&#39;: &#39;identity-obj-proxy&#39;,
+    &#39;\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$&#39;: &#39;&lt;rootDir&gt;/__mocks__/fileMock.js&#39;
+  },
+  collectCoverageFrom: [
+    &#39;src/**/*.{js,jsx}&#39;,
+    &#39;!src/index.js&#39;,
+    &#39;!src/reportWebVitals.js&#39;
+  ]
+};
+</code></pre>
+<pre><code class="language-javascript">// src/setupTests.js
+import &#39;@testing-library/jest-dom&#39;;
+
+// 全局测试设置
+global.matchMedia = global.matchMedia || function (query) {
+  return {
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  };
+};
+</code></pre>
+<h2>基础组件测试</h2>
+<h3>简单组件测试</h3>
+<pre><code class="language-jsx">// Button.jsx
+function Button({ children, onClick, disabled = false, variant = &#39;primary&#39; }) {
+  return (
+    &lt;button 
+      onClick={onClick}
+      disabled={disabled}
+      className={`btn btn-${variant}`}
+      data-testid=&quot;button&quot;
+    &gt;
+      {children}
+    &lt;/button&gt;
+  );
+}
+
+export default Button;
+</code></pre>
+<pre><code class="language-javascript">// Button.test.js
+import { render, screen, fireEvent } from &#39;@testing-library/react&#39;;
+import userEvent from &#39;@testing-library/user-event&#39;;
+import Button from &#39;./Button&#39;;
+
+describe(&#39;Button Component&#39;, () =&gt; {
+  test(&#39;renders button with text&#39;, () =&gt; {
+    render(&lt;Button&gt;Click me&lt;/Button&gt;);
+    
+    const buttonElement = screen.getByRole(&#39;button&#39;, { name: /click me/i });
+    expect(buttonElement).toBeInTheDocument();
+  });
+
+  test(&#39;calls onClick when clicked&#39;, async () =&gt; {
+    const user = userEvent.setup();
+    const handleClick = jest.fn();
+    
+    render(&lt;Button onClick={handleClick}&gt;Click me&lt;/Button&gt;);
+    
+    const buttonElement = screen.getByRole(&#39;button&#39;);
+    await user.click(buttonElement);
+    
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  test(&#39;is disabled when disabled prop is true&#39;, () =&gt; {
+    render(&lt;Button disabled&gt;Click me&lt;/Button&gt;);
+    
+    const buttonElement = screen.getByRole(&#39;button&#39;);
+    expect(buttonElement).toBeDisabled();
+  });
+
+  test(&#39;applies correct CSS class for variant&#39;, () =&gt; {
+    render(&lt;Button variant=&quot;secondary&quot;&gt;Click me&lt;/Button&gt;);
+    
+    const buttonElement = screen.getByRole(&#39;button&#39;);
+    expect(buttonElement).toHaveClass(&#39;btn-secondary&#39;);
+  });
+
+  test(&#39;does not call onClick when disabled&#39;, async () =&gt; {
+    const user = userEvent.setup();
+    const handleClick = jest.fn();
+    
+    render(&lt;Button onClick={handleClick} disabled&gt;Click me&lt;/Button&gt;);
+    
+    const buttonElement = screen.getByRole(&#39;button&#39;);
+    await user.click(buttonElement);
+    
+    expect(handleClick).not.toHaveBeenCalled();
+  });
+});
+</code></pre>
+<h3>表单组件测试</h3>
+<pre><code class="language-jsx">// ContactForm.jsx
+import { useState } from &#39;react&#39;;
+
+function ContactForm({ onSubmit }) {
+  const [formData, setFormData] = useState({
+    name: &#39;&#39;,
+    email: &#39;&#39;,
+    message: &#39;&#39;
+  });
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () =&gt; {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = &#39;姓名不能为空&#39;;
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = &#39;邮箱不能为空&#39;;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = &#39;邮箱格式不正确&#39;;
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = &#39;消息不能为空&#39;;
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) =&gt; {
+    e.preventDefault();
+    
+    if (validateForm()) {
+      onSubmit(formData);
+      setFormData({ name: &#39;&#39;, email: &#39;&#39;, message: &#39;&#39; });
+    }
+  };
+
+  const handleChange = (e) =&gt; {
+    const { name, value } = e.target;
+    setFormData(prev =&gt; ({
+      ...prev,
+      [name]: value
+    }));
+    
+    // 清除对应字段的错误
+    if (errors[name]) {
+      setErrors(prev =&gt; ({
+        ...prev,
+        [name]: &#39;&#39;
+      }));
+    }
+  };
+
+  return (
+    &lt;form onSubmit={handleSubmit} data-testid=&quot;contact-form&quot;&gt;
+      &lt;div&gt;
+        &lt;label htmlFor=&quot;name&quot;&gt;姓名&lt;/label&gt;
+        &lt;input
+          id=&quot;name&quot;
+          name=&quot;name&quot;
+          type=&quot;text&quot;
+          value={formData.name}
+          onChange={handleChange}
+        /&gt;
+        {errors.name &amp;&amp; &lt;span role=&quot;alert&quot;&gt;{errors.name}&lt;/span&gt;}
+      &lt;/div&gt;
+      
+      &lt;div&gt;
+        &lt;label htmlFor=&quot;email&quot;&gt;邮箱&lt;/label&gt;
+        &lt;input
+          id=&quot;email&quot;
+          name=&quot;email&quot;
+          type=&quot;email&quot;
+          value={formData.email}
+          onChange={handleChange}
+        /&gt;
+        {errors.email &amp;&amp; &lt;span role=&quot;alert&quot;&gt;{errors.email}&lt;/span&gt;}
+      &lt;/div&gt;
+      
+      &lt;div&gt;
+        &lt;label htmlFor=&quot;message&quot;&gt;消息&lt;/label&gt;
+        &lt;textarea
+          id=&quot;message&quot;
+          name=&quot;message&quot;
+          value={formData.message}
+          onChange={handleChange}
+        /&gt;
+        {errors.message &amp;&amp; &lt;span role=&quot;alert&quot;&gt;{errors.message}&lt;/span&gt;}
+      &lt;/div&gt;
+      
+      &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+
+export default ContactForm;
+</code></pre>
+<pre><code class="language-javascript">// ContactForm.test.js
+import { render, screen, fireEvent, waitFor } from &#39;@testing-library/react&#39;;
+import userEvent from &#39;@testing-library/user-event&#39;;
+import ContactForm from &#39;./ContactForm&#39;;
+
+describe(&#39;ContactForm&#39;, () =&gt; {
+  const mockOnSubmit = jest.fn();
+
+  beforeEach(() =&gt; {
+    mockOnSubmit.mockClear();
+  });
+
+  test(&#39;renders all form fields&#39;, () =&gt; {
+    render(&lt;ContactForm onSubmit={mockOnSubmit} /&gt;);
+    
+    expect(screen.getByLabelText(/姓名/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/邮箱/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/消息/i)).toBeInTheDocument();
+    expect(screen.getByRole(&#39;button&#39;, { name: /提交/i })).toBeInTheDocument();
+  });
+
+  test(&#39;updates input values when typing&#39;, async () =&gt; {
+    const user = userEvent.setup();
+    render(&lt;ContactForm onSubmit={mockOnSubmit} /&gt;);
+    
+    const nameInput = screen.getByLabelText(/姓名/i);
+    const emailInput = screen.getByLabelText(/邮箱/i);
+    const messageInput = screen.getByLabelText(/消息/i);
+    
+    await user.type(nameInput, &#39;张三&#39;);
+    await user.type(emailInput, &#39;zhangsan@example.com&#39;);
+    await user.type(messageInput, &#39;这是一条测试消息&#39;);
+    
+    expect(nameInput).toHaveValue(&#39;张三&#39;);
+    expect(emailInput).toHaveValue(&#39;zhangsan@example.com&#39;);
+    expect(messageInput).toHaveValue(&#39;这是一条测试消息&#39;);
+  });
+
+  test(&#39;shows validation errors for empty fields&#39;, async () =&gt; {
+    const user = userEvent.setup();
+    render(&lt;ContactForm onSubmit={mockOnSubmit} /&gt;);
+    
+    const submitButton = screen.getByRole(&#39;button&#39;, { name: /提交/i });
+    await user.click(submitButton);
+    
+    expect(screen.getByText(&#39;姓名不能为空&#39;)).toBeInTheDocument();
+    expect(screen.getByText(&#39;邮箱不能为空&#39;)).toBeInTheDocument();
+    expect(screen.getByText(&#39;消息不能为空&#39;)).toBeInTheDocument();
+    expect(mockOnSubmit).not.toHaveBeenCalled();
+  });
+
+  test(&#39;shows error for invalid email format&#39;, async () =&gt; {
+    const user = userEvent.setup();
+    render(&lt;ContactForm onSubmit={mockOnSubmit} /&gt;);
+    
+    const emailInput = screen.getByLabelText(/邮箱/i);
+    await user.type(emailInput, &#39;invalid-email&#39;);
+    
+    const submitButton = screen.getByRole(&#39;button&#39;, { name: /提交/i });
+    await user.click(submitButton);
+    
+    expect(screen.getByText(&#39;邮箱格式不正确&#39;)).toBeInTheDocument();
+  });
+
+  test(&#39;clears error when user fixes the field&#39;, async () =&gt; {
+    const user = userEvent.setup();
+    render(&lt;ContactForm onSubmit={mockOnSubmit} /&gt;);
+    
+    // 先触发错误
+    const submitButton = screen.getByRole(&#39;button&#39;, { name: /提交/i });
+    await user.click(submitButton);
+    
+    expect(screen.getByText(&#39;姓名不能为空&#39;)).toBeInTheDocument();
+    
+    // 修复错误
+    const nameInput = screen.getByLabelText(/姓名/i);
+    await user.type(nameInput, &#39;张三&#39;);
+    
+    expect(screen.queryByText(&#39;姓名不能为空&#39;)).not.toBeInTheDocument();
+  });
+
+  test(&#39;submits form with valid data&#39;, async () =&gt; {
+    const user = userEvent.setup();
+    render(&lt;ContactForm onSubmit={mockOnSubmit} /&gt;);
+    
+    const nameInput = screen.getByLabelText(/姓名/i);
+    const emailInput = screen.getByLabelText(/邮箱/i);
+    const messageInput = screen.getByLabelText(/消息/i);
+    
+    await user.type(nameInput, &#39;张三&#39;);
+    await user.type(emailInput, &#39;zhangsan@example.com&#39;);
+    await user.type(messageInput, &#39;这是一条测试消息&#39;);
+    
+    const submitButton = screen.getByRole(&#39;button&#39;, { name: /提交/i });
+    await user.click(submitButton);
+    
+    expect(mockOnSubmit).toHaveBeenCalledWith({
+      name: &#39;张三&#39;,
+      email: &#39;zhangsan@example.com&#39;,
+      message: &#39;这是一条测试消息&#39;
+    });
+  });
+
+  test(&#39;clears form after successful submission&#39;, async () =&gt; {
+    const user = userEvent.setup();
+    render(&lt;ContactForm onSubmit={mockOnSubmit} /&gt;);
+    
+    const nameInput = screen.getByLabelText(/姓名/i);
+    const emailInput = screen.getByLabelText(/邮箱/i);
+    const messageInput = screen.getByLabelText(/消息/i);
+    
+    await user.type(nameInput, &#39;张三&#39;);
+    await user.type(emailInput, &#39;zhangsan@example.com&#39;);
+    await user.type(messageInput, &#39;这是一条测试消息&#39;);
+    
+    const submitButton = screen.getByRole(&#39;button&#39;, { name: /提交/i });
+    await user.click(submitButton);
+    
+    expect(nameInput).toHaveValue(&#39;&#39;);
+    expect(emailInput).toHaveValue(&#39;&#39;);
+    expect(messageInput).toHaveValue(&#39;&#39;);
+  });
+});
+</code></pre>
+<h2>Hook测试</h2>
+<h3>自定义Hook测试</h3>
+<pre><code class="language-javascript">// useCounter.js
+import { useState } from &#39;react&#39;;
+
+export function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+
+  const increment = () =&gt; setCount(prev =&gt; prev + 1);
+  const decrement = () =&gt; setCount(prev =&gt; prev - 1);
+  const reset = () =&gt; setCount(initialValue);
+
+  return {
+    count,
+    increment,
+    decrement,
+    reset
+  };
+}
+</code></pre>
+<pre><code class="language-javascript">// useCounter.test.js
+import { renderHook, act } from &#39;@testing-library/react&#39;;
+import { useCounter } from &#39;./useCounter&#39;;
+
+describe(&#39;useCounter&#39;, () =&gt; {
+  test(&#39;initializes with default value&#39;, () =&gt; {
+    const { result } = renderHook(() =&gt; useCounter());
+    
+    expect(result.current.count).toBe(0);
+  });
+
+  test(&#39;initializes with custom value&#39;, () =&gt; {
+    const { result } = renderHook(() =&gt; useCounter(10));
+    
+    expect(result.current.count).toBe(10);
+  });
+
+  test(&#39;increments count&#39;, () =&gt; {
+    const { result } = renderHook(() =&gt; useCounter());
+    
+    act(() =&gt; {
+      result.current.increment();
+    });
+    
+    expect(result.current.count).toBe(1);
+  });
+
+  test(&#39;decrements count&#39;, () =&gt; {
+    const { result } = renderHook(() =&gt; useCounter(5));
+    
+    act(() =&gt; {
+      result.current.decrement();
+    });
+    
+    expect(result.current.count).toBe(4);
+  });
+
+  test(&#39;resets count to initial value&#39;, () =&gt; {
+    const { result } = renderHook(() =&gt; useCounter(10));
+    
+    act(() =&gt; {
+      result.current.increment();
+      result.current.increment();
+    });
+    
+    expect(result.current.count).toBe(12);
+    
+    act(() =&gt; {
+      result.current.reset();
+    });
+    
+    expect(result.current.count).toBe(10);
+  });
+});
+</code></pre>
+<h3>复杂Hook测试</h3>
+<pre><code class="language-javascript">// useApi.js
+import { useState, useEffect } from &#39;react&#39;;
+
+export function useApi(url, options = {}) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() =&gt; {
+    if (!url) return;
+
+    const abortController = new AbortController();
+
+    const fetchData = async () =&gt; {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const response = await fetch(url, {
+          ...options,
+          signal: abortController.signal
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
+        if (err.name !== &#39;AbortError&#39;) {
+          setError(err.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+
+    return () =&gt; {
+      abortController.abort();
+    };
+  }, [url, JSON.stringify(options)]);
+
+  return { data, loading, error };
+}
+</code></pre>
+<pre><code class="language-javascript">// useApi.test.js
+import { renderHook, waitFor } from &#39;@testing-library/react&#39;;
+import { useApi } from &#39;./useApi&#39;;
+
+// Mock fetch
+global.fetch = jest.fn();
+
+describe(&#39;useApi&#39;, () =&gt; {
+  beforeEach(() =&gt; {
+    fetch.mockClear();
+  });
+
+  test(&#39;initial state&#39;, () =&gt; {
+    const { result } = renderHook(() =&gt; useApi());
+    
+    expect(result.current.data).toBeNull();
+    expect(result.current.loading).toBe(false);
+    expect(result.current.error).toBeNull();
+  });
+
+  test(&#39;successful data fetch&#39;, async () =&gt; {
+    const mockData = { id: 1, name: &#39;Test&#39; };
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () =&gt; mockData
+    });
+
+    const { result } = renderHook(() =&gt; useApi(&#39;/api/test&#39;));
+    
+    expect(result.current.loading).toBe(true);
+    
+    await waitFor(() =&gt; {
+      expect(result.current.loading).toBe(false);
+    });
+    
+    expect(result.current.data).toEqual(mockData);
+    expect(result.current.error).toBeNull();
+  });
+
+  test(&#39;handles fetch error&#39;, async () =&gt; {
+    fetch.mockResolvedValueOnce({
+      ok: false,
+      status: 404
+    });
+
+    const { result } = renderHook(() =&gt; useApi(&#39;/api/test&#39;));
+    
+    await waitFor(() =&gt; {
+      expect(result.current.loading).toBe(false);
+    });
+    
+    expect(result.current.data).toBeNull();
+    expect(result.current.error).toBe(&#39;HTTP error! status: 404&#39;);
+  });
+
+  test(&#39;handles network error&#39;, async () =&gt; {
+    fetch.mockRejectedValueOnce(new Error(&#39;Network error&#39;));
+
+    const { result } = renderHook(() =&gt; useApi(&#39;/api/test&#39;));
+    
+    await waitFor(() =&gt; {
+      expect(result.current.loading).toBe(false);
+    });
+    
+    expect(result.current.data).toBeNull();
+    expect(result.current.error).toBe(&#39;Network error&#39;);
+  });
+
+  test(&#39;does not fetch without URL&#39;, () =&gt; {
+    renderHook(() =&gt; useApi());
+    
+    expect(fetch).not.toHaveBeenCalled();
+  });
+});
+</code></pre>
+<h2>异步组件测试</h2>
+<h3>数据获取组件测试</h3>
+<pre><code class="language-jsx">// UserProfile.jsx
+import { useState, useEffect } from &#39;react&#39;;
+
+function UserProfile({ userId }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() =&gt; {
+    if (!userId) return;
+
+    const fetchUser = async () =&gt; {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const response = await fetch(`/api/users/${userId}`);
+        if (!response.ok) {
+          throw new Error(&#39;Failed to fetch user&#39;);
+        }
+
+        const userData = await response.json();
+        setUser(userData);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, [userId]);
+
+  if (loading) {
+    return &lt;div role=&quot;status&quot;&gt;Loading...&lt;/div&gt;;
+  }
+
+  if (error) {
+    return &lt;div role=&quot;alert&quot;&gt;Error: {error}&lt;/div&gt;;
+  }
+
+  if (!user) {
+    return &lt;div&gt;No user found&lt;/div&gt;;
+  }
+
+  return (
+    &lt;div data-testid=&quot;user-profile&quot;&gt;
+      &lt;h1&gt;{user.name}&lt;/h1&gt;
+      &lt;p&gt;Email: {user.email}&lt;/p&gt;
+      &lt;p&gt;Role: {user.role}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default UserProfile;
+</code></pre>
+<pre><code class="language-javascript">// UserProfile.test.js
+import { render, screen, waitFor } from &#39;@testing-library/react&#39;;
+import UserProfile from &#39;./UserProfile&#39;;
+
+// Mock fetch
+global.fetch = jest.fn();
+
+describe(&#39;UserProfile&#39;, () =&gt; {
+  beforeEach(() =&gt; {
+    fetch.mockClear();
+  });
+
+  test(&#39;shows loading state initially&#39;, () =&gt; {
+    fetch.mockImplementation(() =&gt; new Promise(() =&gt; {})); // Never resolves
+    
+    render(&lt;UserProfile userId=&quot;1&quot; /&gt;);
+    
+    expect(screen.getByRole(&#39;status&#39;)).toHaveTextContent(&#39;Loading...&#39;);
+  });
+
+  test(&#39;displays user data after successful fetch&#39;, async () =&gt; {
+    const mockUser = {
+      id: &#39;1&#39;,
+      name: &#39;John Doe&#39;,
+      email: &#39;john@example.com&#39;,
+      role: &#39;admin&#39;
+    };
+
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () =&gt; mockUser
+    });
+
+    render(&lt;UserProfile userId=&quot;1&quot; /&gt;);
+    
+    await waitFor(() =&gt; {
+      expect(screen.getByTestId(&#39;user-profile&#39;)).toBeInTheDocument();
+    });
+    
+    expect(screen.getByText(&#39;John Doe&#39;)).toBeInTheDocument();
+    expect(screen.getByText(&#39;Email: john@example.com&#39;)).toBeInTheDocument();
+    expect(screen.getByText(&#39;Role: admin&#39;)).toBeInTheDocument();
+  });
+
+  test(&#39;displays error message on fetch failure&#39;, async () =&gt; {
+    fetch.mockResolvedValueOnce({
+      ok: false,
+      status: 404
+    });
+
+    render(&lt;UserProfile userId=&quot;1&quot; /&gt;);
+    
+    await waitFor(() =&gt; {
+      expect(screen.getByRole(&#39;alert&#39;)).toBeInTheDocument();
+    });
+    
+    expect(screen.getByText(&#39;Error: Failed to fetch user&#39;)).toBeInTheDocument();
+  });
+
+  test(&#39;does not fetch when userId is not provided&#39;, () =&gt; {
+    render(&lt;UserProfile /&gt;);
+    
+    expect(fetch).not.toHaveBeenCalled();
+    expect(screen.getByText(&#39;No user found&#39;)).toBeInTheDocument();
+  });
+
+  test(&#39;fetches new user when userId changes&#39;, async () =&gt; {
+    const mockUser1 = { id: &#39;1&#39;, name: &#39;User 1&#39;, email: &#39;user1@example.com&#39;, role: &#39;user&#39; };
+    const mockUser2 = { id: &#39;2&#39;, name: &#39;User 2&#39;, email: &#39;user2@example.com&#39;, role: &#39;admin&#39; };
+
+    fetch
+      .mockResolvedValueOnce({
+        ok: true,
+        json: async () =&gt; mockUser1
+      })
+      .mockResolvedValueOnce({
+        ok: true,
+        json: async () =&gt; mockUser2
+      });
+
+    const { rerender } = render(&lt;UserProfile userId=&quot;1&quot; /&gt;);
+    
+    await waitFor(() =&gt; {
+      expect(screen.getByText(&#39;User 1&#39;)).toBeInTheDocument();
+    });
+    
+    rerender(&lt;UserProfile userId=&quot;2&quot; /&gt;);
+    
+    await waitFor(() =&gt; {
+      expect(screen.getByText(&#39;User 2&#39;)).toBeInTheDocument();
+    });
+    
+    expect(fetch).toHaveBeenCalledTimes(2);
+    expect(fetch).toHaveBeenNthCalledWith(1, &#39;/api/users/1&#39;);
+    expect(fetch).toHaveBeenNthCalledWith(2, &#39;/api/users/2&#39;);
+  });
+});
+</code></pre>
+<h2>Context测试</h2>
+<h3>Context Provider测试</h3>
+<pre><code class="language-javascript">// ThemeContext.test.js
+import { render, screen, fireEvent } from &#39;@testing-library/react&#39;;
+import { ThemeProvider, useTheme } from &#39;./ThemeContext&#39;;
+
+// 测试组件
+function TestComponent() {
+  const { theme, toggleTheme } = useTheme();
+  
+  return (
+    &lt;div&gt;
+      &lt;span data-testid=&quot;theme&quot;&gt;{theme}&lt;/span&gt;
+      &lt;button onClick={toggleTheme}&gt;Toggle Theme&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 测试工具函数
+function renderWithTheme(ui, { initialTheme = &#39;light&#39; } = {}) {
+  return render(
+    &lt;ThemeProvider initialTheme={initialTheme}&gt;
+      {ui}
+    &lt;/ThemeProvider&gt;
+  );
+}
+
+describe(&#39;ThemeContext&#39;, () =&gt; {
+  test(&#39;provides default theme&#39;, () =&gt; {
+    renderWithTheme(&lt;TestComponent /&gt;);
+    
+    expect(screen.getByTestId(&#39;theme&#39;)).toHaveTextContent(&#39;light&#39;);
+  });
+
+  test(&#39;provides custom initial theme&#39;, () =&gt; {
+    renderWithTheme(&lt;TestComponent /&gt;, { initialTheme: &#39;dark&#39; });
+    
+    expect(screen.getByTestId(&#39;theme&#39;)).toHaveTextContent(&#39;dark&#39;);
+  });
+
+  test(&#39;toggles theme when button is clicked&#39;, () =&gt; {
+    renderWithTheme(&lt;TestComponent /&gt;);
+    
+    expect(screen.getByTestId(&#39;theme&#39;)).toHaveTextContent(&#39;light&#39;);
+    
+    fireEvent.click(screen.getByText(&#39;Toggle Theme&#39;));
+    
+    expect(screen.getByTestId(&#39;theme&#39;)).toHaveTextContent(&#39;dark&#39;);
+    
+    fireEvent.click(screen.getByText(&#39;Toggle Theme&#39;));
+    
+    expect(screen.getByTestId(&#39;theme&#39;)).toHaveTextContent(&#39;light&#39;);
+  });
+
+  test(&#39;throws error when used outside provider&#39;, () =&gt; {
+    const spy = jest.spyOn(console, &#39;error&#39;).mockImplementation(() =&gt; {});
+    
+    expect(() =&gt; render(&lt;TestComponent /&gt;)).toThrow(&#39;useTheme must be used within a ThemeProvider&#39;);
+    
+    spy.mockRestore();
+  });
+});
+</code></pre>
+<h2>Mock和Spy</h2>
+<h3>API Mock</h3>
+<pre><code class="language-javascript">// api.js
+export const userApi = {
+  getUser: async (id) =&gt; {
+    const response = await fetch(`/api/users/${id}`);
+    return response.json();
+  },
+  
+  updateUser: async (id, data) =&gt; {
+    const response = await fetch(`/api/users/${id}`, {
+      method: &#39;PUT&#39;,
+      headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },
+      body: JSON.stringify(data)
+    });
+    return response.json();
+  }
+};
+</code></pre>
+<pre><code class="language-javascript">// UserEditor.test.js
+import { render, screen, fireEvent, waitFor } from &#39;@testing-library/react&#39;;
+import userEvent from &#39;@testing-library/user-event&#39;;
+import { userApi } from &#39;./api&#39;;
+import UserEditor from &#39;./UserEditor&#39;;
+
+// Mock整个API模块
+jest.mock(&#39;./api&#39;);
+
+const mockUserApi = userApi as jest.Mocked&lt;typeof userApi&gt;;
+
+describe(&#39;UserEditor&#39;, () =&gt; {
+  beforeEach(() =&gt; {
+    jest.clearAllMocks();
+  });
+
+  test(&#39;loads user data on mount&#39;, async () =&gt; {
+    const mockUser = { id: &#39;1&#39;, name: &#39;John Doe&#39;, email: &#39;john@example.com&#39; };
+    mockUserApi.getUser.mockResolvedValueOnce(mockUser);
+
+    render(&lt;UserEditor userId=&quot;1&quot; /&gt;);
+    
+    await waitFor(() =&gt; {
+      expect(screen.getByDisplayValue(&#39;John Doe&#39;)).toBeInTheDocument();
+    });
+    
+    expect(mockUserApi.getUser).toHaveBeenCalledWith(&#39;1&#39;);
+  });
+
+  test(&#39;updates user when form is submitted&#39;, async () =&gt; {
+    const user = userEvent.setup();
+    const mockUser = { id: &#39;1&#39;, name: &#39;John Doe&#39;, email: &#39;john@example.com&#39; };
+    const updatedUser = { id: &#39;1&#39;, name: &#39;Jane Doe&#39;, email: &#39;jane@example.com&#39; };
+    
+    mockUserApi.getUser.mockResolvedValueOnce(mockUser);
+    mockUserApi.updateUser.mockResolvedValueOnce(updatedUser);
+
+    render(&lt;UserEditor userId=&quot;1&quot; /&gt;);
+    
+    await waitFor(() =&gt; {
+      expect(screen.getByDisplayValue(&#39;John Doe&#39;)).toBeInTheDocument();
+    });
+    
+    const nameInput = screen.getByLabelText(/name/i);
+    await user.clear(nameInput);
+    await user.type(nameInput, &#39;Jane Doe&#39;);
+    
+    const saveButton = screen.getByRole(&#39;button&#39;, { name: /save/i });
+    await user.click(saveButton);
+    
+    await waitFor(() =&gt; {
+      expect(mockUserApi.updateUser).toHaveBeenCalledWith(&#39;1&#39;, {
+        name: &#39;Jane Doe&#39;,
+        email: &#39;john@example.com&#39;
+      });
+    });
+  });
+
+  test(&#39;handles API error gracefully&#39;, async () =&gt; {
+    mockUserApi.getUser.mockRejectedValueOnce(new Error(&#39;Network error&#39;));
+
+    render(&lt;UserEditor userId=&quot;1&quot; /&gt;);
+    
+    await waitFor(() =&gt; {
+      expect(screen.getByText(/error.*network error/i)).toBeInTheDocument();
+    });
+  });
+});
+</code></pre>
+<h3>组件方法Spy</h3>
+<pre><code class="language-javascript">// Component.test.js
+test(&#39;calls lifecycle methods&#39;, () =&gt; {
+  const componentDidMountSpy = jest.spyOn(MyComponent.prototype, &#39;componentDidMount&#39;);
+  const componentWillUnmountSpy = jest.spyOn(MyComponent.prototype, &#39;componentWillUnmount&#39;);
+  
+  const { unmount } = render(&lt;MyComponent /&gt;);
+  
+  expect(componentDidMountSpy).toHaveBeenCalled();
+  
+  unmount();
+  
+  expect(componentWillUnmountSpy).toHaveBeenCalled();
+  
+  componentDidMountSpy.mockRestore();
+  componentWillUnmountSpy.mockRestore();
+});
+</code></pre>
+<h2>快照测试</h2>
+<h3>基础快照测试</h3>
+<pre><code class="language-javascript">// Button.snapshot.test.js
+import { render } from &#39;@testing-library/react&#39;;
+import Button from &#39;./Button&#39;;
+
+describe(&#39;Button Snapshots&#39;, () =&gt; {
+  test(&#39;renders primary button correctly&#39;, () =&gt; {
+    const { container } = render(
+      &lt;Button variant=&quot;primary&quot;&gt;Primary Button&lt;/Button&gt;
+    );
+    
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(&#39;renders disabled button correctly&#39;, () =&gt; {
+    const { container } = render(
+      &lt;Button disabled&gt;Disabled Button&lt;/Button&gt;
+    );
+    
+    expect(container.firstChild).toMatchSnapshot();
+  });
+
+  test(&#39;renders large secondary button correctly&#39;, () =&gt; {
+    const { container } = render(
+      &lt;Button variant=&quot;secondary&quot; size=&quot;large&quot;&gt;
+        Large Secondary Button
+      &lt;/Button&gt;
+    );
+    
+    expect(container.firstChild).toMatchSnapshot();
+  });
+});
+</code></pre>
+<h3>内联快照</h3>
+<pre><code class="language-javascript">test(&#39;renders error message&#39;, () =&gt; {
+  const { container } = render(
+    &lt;ErrorMessage message=&quot;Something went wrong&quot; /&gt;
+  );
+  
+  expect(container.firstChild).toMatchInlineSnapshot(`
+    &lt;div
+      class=&quot;error-message&quot;
+      role=&quot;alert&quot;
+    &gt;
+      Something went wrong
+    &lt;/div&gt;
+  `);
+});
+</code></pre>
+<h2>测试工具和最佳实践</h2>
+<h3>自定义渲染工具</h3>
+<pre><code class="language-javascript">// test-utils.js
+import { render } from &#39;@testing-library/react&#39;;
+import { BrowserRouter } from &#39;react-router-dom&#39;;
+import { ThemeProvider } from &#39;./ThemeContext&#39;;
+import { AuthProvider } from &#39;./AuthContext&#39;;
+
+const AllTheProviders = ({ children }) =&gt; {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;AuthProvider&gt;
+        &lt;ThemeProvider&gt;
+          {children}
+        &lt;/ThemeProvider&gt;
+      &lt;/AuthProvider&gt;
+    &lt;/BrowserRouter&gt;
+  );
+};
+
+const customRender = (ui, options) =&gt;
+  render(ui, { wrapper: AllTheProviders, ...options });
+
+// re-export everything
+export * from &#39;@testing-library/react&#39;;
+
+// override render method
+export { customRender as render };
+</code></pre>
+<h3>测试数据工厂</h3>
+<pre><code class="language-javascript">// test-factories.js
+export const createUser = (overrides = {}) =&gt; ({
+  id: &#39;1&#39;,
+  name: &#39;John Doe&#39;,
+  email: &#39;john@example.com&#39;,
+  role: &#39;user&#39;,
+  createdAt: &#39;2023-01-01T00:00:00Z&#39;,
+  ...overrides
+});
+
+export const createProduct = (overrides = {}) =&gt; ({
+  id: &#39;1&#39;,
+  name: &#39;Test Product&#39;,
+  price: 99.99,
+  category: &#39;electronics&#39;,
+  inStock: true,
+  ...overrides
+});
+
+// Usage in tests
+test(&#39;displays user information&#39;, () =&gt; {
+  const user = createUser({ name: &#39;Jane Doe&#39;, role: &#39;admin&#39; });
+  render(&lt;UserCard user={user} /&gt;);
+  
+  expect(screen.getByText(&#39;Jane Doe&#39;)).toBeInTheDocument();
+  expect(screen.getByText(&#39;admin&#39;)).toBeInTheDocument();
+});
+</code></pre>
+<h3>页面对象模式</h3>
+<pre><code class="language-javascript">// page-objects/LoginPage.js
+class LoginPage {
+  constructor(screen) {
+    this.screen = screen;
+  }
+
+  get emailInput() {
+    return this.screen.getByLabelText(/email/i);
+  }
+
+  get passwordInput() {
+    return this.screen.getByLabelText(/password/i);
+  }
+
+  get submitButton() {
+    return this.screen.getByRole(&#39;button&#39;, { name: /login/i });
+  }
+
+  get errorMessage() {
+    return this.screen.queryByRole(&#39;alert&#39;);
+  }
+
+  async login(email, password) {
+    await userEvent.type(this.emailInput, email);
+    await userEvent.type(this.passwordInput, password);
+    await userEvent.click(this.submitButton);
+  }
+}
+
+// Usage in tests
+test(&#39;shows error for invalid credentials&#39;, async () =&gt; {
+  render(&lt;LoginForm /&gt;);
+  const loginPage = new LoginPage(screen);
+  
+  await loginPage.login(&#39;invalid@example.com&#39;, &#39;wrongpassword&#39;);
+  
+  expect(loginPage.errorMessage).toHaveTextContent(&#39;Invalid credentials&#39;);
+});
+</code></pre>
+<h2>覆盖率和报告</h2>
+<h3>配置覆盖率</h3>
+<pre><code class="language-javascript">// jest.config.js
+module.exports = {
+  collectCoverage: true,
+  collectCoverageFrom: [
+    &#39;src/**/*.{js,jsx}&#39;,
+    &#39;!src/index.js&#39;,
+    &#39;!src/reportWebVitals.js&#39;,
+    &#39;!src/**/*.test.js&#39;,
+    &#39;!src/**/*.stories.js&#39;
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80
+    }
+  },
+  coverageReporters: [&#39;html&#39;, &#39;text&#39;, &#39;lcov&#39;]
+};
+</code></pre>
+<h3>运行覆盖率报告</h3>
+<pre><code class="language-bash"># 运行测试并生成覆盖率报告
+npm test -- --coverage
+
+# 只运行覆盖率（不监听文件变化）
+npm test -- --coverage --watchAll=false
+
+# 生成详细的HTML报告
+npm test -- --coverage --coverageReporters=html
+</code></pre>
+<h2>调试测试</h2>
+<h3>调试工具</h3>
+<pre><code class="language-javascript">// Debug utilities
+import { screen } from &#39;@testing-library/react&#39;;
+
+test(&#39;debug failing test&#39;, () =&gt; {
+  render(&lt;MyComponent /&gt;);
+  
+  // 打印当前DOM结构
+  screen.debug();
+  
+  // 打印特定元素
+  const button = screen.getByRole(&#39;button&#39;);
+  screen.debug(button);
+  
+  // 使用prettyDOM获取更好的输出
+  import { prettyDOM } from &#39;@testing-library/dom&#39;;
+  console.log(prettyDOM(button, 300000)); // 增加maxLength
+});
+</code></pre>
+<h3>VS Code调试配置</h3>
+<pre><code class="language-json">// .vscode/launch.json
+{
+  &quot;version&quot;: &quot;0.2.0&quot;,
+  &quot;configurations&quot;: [
+    {
+      &quot;name&quot;: &quot;Debug Jest Tests&quot;,
+      &quot;type&quot;: &quot;node&quot;,
+      &quot;request&quot;: &quot;launch&quot;,
+      &quot;program&quot;: &quot;${workspaceFolder}/node_modules/.bin/jest&quot;,
+      &quot;args&quot;: [&quot;--runInBand&quot;],
+      &quot;console&quot;: &quot;integratedTerminal&quot;,
+      &quot;internalConsoleOptions&quot;: &quot;neverOpen&quot;,
+      &quot;env&quot;: {
+        &quot;CI&quot;: &quot;true&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h2>总结</h2>
+<p>React单元测试的核心要点：</p>
+<ol>
+<li><strong>测试策略</strong> - 专注于用户行为而非实现细节</li>
+<li><strong>工具选择</strong> - React Testing Library + Jest 组合</li>
+<li><strong>测试结构</strong> - Arrange, Act, Assert 模式</li>
+<li><strong>异步处理</strong> - 正确使用waitFor和act</li>
+<li><strong>Mock策略</strong> - 适度使用，避免过度mock</li>
+<li><strong>覆盖率目标</strong> - 追求有意义的覆盖而非100%覆盖</li>
+</ol>
+<p>好的测试应该：</p>
+<ul>
+<li>易于理解和维护</li>
+<li>快速执行</li>
+<li>独立且可重复</li>
+<li>专注于用户体验</li>
+<li>在重构时提供信心</li>
+</ul>
+<p>通过系统的测试实践，可以提高代码质量，减少bug，并使重构更加安全。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="26-代码分割.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">代码分割</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="28-集成测试.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">集成测试</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

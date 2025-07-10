@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Context-API - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">Context-API</span>
+            </div>
+            <h1 class="doc-title">Context-API</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #a8edea">
+                📦 状态管理
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>22-Context API</h1>
+<p>Context API是React提供的一种跨组件共享数据的解决方案，它可以避免props逐层传递的问题。Context让你可以在组件树中传递数据而不必一级一级手动传递props。</p>
+<h2>基础概念</h2>
+<h3>什么时候使用Context</h3>
+<p>Context主要解决以下问题：</p>
+<ul>
+<li><strong>Prop Drilling</strong> - 数据需要跨越多层组件传递</li>
+<li><strong>全局状态</strong> - 需要在多个组件间共享的数据</li>
+<li><strong>主题切换</strong> - 全局样式主题</li>
+<li><strong>用户认证</strong> - 用户登录状态</li>
+<li><strong>国际化</strong> - 语言切换</li>
+</ul>
+<h3>基础用法</h3>
+<pre><code class="language-jsx">import React, { createContext, useContext, useState } from &#39;react&#39;;
+
+// 1. 创建Context
+const ThemeContext = createContext();
+
+// 2. 提供Context
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState(&#39;light&#39;);
+
+  return (
+    &lt;ThemeContext.Provider value={{ theme, setTheme }}&gt;
+      {children}
+    &lt;/ThemeContext.Provider&gt;
+  );
+}
+
+// 3. 使用Context
+function ThemedButton() {
+  const { theme, setTheme } = useContext(ThemeContext);
+
+  return (
+    &lt;button 
+      style={{
+        background: theme === &#39;light&#39; ? &#39;#fff&#39; : &#39;#333&#39;,
+        color: theme === &#39;light&#39; ? &#39;#333&#39; : &#39;#fff&#39;
+      }}
+      onClick={() =&gt; setTheme(theme === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;)}
+    &gt;
+      当前主题: {theme}
+    &lt;/button&gt;
+  );
+}
+
+// 4. 应用组件
+function App() {
+  return (
+    &lt;ThemeProvider&gt;
+      &lt;div&gt;
+        &lt;h1&gt;主题切换示例&lt;/h1&gt;
+        &lt;ThemedButton /&gt;
+      &lt;/div&gt;
+    &lt;/ThemeProvider&gt;
+  );
+}
+</code></pre>
+<h2>创建自定义Hook</h2>
+<h3>简化Context使用</h3>
+<pre><code class="language-jsx">// 创建Context和自定义Hook
+const ThemeContext = createContext();
+
+function useTheme() {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error(&#39;useTheme must be used within a ThemeProvider&#39;);
+  }
+  return context;
+}
+
+function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState(&#39;light&#39;);
+
+  const toggleTheme = () =&gt; {
+    setTheme(prev =&gt; prev === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;);
+  };
+
+  const value = {
+    theme,
+    setTheme,
+    toggleTheme,
+    isLight: theme === &#39;light&#39;,
+    isDark: theme === &#39;dark&#39;
+  };
+
+  return (
+    &lt;ThemeContext.Provider value={value}&gt;
+      {children}
+    &lt;/ThemeContext.Provider&gt;
+  );
+}
+
+// 使用时更简洁
+function Header() {
+  const { theme, toggleTheme } = useTheme();
+
+  return (
+    &lt;header style={{ background: theme === &#39;light&#39; ? &#39;#f8f9fa&#39; : &#39;#343a40&#39; }}&gt;
+      &lt;h1&gt;我的应用&lt;/h1&gt;
+      &lt;button onClick={toggleTheme}&gt;
+        切换到 {theme === &#39;light&#39; ? &#39;深色&#39; : &#39;浅色&#39;} 主题
+      &lt;/button&gt;
+    &lt;/header&gt;
+  );
+}
+</code></pre>
+<h2>用户认证Context</h2>
+<h3>完整的认证系统</h3>
+<pre><code class="language-jsx">const AuthContext = createContext();
+
+function useAuth() {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error(&#39;useAuth must be used within an AuthProvider&#39;);
+  }
+  return context;
+}
+
+function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // 初始化时检查登录状态
+  useEffect(() =&gt; {
+    checkAuthStatus();
+  }, []);
+
+  const checkAuthStatus = async () =&gt; {
+    try {
+      const token = localStorage.getItem(&#39;token&#39;);
+      if (token) {
+        const response = await fetch(&#39;/api/auth/me&#39;, {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        
+        if (response.ok) {
+          const userData = await response.json();
+          setUser(userData);
+        } else {
+          localStorage.removeItem(&#39;token&#39;);
+        }
+      }
+    } catch (err) {
+      console.error(&#39;Auth check failed:&#39;, err);
+      localStorage.removeItem(&#39;token&#39;);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const login = async (email, password) =&gt; {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await fetch(&#39;/api/auth/login&#39;, {
+        method: &#39;POST&#39;,
+        headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (!response.ok) {
+        throw new Error(&#39;登录失败&#39;);
+      }
+
+      const data = await response.json();
+      localStorage.setItem(&#39;token&#39;, data.token);
+      setUser(data.user);
+      
+      return { success: true };
+    } catch (err) {
+      setError(err.message);
+      return { success: false, error: err.message };
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const logout = () =&gt; {
+    localStorage.removeItem(&#39;token&#39;);
+    setUser(null);
+    setError(null);
+  };
+
+  const register = async (userData) =&gt; {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await fetch(&#39;/api/auth/register&#39;, {
+        method: &#39;POST&#39;,
+        headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },
+        body: JSON.stringify(userData)
+      });
+
+      if (!response.ok) {
+        throw new Error(&#39;注册失败&#39;);
+      }
+
+      const data = await response.json();
+      localStorage.setItem(&#39;token&#39;, data.token);
+      setUser(data.user);
+      
+      return { success: true };
+    } catch (err) {
+      setError(err.message);
+      return { success: false, error: err.message };
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const value = {
+    user,
+    loading,
+    error,
+    login,
+    logout,
+    register,
+    isAuthenticated: !!user
+  };
+
+  return (
+    &lt;AuthContext.Provider value={value}&gt;
+      {children}
+    &lt;/AuthContext.Provider&gt;
+  );
+}
+
+// 使用示例
+function LoginForm() {
+  const { login, loading, error } = useAuth();
+  const [email, setEmail] = useState(&#39;&#39;);
+  const [password, setPassword] = useState(&#39;&#39;);
+
+  const handleSubmit = async (e) =&gt; {
+    e.preventDefault();
+    const result = await login(email, password);
+    
+    if (result.success) {
+      console.log(&#39;登录成功&#39;);
+    }
+  };
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input
+        type=&quot;email&quot;
+        value={email}
+        onChange={(e) =&gt; setEmail(e.target.value)}
+        placeholder=&quot;邮箱&quot;
+        required
+      /&gt;
+      &lt;input
+        type=&quot;password&quot;
+        value={password}
+        onChange={(e) =&gt; setPassword(e.target.value)}
+        placeholder=&quot;密码&quot;
+        required
+      /&gt;
+      &lt;button type=&quot;submit&quot; disabled={loading}&gt;
+        {loading ? &#39;登录中...&#39; : &#39;登录&#39;}
+      &lt;/button&gt;
+      {error &amp;&amp; &lt;p style={{ color: &#39;red&#39; }}&gt;{error}&lt;/p&gt;}
+    &lt;/form&gt;
+  );
+}
+
+function UserProfile() {
+  const { user, logout } = useAuth();
+
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;欢迎, {user.name}!&lt;/h2&gt;
+      &lt;p&gt;邮箱: {user.email}&lt;/p&gt;
+      &lt;button onClick={logout}&gt;退出登录&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+function App() {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return &lt;div&gt;加载中...&lt;/div&gt;;
+  }
+
+  return (
+    &lt;div&gt;
+      {user ? &lt;UserProfile /&gt; : &lt;LoginForm /&gt;}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>购物车Context</h2>
+<h3>电商购物车管理</h3>
+<pre><code class="language-jsx">const CartContext = createContext();
+
+function useCart() {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error(&#39;useCart must be used within a CartProvider&#39;);
+  }
+  return context;
+}
+
+function CartProvider({ children }) {
+  const [items, setItems] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+
+  // 计算总数量
+  const totalItems = items.reduce((sum, item) =&gt; sum + item.quantity, 0);
+
+  // 计算总价格
+  const totalPrice = items.reduce((sum, item) =&gt; sum + (item.price * item.quantity), 0);
+
+  // 添加商品
+  const addItem = (product) =&gt; {
+    setItems(prev =&gt; {
+      const existingItem = prev.find(item =&gt; item.id === product.id);
+      
+      if (existingItem) {
+        return prev.map(item =&gt;
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        return [...prev, { ...product, quantity: 1 }];
+      }
+    });
+  };
+
+  // 移除商品
+  const removeItem = (productId) =&gt; {
+    setItems(prev =&gt; prev.filter(item =&gt; item.id !== productId));
+  };
+
+  // 更新数量
+  const updateQuantity = (productId, quantity) =&gt; {
+    if (quantity &lt;= 0) {
+      removeItem(productId);
+      return;
+    }
+
+    setItems(prev =&gt; 
+      prev.map(item =&gt;
+        item.id === productId
+          ? { ...item, quantity }
+          : item
+      )
+    );
+  };
+
+  // 清空购物车
+  const clearCart = () =&gt; {
+    setItems([]);
+  };
+
+  // 获取特定商品信息
+  const getItemQuantity = (productId) =&gt; {
+    const item = items.find(item =&gt; item.id === productId);
+    return item ? item.quantity : 0;
+  };
+
+  const value = {
+    items,
+    totalItems,
+    totalPrice,
+    isOpen,
+    setIsOpen,
+    addItem,
+    removeItem,
+    updateQuantity,
+    clearCart,
+    getItemQuantity
+  };
+
+  return (
+    &lt;CartContext.Provider value={value}&gt;
+      {children}
+    &lt;/CartContext.Provider&gt;
+  );
+}
+
+// 产品卡片组件
+function ProductCard({ product }) {
+  const { addItem, getItemQuantity, updateQuantity } = useCart();
+  const quantity = getItemQuantity(product.id);
+
+  return (
+    &lt;div className=&quot;product-card&quot;&gt;
+      &lt;img src={product.image} alt={product.name} /&gt;
+      &lt;h3&gt;{product.name}&lt;/h3&gt;
+      &lt;p&gt;¥{product.price}&lt;/p&gt;
+      
+      {quantity === 0 ? (
+        &lt;button onClick={() =&gt; addItem(product)}&gt;
+          添加到购物车
+        &lt;/button&gt;
+      ) : (
+        &lt;div className=&quot;quantity-controls&quot;&gt;
+          &lt;button onClick={() =&gt; updateQuantity(product.id, quantity - 1)}&gt;
+            -
+          &lt;/button&gt;
+          &lt;span&gt;{quantity}&lt;/span&gt;
+          &lt;button onClick={() =&gt; updateQuantity(product.id, quantity + 1)}&gt;
+            +
+          &lt;/button&gt;
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+
+// 购物车图标
+function CartIcon() {
+  const { totalItems, setIsOpen } = useCart();
+
+  return (
+    &lt;button 
+      className=&quot;cart-icon&quot;
+      onClick={() =&gt; setIsOpen(true)}
+    &gt;
+      🛒 {totalItems &gt; 0 &amp;&amp; &lt;span className=&quot;badge&quot;&gt;{totalItems}&lt;/span&gt;}
+    &lt;/button&gt;
+  );
+}
+
+// 购物车侧边栏
+function CartSidebar() {
+  const { items, isOpen, setIsOpen, totalPrice, updateQuantity, removeItem, clearCart } = useCart();
+
+  if (!isOpen) return null;
+
+  return (
+    &lt;div className=&quot;cart-sidebar&quot;&gt;
+      &lt;div className=&quot;cart-header&quot;&gt;
+        &lt;h2&gt;购物车&lt;/h2&gt;
+        &lt;button onClick={() =&gt; setIsOpen(false)}&gt;×&lt;/button&gt;
+      &lt;/div&gt;
+      
+      &lt;div className=&quot;cart-items&quot;&gt;
+        {items.length === 0 ? (
+          &lt;p&gt;购物车为空&lt;/p&gt;
+        ) : (
+          items.map(item =&gt; (
+            &lt;div key={item.id} className=&quot;cart-item&quot;&gt;
+              &lt;img src={item.image} alt={item.name} /&gt;
+              &lt;div&gt;
+                &lt;h4&gt;{item.name}&lt;/h4&gt;
+                &lt;p&gt;¥{item.price}&lt;/p&gt;
+                &lt;div className=&quot;quantity-controls&quot;&gt;
+                  &lt;button onClick={() =&gt; updateQuantity(item.id, item.quantity - 1)}&gt;
+                    -
+                  &lt;/button&gt;
+                  &lt;span&gt;{item.quantity}&lt;/span&gt;
+                  &lt;button onClick={() =&gt; updateQuantity(item.id, item.quantity + 1)}&gt;
+                    +
+                  &lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;button onClick={() =&gt; removeItem(item.id)}&gt;
+                删除
+              &lt;/button&gt;
+            &lt;/div&gt;
+          ))
+        )}
+      &lt;/div&gt;
+      
+      {items.length &gt; 0 &amp;&amp; (
+        &lt;div className=&quot;cart-footer&quot;&gt;
+          &lt;div className=&quot;total&quot;&gt;
+            总计: ¥{totalPrice.toFixed(2)}
+          &lt;/div&gt;
+          &lt;button onClick={clearCart}&gt;清空购物车&lt;/button&gt;
+          &lt;button className=&quot;checkout-btn&quot;&gt;结算&lt;/button&gt;
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>国际化Context</h2>
+<h3>多语言支持</h3>
+<pre><code class="language-jsx">const I18nContext = createContext();
+
+function useI18n() {
+  const context = useContext(I18nContext);
+  if (!context) {
+    throw new Error(&#39;useI18n must be used within an I18nProvider&#39;);
+  }
+  return context;
+}
+
+const translations = {
+  zh: {
+    welcome: &#39;欢迎&#39;,
+    hello: &#39;你好&#39;,
+    goodbye: &#39;再见&#39;,
+    login: &#39;登录&#39;,
+    logout: &#39;退出&#39;,
+    profile: &#39;个人资料&#39;,
+    settings: &#39;设置&#39;,
+    language: &#39;语言&#39;,
+    theme: &#39;主题&#39;,
+    &#39;hello.world&#39;: &#39;你好，世界！&#39;,
+    &#39;user.name&#39;: &#39;用户名&#39;,
+    &#39;user.email&#39;: &#39;邮箱地址&#39;
+  },
+  en: {
+    welcome: &#39;Welcome&#39;,
+    hello: &#39;Hello&#39;,
+    goodbye: &#39;Goodbye&#39;,
+    login: &#39;Login&#39;,
+    logout: &#39;Logout&#39;,
+    profile: &#39;Profile&#39;,
+    settings: &#39;Settings&#39;,
+    language: &#39;Language&#39;,
+    theme: &#39;Theme&#39;,
+    &#39;hello.world&#39;: &#39;Hello, World!&#39;,
+    &#39;user.name&#39;: &#39;Username&#39;,
+    &#39;user.email&#39;: &#39;Email Address&#39;
+  },
+  ja: {
+    welcome: &#39;いらっしゃいませ&#39;,
+    hello: &#39;こんにちは&#39;,
+    goodbye: &#39;さようなら&#39;,
+    login: &#39;ログイン&#39;,
+    logout: &#39;ログアウト&#39;,
+    profile: &#39;プロフィール&#39;,
+    settings: &#39;設定&#39;,
+    language: &#39;言語&#39;,
+    theme: &#39;テーマ&#39;,
+    &#39;hello.world&#39;: &#39;こんにちは、世界！&#39;,
+    &#39;user.name&#39;: &#39;ユーザー名&#39;,
+    &#39;user.email&#39;: &#39;メールアドレス&#39;
+  }
+};
+
+function I18nProvider({ children }) {
+  const [locale, setLocale] = useState(&#39;zh&#39;);
+
+  // 从localStorage读取保存的语言设置
+  useEffect(() =&gt; {
+    const savedLocale = localStorage.getItem(&#39;locale&#39;);
+    if (savedLocale &amp;&amp; translations[savedLocale]) {
+      setLocale(savedLocale);
+    }
+  }, []);
+
+  // 保存语言设置到localStorage
+  useEffect(() =&gt; {
+    localStorage.setItem(&#39;locale&#39;, locale);
+  }, [locale]);
+
+  // 翻译函数
+  const t = (key, params = {}) =&gt; {
+    let translation = translations[locale]?.[key] || key;
+    
+    // 支持参数替换
+    Object.keys(params).forEach(param =&gt; {
+      translation = translation.replace(`{{${param}}}`, params[param]);
+    });
+    
+    return translation;
+  };
+
+  // 格式化数字
+  const formatNumber = (number) =&gt; {
+    return new Intl.NumberFormat(locale === &#39;zh&#39; ? &#39;zh-CN&#39; : locale).format(number);
+  };
+
+  // 格式化日期
+  const formatDate = (date, options = {}) =&gt; {
+    const localeMap = {
+      zh: &#39;zh-CN&#39;,
+      en: &#39;en-US&#39;,
+      ja: &#39;ja-JP&#39;
+    };
+    
+    return new Intl.DateTimeFormat(localeMap[locale], options).format(date);
+  };
+
+  const value = {
+    locale,
+    setLocale,
+    t,
+    formatNumber,
+    formatDate,
+    availableLocales: Object.keys(translations)
+  };
+
+  return (
+    &lt;I18nContext.Provider value={value}&gt;
+      {children}
+    &lt;/I18nContext.Provider&gt;
+  );
+}
+
+// 语言切换器组件
+function LanguageSwitcher() {
+  const { locale, setLocale, availableLocales, t } = useI18n();
+
+  const languageNames = {
+    zh: &#39;中文&#39;,
+    en: &#39;English&#39;,
+    ja: &#39;日本語&#39;
+  };
+
+  return (
+    &lt;div className=&quot;language-switcher&quot;&gt;
+      &lt;label&gt;{t(&#39;language&#39;)}:&lt;/label&gt;
+      &lt;select 
+        value={locale} 
+        onChange={(e) =&gt; setLocale(e.target.value)}
+      &gt;
+        {availableLocales.map(lang =&gt; (
+          &lt;option key={lang} value={lang}&gt;
+            {languageNames[lang]}
+          &lt;/option&gt;
+        ))}
+      &lt;/select&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 多语言组件示例
+function Welcome({ userName }) {
+  const { t, formatDate } = useI18n();
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{t(&#39;hello.world&#39;)}&lt;/h1&gt;
+      &lt;p&gt;{t(&#39;welcome&#39;)}, {userName}!&lt;/p&gt;
+      &lt;p&gt;{formatDate(new Date(), { 
+        year: &#39;numeric&#39;, 
+        month: &#39;long&#39;, 
+        day: &#39;numeric&#39; 
+      })}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>复合Context模式</h2>
+<h3>组合多个Context</h3>
+<pre><code class="language-jsx">// 组合多个Provider的HOC
+function combineProviders(...providers) {
+  return ({ children }) =&gt;
+    providers.reduce(
+      (AccumulatedProviders, CurrentProvider) =&gt; (
+        &lt;CurrentProvider&gt;
+          &lt;AccumulatedProviders /&gt;
+        &lt;/CurrentProvider&gt;
+      ),
+      () =&gt; children
+    )();
+}
+
+// 或者使用更简单的方式
+function AppProviders({ children }) {
+  return (
+    &lt;AuthProvider&gt;
+      &lt;ThemeProvider&gt;
+        &lt;I18nProvider&gt;
+          &lt;CartProvider&gt;
+            {children}
+          &lt;/CartProvider&gt;
+        &lt;/I18nProvider&gt;
+      &lt;/ThemeProvider&gt;
+    &lt;/AuthProvider&gt;
+  );
+}
+
+// 全局状态Context
+const AppStateContext = createContext();
+
+function useAppState() {
+  const context = useContext(AppStateContext);
+  if (!context) {
+    throw new Error(&#39;useAppState must be used within an AppStateProvider&#39;);
+  }
+  return context;
+}
+
+function AppStateProvider({ children }) {
+  const auth = useAuth();
+  const theme = useTheme();
+  const i18n = useI18n();
+  const cart = useCart();
+
+  // 组合所有状态
+  const appState = {
+    auth,
+    theme,
+    i18n,
+    cart,
+    // 添加一些全局方法
+    reset: () =&gt; {
+      auth.logout();
+      cart.clearCart();
+      theme.setTheme(&#39;light&#39;);
+      i18n.setLocale(&#39;zh&#39;);
+    }
+  };
+
+  return (
+    &lt;AppStateContext.Provider value={appState}&gt;
+      {children}
+    &lt;/AppStateContext.Provider&gt;
+  );
+}
+</code></pre>
+<h2>性能优化</h2>
+<h3>避免不必要的重渲染</h3>
+<pre><code class="language-jsx">// 问题：整个Context值作为一个对象，任何变化都会导致所有消费者重渲染
+function BadProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [theme, setTheme] = useState(&#39;light&#39;);
+
+  // ❌ 每次渲染都创建新对象
+  const value = {
+    user,
+    setUser,
+    theme,
+    setTheme
+  };
+
+  return (
+    &lt;MyContext.Provider value={value}&gt;
+      {children}
+    &lt;/MyContext.Provider&gt;
+  );
+}
+
+// 解决方案1：使用useMemo缓存value
+function OptimizedProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [theme, setTheme] = useState(&#39;light&#39;);
+
+  // ✅ 只有依赖项变化时才创建新对象
+  const value = useMemo(() =&gt; ({
+    user,
+    setUser,
+    theme,
+    setTheme
+  }), [user, theme]);
+
+  return (
+    &lt;MyContext.Provider value={value}&gt;
+      {children}
+    &lt;/MyContext.Provider&gt;
+  );
+}
+
+// 解决方案2：分离不同的Context
+const UserContext = createContext();
+const ThemeContext = createContext();
+
+function SeparatedProviders({ children }) {
+  const [user, setUser] = useState(null);
+  const [theme, setTheme] = useState(&#39;light&#39;);
+
+  const userValue = useMemo(() =&gt; ({
+    user,
+    setUser
+  }), [user]);
+
+  const themeValue = useMemo(() =&gt; ({
+    theme,
+    setTheme
+  }), [theme]);
+
+  return (
+    &lt;UserContext.Provider value={userValue}&gt;
+      &lt;ThemeContext.Provider value={themeValue}&gt;
+        {children}
+      &lt;/ThemeContext.Provider&gt;
+    &lt;/UserContext.Provider&gt;
+  );
+}
+
+// 解决方案3：使用useCallback缓存函数
+function CallbackOptimizedProvider({ children }) {
+  const [user, setUser] = useState(null);
+
+  const updateUser = useCallback((userData) =&gt; {
+    setUser(prev =&gt; ({ ...prev, ...userData }));
+  }, []);
+
+  const logout = useCallback(() =&gt; {
+    setUser(null);
+  }, []);
+
+  const value = useMemo(() =&gt; ({
+    user,
+    updateUser,
+    logout
+  }), [user, updateUser, logout]);
+
+  return (
+    &lt;MyContext.Provider value={value}&gt;
+      {children}
+    &lt;/MyContext.Provider&gt;
+  );
+}
+</code></pre>
+<h3>Context选择器模式</h3>
+<pre><code class="language-jsx">// 创建带选择器的Context Hook
+function createSelectorContext(initialState) {
+  const Context = createContext();
+
+  function Provider({ children, value }) {
+    return (
+      &lt;Context.Provider value={value}&gt;
+        {children}
+      &lt;/Context.Provider&gt;
+    );
+  }
+
+  function useSelector(selector = (state) =&gt; state) {
+    const context = useContext(Context);
+    if (!context) {
+      throw new Error(&#39;useSelector must be used within Provider&#39;);
+    }
+
+    return useMemo(() =&gt; selector(context), [context, selector]);
+  }
+
+  return { Provider, useSelector };
+}
+
+// 使用示例
+const { Provider: StateProvider, useSelector } = createSelectorContext();
+
+function MyProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [theme, setTheme] = useState(&#39;light&#39;);
+  const [cart, setCart] = useState([]);
+
+  const value = {
+    user,
+    setUser,
+    theme,
+    setTheme,
+    cart,
+    setCart
+  };
+
+  return (
+    &lt;StateProvider value={value}&gt;
+      {children}
+    &lt;/StateProvider&gt;
+  );
+}
+
+// 只订阅用户信息的组件
+function UserInfo() {
+  const user = useSelector(state =&gt; state.user);
+  
+  return &lt;div&gt;{user?.name}&lt;/div&gt;;
+}
+
+// 只订阅主题的组件
+function ThemeToggle() {
+  const { theme, setTheme } = useSelector(state =&gt; ({
+    theme: state.theme,
+    setTheme: state.setTheme
+  }));
+
+  return (
+    &lt;button onClick={() =&gt; setTheme(theme === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;)}&gt;
+      切换主题
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<h2>测试Context</h2>
+<h3>Context组件测试</h3>
+<pre><code class="language-jsx">import { render, screen, fireEvent } from &#39;@testing-library/react&#39;;
+import { ThemeProvider, useTheme } from &#39;./ThemeContext&#39;;
+
+// 测试工具组件
+function TestComponent() {
+  const { theme, toggleTheme } = useTheme();
+  return (
+    &lt;div&gt;
+      &lt;span data-testid=&quot;theme&quot;&gt;{theme}&lt;/span&gt;
+      &lt;button data-testid=&quot;toggle&quot; onClick={toggleTheme}&gt;
+        Toggle
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 测试Provider
+function renderWithTheme(ui, { theme = &#39;light&#39; } = {}) {
+  return render(
+    &lt;ThemeProvider defaultTheme={theme}&gt;
+      {ui}
+    &lt;/ThemeProvider&gt;
+  );
+}
+
+describe(&#39;ThemeContext&#39;, () =&gt; {
+  test(&#39;provides theme value&#39;, () =&gt; {
+    renderWithTheme(&lt;TestComponent /&gt;);
+    expect(screen.getByTestId(&#39;theme&#39;)).toHaveTextContent(&#39;light&#39;);
+  });
+
+  test(&#39;toggles theme&#39;, () =&gt; {
+    renderWithTheme(&lt;TestComponent /&gt;);
+    
+    fireEvent.click(screen.getByTestId(&#39;toggle&#39;));
+    expect(screen.getByTestId(&#39;theme&#39;)).toHaveTextContent(&#39;dark&#39;);
+    
+    fireEvent.click(screen.getByTestId(&#39;toggle&#39;));
+    expect(screen.getByTestId(&#39;theme&#39;)).toHaveTextContent(&#39;light&#39;);
+  });
+
+  test(&#39;throws error when used outside provider&#39;, () =&gt; {
+    // 捕获错误输出
+    const spy = jest.spyOn(console, &#39;error&#39;).mockImplementation(() =&gt; {});
+    
+    expect(() =&gt; render(&lt;TestComponent /&gt;)).toThrow();
+    
+    spy.mockRestore();
+  });
+});
+</code></pre>
+<h2>最佳实践</h2>
+<h3>1. Context结构设计</h3>
+<pre><code class="language-jsx">// ✅ 好的做法：按功能分离Context
+const AuthContext = createContext();
+const ThemeContext = createContext();
+const SettingsContext = createContext();
+
+// ❌ 避免：把所有状态放在一个巨大的Context中
+const AppContext = createContext(); // 包含所有应用状态
+</code></pre>
+<h3>2. 错误处理</h3>
+<pre><code class="language-jsx">function useAuthRequired() {
+  const auth = useAuth();
+  
+  if (!auth.isAuthenticated) {
+    throw new Error(&#39;This component requires authentication&#39;);
+  }
+  
+  return auth;
+}
+
+// 错误边界组件
+class ContextErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error(&#39;Context error:&#39;, error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback || &lt;div&gt;Something went wrong&lt;/div&gt;;
+    }
+
+    return this.props.children;
+  }
+}
+</code></pre>
+<h3>3. 调试和开发工具</h3>
+<pre><code class="language-jsx">// 开发环境下的Context调试
+function DebugProvider({ children, name }) {
+  const [logs, setLogs] = useState([]);
+
+  const Provider = useMemo(() =&gt; {
+    const OriginalProvider = React.createContext().Provider;
+    
+    return function DebuggingProvider({ value, children }) {
+      useEffect(() =&gt; {
+        if (process.env.NODE_ENV === &#39;development&#39;) {
+          setLogs(prev =&gt; [...prev, { 
+            timestamp: Date.now(), 
+            value: JSON.stringify(value) 
+          }]);
+        }
+      }, [value]);
+
+      return &lt;OriginalProvider value={value}&gt;{children}&lt;/OriginalProvider&gt;;
+    };
+  }, []);
+
+  // 在开发环境下显示调试信息
+  if (process.env.NODE_ENV === &#39;development&#39;) {
+    console.log(`${name} Context logs:`, logs);
+  }
+
+  return &lt;Provider&gt;{children}&lt;/Provider&gt;;
+}
+</code></pre>
+<h2>总结</h2>
+<p>Context API的核心要点：</p>
+<ol>
+<li><strong>合理使用</strong> - 避免过度使用，只用于真正需要跨组件共享的数据</li>
+<li><strong>性能优化</strong> - 使用useMemo缓存value，考虑分离不同的Context</li>
+<li><strong>错误处理</strong> - 提供错误边界和fallback机制</li>
+<li><strong>类型安全</strong> - 在TypeScript中定义清晰的类型</li>
+<li><strong>测试友好</strong> - 提供测试工具和mock Provider</li>
+</ol>
+<p>Context API是React状态管理的基础，掌握它对于构建复杂应用至关重要。在选择状态管理方案时，应该根据应用的复杂度和需求来决定是否使用Context API或其他状态管理库。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="21-React-Router.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">React-Router</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="23-Redux集成.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">Redux集成</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zustand状态管理 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">Zustand状态管理</span>
+            </div>
+            <h1 class="doc-title">Zustand状态管理</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #a8edea">
+                📦 状态管理
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>24-Zustand状态管理</h1>
+<p>Zustand是一个轻量级、快速且可扩展的状态管理库，为React应用提供了简单直观的状态管理解决方案。它的API设计简洁，没有样板代码，支持TypeScript，并且可以在React之外使用。</p>
+<h2>基础概念</h2>
+<h3>什么是Zustand</h3>
+<p>Zustand（德语中的&quot;状态&quot;）是一个现代的状态管理库，具有以下特点：</p>
+<ul>
+<li><strong>轻量级</strong> - 仅2KB大小</li>
+<li><strong>无样板代码</strong> - 简洁的API设计</li>
+<li><strong>TypeScript支持</strong> - 原生TypeScript支持</li>
+<li><strong>不需要Provider</strong> - 无需包装组件</li>
+<li><strong>可扩展</strong> - 支持中间件和插件</li>
+</ul>
+<h3>安装和基础用法</h3>
+<pre><code class="language-bash">npm install zustand
+# 或
+yarn add zustand
+</code></pre>
+<pre><code class="language-jsx">import { create } from &#39;zustand&#39;
+
+// 创建store
+const useCounterStore = create((set) =&gt; ({
+  count: 0,
+  increment: () =&gt; set((state) =&gt; ({ count: state.count + 1 })),
+  decrement: () =&gt; set((state) =&gt; ({ count: state.count - 1 })),
+  reset: () =&gt; set({ count: 0 })
+}))
+
+// 在组件中使用
+function Counter() {
+  const { count, increment, decrement, reset } = useCounterStore()
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;计数: {count}&lt;/p&gt;
+      &lt;button onClick={increment}&gt;+1&lt;/button&gt;
+      &lt;button onClick={decrement}&gt;-1&lt;/button&gt;
+      &lt;button onClick={reset}&gt;重置&lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>核心API</h2>
+<h3>create函数</h3>
+<p><code>create</code>函数用于创建store，接收一个函数作为参数：</p>
+<pre><code class="language-jsx">const useStore = create((set, get) =&gt; ({
+  // 状态
+  bears: 0,
+  
+  // 同步actions
+  increasePopulation: () =&gt; set((state) =&gt; ({ bears: state.bears + 1 })),
+  removeAllBears: () =&gt; set({ bears: 0 }),
+  
+  // 异步actions
+  fetchBears: async () =&gt; {
+    const response = await fetch(&#39;/api/bears&#39;)
+    const bears = await response.json()
+    set({ bears })
+  },
+  
+  // 使用get获取当前状态
+  getBearCount: () =&gt; get().bears
+}))
+</code></pre>
+<h3>set函数</h3>
+<p><code>set</code>函数用于更新状态：</p>
+<pre><code class="language-jsx">const useStore = create((set) =&gt; ({
+  user: null,
+  
+  // 合并更新
+  updateUser: (userData) =&gt; set((state) =&gt; ({ 
+    user: { ...state.user, ...userData } 
+  })),
+  
+  // 完全替换
+  setUser: (user) =&gt; set({ user }),
+  
+  // 条件更新
+  incrementIfPositive: () =&gt; set((state) =&gt; 
+    state.count &gt; 0 ? { count: state.count + 1 } : state
+  )
+}))
+</code></pre>
+<h3>get函数</h3>
+<p><code>get</code>函数用于获取当前状态：</p>
+<pre><code class="language-jsx">const useStore = create((set, get) =&gt; ({
+  items: [],
+  
+  addItem: (item) =&gt; {
+    const currentItems = get().items
+    if (!currentItems.find(i =&gt; i.id === item.id)) {
+      set({ items: [...currentItems, item] })
+    }
+  },
+  
+  getItemById: (id) =&gt; {
+    return get().items.find(item =&gt; item.id === id)
+  }
+}))
+</code></pre>
+<h2>选择性订阅</h2>
+<h3>使用选择器优化性能</h3>
+<pre><code class="language-jsx">const useUserStore = create((set) =&gt; ({
+  user: { name: &#39;Alice&#39;, age: 30, email: &#39;alice@example.com&#39; },
+  updateUser: (userData) =&gt; set((state) =&gt; ({ 
+    user: { ...state.user, ...userData } 
+  }))
+}))
+
+// 只订阅user.name的变化
+function UserName() {
+  const name = useUserStore((state) =&gt; state.user.name)
+  return &lt;h1&gt;{name}&lt;/h1&gt;
+}
+
+// 只订阅user.email的变化
+function UserEmail() {
+  const email = useUserStore((state) =&gt; state.user.email)
+  return &lt;p&gt;{email}&lt;/p&gt;
+}
+
+// 使用自定义相等函数
+function UserInfo() {
+  const user = useUserStore(
+    (state) =&gt; state.user,
+    (oldUser, newUser) =&gt; oldUser.name === newUser.name &amp;&amp; oldUser.age === newUser.age
+  )
+  
+  return (
+    &lt;div&gt;
+      &lt;p&gt;姓名: {user.name}&lt;/p&gt;
+      &lt;p&gt;年龄: {user.age}&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>实战案例</h2>
+<h3>购物车管理</h3>
+<pre><code class="language-jsx">import { create } from &#39;zustand&#39;
+
+const useCartStore = create((set, get) =&gt; ({
+  items: [],
+  
+  // 添加商品
+  addItem: (product) =&gt; set((state) =&gt; {
+    const existingItem = state.items.find(item =&gt; item.id === product.id)
+    
+    if (existingItem) {
+      return {
+        items: state.items.map(item =&gt;
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      }
+    } else {
+      return {
+        items: [...state.items, { ...product, quantity: 1 }]
+      }
+    }
+  }),
+  
+  // 移除商品
+  removeItem: (productId) =&gt; set((state) =&gt; ({
+    items: state.items.filter(item =&gt; item.id !== productId)
+  })),
+  
+  // 更新数量
+  updateQuantity: (productId, quantity) =&gt; set((state) =&gt; {
+    if (quantity &lt;= 0) {
+      return { items: state.items.filter(item =&gt; item.id !== productId) }
+    }
+    
+    return {
+      items: state.items.map(item =&gt;
+        item.id === productId ? { ...item, quantity } : item
+      )
+    }
+  }),
+  
+  // 清空购物车
+  clearCart: () =&gt; set({ items: [] }),
+  
+  // 计算总数量
+  getTotalItems: () =&gt; {
+    return get().items.reduce((sum, item) =&gt; sum + item.quantity, 0)
+  },
+  
+  // 计算总价格
+  getTotalPrice: () =&gt; {
+    return get().items.reduce((sum, item) =&gt; sum + (item.price * item.quantity), 0)
+  }
+}))
+
+// 使用购物车
+function ProductCard({ product }) {
+  const { addItem, items, updateQuantity } = useCartStore()
+  const cartItem = items.find(item =&gt; item.id === product.id)
+  
+  return (
+    &lt;div className=&quot;product-card&quot;&gt;
+      &lt;h3&gt;{product.name}&lt;/h3&gt;
+      &lt;p&gt;¥{product.price}&lt;/p&gt;
+      
+      {cartItem ? (
+        &lt;div className=&quot;quantity-controls&quot;&gt;
+          &lt;button onClick={() =&gt; updateQuantity(product.id, cartItem.quantity - 1)}&gt;
+            -
+          &lt;/button&gt;
+          &lt;span&gt;{cartItem.quantity}&lt;/span&gt;
+          &lt;button onClick={() =&gt; updateQuantity(product.id, cartItem.quantity + 1)}&gt;
+            +
+          &lt;/button&gt;
+        &lt;/div&gt;
+      ) : (
+        &lt;button onClick={() =&gt; addItem(product)}&gt;
+          添加到购物车
+        &lt;/button&gt;
+      )}
+    &lt;/div&gt;
+  )
+}
+
+function CartSummary() {
+  const { getTotalItems, getTotalPrice } = useCartStore()
+  
+  return (
+    &lt;div className=&quot;cart-summary&quot;&gt;
+      &lt;p&gt;商品数量: {getTotalItems()}&lt;/p&gt;
+      &lt;p&gt;总价: ¥{getTotalPrice().toFixed(2)}&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>用户认证管理</h3>
+<pre><code class="language-jsx">const useAuthStore = create((set, get) =&gt; ({
+  user: null,
+  token: null,
+  isLoading: false,
+  error: null,
+  
+  // 登录
+  login: async (credentials) =&gt; {
+    set({ isLoading: true, error: null })
+    
+    try {
+      const response = await fetch(&#39;/api/login&#39;, {
+        method: &#39;POST&#39;,
+        headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },
+        body: JSON.stringify(credentials)
+      })
+      
+      if (!response.ok) {
+        throw new Error(&#39;登录失败&#39;)
+      }
+      
+      const data = await response.json()
+      
+      set({ 
+        user: data.user, 
+        token: data.token, 
+        isLoading: false 
+      })
+      
+      // 保存token到localStorage
+      localStorage.setItem(&#39;token&#39;, data.token)
+      
+    } catch (error) {
+      set({ error: error.message, isLoading: false })
+    }
+  },
+  
+  // 退出登录
+  logout: () =&gt; {
+    localStorage.removeItem(&#39;token&#39;)
+    set({ user: null, token: null, error: null })
+  },
+  
+  // 初始化认证状态
+  initAuth: async () =&gt; {
+    const token = localStorage.getItem(&#39;token&#39;)
+    if (!token) return
+    
+    set({ isLoading: true })
+    
+    try {
+      const response = await fetch(&#39;/api/me&#39;, {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+      
+      if (response.ok) {
+        const user = await response.json()
+        set({ user, token, isLoading: false })
+      } else {
+        localStorage.removeItem(&#39;token&#39;)
+        set({ isLoading: false })
+      }
+    } catch (error) {
+      localStorage.removeItem(&#39;token&#39;)
+      set({ error: error.message, isLoading: false })
+    }
+  },
+  
+  // 检查是否已登录
+  isAuthenticated: () =&gt; {
+    return !!get().user
+  }
+}))
+
+// 使用认证
+function LoginForm() {
+  const { login, isLoading, error } = useAuthStore()
+  const [email, setEmail] = useState(&#39;&#39;)
+  const [password, setPassword] = useState(&#39;&#39;)
+  
+  const handleSubmit = async (e) =&gt; {
+    e.preventDefault()
+    await login({ email, password })
+  }
+  
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input
+        type=&quot;email&quot;
+        value={email}
+        onChange={(e) =&gt; setEmail(e.target.value)}
+        placeholder=&quot;邮箱&quot;
+        required
+      /&gt;
+      &lt;input
+        type=&quot;password&quot;
+        value={password}
+        onChange={(e) =&gt; setPassword(e.target.value)}
+        placeholder=&quot;密码&quot;
+        required
+      /&gt;
+      &lt;button type=&quot;submit&quot; disabled={isLoading}&gt;
+        {isLoading ? &#39;登录中...&#39; : &#39;登录&#39;}
+      &lt;/button&gt;
+      {error &amp;&amp; &lt;p style={{ color: &#39;red&#39; }}&gt;{error}&lt;/p&gt;}
+    &lt;/form&gt;
+  )
+}
+</code></pre>
+<h2>持久化存储</h2>
+<h3>使用persist中间件</h3>
+<pre><code class="language-jsx">import { create } from &#39;zustand&#39;
+import { persist } from &#39;zustand/middleware&#39;
+
+const useSettingsStore = create(
+  persist(
+    (set) =&gt; ({
+      theme: &#39;light&#39;,
+      language: &#39;zh&#39;,
+      notifications: true,
+      
+      setTheme: (theme) =&gt; set({ theme }),
+      setLanguage: (language) =&gt; set({ language }),
+      toggleNotifications: () =&gt; set((state) =&gt; ({ 
+        notifications: !state.notifications 
+      }))
+    }),
+    {
+      name: &#39;app-settings&#39;, // localStorage键名
+      // 可选：自定义存储
+      storage: {
+        getItem: (name) =&gt; {
+          const item = localStorage.getItem(name)
+          return item ? JSON.parse(item) : null
+        },
+        setItem: (name, value) =&gt; {
+          localStorage.setItem(name, JSON.stringify(value))
+        },
+        removeItem: (name) =&gt; {
+          localStorage.removeItem(name)
+        }
+      }
+    }
+  )
+)
+
+// 使用设置
+function Settings() {
+  const { theme, language, notifications, setTheme, setLanguage, toggleNotifications } = useSettingsStore()
+  
+  return (
+    &lt;div&gt;
+      &lt;select value={theme} onChange={(e) =&gt; setTheme(e.target.value)}&gt;
+        &lt;option value=&quot;light&quot;&gt;浅色主题&lt;/option&gt;
+        &lt;option value=&quot;dark&quot;&gt;深色主题&lt;/option&gt;
+      &lt;/select&gt;
+      
+      &lt;select value={language} onChange={(e) =&gt; setLanguage(e.target.value)}&gt;
+        &lt;option value=&quot;zh&quot;&gt;中文&lt;/option&gt;
+        &lt;option value=&quot;en&quot;&gt;English&lt;/option&gt;
+      &lt;/select&gt;
+      
+      &lt;label&gt;
+        &lt;input
+          type=&quot;checkbox&quot;
+          checked={notifications}
+          onChange={toggleNotifications}
+        /&gt;
+        启用通知
+      &lt;/label&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>中间件和插件</h2>
+<h3>使用immer中间件</h3>
+<pre><code class="language-jsx">import { create } from &#39;zustand&#39;
+import { immer } from &#39;zustand/middleware/immer&#39;
+
+const useTaskStore = create(
+  immer((set) =&gt; ({
+    tasks: [],
+    
+    addTask: (task) =&gt; set((state) =&gt; {
+      state.tasks.push({
+        id: Date.now(),
+        ...task,
+        completed: false,
+        createdAt: new Date().toISOString()
+      })
+    }),
+    
+    updateTask: (id, updates) =&gt; set((state) =&gt; {
+      const task = state.tasks.find(t =&gt; t.id === id)
+      if (task) {
+        Object.assign(task, updates)
+      }
+    }),
+    
+    deleteTask: (id) =&gt; set((state) =&gt; {
+      const index = state.tasks.findIndex(t =&gt; t.id === id)
+      if (index !== -1) {
+        state.tasks.splice(index, 1)
+      }
+    }),
+    
+    toggleTask: (id) =&gt; set((state) =&gt; {
+      const task = state.tasks.find(t =&gt; t.id === id)
+      if (task) {
+        task.completed = !task.completed
+      }
+    })
+  }))
+)
+</code></pre>
+<h3>自定义中间件</h3>
+<pre><code class="language-jsx">// 日志中间件
+const logger = (config) =&gt; (set, get, api) =&gt;
+  config(
+    (...args) =&gt; {
+      console.log(&#39;Previous state:&#39;, get())
+      set(...args)
+      console.log(&#39;New state:&#39;, get())
+    },
+    get,
+    api
+  )
+
+// 使用中间件
+const useStore = create(
+  logger((set) =&gt; ({
+    count: 0,
+    increment: () =&gt; set((state) =&gt; ({ count: state.count + 1 }))
+  }))
+)
+</code></pre>
+<h2>TypeScript支持</h2>
+<h3>类型定义</h3>
+<pre><code class="language-typescript">interface CounterState {
+  count: number
+  increment: () =&gt; void
+  decrement: () =&gt; void
+  reset: () =&gt; void
+}
+
+const useCounterStore = create&lt;CounterState&gt;((set) =&gt; ({
+  count: 0,
+  increment: () =&gt; set((state) =&gt; ({ count: state.count + 1 })),
+  decrement: () =&gt; set((state) =&gt; ({ count: state.count - 1 })),
+  reset: () =&gt; set({ count: 0 })
+}))
+
+// 使用选择器的类型
+const count = useCounterStore((state: CounterState) =&gt; state.count)
+</code></pre>
+<h3>复杂状态的类型</h3>
+<pre><code class="language-typescript">interface User {
+  id: string
+  name: string
+  email: string
+  avatar?: string
+}
+
+interface UserStore {
+  users: User[]
+  currentUser: User | null
+  loading: boolean
+  error: string | null
+  
+  fetchUsers: () =&gt; Promise&lt;void&gt;
+  addUser: (user: Omit&lt;User, &#39;id&#39;&gt;) =&gt; void
+  updateUser: (id: string, updates: Partial&lt;User&gt;) =&gt; void
+  deleteUser: (id: string) =&gt; void
+  setCurrentUser: (user: User | null) =&gt; void
+}
+
+const useUserStore = create&lt;UserStore&gt;((set, get) =&gt; ({
+  users: [],
+  currentUser: null,
+  loading: false,
+  error: null,
+  
+  fetchUsers: async () =&gt; {
+    set({ loading: true, error: null })
+    try {
+      const response = await fetch(&#39;/api/users&#39;)
+      const users = await response.json()
+      set({ users, loading: false })
+    } catch (error) {
+      set({ error: error.message, loading: false })
+    }
+  },
+  
+  addUser: (userData) =&gt; {
+    const newUser: User = {
+      id: Math.random().toString(36),
+      ...userData
+    }
+    set((state) =&gt; ({ users: [...state.users, newUser] }))
+  },
+  
+  updateUser: (id, updates) =&gt; {
+    set((state) =&gt; ({
+      users: state.users.map(user =&gt;
+        user.id === id ? { ...user, ...updates } : user
+      )
+    }))
+  },
+  
+  deleteUser: (id) =&gt; {
+    set((state) =&gt; ({
+      users: state.users.filter(user =&gt; user.id !== id)
+    }))
+  },
+  
+  setCurrentUser: (user) =&gt; {
+    set({ currentUser: user })
+  }
+}))
+</code></pre>
+<h2>性能优化</h2>
+<h3>避免不必要的重渲染</h3>
+<pre><code class="language-jsx">// 不好的做法 - 会导致不必要的重渲染
+function BadComponent() {
+  const store = useStore() // 订阅整个store
+  return &lt;div&gt;{store.specificValue}&lt;/div&gt;
+}
+
+// 好的做法 - 只订阅需要的部分
+function GoodComponent() {
+  const specificValue = useStore((state) =&gt; state.specificValue)
+  return &lt;div&gt;{specificValue}&lt;/div&gt;
+}
+
+// 使用浅比较
+function ShallowComponent() {
+  const { name, age } = useStore(
+    (state) =&gt; ({ name: state.user.name, age: state.user.age }),
+    shallow
+  )
+  return &lt;div&gt;{name}, {age}&lt;/div&gt;
+}
+</code></pre>
+<h3>分离频繁更新的状态</h3>
+<pre><code class="language-jsx">// 将频繁更新的状态分离到独立的store
+const useAnimationStore = create((set) =&gt; ({
+  progress: 0,
+  setProgress: (progress) =&gt; set({ progress })
+}))
+
+const useAppStore = create((set) =&gt; ({
+  user: null,
+  settings: {},
+  // 其他不频繁更新的状态
+}))
+</code></pre>
+<h2>最佳实践</h2>
+<h3>1. Store组织结构</h3>
+<pre><code class="language-jsx">// 按功能模块组织store
+const useUserStore = create((set, get) =&gt; ({
+  // 状态
+  users: [],
+  currentUser: null,
+  loading: false,
+  
+  // Actions
+  actions: {
+    fetchUsers: async () =&gt; {
+      // 实现
+    },
+    addUser: (user) =&gt; {
+      // 实现
+    }
+  }
+}))
+</code></pre>
+<h3>2. 错误处理</h3>
+<pre><code class="language-jsx">const useApiStore = create((set) =&gt; ({
+  data: null,
+  error: null,
+  loading: false,
+  
+  fetchData: async () =&gt; {
+    set({ loading: true, error: null })
+    
+    try {
+      const response = await fetch(&#39;/api/data&#39;)
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      const data = await response.json()
+      set({ data, loading: false })
+    } catch (error) {
+      set({ error: error.message, loading: false })
+    }
+  }
+}))
+</code></pre>
+<h3>3. 状态重置</h3>
+<pre><code class="language-jsx">const initialState = {
+  user: null,
+  settings: {},
+  preferences: {}
+}
+
+const useStore = create((set) =&gt; ({
+  ...initialState,
+  
+  // 重置整个store
+  reset: () =&gt; set(initialState),
+  
+  // 重置特定状态
+  resetUser: () =&gt; set({ user: null }),
+}))
+</code></pre>
+<h2>与其他状态管理库的对比</h2>
+<h3>Zustand vs Redux</h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Zustand</th>
+<th>Redux</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>学习曲线</td>
+<td>简单</td>
+<td>复杂</td>
+</tr>
+<tr>
+<td>样板代码</td>
+<td>少</td>
+<td>多</td>
+</tr>
+<tr>
+<td>TypeScript支持</td>
+<td>原生支持</td>
+<td>需要额外配置</td>
+</tr>
+<tr>
+<td>中间件</td>
+<td>轻量级</td>
+<td>丰富的生态系统</td>
+</tr>
+<tr>
+<td>包大小</td>
+<td>2KB</td>
+<td>较大</td>
+</tr>
+</tbody></table>
+<h3>Zustand vs Context API</h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Zustand</th>
+<th>Context API</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>性能</td>
+<td>更好</td>
+<td>可能导致不必要的重渲染</td>
+</tr>
+<tr>
+<td>选择性订阅</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>持久化</td>
+<td>内置支持</td>
+<td>需要手动实现</td>
+</tr>
+<tr>
+<td>中间件</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>学习成本</td>
+<td>低</td>
+<td>低</td>
+</tr>
+</tbody></table>
+<h2>调试和开发工具</h2>
+<h3>使用devtools中间件</h3>
+<pre><code class="language-jsx">import { devtools } from &#39;zustand/middleware&#39;
+
+const useStore = create(
+  devtools((set) =&gt; ({
+    bears: 0,
+    increasePopulation: () =&gt; set((state) =&gt; ({ bears: state.bears + 1 })),
+    removeAllBears: () =&gt; set({ bears: 0 })
+  }))
+)
+</code></pre>
+<h3>自定义调试</h3>
+<pre><code class="language-jsx">const useDebugStore = create((set, get) =&gt; ({
+  count: 0,
+  increment: () =&gt; {
+    const newCount = get().count + 1
+    console.log(`Count updated: ${get().count} -&gt; ${newCount}`)
+    set({ count: newCount })
+  }
+}))
+</code></pre>
+<h2>总结</h2>
+<p>Zustand是一个优秀的状态管理解决方案，适合各种规模的React应用。它的主要优势包括：</p>
+<ol>
+<li><strong>简单易用</strong> - 几乎没有学习成本</li>
+<li><strong>高性能</strong> - 选择性订阅和优化的更新机制</li>
+<li><strong>TypeScript友好</strong> - 原生TypeScript支持</li>
+<li><strong>轻量级</strong> - 最小的包大小</li>
+<li><strong>灵活</strong> - 支持中间件和自定义扩展</li>
+</ol>
+<p>选择Zustand还是其他状态管理库，主要取决于你的项目需求、团队经验和个人偏好。对于大多数项目，Zustand都是一个不错的选择。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="23-Redux集成.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">Redux集成</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="25-性能优化技巧.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">性能优化技巧</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

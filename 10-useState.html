@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>useState - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">useState</span>
+            </div>
+            <h1 class="doc-title">useState</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #4facfe">
+                🎣 Hooks API
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>useState Hook 详解</h1>
+<h2>什么是 useState？</h2>
+<p><code>useState</code> 是React中最基本的Hook，它让函数组件拥有状态管理能力。它返回一个状态值和一个更新该状态的函数。</p>
+<h2>基本语法</h2>
+<pre><code class="language-javascript">import React, { useState } from &#39;react&#39;;
+
+function MyComponent() {
+  const [state, setState] = useState(initialValue);
+  
+  return (
+    // JSX
+  );
+}
+</code></pre>
+<h2>基础用法</h2>
+<h3>简单状态管理</h3>
+<pre><code class="language-javascript">function Counter() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    &lt;div&gt;
+      &lt;p&gt;当前计数: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;+1&lt;/button&gt;
+      &lt;button onClick={() =&gt; setCount(count - 1)}&gt;-1&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>不同数据类型的状态</h3>
+<pre><code class="language-javascript">function StateTypes() {
+  // 数字状态
+  const [count, setCount] = useState(0);
+  
+  // 字符串状态
+  const [name, setName] = useState(&#39;&#39;);
+  
+  // 布尔状态
+  const [isVisible, setIsVisible] = useState(true);
+  
+  // 数组状态
+  const [items, setItems] = useState([]);
+  
+  // 对象状态
+  const [user, setUser] = useState({
+    name: &#39;&#39;,
+    email: &#39;&#39;,
+    age: 0
+  });
+  
+  // null/undefined状态
+  const [data, setData] = useState(null);
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;Count: {count}&lt;/div&gt;
+      &lt;div&gt;Name: {name}&lt;/div&gt;
+      &lt;div&gt;Visible: {isVisible ? &#39;Yes&#39; : &#39;No&#39;}&lt;/div&gt;
+      &lt;div&gt;Items: {items.length}&lt;/div&gt;
+      &lt;div&gt;User: {user.name}&lt;/div&gt;
+      &lt;div&gt;Data: {data ? &#39;Loaded&#39; : &#39;No data&#39;}&lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>状态更新方法</h2>
+<h3>直接设置新值</h3>
+<pre><code class="language-javascript">function SimpleUpdate() {
+  const [count, setCount] = useState(0);
+  const [name, setName] = useState(&#39;&#39;);
+  
+  const handleIncrement = () =&gt; {
+    setCount(10); // 直接设置为10
+  };
+  
+  const handleNameChange = (e) =&gt; {
+    setName(e.target.value); // 直接设置为输入值
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;Count: {count}&lt;/div&gt;
+      &lt;button onClick={handleIncrement}&gt;Set to 10&lt;/button&gt;
+      
+      &lt;input value={name} onChange={handleNameChange} /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>函数式更新</h3>
+<pre><code class="language-javascript">function FunctionalUpdate() {
+  const [count, setCount] = useState(0);
+  
+  const increment = () =&gt; {
+    // 基于前一个状态更新
+    setCount(prevCount =&gt; prevCount + 1);
+  };
+  
+  const incrementTwice = () =&gt; {
+    // 多次更新会被批处理，函数式更新确保正确性
+    setCount(prevCount =&gt; prevCount + 1);
+    setCount(prevCount =&gt; prevCount + 1);
+  };
+  
+  const reset = () =&gt; {
+    setCount(0);
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;Count: {count}&lt;/div&gt;
+      &lt;button onClick={increment}&gt;+1&lt;/button&gt;
+      &lt;button onClick={incrementTwice}&gt;+2&lt;/button&gt;
+      &lt;button onClick={reset}&gt;Reset&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>复杂状态管理</h2>
+<h3>对象状态更新</h3>
+<pre><code class="language-javascript">function UserProfile() {
+  const [user, setUser] = useState({
+    name: &#39;John Doe&#39;,
+    email: &#39;john@example.com&#39;,
+    age: 30,
+    preferences: {
+      theme: &#39;light&#39;,
+      notifications: true
+    }
+  });
+  
+  // 更新顶层属性
+  const updateName = (newName) =&gt; {
+    setUser(prevUser =&gt; ({
+      ...prevUser,
+      name: newName
+    }));
+  };
+  
+  // 更新嵌套对象
+  const updateTheme = (newTheme) =&gt; {
+    setUser(prevUser =&gt; ({
+      ...prevUser,
+      preferences: {
+        ...prevUser.preferences,
+        theme: newTheme
+      }
+    }));
+  };
+  
+  // 批量更新
+  const updateUserInfo = (name, email) =&gt; {
+    setUser(prevUser =&gt; ({
+      ...prevUser,
+      name,
+      email
+    }));
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;User Profile&lt;/h3&gt;
+      &lt;div&gt;Name: {user.name}&lt;/div&gt;
+      &lt;div&gt;Email: {user.email}&lt;/div&gt;
+      &lt;div&gt;Age: {user.age}&lt;/div&gt;
+      &lt;div&gt;Theme: {user.preferences.theme}&lt;/div&gt;
+      
+      &lt;button onClick={() =&gt; updateName(&#39;Jane Doe&#39;)}&gt;
+        Change Name
+      &lt;/button&gt;
+      
+      &lt;button onClick={() =&gt; updateTheme(&#39;dark&#39;)}&gt;
+        Switch to Dark Theme
+      &lt;/button&gt;
+      
+      &lt;button onClick={() =&gt; updateUserInfo(&#39;Bob Smith&#39;, &#39;bob@example.com&#39;)}&gt;
+        Update Info
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>数组状态管理</h3>
+<pre><code class="language-javascript">function TodoList() {
+  const [todos, setTodos] = useState([
+    { id: 1, text: &#39;学习React&#39;, completed: false },
+    { id: 2, text: &#39;写文档&#39;, completed: true }
+  ]);
+  
+  // 添加新项目
+  const addTodo = (text) =&gt; {
+    const newTodo = {
+      id: Date.now(),
+      text,
+      completed: false
+    };
+    setTodos(prevTodos =&gt; [...prevTodos, newTodo]);
+  };
+  
+  // 删除项目
+  const deleteTodo = (id) =&gt; {
+    setTodos(prevTodos =&gt; prevTodos.filter(todo =&gt; todo.id !== id));
+  };
+  
+  // 切换完成状态
+  const toggleTodo = (id) =&gt; {
+    setTodos(prevTodos =&gt;
+      prevTodos.map(todo =&gt;
+        todo.id === id 
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      )
+    );
+  };
+  
+  // 编辑项目
+  const editTodo = (id, newText) =&gt; {
+    setTodos(prevTodos =&gt;
+      prevTodos.map(todo =&gt;
+        todo.id === id 
+          ? { ...todo, text: newText }
+          : todo
+      )
+    );
+  };
+  
+  // 清空所有已完成项目
+  const clearCompleted = () =&gt; {
+    setTodos(prevTodos =&gt; prevTodos.filter(todo =&gt; !todo.completed));
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;Todo List ({todos.length} items)&lt;/h3&gt;
+      
+      &lt;button onClick={() =&gt; addTodo(&#39;New Todo&#39;)}&gt;
+        Add Todo
+      &lt;/button&gt;
+      
+      &lt;button onClick={clearCompleted}&gt;
+        Clear Completed
+      &lt;/button&gt;
+      
+      &lt;ul&gt;
+        {todos.map(todo =&gt; (
+          &lt;li key={todo.id}&gt;
+            &lt;input
+              type=&quot;checkbox&quot;
+              checked={todo.completed}
+              onChange={() =&gt; toggleTodo(todo.id)}
+            /&gt;
+            &lt;span style={{ 
+              textDecoration: todo.completed ? &#39;line-through&#39; : &#39;none&#39; 
+            }}&gt;
+              {todo.text}
+            &lt;/span&gt;
+            &lt;button onClick={() =&gt; editTodo(todo.id, prompt(&#39;New text:&#39;, todo.text))}&gt;
+              Edit
+            &lt;/button&gt;
+            &lt;button onClick={() =&gt; deleteTodo(todo.id)}&gt;
+              Delete
+            &lt;/button&gt;
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>惰性初始状态</h2>
+<h3>为什么需要惰性初始化？</h3>
+<pre><code class="language-javascript">// ❌ 每次渲染都会执行昂贵的计算
+function ExpensiveComponent() {
+  const [data, setData] = useState(expensiveCalculation());
+  
+  return &lt;div&gt;{data}&lt;/div&gt;;
+}
+
+// ✅ 只在初始化时执行一次
+function ExpensiveComponent() {
+  const [data, setData] = useState(() =&gt; expensiveCalculation());
+  
+  return &lt;div&gt;{data}&lt;/div&gt;;
+}
+
+function expensiveCalculation() {
+  console.log(&#39;Performing expensive calculation...&#39;);
+  let result = 0;
+  for (let i = 0; i &lt; 1000000; i++) {
+    result += i;
+  }
+  return result;
+}
+</code></pre>
+<h3>常见的惰性初始化场景</h3>
+<pre><code class="language-javascript">function ComponentWithLocalStorage() {
+  // 从localStorage读取初始值
+  const [user, setUser] = useState(() =&gt; {
+    const savedUser = localStorage.getItem(&#39;user&#39;);
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
+  
+  // 从URL参数读取初始值
+  const [searchQuery, setSearchQuery] = useState(() =&gt; {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(&#39;q&#39;) || &#39;&#39;;
+  });
+  
+  // 复杂的初始状态计算
+  const [gameState, setGameState] = useState(() =&gt; {
+    return {
+      board: Array(9).fill(null),
+      currentPlayer: &#39;X&#39;,
+      winner: null,
+      gameId: Math.random().toString(36).substr(2, 9)
+    };
+  });
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;User: {user?.name || &#39;Not logged in&#39;}&lt;/div&gt;
+      &lt;div&gt;Search: {searchQuery}&lt;/div&gt;
+      &lt;div&gt;Game ID: {gameState.gameId}&lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>多个状态变量</h2>
+<h3>何时分离状态</h3>
+<pre><code class="language-javascript">function UserForm() {
+  // ✅ 相关但独立的状态可以分开
+  const [name, setName] = useState(&#39;&#39;);
+  const [email, setEmail] = useState(&#39;&#39;);
+  const [age, setAge] = useState(0);
+  
+  // ✅ UI状态通常单独管理
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [showValidation, setShowValidation] = useState(false);
+  
+  const handleSubmit = async (e) =&gt; {
+    e.preventDefault();
+    setIsLoading(true);
+    setError(null);
+    
+    try {
+      await submitUser({ name, email, age });
+      // 成功处理
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input 
+        value={name}
+        onChange={e =&gt; setName(e.target.value)}
+        placeholder=&quot;Name&quot;
+      /&gt;
+      &lt;input 
+        value={email}
+        onChange={e =&gt; setEmail(e.target.value)}
+        placeholder=&quot;Email&quot;
+      /&gt;
+      &lt;input 
+        type=&quot;number&quot;
+        value={age}
+        onChange={e =&gt; setAge(parseInt(e.target.value))}
+        placeholder=&quot;Age&quot;
+      /&gt;
+      
+      {error &amp;&amp; &lt;div className=&quot;error&quot;&gt;{error}&lt;/div&gt;}
+      
+      &lt;button type=&quot;submit&quot; disabled={isLoading}&gt;
+        {isLoading ? &#39;Submitting...&#39; : &#39;Submit&#39;}
+      &lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+</code></pre>
+<h3>何时合并状态</h3>
+<pre><code class="language-javascript">function UserForm() {
+  // ✅ 密切相关的状态可以合并
+  const [formData, setFormData] = useState({
+    name: &#39;&#39;,
+    email: &#39;&#39;,
+    age: 0
+  });
+  
+  // ✅ UI状态也可以合并
+  const [ui, setUi] = useState({
+    isLoading: false,
+    error: null,
+    showValidation: false
+  });
+  
+  const updateFormData = (field, value) =&gt; {
+    setFormData(prev =&gt; ({
+      ...prev,
+      [field]: value
+    }));
+  };
+  
+  const updateUi = (updates) =&gt; {
+    setUi(prev =&gt; ({
+      ...prev,
+      ...updates
+    }));
+  };
+  
+  return (
+    &lt;form&gt;
+      &lt;input 
+        value={formData.name}
+        onChange={e =&gt; updateFormData(&#39;name&#39;, e.target.value)}
+        placeholder=&quot;Name&quot;
+      /&gt;
+      
+      {ui.error &amp;&amp; &lt;div className=&quot;error&quot;&gt;{ui.error}&lt;/div&gt;}
+      
+      &lt;button disabled={ui.isLoading}&gt;
+        {ui.isLoading ? &#39;Submitting...&#39; : &#39;Submit&#39;}
+      &lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+</code></pre>
+<h2>常见模式和技巧</h2>
+<h3>状态重置</h3>
+<pre><code class="language-javascript">function ResettableCounter() {
+  const [count, setCount] = useState(0);
+  const [initialValue] = useState(0); // 保存初始值
+  
+  const reset = () =&gt; {
+    setCount(initialValue);
+  };
+  
+  // 或者使用useCallback记住重置函数
+  const resetToValue = useCallback((value) =&gt; {
+    setCount(value);
+  }, []);
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;Count: {count}&lt;/div&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;+1&lt;/button&gt;
+      &lt;button onClick={reset}&gt;Reset&lt;/button&gt;
+      &lt;button onClick={() =&gt; resetToValue(10)}&gt;Reset to 10&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>状态持久化</h3>
+<pre><code class="language-javascript">function PersistentCounter() {
+  const [count, setCount] = useState(() =&gt; {
+    const saved = localStorage.getItem(&#39;count&#39;);
+    return saved ? parseInt(saved) : 0;
+  });
+  
+  // 每次count变化时保存到localStorage
+  useEffect(() =&gt; {
+    localStorage.setItem(&#39;count&#39;, count.toString());
+  }, [count]);
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;Count: {count}&lt;/div&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;+1&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>状态派生</h3>
+<pre><code class="language-javascript">function DerivedState() {
+  const [items, setItems] = useState([
+    { id: 1, name: &#39;Apple&#39;, price: 1.2, quantity: 5 },
+    { id: 2, name: &#39;Banana&#39;, price: 0.8, quantity: 3 },
+    { id: 3, name: &#39;Orange&#39;, price: 1.5, quantity: 2 }
+  ]);
+  
+  // 从状态派生的值
+  const totalItems = items.reduce((sum, item) =&gt; sum + item.quantity, 0);
+  const totalValue = items.reduce((sum, item) =&gt; sum + (item.price * item.quantity), 0);
+  const averagePrice = totalValue / totalItems;
+  
+  const updateQuantity = (id, newQuantity) =&gt; {
+    setItems(prevItems =&gt;
+      prevItems.map(item =&gt;
+        item.id === id 
+          ? { ...item, quantity: newQuantity }
+          : item
+      )
+    );
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;Shopping Cart&lt;/h3&gt;
+      &lt;div&gt;Total Items: {totalItems}&lt;/div&gt;
+      &lt;div&gt;Total Value: ${totalValue.toFixed(2)}&lt;/div&gt;
+      &lt;div&gt;Average Price: ${averagePrice.toFixed(2)}&lt;/div&gt;
+      
+      {items.map(item =&gt; (
+        &lt;div key={item.id}&gt;
+          &lt;span&gt;{item.name} - ${item.price} x {item.quantity}&lt;/span&gt;
+          &lt;button 
+            onClick={() =&gt; updateQuantity(item.id, item.quantity + 1)}
+          &gt;
+            +
+          &lt;/button&gt;
+          &lt;button 
+            onClick={() =&gt; updateQuantity(item.id, Math.max(0, item.quantity - 1))}
+          &gt;
+            -
+          &lt;/button&gt;
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>性能优化</h2>
+<h3>避免不必要的对象创建</h3>
+<pre><code class="language-javascript">function OptimizedComponent() {
+  const [user, setUser] = useState({
+    name: &#39;John&#39;,
+    email: &#39;john@example.com&#39;
+  });
+  
+  // ❌ 每次渲染都创建新对象
+  const style = {
+    color: &#39;red&#39;,
+    fontSize: &#39;16px&#39;
+  };
+  
+  // ✅ 将样式对象移到组件外部或使用useMemo
+  const memoizedStyle = useMemo(() =&gt; ({
+    color: &#39;red&#39;,
+    fontSize: &#39;16px&#39;
+  }), []);
+  
+  // ✅ 或者定义在组件外部
+  return (
+    &lt;div style={memoizedStyle}&gt;
+      {user.name}
+    &lt;/div&gt;
+  );
+}
+
+// 在组件外部定义常量
+const BUTTON_STYLES = {
+  primary: { backgroundColor: &#39;#007bff&#39;, color: &#39;white&#39; },
+  secondary: { backgroundColor: &#39;#6c757d&#39;, color: &#39;white&#39; }
+};
+</code></pre>
+<h3>批量状态更新</h3>
+<pre><code class="language-javascript">function BatchUpdates() {
+  const [count, setCount] = useState(0);
+  const [name, setName] = useState(&#39;&#39;);
+  
+  const handleMultipleUpdates = () =&gt; {
+    // React 18+ 会自动批处理这些更新
+    setCount(c =&gt; c + 1);
+    setName(&#39;Updated&#39;);
+    
+    // 在事件处理器中，这些更新会被批处理成一次重新渲染
+  };
+  
+  const handleAsyncUpdates = async () =&gt; {
+    await someAsyncOperation();
+    
+    // React 18+ 也会批处理异步更新
+    setCount(c =&gt; c + 1);
+    setName(&#39;Async Updated&#39;);
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;Count: {count}&lt;/div&gt;
+      &lt;div&gt;Name: {name}&lt;/div&gt;
+      &lt;button onClick={handleMultipleUpdates}&gt;
+        Update Both
+      &lt;/button&gt;
+      &lt;button onClick={handleAsyncUpdates}&gt;
+        Async Update
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>常见错误和解决方案</h2>
+<h3>错误1：直接修改状态</h3>
+<pre><code class="language-javascript">// ❌ 错误：直接修改状态对象
+function WrongWay() {
+  const [user, setUser] = useState({ name: &#39;John&#39;, age: 30 });
+  
+  const updateAge = () =&gt; {
+    user.age = 31; // 错误！直接修改了状态
+    setUser(user); // 不会触发重新渲染
+  };
+  
+  return &lt;button onClick={updateAge}&gt;Update Age&lt;/button&gt;;
+}
+
+// ✅ 正确：创建新对象
+function RightWay() {
+  const [user, setUser] = useState({ name: &#39;John&#39;, age: 30 });
+  
+  const updateAge = () =&gt; {
+    setUser(prevUser =&gt; ({
+      ...prevUser,
+      age: 31
+    }));
+  };
+  
+  return &lt;button onClick={updateAge}&gt;Update Age&lt;/button&gt;;
+}
+</code></pre>
+<h3>错误2：闭包问题</h3>
+<pre><code class="language-javascript">// ❌ 可能的问题：使用过时的状态值
+function ClosureProblem() {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() =&gt; {
+    const interval = setInterval(() =&gt; {
+      setCount(count + 1); // count始终是0
+    }, 1000);
+    
+    return () =&gt; clearInterval(interval);
+  }, []); // 空依赖数组
+  
+  return &lt;div&gt;Count: {count}&lt;/div&gt;;
+}
+
+// ✅ 解决方案：使用函数式更新
+function ClosureSolution() {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() =&gt; {
+    const interval = setInterval(() =&gt; {
+      setCount(prevCount =&gt; prevCount + 1);
+    }, 1000);
+    
+    return () =&gt; clearInterval(interval);
+  }, []);
+  
+  return &lt;div&gt;Count: {count}&lt;/div&gt;;
+}
+</code></pre>
+<h3>错误3：异步状态更新的时序问题</h3>
+<pre><code class="language-javascript">// ❌ 可能的竞态条件
+function AsyncProblem() {
+  const [data, setData] = useState(null);
+  const [userId, setUserId] = useState(1);
+  
+  useEffect(() =&gt; {
+    fetchUser(userId).then(user =&gt; {
+      setData(user); // 可能设置了错误用户的数据
+    });
+  }, [userId]);
+  
+  return &lt;div&gt;{data?.name}&lt;/div&gt;;
+}
+
+// ✅ 解决方案：使用清理函数或AbortController
+function AsyncSolution() {
+  const [data, setData] = useState(null);
+  const [userId, setUserId] = useState(1);
+  
+  useEffect(() =&gt; {
+    let cancelled = false;
+    
+    fetchUser(userId).then(user =&gt; {
+      if (!cancelled) {
+        setData(user);
+      }
+    });
+    
+    return () =&gt; {
+      cancelled = true;
+    };
+  }, [userId]);
+  
+  return &lt;div&gt;{data?.name}&lt;/div&gt;;
+}
+</code></pre>
+<h2>TypeScript 使用</h2>
+<h3>基本类型定义</h3>
+<pre><code class="language-typescript">interface User {
+  id: number;
+  name: string;
+  email: string;
+  age?: number;
+}
+
+function TypeScriptExample() {
+  // 明确指定类型
+  const [user, setUser] = useState&lt;User | null&gt;(null);
+  const [users, setUsers] = useState&lt;User[]&gt;([]);
+  const [count, setCount] = useState&lt;number&gt;(0);
+  
+  // 联合类型
+  const [status, setStatus] = useState&lt;&#39;loading&#39; | &#39;success&#39; | &#39;error&#39;&gt;(&#39;loading&#39;);
+  
+  // 复杂对象类型
+  const [formState, setFormState] = useState&lt;{
+    values: Record&lt;string, string&gt;;
+    errors: Record&lt;string, string&gt;;
+    touched: Record&lt;string, boolean&gt;;
+  }&gt;({
+    values: {},
+    errors: {},
+    touched: {}
+  });
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;User: {user?.name}&lt;/div&gt;
+      &lt;div&gt;Users count: {users.length}&lt;/div&gt;
+      &lt;div&gt;Count: {count}&lt;/div&gt;
+      &lt;div&gt;Status: {status}&lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>最佳实践总结</h2>
+<ol>
+<li><strong>使用函数式更新</strong>：当新状态依赖于前一个状态时</li>
+<li><strong>保持状态结构简单</strong>：避免过于嵌套的对象</li>
+<li><strong>使用惰性初始化</strong>：对于昂贵的初始值计算</li>
+<li><strong>正确分组状态</strong>：相关状态可以合并，独立状态应该分开</li>
+<li><strong>避免直接修改状态</strong>：始终创建新的状态对象</li>
+<li><strong>考虑性能影响</strong>：避免在渲染过程中创建新对象</li>
+<li><strong>使用TypeScript</strong>：获得更好的类型安全性</li>
+</ol>
+<h2>下一步</h2>
+<p>学习完useState后，建议继续学习：</p>
+<ol>
+<li><a href="./11-useEffect.md">useEffect</a> - 处理副作用</li>
+<li><a href="./12-useContext.md">useContext</a> - 跨组件状态共享</li>
+<li><a href="./13-useReducer.md">useReducer</a> - 复杂状态管理</li>
+</ol>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="09-Hooks概述.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">Hooks概述</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="11-useEffect.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">useEffect</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

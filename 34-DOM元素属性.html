@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM元素属性 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">DOM元素属性</span>
+            </div>
+            <h1 class="doc-title">DOM元素属性</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #fbc2eb">
+                📖 API参考
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>34-DOM元素属性</h1>
+<p>React支持大部分HTML标准属性，但有一些特殊的命名约定和行为。本文档详细介绍React中DOM元素的属性使用方法。</p>
+<h2>基础HTML属性</h2>
+<h3>常用属性</h3>
+<pre><code class="language-jsx">// 基础HTML属性
+function BasicElement() {
+  return (
+    &lt;div
+      id=&quot;main-content&quot;
+      className=&quot;container&quot;
+      title=&quot;主要内容区域&quot;
+      role=&quot;main&quot;
+      aria-label=&quot;主要内容&quot;
+      data-testid=&quot;main-container&quot;
+    &gt;
+      &lt;p&gt;内容&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>属性命名约定</h3>
+<pre><code class="language-jsx">// React中的属性命名（camelCase）
+function AttributeNaming() {
+  return (
+    &lt;div
+      className=&quot;box&quot;           // class -&gt; className
+      htmlFor=&quot;input-id&quot;        // for -&gt; htmlFor
+      tabIndex={0}              // tabindex -&gt; tabIndex
+      autoComplete=&quot;off&quot;        // autocomplete -&gt; autoComplete
+      autoFocus={true}          // autofocus -&gt; autoFocus
+      contentEditable={true}    // contenteditable -&gt; contentEditable
+      spellCheck={false}        // spellcheck -&gt; spellCheck
+      readOnly={true}           // readonly -&gt; readOnly
+      maxLength={100}           // maxlength -&gt; maxLength
+      minLength={5}             // minlength -&gt; minLength
+      rowSpan={2}               // rowspan -&gt; rowSpan
+      colSpan={3}               // colspan -&gt; colSpan
+      useMap=&quot;#map&quot;             // usemap -&gt; useMap
+      accessKey=&quot;k&quot;             // accesskey -&gt; accessKey
+      contentEditable=&quot;true&quot;    // contenteditable -&gt; contentEditable
+    /&gt;
+  )
+}
+</code></pre>
+<h2>表单元素属性</h2>
+<h3>Input元素</h3>
+<pre><code class="language-jsx">function InputAttributes() {
+  return (
+    &lt;div&gt;
+      {/* 文本输入 */}
+      &lt;input
+        type=&quot;text&quot;
+        name=&quot;username&quot;
+        value={value}
+        onChange={handleChange}
+        placeholder=&quot;请输入用户名&quot;
+        required
+        disabled={false}
+        readOnly={false}
+        autoComplete=&quot;username&quot;
+        autoFocus
+        maxLength={20}
+        minLength={3}
+        pattern=&quot;[a-zA-Z0-9]+&quot;
+        title=&quot;只能包含字母和数字&quot;
+      /&gt;
+
+      {/* 数字输入 */}
+      &lt;input
+        type=&quot;number&quot;
+        name=&quot;age&quot;
+        value={age}
+        onChange={handleAgeChange}
+        min={0}
+        max={120}
+        step={1}
+        placeholder=&quot;年龄&quot;
+      /&gt;
+
+      {/* 邮箱输入 */}
+      &lt;input
+        type=&quot;email&quot;
+        name=&quot;email&quot;
+        value={email}
+        onChange={handleEmailChange}
+        placeholder=&quot;请输入邮箱&quot;
+        autoComplete=&quot;email&quot;
+        required
+      /&gt;
+
+      {/* 密码输入 */}
+      &lt;input
+        type=&quot;password&quot;
+        name=&quot;password&quot;
+        value={password}
+        onChange={handlePasswordChange}
+        placeholder=&quot;请输入密码&quot;
+        autoComplete=&quot;current-password&quot;
+        minLength={8}
+        required
+      /&gt;
+
+      {/* 复选框 */}
+      &lt;input
+        type=&quot;checkbox&quot;
+        name=&quot;agree&quot;
+        checked={agreed}
+        onChange={handleAgreeChange}
+        required
+      /&gt;
+
+      {/* 单选框 */}
+      &lt;input
+        type=&quot;radio&quot;
+        name=&quot;gender&quot;
+        value=&quot;male&quot;
+        checked={gender === &#39;male&#39;}
+        onChange={handleGenderChange}
+      /&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>Select元素</h3>
+<pre><code class="language-jsx">function SelectAttributes() {
+  return (
+    &lt;div&gt;
+      {/* 单选下拉框 */}
+      &lt;select
+        name=&quot;country&quot;
+        value={selectedCountry}
+        onChange={handleCountryChange}
+        required
+        disabled={loading}
+        autoFocus
+      &gt;
+        &lt;option value=&quot;&quot;&gt;请选择国家&lt;/option&gt;
+        &lt;option value=&quot;china&quot;&gt;中国&lt;/option&gt;
+        &lt;option value=&quot;usa&quot;&gt;美国&lt;/option&gt;
+        &lt;option value=&quot;japan&quot;&gt;日本&lt;/option&gt;
+      &lt;/select&gt;
+
+      {/* 多选下拉框 */}
+      &lt;select
+        name=&quot;skills&quot;
+        multiple
+        value={selectedSkills}
+        onChange={handleSkillsChange}
+        size={5}
+      &gt;
+        &lt;option value=&quot;react&quot;&gt;React&lt;/option&gt;
+        &lt;option value=&quot;vue&quot;&gt;Vue&lt;/option&gt;
+        &lt;option value=&quot;angular&quot;&gt;Angular&lt;/option&gt;
+        &lt;option value=&quot;node&quot;&gt;Node.js&lt;/option&gt;
+        &lt;option value=&quot;python&quot;&gt;Python&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>Textarea元素</h3>
+<pre><code class="language-jsx">function TextareaAttributes() {
+  return (
+    &lt;textarea
+      name=&quot;description&quot;
+      value={description}
+      onChange={handleDescriptionChange}
+      placeholder=&quot;请输入描述&quot;
+      rows={5}
+      cols={40}
+      maxLength={500}
+      required
+      disabled={false}
+      readOnly={false}
+      autoFocus
+      spellCheck={true}
+      wrap=&quot;soft&quot;
+    /&gt;
+  )
+}
+</code></pre>
+<h2>样式属性</h2>
+<h3>内联样式</h3>
+<pre><code class="language-jsx">function InlineStyles() {
+  const boxStyle = {
+    width: &#39;200px&#39;,
+    height: &#39;100px&#39;,
+    backgroundColor: &#39;#f0f0f0&#39;,
+    border: &#39;1px solid #ccc&#39;,
+    borderRadius: &#39;4px&#39;,
+    padding: &#39;16px&#39;,
+    margin: &#39;8px&#39;,
+    fontSize: &#39;14px&#39;,
+    fontWeight: &#39;bold&#39;,
+    color: &#39;#333&#39;,
+    textAlign: &#39;center&#39;,
+    display: &#39;flex&#39;,
+    alignItems: &#39;center&#39;,
+    justifyContent: &#39;center&#39;,
+    boxShadow: &#39;0 2px 4px rgba(0,0,0,0.1)&#39;,
+    transition: &#39;all 0.3s ease&#39;,
+    cursor: &#39;pointer&#39;,
+    userSelect: &#39;none&#39;
+  }
+
+  return (
+    &lt;div style={boxStyle}&gt;
+      样式化的盒子
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>样式属性命名</h3>
+<pre><code class="language-jsx">function StyleNaming() {
+  return (
+    &lt;div
+      style={{
+        // CSS属性需要转换为camelCase
+        backgroundColor: &#39;red&#39;,      // background-color
+        fontSize: &#39;16px&#39;,           // font-size
+        fontWeight: &#39;bold&#39;,         // font-weight
+        textAlign: &#39;center&#39;,        // text-align
+        borderRadius: &#39;4px&#39;,        // border-radius
+        marginTop: &#39;10px&#39;,          // margin-top
+        paddingLeft: &#39;20px&#39;,        // padding-left
+        zIndex: 1000,               // z-index
+        boxShadow: &#39;0 2px 4px rgba(0,0,0,0.1)&#39;, // box-shadow
+        textDecoration: &#39;underline&#39;, // text-decoration
+        whiteSpace: &#39;nowrap&#39;,       // white-space
+        wordBreak: &#39;break-all&#39;,     // word-break
+        lineHeight: &#39;1.5&#39;,          // line-height
+        letterSpacing: &#39;1px&#39;,       // letter-spacing
+        textTransform: &#39;uppercase&#39;, // text-transform
+        verticalAlign: &#39;middle&#39;,    // vertical-align
+        listStyle: &#39;none&#39;,          // list-style
+        borderTop: &#39;1px solid #ccc&#39;, // border-top
+        borderBottom: &#39;1px solid #ccc&#39;, // border-bottom
+        borderLeft: &#39;1px solid #ccc&#39;,   // border-left
+        borderRight: &#39;1px solid #ccc&#39;,  // border-right
+        outlineOffset: &#39;2px&#39;,       // outline-offset
+        textShadow: &#39;1px 1px 2px rgba(0,0,0,0.3)&#39;, // text-shadow
+        transformOrigin: &#39;center&#39;,  // transform-origin
+        backfaceVisibility: &#39;hidden&#39;, // backface-visibility
+        WebkitTransform: &#39;rotate(45deg)&#39;, // -webkit-transform (vendor prefix)
+        MozTransform: &#39;rotate(45deg)&#39;,    // -moz-transform
+        msTransform: &#39;rotate(45deg)&#39;      // -ms-transform
+      }}
+    &gt;
+      样式示例
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>事件属性</h2>
+<h3>鼠标事件</h3>
+<pre><code class="language-jsx">function MouseEventAttributes() {
+  return (
+    &lt;div
+      onClick={handleClick}
+      onDoubleClick={handleDoubleClick}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onMouseOver={handleMouseOver}
+      onMouseOut={handleMouseOut}
+      onContextMenu={handleContextMenu}
+      onDrag={handleDrag}
+      onDragStart={handleDragStart}
+      onDragEnd={handleDragEnd}
+      onDragOver={handleDragOver}
+      onDragEnter={handleDragEnter}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+    &gt;
+      鼠标事件元素
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>键盘事件</h3>
+<pre><code class="language-jsx">function KeyboardEventAttributes() {
+  return (
+    &lt;input
+      type=&quot;text&quot;
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
+      onKeyPress={handleKeyPress} // 已废弃，使用 onKeyDown 替代
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      onInput={handleInput}
+      onChange={handleChange}
+      onSelect={handleSelect}
+      onCopy={handleCopy}
+      onCut={handleCut}
+      onPaste={handlePaste}
+    /&gt;
+  )
+}
+</code></pre>
+<h3>表单事件</h3>
+<pre><code class="language-jsx">function FormEventAttributes() {
+  return (
+    &lt;form
+      onSubmit={handleSubmit}
+      onReset={handleReset}
+      onInvalid={handleInvalid}
+    &gt;
+      &lt;input
+        type=&quot;text&quot;
+        onChange={handleInputChange}
+        onInput={handleInput}
+        onInvalid={handleInputInvalid}
+        required
+      /&gt;
+      
+      &lt;select onChange={handleSelectChange}&gt;
+        &lt;option value=&quot;&quot;&gt;选择选项&lt;/option&gt;
+        &lt;option value=&quot;option1&quot;&gt;选项1&lt;/option&gt;
+      &lt;/select&gt;
+      
+      &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+      &lt;button type=&quot;reset&quot;&gt;重置&lt;/button&gt;
+    &lt;/form&gt;
+  )
+}
+</code></pre>
+<h2>媒体元素属性</h2>
+<h3>图片元素</h3>
+<pre><code class="language-jsx">function ImageAttributes() {
+  return (
+    &lt;img
+      src=&quot;/path/to/image.jpg&quot;
+      alt=&quot;图片描述&quot;
+      width={300}
+      height={200}
+      loading=&quot;lazy&quot;
+      decoding=&quot;async&quot;
+      onLoad={handleImageLoad}
+      onError={handleImageError}
+      onAbort={handleImageAbort}
+      crossOrigin=&quot;anonymous&quot;
+      referrerPolicy=&quot;no-referrer&quot;
+      sizes=&quot;(max-width: 768px) 100vw, 50vw&quot;
+      srcSet=&quot;/image-small.jpg 300w, /image-large.jpg 600w&quot;
+      useMap=&quot;#image-map&quot;
+    /&gt;
+  )
+}
+</code></pre>
+<h3>视频和音频元素</h3>
+<pre><code class="language-jsx">function MediaAttributes() {
+  return (
+    &lt;div&gt;
+      {/* 视频元素 */}
+      &lt;video
+        src=&quot;/path/to/video.mp4&quot;
+        width={640}
+        height={360}
+        controls
+        autoPlay={false}
+        loop={false}
+        muted={false}
+        preload=&quot;metadata&quot;
+        poster=&quot;/path/to/poster.jpg&quot;
+        onPlay={handlePlay}
+        onPause={handlePause}
+        onEnded={handleEnded}
+        onTimeUpdate={handleTimeUpdate}
+        onVolumeChange={handleVolumeChange}
+        onLoadedMetadata={handleLoadedMetadata}
+        onError={handleMediaError}
+      &gt;
+        &lt;source src=&quot;/video.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+        &lt;source src=&quot;/video.webm&quot; type=&quot;video/webm&quot; /&gt;
+        您的浏览器不支持视频播放
+      &lt;/video&gt;
+
+      {/* 音频元素 */}
+      &lt;audio
+        src=&quot;/path/to/audio.mp3&quot;
+        controls
+        autoPlay={false}
+        loop={false}
+        muted={false}
+        preload=&quot;metadata&quot;
+        onPlay={handleAudioPlay}
+        onPause={handleAudioPause}
+        onEnded={handleAudioEnded}
+        onTimeUpdate={handleAudioTimeUpdate}
+        onVolumeChange={handleAudioVolumeChange}
+        onLoadedMetadata={handleAudioLoadedMetadata}
+        onError={handleAudioError}
+      &gt;
+        &lt;source src=&quot;/audio.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;
+        &lt;source src=&quot;/audio.ogg&quot; type=&quot;audio/ogg&quot; /&gt;
+        您的浏览器不支持音频播放
+      &lt;/audio&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>表格元素属性</h2>
+<pre><code class="language-jsx">function TableAttributes() {
+  return (
+    &lt;table
+      border={1}
+      cellPadding={5}
+      cellSpacing={0}
+      summary=&quot;用户信息表格&quot;
+    &gt;
+      &lt;caption&gt;用户信息&lt;/caption&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th
+            scope=&quot;col&quot;
+            abbr=&quot;ID&quot;
+            axis=&quot;id&quot;
+            rowSpan={1}
+            colSpan={1}
+          &gt;
+            ID
+          &lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;姓名&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;年龄&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td
+            headers=&quot;id-header&quot;
+            rowSpan={1}
+            colSpan={1}
+          &gt;
+            1
+          &lt;/td&gt;
+          &lt;td&gt;张三&lt;/td&gt;
+          &lt;td&gt;25&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  )
+}
+</code></pre>
+<h2>链接和导航属性</h2>
+<pre><code class="language-jsx">function LinkAttributes() {
+  return (
+    &lt;div&gt;
+      {/* 链接元素 */}
+      &lt;a
+        href=&quot;/path/to/page&quot;
+        target=&quot;_blank&quot;
+        rel=&quot;noopener noreferrer&quot;
+        download=&quot;filename.pdf&quot;
+        hrefLang=&quot;en&quot;
+        type=&quot;application/pdf&quot;
+        ping=&quot;/analytics&quot;
+        referrerPolicy=&quot;no-referrer&quot;
+        onClick={handleLinkClick}
+      &gt;
+        外部链接
+      &lt;/a&gt;
+
+      {/* 区域元素 */}
+      &lt;area
+        shape=&quot;rect&quot;
+        coords=&quot;0,0,100,100&quot;
+        href=&quot;/area-link&quot;
+        alt=&quot;区域描述&quot;
+        target=&quot;_blank&quot;
+        rel=&quot;noopener&quot;
+      /&gt;
+
+      {/* 基础元素 */}
+      &lt;base
+        href=&quot;/base-url/&quot;
+        target=&quot;_blank&quot;
+      /&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>无障碍属性 (ARIA)</h2>
+<pre><code class="language-jsx">function AccessibilityAttributes() {
+  return (
+    &lt;div&gt;
+      {/* 基础ARIA属性 */}
+      &lt;button
+        aria-label=&quot;关闭对话框&quot;
+        aria-describedby=&quot;help-text&quot;
+        aria-expanded={isExpanded}
+        aria-pressed={isPressed}
+        aria-disabled={isDisabled}
+        aria-hidden={isHidden}
+        role=&quot;button&quot;
+        tabIndex={0}
+      &gt;
+        按钮
+      &lt;/button&gt;
+
+      {/* 列表ARIA属性 */}
+      &lt;ul
+        role=&quot;listbox&quot;
+        aria-label=&quot;选项列表&quot;
+        aria-multiselectable={true}
+        aria-orientation=&quot;vertical&quot;
+      &gt;
+        &lt;li
+          role=&quot;option&quot;
+          aria-selected={isSelected}
+          aria-posinset={1}
+          aria-setsize={5}
+        &gt;
+          选项1
+        &lt;/li&gt;
+      &lt;/ul&gt;
+
+      {/* 表单ARIA属性 */}
+      &lt;input
+        type=&quot;text&quot;
+        aria-label=&quot;搜索&quot;
+        aria-placeholder=&quot;请输入搜索关键词&quot;
+        aria-required={true}
+        aria-invalid={hasError}
+        aria-describedby=&quot;error-message&quot;
+        aria-autocomplete=&quot;list&quot;
+        aria-controls=&quot;suggestions&quot;
+        aria-activedescendant=&quot;suggestion-1&quot;
+      /&gt;
+
+      {/* 导航ARIA属性 */}
+      &lt;nav
+        role=&quot;navigation&quot;
+        aria-label=&quot;主导航&quot;
+        aria-current=&quot;page&quot;
+      &gt;
+        &lt;a
+          href=&quot;/home&quot;
+          aria-current=&quot;page&quot;
+          aria-label=&quot;首页 (当前页面)&quot;
+        &gt;
+          首页
+        &lt;/a&gt;
+      &lt;/nav&gt;
+
+      {/* 对话框ARIA属性 */}
+      &lt;div
+        role=&quot;dialog&quot;
+        aria-modal={true}
+        aria-labelledby=&quot;dialog-title&quot;
+        aria-describedby=&quot;dialog-description&quot;
+      &gt;
+        &lt;h2 id=&quot;dialog-title&quot;&gt;对话框标题&lt;/h2&gt;
+        &lt;p id=&quot;dialog-description&quot;&gt;对话框描述&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>数据属性</h2>
+<pre><code class="language-jsx">function DataAttributes() {
+  return (
+    &lt;div
+      data-testid=&quot;user-card&quot;
+      data-user-id=&quot;123&quot;
+      data-role=&quot;admin&quot;
+      data-created-at=&quot;2023-01-01&quot;
+      data-config=&#39;{&quot;theme&quot;: &quot;dark&quot;, &quot;lang&quot;: &quot;zh&quot;}&#39;
+      data-analytics-event=&quot;user-click&quot;
+      data-tooltip=&quot;这是一个用户卡片&quot;
+      data-state=&quot;active&quot;
+      data-priority=&quot;high&quot;
+    &gt;
+      用户卡片
+    &lt;/div&gt;
+  )
+}
+
+// 访问数据属性
+function AccessDataAttributes() {
+  const handleClick = (event) =&gt; {
+    const element = event.currentTarget
+    
+    // 使用 dataset 访问数据属性
+    console.log(element.dataset.userId)        // &quot;123&quot;
+    console.log(element.dataset.role)          // &quot;admin&quot;
+    console.log(element.dataset.createdAt)     // &quot;2023-01-01&quot;
+    console.log(element.dataset.config)        // &#39;{&quot;theme&quot;: &quot;dark&quot;, &quot;lang&quot;: &quot;zh&quot;}&#39;
+    console.log(element.dataset.analyticsEvent) // &quot;user-click&quot;
+    
+    // 解析JSON数据
+    const config = JSON.parse(element.dataset.config)
+    console.log(config.theme) // &quot;dark&quot;
+  }
+  
+  return (
+    &lt;div
+      data-user-id=&quot;123&quot;
+      data-role=&quot;admin&quot;
+      data-created-at=&quot;2023-01-01&quot;
+      data-config=&#39;{&quot;theme&quot;: &quot;dark&quot;, &quot;lang&quot;: &quot;zh&quot;}&#39;
+      data-analytics-event=&quot;user-click&quot;
+      onClick={handleClick}
+    &gt;
+      点击获取数据属性
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>Meta和Head元素属性</h2>
+<pre><code class="language-jsx">function MetaAttributes() {
+  return (
+    &lt;head&gt;
+      {/* Meta标签 */}
+      &lt;meta charSet=&quot;utf-8&quot; /&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+      &lt;meta name=&quot;description&quot; content=&quot;页面描述&quot; /&gt;
+      &lt;meta name=&quot;keywords&quot; content=&quot;关键词1, 关键词2&quot; /&gt;
+      &lt;meta name=&quot;author&quot; content=&quot;作者名&quot; /&gt;
+      &lt;meta name=&quot;robots&quot; content=&quot;index, follow&quot; /&gt;
+      &lt;meta name=&quot;theme-color&quot; content=&quot;#000000&quot; /&gt;
+      &lt;meta httpEquiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+      &lt;meta httpEquiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#39;self&#39;&quot; /&gt;
+      
+      {/* Open Graph */}
+      &lt;meta property=&quot;og:title&quot; content=&quot;页面标题&quot; /&gt;
+      &lt;meta property=&quot;og:description&quot; content=&quot;页面描述&quot; /&gt;
+      &lt;meta property=&quot;og:image&quot; content=&quot;/image.jpg&quot; /&gt;
+      &lt;meta property=&quot;og:url&quot; content=&quot;https://example.com&quot; /&gt;
+      &lt;meta property=&quot;og:type&quot; content=&quot;website&quot; /&gt;
+      
+      {/* Twitter Cards */}
+      &lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot; /&gt;
+      &lt;meta name=&quot;twitter:title&quot; content=&quot;页面标题&quot; /&gt;
+      &lt;meta name=&quot;twitter:description&quot; content=&quot;页面描述&quot; /&gt;
+      &lt;meta name=&quot;twitter:image&quot; content=&quot;/image.jpg&quot; /&gt;
+      
+      {/* Link标签 */}
+      &lt;link rel=&quot;icon&quot; href=&quot;/favicon.ico&quot; /&gt;
+      &lt;link rel=&quot;apple-touch-icon&quot; href=&quot;/apple-touch-icon.png&quot; /&gt;
+      &lt;link rel=&quot;manifest&quot; href=&quot;/manifest.json&quot; /&gt;
+      &lt;link rel=&quot;stylesheet&quot; href=&quot;/styles.css&quot; /&gt;
+      &lt;link rel=&quot;preload&quot; href=&quot;/font.woff2&quot; as=&quot;font&quot; type=&quot;font/woff2&quot; crossOrigin=&quot;anonymous&quot; /&gt;
+      &lt;link rel=&quot;dns-prefetch&quot; href=&quot;https://fonts.googleapis.com&quot; /&gt;
+      &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossOrigin=&quot;anonymous&quot; /&gt;
+      &lt;link rel=&quot;canonical&quot; href=&quot;https://example.com/page&quot; /&gt;
+      &lt;link rel=&quot;alternate&quot; hrefLang=&quot;en&quot; href=&quot;https://example.com/en/page&quot; /&gt;
+      &lt;link rel=&quot;next&quot; href=&quot;https://example.com/page/2&quot; /&gt;
+      &lt;link rel=&quot;prev&quot; href=&quot;https://example.com/page/1&quot; /&gt;
+      
+      {/* Script标签 */}
+      &lt;script src=&quot;/script.js&quot; defer&gt;&lt;/script&gt;
+      &lt;script src=&quot;/analytics.js&quot; async&gt;&lt;/script&gt;
+      &lt;script type=&quot;application/ld+json&quot;&gt;
+        {JSON.stringify({
+          &quot;@context&quot;: &quot;https://schema.org&quot;,
+          &quot;@type&quot;: &quot;WebPage&quot;,
+          &quot;name&quot;: &quot;页面名称&quot;
+        })}
+      &lt;/script&gt;
+    &lt;/head&gt;
+  )
+}
+</code></pre>
+<h2>特殊属性</h2>
+<h3>布尔属性</h3>
+<pre><code class="language-jsx">function BooleanAttributes() {
+  return (
+    &lt;div&gt;
+      {/* 布尔属性的不同写法 */}
+      &lt;input type=&quot;checkbox&quot; checked={true} /&gt;
+      &lt;input type=&quot;checkbox&quot; checked /&gt;
+      &lt;input type=&quot;checkbox&quot; checked={false} /&gt;
+      
+      &lt;input type=&quot;text&quot; disabled={true} /&gt;
+      &lt;input type=&quot;text&quot; disabled /&gt;
+      &lt;input type=&quot;text&quot; disabled={false} /&gt;
+      
+      &lt;input type=&quot;text&quot; readOnly={true} /&gt;
+      &lt;input type=&quot;text&quot; readOnly /&gt;
+      &lt;input type=&quot;text&quot; readOnly={false} /&gt;
+      
+      &lt;input type=&quot;text&quot; required={true} /&gt;
+      &lt;input type=&quot;text&quot; required /&gt;
+      &lt;input type=&quot;text&quot; required={false} /&gt;
+      
+      &lt;video controls={true} /&gt;
+      &lt;video controls /&gt;
+      &lt;video controls={false} /&gt;
+      
+      &lt;script defer={true} /&gt;
+      &lt;script defer /&gt;
+      &lt;script defer={false} /&gt;
+      
+      &lt;script async={true} /&gt;
+      &lt;script async /&gt;
+      &lt;script async={false} /&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>引用属性</h3>
+<pre><code class="language-jsx">function RefAttributes() {
+  const inputRef = useRef(null)
+  const divRef = useRef(null)
+  
+  const handleClick = () =&gt; {
+    inputRef.current?.focus()
+  }
+  
+  return (
+    &lt;div&gt;
+      &lt;input ref={inputRef} type=&quot;text&quot; /&gt;
+      &lt;div ref={divRef}&gt;引用的元素&lt;/div&gt;
+      &lt;button onClick={handleClick}&gt;聚焦输入框&lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>危险属性</h3>
+<pre><code class="language-jsx">function DangerousAttributes() {
+  const htmlContent = &#39;&lt;p&gt;这是&lt;strong&gt;粗体&lt;/strong&gt;文本&lt;/p&gt;&#39;
+  const sanitizedContent = sanitizeHtml(htmlContent) // 需要使用消毒库
+  
+  return (
+    &lt;div&gt;
+      {/* 危险：直接设置HTML内容 */}
+      &lt;div dangerouslySetInnerHTML={{ __html: htmlContent }} /&gt;
+      
+      {/* 安全：使用消毒后的HTML内容 */}
+      &lt;div dangerouslySetInnerHTML={{ __html: sanitizedContent }} /&gt;
+      
+      {/* 推荐：使用组件渲染 */}
+      &lt;div&gt;
+        &lt;p&gt;这是&lt;strong&gt;粗体&lt;/strong&gt;文本&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>属性验证</h2>
+<pre><code class="language-jsx">import PropTypes from &#39;prop-types&#39;
+
+function ComponentWithProps({ 
+  id, 
+  className, 
+  style, 
+  children, 
+  onClick, 
+  disabled, 
+  type 
+}) {
+  return (
+    &lt;button
+      id={id}
+      className={className}
+      style={style}
+      onClick={onClick}
+      disabled={disabled}
+      type={type}
+    &gt;
+      {children}
+    &lt;/button&gt;
+  )
+}
+
+ComponentWithProps.propTypes = {
+  id: PropTypes.string,
+  className: PropTypes.string,
+  style: PropTypes.object,
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool,
+  type: PropTypes.oneOf([&#39;button&#39;, &#39;submit&#39;, &#39;reset&#39;])
+}
+
+ComponentWithProps.defaultProps = {
+  disabled: false,
+  type: &#39;button&#39;
+}
+</code></pre>
+<h2>属性传递</h2>
+<pre><code class="language-jsx">function AttributeSpread() {
+  const baseProps = {
+    className: &#39;base-class&#39;,
+    &#39;data-testid&#39;: &#39;test-element&#39;,
+    role: &#39;button&#39;,
+    tabIndex: 0
+  }
+  
+  const additionalProps = {
+    &#39;aria-label&#39;: &#39;操作按钮&#39;,
+    onClick: handleClick
+  }
+  
+  return (
+    &lt;div&gt;
+      {/* 展开属性 */}
+      &lt;button {...baseProps} {...additionalProps}&gt;
+        按钮
+      &lt;/button&gt;
+      
+      {/* 属性合并 */}
+      &lt;div {...baseProps} className={`${baseProps.className} extra-class`}&gt;
+        合并类名
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+
+// 自定义组件属性传递
+function CustomButton({ children, className, ...restProps }) {
+  return (
+    &lt;button
+      className={`custom-button ${className || &#39;&#39;}`}
+      {...restProps}
+    &gt;
+      {children}
+    &lt;/button&gt;
+  )
+}
+</code></pre>
+<h2>总结</h2>
+<p>React DOM属性的关键点：</p>
+<ol>
+<li><strong>命名约定</strong> - 使用camelCase命名</li>
+<li><strong>布尔属性</strong> - 可以省略值或使用布尔值</li>
+<li><strong>样式属性</strong> - 使用对象形式，属性名为camelCase</li>
+<li><strong>事件属性</strong> - 使用React合成事件系统</li>
+<li><strong>数据属性</strong> - 使用data-*格式</li>
+<li><strong>ARIA属性</strong> - 提供无障碍支持</li>
+<li><strong>引用属性</strong> - 使用ref获取DOM元素</li>
+<li><strong>属性展开</strong> - 使用...操作符传递属性</li>
+</ol>
+<p>理解这些属性的正确使用方法，可以帮助你构建更好的React应用。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="33-React-API完整参考.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">React-API完整参考</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="35-合成事件.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">合成事件</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

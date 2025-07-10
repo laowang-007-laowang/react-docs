@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>useEffect - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">useEffect</span>
+            </div>
+            <h1 class="doc-title">useEffect</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #4facfe">
+                🎣 Hooks API
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>useEffect Hook 详解</h1>
+<h2>什么是 useEffect？</h2>
+<p><code>useEffect</code> 是React中用于处理副作用的Hook。副作用包括数据获取、订阅、手动修改DOM、定时器等。它相当于类组件中的 <code>componentDidMount</code>、<code>componentDidUpdate</code> 和 <code>componentWillUnmount</code> 的组合。</p>
+<h2>基本语法</h2>
+<pre><code class="language-javascript">import React, { useEffect } from &#39;react&#39;;
+
+useEffect(() =&gt; {
+  // 副作用代码
+  
+  return () =&gt; {
+    // 清理代码（可选）
+  };
+}, [dependencies]); // 依赖数组（可选）
+</code></pre>
+<h2>基础用法</h2>
+<h3>无依赖的Effect（每次渲染都执行）</h3>
+<pre><code class="language-javascript">function Component() {
+  const [count, setCount] = useState(0);
+  
+  // 每次渲染后都会执行
+  useEffect(() =&gt; {
+    console.log(&#39;组件已渲染，count:&#39;, count);
+  });
+  
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;+1&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>空依赖数组（仅在挂载和卸载时执行）</h3>
+<pre><code class="language-javascript">function Component() {
+  useEffect(() =&gt; {
+    console.log(&#39;组件挂载&#39;);
+    
+    return () =&gt; {
+      console.log(&#39;组件卸载&#39;);
+    };
+  }, []); // 空依赖数组
+  
+  return &lt;div&gt;Hello World&lt;/div&gt;;
+}
+</code></pre>
+<h3>带依赖的Effect（只在依赖变化时执行）</h3>
+<pre><code class="language-javascript">function UserProfile({ userId }) {
+  const [user, setUser] = useState(null);
+  
+  useEffect(() =&gt; {
+    // 只在 userId 变化时执行
+    fetchUser(userId).then(setUser);
+  }, [userId]);
+  
+  return (
+    &lt;div&gt;
+      {user ? &lt;h1&gt;{user.name}&lt;/h1&gt; : &lt;p&gt;Loading...&lt;/p&gt;}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>数据获取</h2>
+<h3>基本数据获取</h3>
+<pre><code class="language-javascript">function DataFetching() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
+  useEffect(() =&gt; {
+    const fetchData = async () =&gt; {
+      try {
+        setLoading(true);
+        const response = await fetch(&#39;/api/data&#39;);
+        if (!response.ok) {
+          throw new Error(&#39;Network response was not ok&#39;);
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchData();
+  }, []);
+  
+  if (loading) return &lt;div&gt;Loading...&lt;/div&gt;;
+  if (error) return &lt;div&gt;Error: {error}&lt;/div&gt;;
+  
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Data:&lt;/h1&gt;
+      &lt;pre&gt;{JSON.stringify(data, null, 2)}&lt;/pre&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>带参数的数据获取</h3>
+<pre><code class="language-javascript">function UserList({ searchTerm, sortBy }) {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(false);
+  
+  useEffect(() =&gt; {
+    let cancelled = false;
+    
+    const fetchUsers = async () =&gt; {
+      setLoading(true);
+      try {
+        const response = await fetch(
+          `/api/users?search=${searchTerm}&amp;sort=${sortBy}`
+        );
+        const userData = await response.json();
+        
+        // 检查请求是否已被取消
+        if (!cancelled) {
+          setUsers(userData);
+        }
+      } catch (error) {
+        if (!cancelled) {
+          console.error(&#39;Failed to fetch users:&#39;, error);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      }
+    };
+    
+    fetchUsers();
+    
+    // 清理函数，取消请求
+    return () =&gt; {
+      cancelled = true;
+    };
+  }, [searchTerm, sortBy]);
+  
+  return (
+    &lt;div&gt;
+      {loading &amp;&amp; &lt;p&gt;Loading users...&lt;/p&gt;}
+      &lt;ul&gt;
+        {users.map(user =&gt; (
+          &lt;li key={user.id}&gt;{user.name}&lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>使用 AbortController 取消请求</h3>
+<pre><code class="language-javascript">function DataWithAbort() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  
+  useEffect(() =&gt; {
+    const abortController = new AbortController();
+    
+    const fetchData = async () =&gt; {
+      setLoading(true);
+      try {
+        const response = await fetch(&#39;/api/data&#39;, {
+          signal: abortController.signal
+        });
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        if (error.name !== &#39;AbortError&#39;) {
+          console.error(&#39;Fetch error:&#39;, error);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchData();
+    
+    return () =&gt; {
+      abortController.abort();
+    };
+  }, []);
+  
+  return loading ? &lt;p&gt;Loading...&lt;/p&gt; : &lt;pre&gt;{JSON.stringify(data, null, 2)}&lt;/pre&gt;;
+}
+</code></pre>
+<h2>订阅和事件监听</h2>
+<h3>DOM 事件监听</h3>
+<pre><code class="language-javascript">function WindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+  
+  useEffect(() =&gt; {
+    const handleResize = () =&gt; {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+    
+    window.addEventListener(&#39;resize&#39;, handleResize);
+    
+    // 清理事件监听器
+    return () =&gt; {
+      window.removeEventListener(&#39;resize&#39;, handleResize);
+    };
+  }, []);
+  
+  return (
+    &lt;div&gt;
+      &lt;p&gt;窗口大小: {windowSize.width} x {windowSize.height}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>键盘事件监听</h3>
+<pre><code class="language-javascript">function KeyboardHandler() {
+  const [pressedKeys, setPressedKeys] = useState(new Set());
+  
+  useEffect(() =&gt; {
+    const handleKeyDown = (event) =&gt; {
+      setPressedKeys(prev =&gt; new Set([...prev, event.key]));
+    };
+    
+    const handleKeyUp = (event) =&gt; {
+      setPressedKeys(prev =&gt; {
+        const newSet = new Set(prev);
+        newSet.delete(event.key);
+        return newSet;
+      });
+    };
+    
+    document.addEventListener(&#39;keydown&#39;, handleKeyDown);
+    document.addEventListener(&#39;keyup&#39;, handleKeyUp);
+    
+    return () =&gt; {
+      document.removeEventListener(&#39;keydown&#39;, handleKeyDown);
+      document.removeEventListener(&#39;keyup&#39;, handleKeyUp);
+    };
+  }, []);
+  
+  return (
+    &lt;div&gt;
+      &lt;p&gt;按下的键: {Array.from(pressedKeys).join(&#39;, &#39;)}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>WebSocket 订阅</h3>
+<pre><code class="language-javascript">function ChatRoom({ roomId }) {
+  const [messages, setMessages] = useState([]);
+  const [connectionStatus, setConnectionStatus] = useState(&#39;Disconnected&#39;);
+  
+  useEffect(() =&gt; {
+    const ws = new WebSocket(`ws://localhost:8080/chat/${roomId}`);
+    
+    ws.onopen = () =&gt; {
+      setConnectionStatus(&#39;Connected&#39;);
+    };
+    
+    ws.onmessage = (event) =&gt; {
+      const message = JSON.parse(event.data);
+      setMessages(prev =&gt; [...prev, message]);
+    };
+    
+    ws.onclose = () =&gt; {
+      setConnectionStatus(&#39;Disconnected&#39;);
+    };
+    
+    ws.onerror = (error) =&gt; {
+      console.error(&#39;WebSocket error:&#39;, error);
+      setConnectionStatus(&#39;Error&#39;);
+    };
+    
+    return () =&gt; {
+      ws.close();
+    };
+  }, [roomId]);
+  
+  return (
+    &lt;div&gt;
+      &lt;p&gt;状态: {connectionStatus}&lt;/p&gt;
+      &lt;div&gt;
+        {messages.map((msg, index) =&gt; (
+          &lt;div key={index}&gt;{msg.text}&lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>定时器</h2>
+<h3>setInterval 和 setTimeout</h3>
+<pre><code class="language-javascript">function Timer() {
+  const [count, setCount] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  
+  useEffect(() =&gt; {
+    let intervalId;
+    
+    if (isRunning) {
+      intervalId = setInterval(() =&gt; {
+        setCount(prevCount =&gt; prevCount + 1);
+      }, 1000);
+    }
+    
+    return () =&gt; {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
+  }, [isRunning]);
+  
+  const toggle = () =&gt; {
+    setIsRunning(prev =&gt; !prev);
+  };
+  
+  const reset = () =&gt; {
+    setCount(0);
+    setIsRunning(false);
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;Timer: {count}s&lt;/h2&gt;
+      &lt;button onClick={toggle}&gt;
+        {isRunning ? &#39;Pause&#39; : &#39;Start&#39;}
+      &lt;/button&gt;
+      &lt;button onClick={reset}&gt;Reset&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>延迟执行</h3>
+<pre><code class="language-javascript">function DelayedSearch({ searchTerm }) {
+  const [results, setResults] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
+  
+  useEffect(() =&gt; {
+    if (!searchTerm) {
+      setResults([]);
+      return;
+    }
+    
+    setIsSearching(true);
+    
+    // 延迟500ms执行搜索
+    const timeoutId = setTimeout(async () =&gt; {
+      try {
+        const response = await fetch(`/api/search?q=${searchTerm}`);
+        const data = await response.json();
+        setResults(data);
+      } catch (error) {
+        console.error(&#39;Search error:&#39;, error);
+      } finally {
+        setIsSearching(false);
+      }
+    }, 500);
+    
+    return () =&gt; {
+      clearTimeout(timeoutId);
+      setIsSearching(false);
+    };
+  }, [searchTerm]);
+  
+  return (
+    &lt;div&gt;
+      {isSearching &amp;&amp; &lt;p&gt;Searching...&lt;/p&gt;}
+      &lt;ul&gt;
+        {results.map(result =&gt; (
+          &lt;li key={result.id}&gt;{result.title}&lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>DOM 操作</h2>
+<h3>直接操作 DOM</h3>
+<pre><code class="language-javascript">function FocusInput() {
+  const inputRef = useRef(null);
+  
+  useEffect(() =&gt; {
+    // 组件挂载后自动聚焦
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+  
+  return &lt;input ref={inputRef} placeholder=&quot;This input will be focused&quot; /&gt;;
+}
+
+function ScrollToTop() {
+  useEffect(() =&gt; {
+    // 滚动到页面顶部
+    window.scrollTo(0, 0);
+  }, []);
+  
+  return &lt;div&gt;Content...&lt;/div&gt;;
+}
+</code></pre>
+<h3>动态修改文档标题</h3>
+<pre><code class="language-javascript">function DocumentTitle({ title }) {
+  useEffect(() =&gt; {
+    const originalTitle = document.title;
+    document.title = title;
+    
+    return () =&gt; {
+      document.title = originalTitle;
+    };
+  }, [title]);
+  
+  return null;
+}
+
+// 使用
+function App() {
+  const [currentPage, setCurrentPage] = useState(&#39;home&#39;);
+  
+  return (
+    &lt;div&gt;
+      &lt;DocumentTitle title={`My App - ${currentPage}`} /&gt;
+      &lt;nav&gt;
+        &lt;button onClick={() =&gt; setCurrentPage(&#39;home&#39;)}&gt;Home&lt;/button&gt;
+        &lt;button onClick={() =&gt; setCurrentPage(&#39;about&#39;)}&gt;About&lt;/button&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>依赖数组详解</h2>
+<h3>依赖数组的重要性</h3>
+<pre><code class="language-javascript">function DependencyExample({ userId, filter }) {
+  const [user, setUser] = useState(null);
+  const [posts, setPosts] = useState([]);
+  
+  // ❌ 错误：缺少依赖
+  useEffect(() =&gt; {
+    fetchUser(userId).then(setUser);
+  }, []); // 缺少 userId 依赖
+  
+  // ✅ 正确：包含所有依赖
+  useEffect(() =&gt; {
+    fetchUser(userId).then(setUser);
+  }, [userId]);
+  
+  // ❌ 错误：依赖过多，每次都执行
+  useEffect(() =&gt; {
+    fetchPosts(userId, filter).then(setPosts);
+  }, [userId, filter, posts]); // posts 不应该作为依赖
+  
+  // ✅ 正确：只包含必要的依赖
+  useEffect(() =&gt; {
+    fetchPosts(userId, filter).then(setPosts);
+  }, [userId, filter]);
+  
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{user?.name}&lt;/h1&gt;
+      &lt;div&gt;{posts.length} posts&lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>对象和函数作为依赖</h3>
+<pre><code class="language-javascript">function ObjectDependency() {
+  const [user, setUser] = useState(null);
+  
+  // ❌ 问题：对象每次渲染都是新的
+  const config = { timeout: 5000 };
+  
+  useEffect(() =&gt; {
+    fetchUser(config).then(setUser);
+  }, [config]); // config 每次都变化
+  
+  // ✅ 解决方案1：将对象移到effect内部
+  useEffect(() =&gt; {
+    const config = { timeout: 5000 };
+    fetchUser(config).then(setUser);
+  }, []);
+  
+  // ✅ 解决方案2：使用useMemo
+  const memoizedConfig = useMemo(() =&gt; ({ timeout: 5000 }), []);
+  
+  useEffect(() =&gt; {
+    fetchUser(memoizedConfig).then(setUser);
+  }, [memoizedConfig]);
+  
+  return &lt;div&gt;{user?.name}&lt;/div&gt;;
+}
+</code></pre>
+<h3>函数依赖的处理</h3>
+<pre><code class="language-javascript">function FunctionDependency({ userId }) {
+  const [user, setUser] = useState(null);
+  
+  // ❌ 问题：函数每次渲染都是新的
+  const fetchUserData = () =&gt; {
+    return fetch(`/api/users/${userId}`);
+  };
+  
+  useEffect(() =&gt; {
+    fetchUserData().then(response =&gt; response.json()).then(setUser);
+  }, [fetchUserData]); // fetchUserData 每次都变化
+  
+  // ✅ 解决方案1：将函数移到effect内部
+  useEffect(() =&gt; {
+    const fetchUserData = () =&gt; {
+      return fetch(`/api/users/${userId}`);
+    };
+    
+    fetchUserData().then(response =&gt; response.json()).then(setUser);
+  }, [userId]);
+  
+  // ✅ 解决方案2：使用useCallback
+  const memoizedFetchUserData = useCallback(() =&gt; {
+    return fetch(`/api/users/${userId}`);
+  }, [userId]);
+  
+  useEffect(() =&gt; {
+    memoizedFetchUserData().then(response =&gt; response.json()).then(setUser);
+  }, [memoizedFetchUserData]);
+  
+  return &lt;div&gt;{user?.name}&lt;/div&gt;;
+}
+</code></pre>
+<h2>条件执行 Effect</h2>
+<h3>基于状态的条件执行</h3>
+<pre><code class="language-javascript">function ConditionalEffect({ shouldFetch, userId }) {
+  const [data, setData] = useState(null);
+  
+  useEffect(() =&gt; {
+    if (!shouldFetch || !userId) {
+      return;
+    }
+    
+    fetchData(userId).then(setData);
+  }, [shouldFetch, userId]);
+  
+  return data ? &lt;div&gt;{data.name}&lt;/div&gt; : &lt;div&gt;No data&lt;/div&gt;;
+}
+</code></pre>
+<h3>跳过不必要的Effect</h3>
+<pre><code class="language-javascript">function SkipEffect() {
+  const [count, setCount] = useState(0);
+  const [name, setName] = useState(&#39;&#39;);
+  
+  // 只在count变化且大于0时执行
+  useEffect(() =&gt; {
+    if (count &gt; 0) {
+      console.log(`Count is now ${count}`);
+    }
+  }, [count]);
+  
+  // 只在name不为空时执行
+  useEffect(() =&gt; {
+    if (name.trim()) {
+      document.title = `Hello, ${name}`;
+    }
+  }, [name]);
+  
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; setCount(c =&gt; c + 1)}&gt;
+        Count: {count}
+      &lt;/button&gt;
+      &lt;input 
+        value={name}
+        onChange={e =&gt; setName(e.target.value)}
+        placeholder=&quot;Enter name&quot;
+      /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>多个 Effect 的组织</h2>
+<h3>按关注点分离Effect</h3>
+<pre><code class="language-javascript">function MultipleEffects({ userId }) {
+  const [user, setUser] = useState(null);
+  const [posts, setPosts] = useState([]);
+  const [onlineStatus, setOnlineStatus] = useState(false);
+  
+  // Effect 1: 获取用户数据
+  useEffect(() =&gt; {
+    if (userId) {
+      fetchUser(userId).then(setUser);
+    }
+  }, [userId]);
+  
+  // Effect 2: 获取用户的帖子
+  useEffect(() =&gt; {
+    if (userId) {
+      fetchUserPosts(userId).then(setPosts);
+    }
+  }, [userId]);
+  
+  // Effect 3: 监听在线状态
+  useEffect(() =&gt; {
+    const handleOnline = () =&gt; setOnlineStatus(true);
+    const handleOffline = () =&gt; setOnlineStatus(false);
+    
+    window.addEventListener(&#39;online&#39;, handleOnline);
+    window.addEventListener(&#39;offline&#39;, handleOffline);
+    
+    return () =&gt; {
+      window.removeEventListener(&#39;online&#39;, handleOnline);
+      window.removeEventListener(&#39;offline&#39;, handleOffline);
+    };
+  }, []);
+  
+  // Effect 4: 更新文档标题
+  useEffect(() =&gt; {
+    if (user) {
+      document.title = `${user.name}&#39;s Profile`;
+    }
+    
+    return () =&gt; {
+      document.title = &#39;My App&#39;;
+    };
+  }, [user]);
+  
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{user?.name} {onlineStatus ? &#39;🟢&#39; : &#39;🔴&#39;}&lt;/h1&gt;
+      &lt;div&gt;{posts.length} posts&lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>自定义Hook中的useEffect</h2>
+<h3>封装副作用逻辑</h3>
+<pre><code class="language-javascript">// 自定义Hook: 数据获取
+function useApi(url) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
+  useEffect(() =&gt; {
+    let cancelled = false;
+    
+    const fetchData = async () =&gt; {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        
+        if (!cancelled) {
+          setData(result);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setError(err.message);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      }
+    };
+    
+    fetchData();
+    
+    return () =&gt; {
+      cancelled = true;
+    };
+  }, [url]);
+  
+  return { data, loading, error };
+}
+
+// 使用自定义Hook
+function UserProfile({ userId }) {
+  const { data: user, loading, error } = useApi(`/api/users/${userId}`);
+  
+  if (loading) return &lt;div&gt;Loading...&lt;/div&gt;;
+  if (error) return &lt;div&gt;Error: {error}&lt;/div&gt;;
+  
+  return &lt;div&gt;Welcome, {user.name}!&lt;/div&gt;;
+}
+</code></pre>
+<h3>封装事件监听</h3>
+<pre><code class="language-javascript">function useEventListener(eventName, handler, element = window) {
+  useEffect(() =&gt; {
+    const isSupported = element &amp;&amp; element.addEventListener;
+    if (!isSupported) return;
+    
+    element.addEventListener(eventName, handler);
+    
+    return () =&gt; {
+      element.removeEventListener(eventName, handler);
+    };
+  }, [eventName, handler, element]);
+}
+
+// 使用示例
+function MouseTracker() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
+  useEventListener(&#39;mousemove&#39;, (e) =&gt; {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  });
+  
+  return (
+    &lt;div&gt;
+      Mouse position: {mousePosition.x}, {mousePosition.y}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>性能优化</h2>
+<h3>避免不必要的Effect执行</h3>
+<pre><code class="language-javascript">function OptimizedComponent({ user, settings }) {
+  const [profile, setProfile] = useState(null);
+  
+  // ❌ 不好：整个对象作为依赖
+  useEffect(() =&gt; {
+    updateProfile(user, settings);
+  }, [user, settings]);
+  
+  // ✅ 更好：只依赖实际使用的属性
+  useEffect(() =&gt; {
+    updateProfile(user.id, settings.theme);
+  }, [user.id, settings.theme]);
+  
+  return &lt;div&gt;{profile?.name}&lt;/div&gt;;
+}
+</code></pre>
+<h3>使用useCallback优化Effect依赖</h3>
+<pre><code class="language-javascript">function OptimizedWithCallback({ onDataChange }) {
+  const [data, setData] = useState([]);
+  
+  // 使用useCallback稳定函数引用
+  const handleDataUpdate = useCallback((newData) =&gt; {
+    setData(newData);
+    onDataChange?.(newData);
+  }, [onDataChange]);
+  
+  useEffect(() =&gt; {
+    const subscription = subscribeToData(handleDataUpdate);
+    
+    return () =&gt; {
+      subscription.unsubscribe();
+    };
+  }, [handleDataUpdate]);
+  
+  return &lt;div&gt;Data count: {data.length}&lt;/div&gt;;
+}
+</code></pre>
+<h2>常见错误和解决方案</h2>
+<h3>错误1：无限循环</h3>
+<pre><code class="language-javascript">// ❌ 错误：会导致无限循环
+function InfiniteLoop() {
+  const [data, setData] = useState([]);
+  
+  useEffect(() =&gt; {
+    setData([...data, &#39;new item&#39;]); // data 变化 -&gt; effect 执行 -&gt; data 变化 -&gt; ...
+  }, [data]);
+  
+  return &lt;div&gt;{data.length}&lt;/div&gt;;
+}
+
+// ✅ 解决方案：使用函数式更新
+function FixedLoop() {
+  const [data, setData] = useState([]);
+  
+  useEffect(() =&gt; {
+    const timer = setInterval(() =&gt; {
+      setData(prevData =&gt; [...prevData, &#39;new item&#39;]);
+    }, 1000);
+    
+    return () =&gt; clearInterval(timer);
+  }, []); // 空依赖数组
+  
+  return &lt;div&gt;{data.length}&lt;/div&gt;;
+}
+</code></pre>
+<h3>错误2：忘记清理</h3>
+<pre><code class="language-javascript">// ❌ 错误：可能导致内存泄漏
+function MemoryLeak() {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() =&gt; {
+    const interval = setInterval(() =&gt; {
+      setCount(c =&gt; c + 1);
+    }, 1000);
+    
+    // 忘记清理定时器
+  }, []);
+  
+  return &lt;div&gt;{count}&lt;/div&gt;;
+}
+
+// ✅ 正确：清理副作用
+function ProperCleanup() {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() =&gt; {
+    const interval = setInterval(() =&gt; {
+      setCount(c =&gt; c + 1);
+    }, 1000);
+    
+    return () =&gt; clearInterval(interval);
+  }, []);
+  
+  return &lt;div&gt;{count}&lt;/div&gt;;
+}
+</code></pre>
+<h2>最佳实践</h2>
+<ol>
+<li><strong>明确依赖关系</strong>：确保依赖数组包含所有使用的变量</li>
+<li><strong>及时清理副作用</strong>：防止内存泄漏和意外行为</li>
+<li><strong>按关注点分离</strong>：将不相关的副作用分到不同的useEffect中</li>
+<li><strong>优化性能</strong>：避免不必要的Effect执行</li>
+<li><strong>处理竞态条件</strong>：对于异步操作，正确处理组件卸载情况</li>
+<li><strong>使用自定义Hook</strong>：封装可复用的副作用逻辑</li>
+</ol>
+<h2>下一步</h2>
+<p>学习完useEffect后，建议继续学习：</p>
+<ol>
+<li><a href="./12-useContext.md">useContext</a> - 跨组件数据共享</li>
+<li><a href="./14-useMemo%E5%92%8CuseCallback.md">useMemo和useCallback</a> - 性能优化</li>
+<li><a href="./16-%E8%87%AA%E5%AE%9A%E4%B9%89Hooks.md">自定义Hooks</a> - 封装复杂逻辑</li>
+</ol>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="10-useState.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">useState</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="12-useContext.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">useContext</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

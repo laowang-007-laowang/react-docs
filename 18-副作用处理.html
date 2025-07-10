@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>副作用处理 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">副作用处理</span>
+            </div>
+            <h1 class="doc-title">副作用处理</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #43e97b">
+                🔄 生命周期
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>18-副作用处理</h1>
+<p>副作用(Side Effects)是指组件渲染过程中产生的、影响组件外部环境的操作。在React中，useEffect是处理副作用的主要工具，它可以让你在函数组件中执行副作用操作。</p>
+<h2>什么是副作用</h2>
+<p>副作用包括但不限于：</p>
+<ul>
+<li>数据获取(API调用)</li>
+<li>设置订阅</li>
+<li>手动更改DOM</li>
+<li>定时器</li>
+<li>事件监听器</li>
+<li>清理资源</li>
+</ul>
+<h2>useEffect基础用法</h2>
+<h3>基本语法</h3>
+<pre><code class="language-jsx">import React, { useState, useEffect } from &#39;react&#39;;
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // 每次渲染后都会执行
+  useEffect(() =&gt; {
+    document.title = `您点击了 ${count} 次`;
+  });
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;您点击了 {count} 次&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        点击我
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>依赖数组</h3>
+<pre><code class="language-jsx">function Example() {
+  const [count, setCount] = useState(0);
+  const [name, setName] = useState(&#39;&#39;);
+
+  // 只在mount时执行一次
+  useEffect(() =&gt; {
+    console.log(&#39;组件挂载&#39;);
+  }, []); // 空依赖数组
+
+  // 只在count变化时执行
+  useEffect(() =&gt; {
+    document.title = `计数: ${count}`;
+  }, [count]); // count作为依赖
+
+  // 在count或name变化时执行
+  useEffect(() =&gt; {
+    console.log(&#39;count或name发生变化&#39;);
+  }, [count, name]); // 多个依赖
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;计数: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;增加计数&lt;/button&gt;
+      
+      &lt;input 
+        value={name} 
+        onChange={(e) =&gt; setName(e.target.value)} 
+        placeholder=&quot;输入姓名&quot;
+      /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>清理副作用</h2>
+<h3>基础清理</h3>
+<pre><code class="language-jsx">function Timer() {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() =&gt; {
+    // 设置定时器
+    const interval = setInterval(() =&gt; {
+      setSeconds(prevSeconds =&gt; prevSeconds + 1);
+    }, 1000);
+
+    // 清理函数
+    return () =&gt; {
+      clearInterval(interval);
+    };
+  }, []); // 空依赖，只在mount/unmount时执行
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;已运行 {seconds} 秒&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>事件监听器清理</h3>
+<pre><code class="language-jsx">function WindowSizeTracker() {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+
+  useEffect(() =&gt; {
+    const handleResize = () =&gt; {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    // 添加事件监听
+    window.addEventListener(&#39;resize&#39;, handleResize);
+
+    // 清理事件监听
+    return () =&gt; {
+      window.removeEventListener(&#39;resize&#39;, handleResize);
+    };
+  }, []); // 空依赖
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;窗口大小: {windowSize.width} x {windowSize.height}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>数据获取</h2>
+<h3>基础数据获取</h3>
+<pre><code class="language-jsx">function UserProfile({ userId }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() =&gt; {
+    const fetchUser = async () =&gt; {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        const response = await fetch(`/api/users/${userId}`);
+        if (!response.ok) {
+          throw new Error(&#39;用户获取失败&#39;);
+        }
+        
+        const userData = await response.json();
+        setUser(userData);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUser();
+  }, [userId]); // userId变化时重新获取
+
+  if (loading) return &lt;div&gt;加载中...&lt;/div&gt;;
+  if (error) return &lt;div&gt;错误: {error}&lt;/div&gt;;
+  if (!user) return &lt;div&gt;用户不存在&lt;/div&gt;;
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{user.name}&lt;/h1&gt;
+      &lt;p&gt;{user.email}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>取消网络请求</h3>
+<pre><code class="language-jsx">function DataFetcher({ url }) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() =&gt; {
+    const abortController = new AbortController();
+
+    const fetchData = async () =&gt; {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const response = await fetch(url, {
+          signal: abortController.signal
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
+        if (err.name !== &#39;AbortError&#39;) {
+          setError(err.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+
+    // 清理：取消请求
+    return () =&gt; {
+      abortController.abort();
+    };
+  }, [url]);
+
+  return (
+    &lt;div&gt;
+      {loading &amp;&amp; &lt;p&gt;加载中...&lt;/p&gt;}
+      {error &amp;&amp; &lt;p&gt;错误: {error}&lt;/p&gt;}
+      {data &amp;&amp; &lt;pre&gt;{JSON.stringify(data, null, 2)}&lt;/pre&gt;}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>订阅和WebSocket</h2>
+<h3>WebSocket连接</h3>
+<pre><code class="language-jsx">function ChatComponent({ roomId }) {
+  const [messages, setMessages] = useState([]);
+  const [connectionStatus, setConnectionStatus] = useState(&#39;Disconnected&#39;);
+
+  useEffect(() =&gt; {
+    const websocket = new WebSocket(`ws://localhost:8080/chat/${roomId}`);
+
+    websocket.onopen = () =&gt; {
+      setConnectionStatus(&#39;Connected&#39;);
+    };
+
+    websocket.onmessage = (event) =&gt; {
+      const message = JSON.parse(event.data);
+      setMessages(prev =&gt; [...prev, message]);
+    };
+
+    websocket.onclose = () =&gt; {
+      setConnectionStatus(&#39;Disconnected&#39;);
+    };
+
+    websocket.onerror = (error) =&gt; {
+      console.error(&#39;WebSocket错误:&#39;, error);
+      setConnectionStatus(&#39;Error&#39;);
+    };
+
+    // 清理WebSocket连接
+    return () =&gt; {
+      websocket.close();
+    };
+  }, [roomId]); // roomId变化时重新连接
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;连接状态: {connectionStatus}&lt;/p&gt;
+      &lt;div&gt;
+        {messages.map((message, index) =&gt; (
+          &lt;div key={index}&gt;
+            &lt;strong&gt;{message.user}:&lt;/strong&gt; {message.text}
+          &lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>事件订阅</h3>
+<pre><code class="language-jsx">function NotificationListener() {
+  const [notifications, setNotifications] = useState([]);
+
+  useEffect(() =&gt; {
+    const handleStorageChange = (e) =&gt; {
+      if (e.key === &#39;notifications&#39;) {
+        const newNotifications = JSON.parse(e.newValue || &#39;[]&#39;);
+        setNotifications(newNotifications);
+      }
+    };
+
+    const handleVisibilityChange = () =&gt; {
+      if (document.visibilityState === &#39;visible&#39;) {
+        console.log(&#39;页面变为可见&#39;);
+      } else {
+        console.log(&#39;页面变为隐藏&#39;);
+      }
+    };
+
+    const handleOnline = () =&gt; {
+      console.log(&#39;网络连接恢复&#39;);
+    };
+
+    const handleOffline = () =&gt; {
+      console.log(&#39;网络连接断开&#39;);
+    };
+
+    // 添加事件监听
+    window.addEventListener(&#39;storage&#39;, handleStorageChange);
+    document.addEventListener(&#39;visibilitychange&#39;, handleVisibilityChange);
+    window.addEventListener(&#39;online&#39;, handleOnline);
+    window.addEventListener(&#39;offline&#39;, handleOffline);
+
+    // 清理事件监听
+    return () =&gt; {
+      window.removeEventListener(&#39;storage&#39;, handleStorageChange);
+      document.removeEventListener(&#39;visibilitychange&#39;, handleVisibilityChange);
+      window.removeEventListener(&#39;online&#39;, handleOnline);
+      window.removeEventListener(&#39;offline&#39;, handleOffline);
+    };
+  }, []);
+
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;通知&lt;/h3&gt;
+      {notifications.map((notification, index) =&gt; (
+        &lt;div key={index}&gt;{notification.message}&lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>条件执行副作用</h2>
+<h3>基于条件的副作用</h3>
+<pre><code class="language-jsx">function ConditionalEffect({ shouldFetch, userId }) {
+  const [user, setUser] = useState(null);
+
+  useEffect(() =&gt; {
+    // 只有当shouldFetch为true时才执行
+    if (!shouldFetch) return;
+
+    const fetchUser = async () =&gt; {
+      try {
+        const response = await fetch(`/api/users/${userId}`);
+        const userData = await response.json();
+        setUser(userData);
+      } catch (error) {
+        console.error(&#39;获取用户失败:&#39;, error);
+      }
+    };
+
+    fetchUser();
+  }, [shouldFetch, userId]);
+
+  return (
+    &lt;div&gt;
+      {user ? (
+        &lt;p&gt;用户: {user.name}&lt;/p&gt;
+      ) : (
+        &lt;p&gt;暂无用户数据&lt;/p&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>防抖副作用</h3>
+<pre><code class="language-jsx">function SearchComponent() {
+  const [searchTerm, setSearchTerm] = useState(&#39;&#39;);
+  const [results, setResults] = useState([]);
+
+  useEffect(() =&gt; {
+    // 防抖处理
+    const timeoutId = setTimeout(() =&gt; {
+      if (searchTerm.trim()) {
+        searchAPI(searchTerm);
+      } else {
+        setResults([]);
+      }
+    }, 300);
+
+    // 清理定时器
+    return () =&gt; clearTimeout(timeoutId);
+  }, [searchTerm]);
+
+  const searchAPI = async (query) =&gt; {
+    try {
+      const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+      const data = await response.json();
+      setResults(data.results);
+    } catch (error) {
+      console.error(&#39;搜索失败:&#39;, error);
+    }
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;input
+        type=&quot;text&quot;
+        value={searchTerm}
+        onChange={(e) =&gt; setSearchTerm(e.target.value)}
+        placeholder=&quot;搜索...&quot;
+      /&gt;
+      &lt;ul&gt;
+        {results.map(result =&gt; (
+          &lt;li key={result.id}&gt;{result.title}&lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>复杂副作用模式</h2>
+<h3>多个相关副作用</h3>
+<pre><code class="language-jsx">function UserDashboard({ userId }) {
+  const [user, setUser] = useState(null);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // 获取用户信息
+  useEffect(() =&gt; {
+    const fetchUser = async () =&gt; {
+      try {
+        const response = await fetch(`/api/users/${userId}`);
+        const userData = await response.json();
+        setUser(userData);
+      } catch (error) {
+        console.error(&#39;获取用户失败:&#39;, error);
+      }
+    };
+
+    if (userId) {
+      fetchUser();
+    }
+  }, [userId]);
+
+  // 获取用户的帖子
+  useEffect(() =&gt; {
+    const fetchPosts = async () =&gt; {
+      try {
+        setLoading(true);
+        const response = await fetch(`/api/users/${userId}/posts`);
+        const postsData = await response.json();
+        setPosts(postsData);
+      } catch (error) {
+        console.error(&#39;获取帖子失败:&#39;, error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (userId) {
+      fetchPosts();
+    }
+  }, [userId]);
+
+  // 设置页面标题
+  useEffect(() =&gt; {
+    if (user) {
+      document.title = `${user.name} - 用户面板`;
+    }
+
+    return () =&gt; {
+      document.title = &#39;应用&#39;; // 清理时重置标题
+    };
+  }, [user]);
+
+  return (
+    &lt;div&gt;
+      {user &amp;&amp; (
+        &lt;div&gt;
+          &lt;h1&gt;{user.name}&lt;/h1&gt;
+          &lt;p&gt;{user.email}&lt;/p&gt;
+        &lt;/div&gt;
+      )}
+      
+      {loading ? (
+        &lt;p&gt;加载帖子中...&lt;/p&gt;
+      ) : (
+        &lt;div&gt;
+          &lt;h2&gt;帖子&lt;/h2&gt;
+          {posts.map(post =&gt; (
+            &lt;div key={post.id}&gt;
+              &lt;h3&gt;{post.title}&lt;/h3&gt;
+              &lt;p&gt;{post.content}&lt;/p&gt;
+            &lt;/div&gt;
+          ))}
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>副作用链</h3>
+<pre><code class="language-jsx">function DataProcessingComponent() {
+  const [rawData, setRawData] = useState(null);
+  const [processedData, setProcessedData] = useState(null);
+  const [finalResult, setFinalResult] = useState(null);
+
+  // 第一步：获取原始数据
+  useEffect(() =&gt; {
+    const fetchRawData = async () =&gt; {
+      try {
+        const response = await fetch(&#39;/api/raw-data&#39;);
+        const data = await response.json();
+        setRawData(data);
+      } catch (error) {
+        console.error(&#39;获取原始数据失败:&#39;, error);
+      }
+    };
+
+    fetchRawData();
+  }, []);
+
+  // 第二步：处理原始数据
+  useEffect(() =&gt; {
+    if (!rawData) return;
+
+    const processData = () =&gt; {
+      // 模拟数据处理
+      const processed = rawData.map(item =&gt; ({
+        ...item,
+        processed: true,
+        timestamp: Date.now()
+      }));
+      setProcessedData(processed);
+    };
+
+    processData();
+  }, [rawData]);
+
+  // 第三步：生成最终结果
+  useEffect(() =&gt; {
+    if (!processedData) return;
+
+    const generateResult = async () =&gt; {
+      try {
+        const response = await fetch(&#39;/api/analyze&#39;, {
+          method: &#39;POST&#39;,
+          headers: {
+            &#39;Content-Type&#39;: &#39;application/json&#39;,
+          },
+          body: JSON.stringify(processedData)
+        });
+        const result = await response.json();
+        setFinalResult(result);
+      } catch (error) {
+        console.error(&#39;分析数据失败:&#39;, error);
+      }
+    };
+
+    generateResult();
+  }, [processedData]);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;原始数据: {rawData ? &#39;已加载&#39; : &#39;加载中...&#39;}&lt;/p&gt;
+      &lt;p&gt;处理后数据: {processedData ? &#39;已处理&#39; : &#39;处理中...&#39;}&lt;/p&gt;
+      &lt;p&gt;最终结果: {finalResult ? &#39;已完成&#39; : &#39;分析中...&#39;}&lt;/p&gt;
+      
+      {finalResult &amp;&amp; (
+        &lt;div&gt;
+          &lt;h3&gt;分析结果&lt;/h3&gt;
+          &lt;pre&gt;{JSON.stringify(finalResult, null, 2)}&lt;/pre&gt;
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>自定义副作用Hook</h2>
+<h3>useAsync Hook</h3>
+<pre><code class="language-jsx">function useAsync(asyncFunction, dependencies = []) {
+  const [state, setState] = useState({
+    data: null,
+    loading: false,
+    error: null
+  });
+
+  useEffect(() =&gt; {
+    let cancelled = false;
+
+    const runAsync = async () =&gt; {
+      setState(prev =&gt; ({ ...prev, loading: true, error: null }));
+
+      try {
+        const data = await asyncFunction();
+        if (!cancelled) {
+          setState({ data, loading: false, error: null });
+        }
+      } catch (error) {
+        if (!cancelled) {
+          setState({ data: null, loading: false, error });
+        }
+      }
+    };
+
+    runAsync();
+
+    return () =&gt; {
+      cancelled = true;
+    };
+  }, dependencies);
+
+  return state;
+}
+
+// 使用useAsync
+function UserComponent({ userId }) {
+  const { data: user, loading, error } = useAsync(
+    () =&gt; fetch(`/api/users/${userId}`).then(res =&gt; res.json()),
+    [userId]
+  );
+
+  if (loading) return &lt;div&gt;加载中...&lt;/div&gt;;
+  if (error) return &lt;div&gt;错误: {error.message}&lt;/div&gt;;
+  if (!user) return &lt;div&gt;无用户数据&lt;/div&gt;;
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{user.name}&lt;/h1&gt;
+      &lt;p&gt;{user.email}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>useInterval Hook</h3>
+<pre><code class="language-jsx">function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  // 记住最新的回调函数
+  useEffect(() =&gt; {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // 设置定时器
+  useEffect(() =&gt; {
+    function tick() {
+      savedCallback.current();
+    }
+
+    if (delay !== null) {
+      const id = setInterval(tick, delay);
+      return () =&gt; clearInterval(id);
+    }
+  }, [delay]);
+}
+
+// 使用useInterval
+function Clock() {
+  const [time, setTime] = useState(new Date());
+
+  useInterval(() =&gt; {
+    setTime(new Date());
+  }, 1000);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;当前时间: {time.toLocaleTimeString()}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>常见问题和解决方案</h2>
+<h3>1. 无限循环</h3>
+<pre><code class="language-jsx">// ❌ 错误：会导致无限循环
+function BadExample({ user }) {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() =&gt; {
+    setUserData({ ...user, lastUpdated: Date.now() });
+  }, [user]); // user对象每次都不同
+
+  return &lt;div&gt;{userData?.name}&lt;/div&gt;;
+}
+
+// ✅ 正确：指定具体的依赖
+function GoodExample({ user }) {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() =&gt; {
+    setUserData({ ...user, lastUpdated: Date.now() });
+  }, [user.id, user.name]); // 只依赖特定属性
+
+  return &lt;div&gt;{userData?.name}&lt;/div&gt;;
+}
+</code></pre>
+<h3>2. 忘记清理</h3>
+<pre><code class="language-jsx">// ❌ 错误：忘记清理定时器
+function BadTimer() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() =&gt; {
+    setInterval(() =&gt; {
+      setCount(c =&gt; c + 1);
+    }, 1000);
+    // 忘记返回清理函数
+  }, []);
+
+  return &lt;div&gt;{count}&lt;/div&gt;;
+}
+
+// ✅ 正确：清理定时器
+function GoodTimer() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() =&gt; {
+    const interval = setInterval(() =&gt; {
+      setCount(c =&gt; c + 1);
+    }, 1000);
+
+    return () =&gt; clearInterval(interval);
+  }, []);
+
+  return &lt;div&gt;{count}&lt;/div&gt;;
+}
+</code></pre>
+<h3>3. 依赖项不完整</h3>
+<pre><code class="language-jsx">// ❌ 错误：缺少依赖项
+function BadExample({ userId, settings }) {
+  const [data, setData] = useState(null);
+
+  useEffect(() =&gt; {
+    fetchUserData(userId, settings.theme);
+  }, [userId]); // 缺少settings.theme依赖
+
+  return &lt;div&gt;{data}&lt;/div&gt;;
+}
+
+// ✅ 正确：包含所有依赖项
+function GoodExample({ userId, settings }) {
+  const [data, setData] = useState(null);
+
+  useEffect(() =&gt; {
+    fetchUserData(userId, settings.theme);
+  }, [userId, settings.theme]); // 包含所有依赖
+
+  return &lt;div&gt;{data}&lt;/div&gt;;
+}
+</code></pre>
+<h2>调试副作用</h2>
+<h3>使用开发工具</h3>
+<pre><code class="language-jsx">function DebuggableComponent({ userId }) {
+  const [user, setUser] = useState(null);
+
+  useEffect(() =&gt; {
+    console.log(&#39;Effect运行，userId:&#39;, userId);
+    
+    const fetchUser = async () =&gt; {
+      console.log(&#39;开始获取用户数据&#39;);
+      try {
+        const response = await fetch(`/api/users/${userId}`);
+        const userData = await response.json();
+        console.log(&#39;用户数据获取成功:&#39;, userData);
+        setUser(userData);
+      } catch (error) {
+        console.error(&#39;用户数据获取失败:&#39;, error);
+      }
+    };
+
+    fetchUser();
+
+    return () =&gt; {
+      console.log(&#39;Effect清理，userId:&#39;, userId);
+    };
+  }, [userId]);
+
+  console.log(&#39;组件渲染，user:&#39;, user);
+
+  return user ? &lt;div&gt;{user.name}&lt;/div&gt; : &lt;div&gt;加载中...&lt;/div&gt;;
+}
+</code></pre>
+<h2>总结</h2>
+<p>副作用处理的关键要点：</p>
+<ol>
+<li><strong>正确使用依赖数组</strong>：确保包含所有使用的值</li>
+<li><strong>及时清理资源</strong>：避免内存泄漏</li>
+<li><strong>处理竞态条件</strong>：使用AbortController取消请求</li>
+<li><strong>合理分离副作用</strong>：将不相关的副作用放在不同的useEffect中</li>
+<li><strong>使用自定义Hook</strong>：封装复杂的副作用逻辑</li>
+</ol>
+<p>掌握副作用处理是编写可靠React应用的关键技能。通过正确使用useEffect，可以构建出高性能、无bug的用户界面。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="17-生命周期方法.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">生命周期方法</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="19-样式处理.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">样式处理</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

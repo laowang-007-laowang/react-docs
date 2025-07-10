@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自定义Hooks - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">自定义Hooks</span>
+            </div>
+            <h1 class="doc-title">自定义Hooks</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #4facfe">
+                🎣 Hooks API
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>16-自定义Hooks</h1>
+<p>自定义Hook是一个函数，其名称以&quot;use&quot;开头，函数内部可以调用其他的Hook。通过自定义Hook，可以将组件逻辑提取到可重用的函数中。</p>
+<h2>基础概念</h2>
+<h3>创建自定义Hook</h3>
+<pre><code class="language-jsx">import { useState, useEffect } from &#39;react&#39;;
+
+// 自定义Hook：管理计数器
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+
+  const increment = () =&gt; setCount(prev =&gt; prev + 1);
+  const decrement = () =&gt; setCount(prev =&gt; prev - 1);
+  const reset = () =&gt; setCount(initialValue);
+
+  return { count, increment, decrement, reset };
+}
+
+// 使用自定义Hook
+function Counter() {
+  const { count, increment, decrement, reset } = useCounter(10);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;计数: {count}&lt;/p&gt;
+      &lt;button onClick={increment}&gt;+&lt;/button&gt;
+      &lt;button onClick={decrement}&gt;-&lt;/button&gt;
+      &lt;button onClick={reset}&gt;重置&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>数据获取Hooks</h2>
+<h3>useApi - API调用Hook</h3>
+<pre><code class="language-jsx">function useApi(url) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() =&gt; {
+    const fetchData = async () =&gt; {
+      try {
+        setLoading(true);
+        setError(null);
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [url]);
+
+  const refetch = () =&gt; {
+    fetchData();
+  };
+
+  return { data, loading, error, refetch };
+}
+
+// 使用
+function UserProfile({ userId }) {
+  const { data: user, loading, error } = useApi(`/api/users/${userId}`);
+
+  if (loading) return &lt;div&gt;加载中...&lt;/div&gt;;
+  if (error) return &lt;div&gt;错误: {error}&lt;/div&gt;;
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{user.name}&lt;/h1&gt;
+      &lt;p&gt;{user.email}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>useAsyncData - 更强大的数据获取Hook</h3>
+<pre><code class="language-jsx">function useAsyncData(asyncFunction, dependencies = []) {
+  const [state, setState] = useState({
+    data: null,
+    loading: false,
+    error: null
+  });
+
+  const execute = useCallback(async (...args) =&gt; {
+    setState(prev =&gt; ({ ...prev, loading: true, error: null }));
+    
+    try {
+      const result = await asyncFunction(...args);
+      setState({ data: result, loading: false, error: null });
+      return result;
+    } catch (error) {
+      setState({ data: null, loading: false, error });
+      throw error;
+    }
+  }, dependencies);
+
+  return { ...state, execute };
+}
+
+// 使用
+function ProductList() {
+  const fetchProducts = async (category, page) =&gt; {
+    const response = await fetch(`/api/products?category=${category}&amp;page=${page}`);
+    return response.json();
+  };
+
+  const { data: products, loading, error, execute } = useAsyncData(fetchProducts);
+
+  useEffect(() =&gt; {
+    execute(&#39;electronics&#39;, 1);
+  }, [execute]);
+
+  return (
+    &lt;div&gt;
+      {loading &amp;&amp; &lt;div&gt;加载中...&lt;/div&gt;}
+      {error &amp;&amp; &lt;div&gt;错误: {error.message}&lt;/div&gt;}
+      {products &amp;&amp; (
+        &lt;ul&gt;
+          {products.map(product =&gt; (
+            &lt;li key={product.id}&gt;{product.name}&lt;/li&gt;
+          ))}
+        &lt;/ul&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>本地存储Hooks</h2>
+<h3>useLocalStorage</h3>
+<pre><code class="language-jsx">function useLocalStorage(key, initialValue) {
+  // 获取存储的值
+  const [storedValue, setStoredValue] = useState(() =&gt; {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.error(`Error reading localStorage key &quot;${key}&quot;:`, error);
+      return initialValue;
+    }
+  });
+
+  // 设置值的函数
+  const setValue = (value) =&gt; {
+    try {
+      // 允许值为函数，类似useState
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
+      window.localStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      console.error(`Error setting localStorage key &quot;${key}&quot;:`, error);
+    }
+  };
+
+  return [storedValue, setValue];
+}
+
+// 使用
+function Settings() {
+  const [theme, setTheme] = useLocalStorage(&#39;theme&#39;, &#39;light&#39;);
+  const [language, setLanguage] = useLocalStorage(&#39;language&#39;, &#39;zh&#39;);
+
+  return (
+    &lt;div className={`theme-${theme}`}&gt;
+      &lt;h1&gt;设置&lt;/h1&gt;
+      
+      &lt;div&gt;
+        &lt;label&gt;主题:&lt;/label&gt;
+        &lt;select value={theme} onChange={(e) =&gt; setTheme(e.target.value)}&gt;
+          &lt;option value=&quot;light&quot;&gt;浅色&lt;/option&gt;
+          &lt;option value=&quot;dark&quot;&gt;深色&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+      
+      &lt;div&gt;
+        &lt;label&gt;语言:&lt;/label&gt;
+        &lt;select value={language} onChange={(e) =&gt; setLanguage(e.target.value)}&gt;
+          &lt;option value=&quot;zh&quot;&gt;中文&lt;/option&gt;
+          &lt;option value=&quot;en&quot;&gt;English&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>useSessionStorage</h3>
+<pre><code class="language-jsx">function useSessionStorage(key, initialValue) {
+  const [storedValue, setStoredValue] = useState(() =&gt; {
+    try {
+      const item = window.sessionStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      return initialValue;
+    }
+  });
+
+  const setValue = (value) =&gt; {
+    try {
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
+      window.sessionStorage.setItem(key, JSON.stringify(valueToStore));
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return [storedValue, setValue];
+}
+</code></pre>
+<h2>表单处理Hooks</h2>
+<h3>useForm</h3>
+<pre><code class="language-jsx">function useForm(initialValues, validationRules = {}) {
+  const [values, setValues] = useState(initialValues);
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+
+  const setValue = (name, value) =&gt; {
+    setValues(prev =&gt; ({ ...prev, [name]: value }));
+    
+    // 清除错误
+    if (errors[name]) {
+      setErrors(prev =&gt; ({ ...prev, [name]: null }));
+    }
+  };
+
+  const setError = (name, error) =&gt; {
+    setErrors(prev =&gt; ({ ...prev, [name]: error }));
+  };
+
+  const setTouched = (name) =&gt; {
+    setTouched(prev =&gt; ({ ...prev, [name]: true }));
+  };
+
+  const validate = () =&gt; {
+    const newErrors = {};
+    
+    Object.keys(validationRules).forEach(field =&gt; {
+      const rule = validationRules[field];
+      const value = values[field];
+      
+      if (typeof rule === &#39;function&#39;) {
+        const error = rule(value, values);
+        if (error) {
+          newErrors[field] = error;
+        }
+      }
+    });
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const reset = () =&gt; {
+    setValues(initialValues);
+    setErrors({});
+    setTouched({});
+  };
+
+  const handleChange = (event) =&gt; {
+    const { name, value, type, checked } = event.target;
+    setValue(name, type === &#39;checkbox&#39; ? checked : value);
+  };
+
+  const handleBlur = (event) =&gt; {
+    const { name } = event.target;
+    setTouched(name);
+    
+    // 验证单个字段
+    const rule = validationRules[name];
+    if (rule) {
+      const error = rule(values[name], values);
+      if (error) {
+        setError(name, error);
+      }
+    }
+  };
+
+  return {
+    values,
+    errors,
+    touched,
+    setValue,
+    setError,
+    setTouched,
+    validate,
+    reset,
+    handleChange,
+    handleBlur
+  };
+}
+
+// 使用
+function UserForm() {
+  const validationRules = {
+    name: (value) =&gt; !value ? &#39;姓名是必填的&#39; : null,
+    email: (value) =&gt; {
+      if (!value) return &#39;邮箱是必填的&#39;;
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        return &#39;请输入有效的邮箱地址&#39;;
+      }
+      return null;
+    },
+    age: (value) =&gt; {
+      if (!value) return &#39;年龄是必填的&#39;;
+      if (value &lt; 18) return &#39;年龄必须大于18岁&#39;;
+      return null;
+    }
+  };
+
+  const {
+    values,
+    errors,
+    touched,
+    validate,
+    reset,
+    handleChange,
+    handleBlur
+  } = useForm(
+    { name: &#39;&#39;, email: &#39;&#39;, age: &#39;&#39; },
+    validationRules
+  );
+
+  const handleSubmit = (e) =&gt; {
+    e.preventDefault();
+    if (validate()) {
+      console.log(&#39;提交数据:&#39;, values);
+    }
+  };
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;div&gt;
+        &lt;input
+          name=&quot;name&quot;
+          placeholder=&quot;姓名&quot;
+          value={values.name}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        /&gt;
+        {touched.name &amp;&amp; errors.name &amp;&amp; (
+          &lt;span className=&quot;error&quot;&gt;{errors.name}&lt;/span&gt;
+        )}
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;input
+          name=&quot;email&quot;
+          type=&quot;email&quot;
+          placeholder=&quot;邮箱&quot;
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        /&gt;
+        {touched.email &amp;&amp; errors.email &amp;&amp; (
+          &lt;span className=&quot;error&quot;&gt;{errors.email}&lt;/span&gt;
+        )}
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;input
+          name=&quot;age&quot;
+          type=&quot;number&quot;
+          placeholder=&quot;年龄&quot;
+          value={values.age}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        /&gt;
+        {touched.age &amp;&amp; errors.age &amp;&amp; (
+          &lt;span className=&quot;error&quot;&gt;{errors.age}&lt;/span&gt;
+        )}
+      &lt;/div&gt;
+
+      &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+      &lt;button type=&quot;button&quot; onClick={reset}&gt;重置&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+</code></pre>
+<h2>DOM和事件Hooks</h2>
+<h3>useClickOutside</h3>
+<pre><code class="language-jsx">function useClickOutside(callback) {
+  const ref = useRef();
+
+  useEffect(() =&gt; {
+    const handleClick = (event) =&gt; {
+      if (ref.current &amp;&amp; !ref.current.contains(event.target)) {
+        callback();
+      }
+    };
+
+    document.addEventListener(&#39;mousedown&#39;, handleClick);
+    return () =&gt; {
+      document.removeEventListener(&#39;mousedown&#39;, handleClick);
+    };
+  }, [callback]);
+
+  return ref;
+}
+
+// 使用
+function Modal({ isOpen, onClose, children }) {
+  const modalRef = useClickOutside(onClose);
+
+  if (!isOpen) return null;
+
+  return (
+    &lt;div className=&quot;modal-overlay&quot;&gt;
+      &lt;div ref={modalRef} className=&quot;modal-content&quot;&gt;
+        {children}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>useKeyPress</h3>
+<pre><code class="language-jsx">function useKeyPress(targetKey, callback) {
+  useEffect(() =&gt; {
+    const handleKeyPress = (event) =&gt; {
+      if (event.key === targetKey) {
+        callback(event);
+      }
+    };
+
+    window.addEventListener(&#39;keydown&#39;, handleKeyPress);
+    return () =&gt; {
+      window.removeEventListener(&#39;keydown&#39;, handleKeyPress);
+    };
+  }, [targetKey, callback]);
+}
+
+// 使用
+function SearchBox() {
+  const [query, setQuery] = useState(&#39;&#39;);
+
+  useKeyPress(&#39;Enter&#39;, () =&gt; {
+    console.log(&#39;搜索:&#39;, query);
+  });
+
+  useKeyPress(&#39;Escape&#39;, () =&gt; {
+    setQuery(&#39;&#39;);
+  });
+
+  return (
+    &lt;input
+      type=&quot;text&quot;
+      value={query}
+      onChange={(e) =&gt; setQuery(e.target.value)}
+      placeholder=&quot;按回车搜索，按ESC清空&quot;
+    /&gt;
+  );
+}
+</code></pre>
+<h3>useWindowSize</h3>
+<pre><code class="language-jsx">function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+
+  useEffect(() =&gt; {
+    const handleResize = () =&gt; {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    window.addEventListener(&#39;resize&#39;, handleResize);
+    return () =&gt; window.removeEventListener(&#39;resize&#39;, handleResize);
+  }, []);
+
+  return windowSize;
+}
+
+// 使用
+function ResponsiveComponent() {
+  const { width, height } = useWindowSize();
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;窗口大小: {width} x {height}&lt;/p&gt;
+      {width &lt; 768 ? (
+        &lt;MobileLayout /&gt;
+      ) : (
+        &lt;DesktopLayout /&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>性能相关Hooks</h2>
+<h3>useDebounce</h3>
+<pre><code class="language-jsx">function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() =&gt; {
+    const handler = setTimeout(() =&gt; {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () =&gt; {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+
+// 使用
+function SearchInput() {
+  const [searchTerm, setSearchTerm] = useState(&#39;&#39;);
+  const debouncedSearchTerm = useDebounce(searchTerm, 300);
+
+  useEffect(() =&gt; {
+    if (debouncedSearchTerm) {
+      // 执行搜索
+      console.log(&#39;搜索:&#39;, debouncedSearchTerm);
+    }
+  }, [debouncedSearchTerm]);
+
+  return (
+    &lt;input
+      type=&quot;text&quot;
+      value={searchTerm}
+      onChange={(e) =&gt; setSearchTerm(e.target.value)}
+      placeholder=&quot;输入搜索关键词&quot;
+    /&gt;
+  );
+}
+</code></pre>
+<h3>useThrottle</h3>
+<pre><code class="language-jsx">function useThrottle(value, limit) {
+  const [throttledValue, setThrottledValue] = useState(value);
+  const lastRan = useRef(Date.now());
+
+  useEffect(() =&gt; {
+    const handler = setTimeout(() =&gt; {
+      if (Date.now() - lastRan.current &gt;= limit) {
+        setThrottledValue(value);
+        lastRan.current = Date.now();
+      }
+    }, limit - (Date.now() - lastRan.current));
+
+    return () =&gt; {
+      clearTimeout(handler);
+    };
+  }, [value, limit]);
+
+  return throttledValue;
+}
+</code></pre>
+<h3>usePrevious</h3>
+<pre><code class="language-jsx">function usePrevious(value) {
+  const ref = useRef();
+  
+  useEffect(() =&gt; {
+    ref.current = value;
+  });
+  
+  return ref.current;
+}
+
+// 使用
+function Counter() {
+  const [count, setCount] = useState(0);
+  const prevCount = usePrevious(count);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;当前: {count}&lt;/p&gt;
+      &lt;p&gt;之前: {prevCount}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;增加&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>业务逻辑Hooks</h2>
+<h3>useAuth</h3>
+<pre><code class="language-jsx">function useAuth() {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() =&gt; {
+    // 检查认证状态
+    const checkAuth = async () =&gt; {
+      try {
+        const token = localStorage.getItem(&#39;token&#39;);
+        if (token) {
+          const response = await fetch(&#39;/api/me&#39;, {
+            headers: { Authorization: `Bearer ${token}` }
+          });
+          if (response.ok) {
+            const userData = await response.json();
+            setUser(userData);
+          }
+        }
+      } catch (error) {
+        console.error(&#39;认证检查失败:&#39;, error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    checkAuth();
+  }, []);
+
+  const login = async (credentials) =&gt; {
+    setLoading(true);
+    try {
+      const response = await fetch(&#39;/api/login&#39;, {
+        method: &#39;POST&#39;,
+        headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },
+        body: JSON.stringify(credentials)
+      });
+
+      if (response.ok) {
+        const { user, token } = await response.json();
+        localStorage.setItem(&#39;token&#39;, token);
+        setUser(user);
+        return user;
+      } else {
+        throw new Error(&#39;登录失败&#39;);
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const logout = () =&gt; {
+    localStorage.removeItem(&#39;token&#39;);
+    setUser(null);
+  };
+
+  return {
+    user,
+    loading,
+    login,
+    logout,
+    isAuthenticated: !!user
+  };
+}
+</code></pre>
+<h3>usePermissions</h3>
+<pre><code class="language-jsx">function usePermissions() {
+  const { user } = useAuth();
+
+  const hasPermission = (permission) =&gt; {
+    if (!user || !user.permissions) return false;
+    return user.permissions.includes(permission);
+  };
+
+  const hasRole = (role) =&gt; {
+    if (!user || !user.roles) return false;
+    return user.roles.includes(role);
+  };
+
+  const hasAnyRole = (roles) =&gt; {
+    if (!user || !user.roles) return false;
+    return roles.some(role =&gt; user.roles.includes(role));
+  };
+
+  return {
+    hasPermission,
+    hasRole,
+    hasAnyRole
+  };
+}
+
+// 使用
+function AdminPanel() {
+  const { hasRole } = usePermissions();
+
+  if (!hasRole(&#39;admin&#39;)) {
+    return &lt;div&gt;您没有权限访问此页面&lt;/div&gt;;
+  }
+
+  return &lt;div&gt;管理员面板&lt;/div&gt;;
+}
+</code></pre>
+<h2>自定义Hook最佳实践</h2>
+<h3>1. 命名规范</h3>
+<pre><code class="language-jsx">// ✅ 正确：以use开头
+function useCounter() { ... }
+function useApi() { ... }
+function useLocalStorage() { ... }
+
+// ❌ 错误：不以use开头
+function counter() { ... }
+function apiHelper() { ... }
+</code></pre>
+<h3>2. 返回一致的接口</h3>
+<pre><code class="language-jsx">// ✅ 推荐：返回对象，便于扩展
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+  return {
+    count,
+    increment: () =&gt; setCount(c =&gt; c + 1),
+    decrement: () =&gt; setCount(c =&gt; c - 1),
+    reset: () =&gt; setCount(initialValue)
+  };
+}
+
+// ✅ 也可以：返回数组，类似useState
+function useToggle(initialValue = false) {
+  const [value, setValue] = useState(initialValue);
+  const toggle = () =&gt; setValue(v =&gt; !v);
+  return [value, toggle];
+}
+</code></pre>
+<h3>3. 参数设计</h3>
+<pre><code class="language-jsx">// ✅ 提供默认值
+function useApi(url, options = {}) {
+  // ...
+}
+
+// ✅ 使用配置对象
+function useInfiniteScroll({
+  threshold = 100,
+  onLoadMore,
+  hasMore = true
+}) {
+  // ...
+}
+</code></pre>
+<h2>总结</h2>
+<p>自定义Hook的优势：</p>
+<ol>
+<li><strong>逻辑复用</strong>：在多个组件间共享状态逻辑</li>
+<li><strong>关注点分离</strong>：将复杂逻辑从组件中抽离</li>
+<li><strong>易于测试</strong>：可以独立测试Hook逻辑</li>
+<li><strong>代码组织</strong>：让组件更简洁，逻辑更清晰</li>
+</ol>
+<p>记住：自定义Hook就是一个普通的JavaScript函数，只是遵循Hook的规则并以&quot;use&quot;开头。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="15-useRef.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">useRef</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="17-生命周期方法.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">生命周期方法</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

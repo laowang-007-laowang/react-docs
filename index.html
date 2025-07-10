@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">首页</span>
+            </div>
+            <h1 class="doc-title">首页</h1>
+            
+          </div>
+          
+          <div class="doc-content">
+            
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-icon">⚛️</span>
+          React 中文文档
+        </h1>
+        <p class="hero-subtitle">从入门到精通，全面掌握React开发技能</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">39</span>
+            <span class="stat-label">篇文档</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">13</span>
+            <span class="stat-label">个分类</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">18.x</span>
+            <span class="stat-label">React版本</span>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="01-React简介.html" class="btn btn-primary">开始学习</a>
+          <a href="#categories" class="btn btn-secondary">浏览分类</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="categories" class="categories-section">
+      <h2 class="section-title">📚 文档分类</h2>
+      <div class="categories-grid">
+        
+      <div class="category-card" style="border-left: 4px solid #667eea">
+        <div class="category-header">
+          <span class="category-icon">📚</span>
+          <h3>基础概念</h3>
+        </div>
+        <div class="category-docs">
+          <a href="01-React简介.html" class="doc-quick-link">React简介</a><a href="02-环境搭建.html" class="doc-quick-link">环境搭建</a><a href="03-JSX语法.html" class="doc-quick-link">JSX语法</a>
+          
+        </div>
+      </div>
+      <div class="category-card" style="border-left: 4px solid #f093fb">
+        <div class="category-header">
+          <span class="category-icon">🧩</span>
+          <h3>组件开发</h3>
+        </div>
+        <div class="category-docs">
+          <a href="04-组件基础.html" class="doc-quick-link">组件基础</a><a href="05-Props与State.html" class="doc-quick-link">Props与State</a><a href="06-事件处理.html" class="doc-quick-link">事件处理</a><a href="07-条件渲染.html" class="doc-quick-link">条件渲染</a><a href="08-列表渲染.html" class="doc-quick-link">列表渲染</a>
+          
+        </div>
+      </div>
+      <div class="category-card" style="border-left: 4px solid #4facfe">
+        <div class="category-header">
+          <span class="category-icon">🎣</span>
+          <h3>Hooks API</h3>
+        </div>
+        <div class="category-docs">
+          <a href="09-Hooks概述.html" class="doc-quick-link">Hooks概述</a><a href="10-useState.html" class="doc-quick-link">useState</a><a href="11-useEffect.html" class="doc-quick-link">useEffect</a><a href="12-useContext.html" class="doc-quick-link">useContext</a><a href="13-useReducer.html" class="doc-quick-link">useReducer</a>
+          <span class="more-docs">+3 更多...</span>
+        </div>
+      </div>
+      <div class="category-card" style="border-left: 4px solid #43e97b">
+        <div class="category-header">
+          <span class="category-icon">🔄</span>
+          <h3>生命周期</h3>
+        </div>
+        <div class="category-docs">
+          <a href="17-生命周期方法.html" class="doc-quick-link">生命周期方法</a><a href="18-副作用处理.html" class="doc-quick-link">副作用处理</a>
+          
+        </div>
+      </div>
+      <div class="category-card" style="border-left: 4px solid #fa709a">
+        <div class="category-header">
+          <span class="category-icon">🎨</span>
+          <h3>样式与UI</h3>
+        </div>
+        <div class="category-docs">
+          <a href="19-样式处理.html" class="doc-quick-link">样式处理</a><a href="20-动画效果.html" class="doc-quick-link">动画效果</a>
+          
+        </div>
+      </div>
+      <div class="category-card" style="border-left: 4px solid #ffecd2">
+        <div class="category-header">
+          <span class="category-icon">🗺️</span>
+          <h3>路由管理</h3>
+        </div>
+        <div class="category-docs">
+          <a href="21-React-Router.html" class="doc-quick-link">React-Router</a>
+          
+        </div>
+      </div>
+      <div class="category-card" style="border-left: 4px solid #a8edea">
+        <div class="category-header">
+          <span class="category-icon">📦</span>
+          <h3>状态管理</h3>
+        </div>
+        <div class="category-docs">
+          <a href="22-Context-API.html" class="doc-quick-link">Context-API</a><a href="23-Redux集成.html" class="doc-quick-link">Redux集成</a><a href="24-Zustand状态管理.html" class="doc-quick-link">Zustand状态管理</a>
+          
+        </div>
+      </div>
+      <div class="category-card" style="border-left: 4px solid #d299c2">
+        <div class="category-header">
+          <span class="category-icon">🚀</span>
+          <h3>性能优化</h3>
+        </div>
+        <div class="category-docs">
+          <a href="25-性能优化技巧.html" class="doc-quick-link">性能优化技巧</a><a href="26-代码分割.html" class="doc-quick-link">代码分割</a>
+          
+        </div>
+      </div>
+      <div class="category-card" style="border-left: 4px solid #fad0c4">
+        <div class="category-header">
+          <span class="category-icon">🧪</span>
+          <h3>测试</h3>
+        </div>
+        <div class="category-docs">
+          <a href="27-单元测试.html" class="doc-quick-link">单元测试</a><a href="28-集成测试.html" class="doc-quick-link">集成测试</a>
+          
+        </div>
+      </div>
+      <div class="category-card" style="border-left: 4px solid #ffd89b">
+        <div class="category-header">
+          <span class="category-icon">🏗️</span>
+          <h3>构建与部署</h3>
+        </div>
+        <div class="category-docs">
+          <a href="29-项目构建.html" class="doc-quick-link">项目构建</a><a href="30-生产部署.html" class="doc-quick-link">生产部署</a>
+          
+        </div>
+      </div>
+      <div class="category-card" style="border-left: 4px solid #a18cd1">
+        <div class="category-header">
+          <span class="category-icon">🛠️</span>
+          <h3>开发工具</h3>
+        </div>
+        <div class="category-docs">
+          <a href="31-开发者工具.html" class="doc-quick-link">开发者工具</a><a href="32-调试技巧.html" class="doc-quick-link">调试技巧</a>
+          
+        </div>
+      </div>
+      <div class="category-card" style="border-left: 4px solid #fbc2eb">
+        <div class="category-header">
+          <span class="category-icon">📖</span>
+          <h3>API参考</h3>
+        </div>
+        <div class="category-docs">
+          <a href="33-React-API完整参考.html" class="doc-quick-link">React-API完整参考</a><a href="34-DOM元素属性.html" class="doc-quick-link">DOM元素属性</a><a href="35-合成事件.html" class="doc-quick-link">合成事件</a><a href="React-Hooks完整参考.html" class="doc-quick-link">React-Hooks完整参考</a>
+          
+        </div>
+      </div>
+      <div class="category-card" style="border-left: 4px solid #84fab0">
+        <div class="category-header">
+          <span class="category-icon">💡</span>
+          <h3>最佳实践</h3>
+        </div>
+        <div class="category-docs">
+          <a href="36-编码规范.html" class="doc-quick-link">编码规范</a><a href="37-项目架构.html" class="doc-quick-link">项目架构</a><a href="38-常见问题.html" class="doc-quick-link">常见问题</a>
+          
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="features-section">
+      <h2 class="section-title">✨ 特色功能</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>快速上手</h3>
+          <p>从基础概念开始，循序渐进地学习React开发</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💡</div>
+          <h3>实战案例</h3>
+          <p>丰富的代码示例和实际项目案例</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>最新技术</h3>
+          <p>覆盖React 18.x最新特性和最佳实践</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>响应式设计</h3>
+          <p>支持移动端和桌面端完美显示</p>
+        </div>
+      </div>
+    </div>
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            <div></div>
+            
+            <div></div>
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

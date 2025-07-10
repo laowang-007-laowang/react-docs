@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开发者工具 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">开发者工具</span>
+            </div>
+            <h1 class="doc-title">开发者工具</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #a18cd1">
+                🛠️ 开发工具
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>31-开发者工具</h1>
+<p>开发者工具是提高React开发效率的重要助手。本文档介绍各种React开发工具、浏览器扩展、调试技巧和开发环境配置。</p>
+<h2>React开发者工具</h2>
+<h3>React DevTools</h3>
+<p>React DevTools是官方提供的浏览器扩展，是React开发不可或缺的工具。</p>
+<p><strong>安装方式:</strong></p>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi">Chrome扩展</a></li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/react-devtools/">Firefox扩展</a></li>
+<li><a href="https://github.com/facebook/react/tree/main/packages/react-devtools">独立应用</a></li>
+</ul>
+<p><strong>主要功能:</strong></p>
+<ol>
+<li><strong>组件树查看</strong></li>
+</ol>
+<pre><code class="language-jsx">// 在React DevTools中可以看到组件树结构
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Header /&gt;
+      &lt;UserProfile user={user} /&gt;
+      &lt;PostList posts={posts} /&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<ol start="2">
+<li><strong>Props和State检查</strong></li>
+</ol>
+<pre><code class="language-jsx">function UserProfile({ user }) {
+  const [isEditing, setIsEditing] = useState(false)
+  
+  // 在DevTools中可以实时查看和编辑这些值
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;{user.name}&lt;/h2&gt;
+      {isEditing ? &lt;EditForm /&gt; : &lt;DisplayInfo /&gt;}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<ol start="3">
+<li><strong>Hooks调试</strong></li>
+</ol>
+<pre><code class="language-jsx">function useCounter() {
+  const [count, setCount] = useState(0)
+  const [history, setHistory] = useState([0])
+  
+  const increment = () =&gt; {
+    setCount(prev =&gt; {
+      const newCount = prev + 1
+      setHistory(h =&gt; [...h, newCount])
+      return newCount
+    })
+  }
+  
+  // 在DevTools中可以看到所有Hooks的状态
+  return { count, history, increment }
+}
+</code></pre>
+<h3>React DevTools Profiler</h3>
+<p>性能分析工具，帮助识别性能瓶颈。</p>
+<pre><code class="language-jsx">// 使用Profiler组件包装需要分析的组件
+import { Profiler } from &#39;react&#39;
+
+function onRenderCallback(id, phase, actualDuration) {
+  console.log(&#39;Profiler:&#39;, {
+    id,
+    phase, // &quot;mount&quot; 或 &quot;update&quot;
+    actualDuration, // 本次渲染耗时
+  })
+}
+
+function App() {
+  return (
+    &lt;Profiler id=&quot;App&quot; onRender={onRenderCallback}&gt;
+      &lt;Header /&gt;
+      &lt;MainContent /&gt;
+    &lt;/Profiler&gt;
+  )
+}
+</code></pre>
+<p><strong>性能优化建议:</strong></p>
+<pre><code class="language-jsx">// 使用React.memo优化组件
+const ExpensiveComponent = React.memo(({ data }) =&gt; {
+  // 只有当data改变时才重新渲染
+  return &lt;div&gt;{data.value}&lt;/div&gt;
+})
+
+// 使用useMemo优化计算
+function DataVisualization({ data }) {
+  const processedData = useMemo(() =&gt; {
+    return data.map(item =&gt; ({
+      ...item,
+      processed: complexCalculation(item)
+    }))
+  }, [data])
+  
+  return &lt;Chart data={processedData} /&gt;
+}
+</code></pre>
+<h2>浏览器开发者工具</h2>
+<h3>控制台调试</h3>
+<pre><code class="language-javascript">// 基础调试技巧
+console.log(&#39;值:&#39;, value)
+console.error(&#39;错误:&#39;, error)
+console.warn(&#39;警告:&#39;, warning)
+console.table(arrayData) // 以表格形式显示数组
+console.group(&#39;分组日志&#39;)
+console.log(&#39;分组内容&#39;)
+console.groupEnd()
+
+// 条件断点
+function fetchData() {
+  const data = getData()
+  
+  // 在控制台中设置条件断点: data.length &gt; 10
+  debugger
+  
+  return data
+}
+</code></pre>
+<h3>网络监控</h3>
+<pre><code class="language-javascript">// 监控API调用
+const api = {
+  request: async (url, options) =&gt; {
+    console.log(&#39;API请求:&#39;, url, options)
+    
+    const start = performance.now()
+    const response = await fetch(url, options)
+    const end = performance.now()
+    
+    console.log(`API响应: ${url} - ${end - start}ms`)
+    
+    return response
+  }
+}
+</code></pre>
+<h3>性能监控</h3>
+<pre><code class="language-javascript">// 性能标记
+performance.mark(&#39;component-render-start&#39;)
+
+// 组件渲染逻辑
+renderComponent()
+
+performance.mark(&#39;component-render-end&#39;)
+performance.measure(&#39;component-render&#39;, &#39;component-render-start&#39;, &#39;component-render-end&#39;)
+
+// 查看测量结果
+const measures = performance.getEntriesByType(&#39;measure&#39;)
+console.log(&#39;性能测量:&#39;, measures)
+</code></pre>
+<h2>代码编辑器工具</h2>
+<h3>Visual Studio Code扩展</h3>
+<p><strong>必备扩展:</strong></p>
+<ol>
+<li><strong>ES7+ React/Redux/React-Native snippets</strong></li>
+</ol>
+<pre><code class="language-jsx">// 快速生成组件代码
+// 输入 &quot;rafce&quot; 生成:
+import React from &#39;react&#39;
+
+const ComponentName = () =&gt; {
+  return (
+    &lt;div&gt;
+      
+    &lt;/div&gt;
+  )
+}
+
+export default ComponentName
+</code></pre>
+<ol start="2">
+<li><strong>Auto Rename Tag</strong></li>
+</ol>
+<pre><code class="language-jsx">// 自动重命名配对的JSX标签
+&lt;div&gt;
+  &lt;span&gt;内容&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<ol start="3">
+<li><strong>Bracket Pair Colorizer</strong></li>
+</ol>
+<pre><code class="language-jsx">// 为括号添加颜色区分
+function complexFunction() {
+  return (
+    &lt;div&gt;
+      {data.map(item =&gt; (
+        &lt;div key={item.id}&gt;
+          {item.name}
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<ol start="4">
+<li><strong>GitLens</strong></li>
+</ol>
+<pre><code class="language-jsx">// 在代码中显示Git信息
+function Component() {
+  // GitLens会显示: John Doe • 2 days ago • fix: update component logic
+  return &lt;div&gt;Content&lt;/div&gt;
+}
+</code></pre>
+<h3>配置文件</h3>
+<pre><code class="language-json">// .vscode/settings.json
+{
+  &quot;editor.formatOnSave&quot;: true,
+  &quot;editor.defaultFormatter&quot;: &quot;esbenp.prettier-vscode&quot;,
+  &quot;emmet.includeLanguages&quot;: {
+    &quot;javascript&quot;: &quot;javascriptreact&quot;
+  },
+  &quot;editor.codeActionsOnSave&quot;: {
+    &quot;source.fixAll.eslint&quot;: true
+  }
+}
+</code></pre>
+<pre><code class="language-json">// .vscode/launch.json
+{
+  &quot;version&quot;: &quot;0.2.0&quot;,
+  &quot;configurations&quot;: [
+    {
+      &quot;name&quot;: &quot;Debug React App&quot;,
+      &quot;type&quot;: &quot;node&quot;,
+      &quot;request&quot;: &quot;launch&quot;,
+      &quot;program&quot;: &quot;${workspaceFolder}/node_modules/.bin/react-scripts&quot;,
+      &quot;args&quot;: [&quot;start&quot;],
+      &quot;env&quot;: {
+        &quot;BROWSER&quot;: &quot;none&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<h2>调试工具</h2>
+<h3>Chrome DevTools调试</h3>
+<pre><code class="language-javascript">// 断点调试
+function handleClick() {
+  const data = processData()
+  
+  // 在Chrome DevTools中设置断点
+  debugger
+  
+  updateUI(data)
+}
+
+// 条件断点
+function processArray(arr) {
+  return arr.map((item, index) =&gt; {
+    // 在DevTools中设置条件: index === 5
+    return processItem(item)
+  })
+}
+</code></pre>
+<h3>错误边界调试</h3>
+<pre><code class="language-jsx">class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { hasError: false, error: null }
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error }
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // 详细的错误信息
+    console.error(&#39;Error Boundary caught an error:&#39;, error, errorInfo)
+    
+    // 可以发送错误报告
+    this.logErrorToService(error, errorInfo)
+  }
+
+  logErrorToService(error, errorInfo) {
+    // 发送到错误监控服务
+    if (process.env.NODE_ENV === &#39;production&#39;) {
+      // Sentry, LogRocket等
+    }
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        &lt;div style={{ padding: &#39;20px&#39;, border: &#39;1px solid red&#39; }}&gt;
+          &lt;h2&gt;出现错误&lt;/h2&gt;
+          &lt;details style={{ whiteSpace: &#39;pre-wrap&#39; }}&gt;
+            {this.state.error &amp;&amp; this.state.error.toString()}
+          &lt;/details&gt;
+        &lt;/div&gt;
+      )
+    }
+
+    return this.props.children
+  }
+}
+</code></pre>
+<h3>自定义调试Hook</h3>
+<pre><code class="language-jsx">// 调试Hook
+function useDebugValue(value, label) {
+  React.useDebugValue(value, v =&gt; `${label}: ${JSON.stringify(v)}`)
+  return value
+}
+
+function useCounter() {
+  const [count, setCount] = useState(0)
+  
+  // 在React DevTools中显示调试信息
+  useDebugValue(count, &#39;Counter Value&#39;)
+  
+  return { count, setCount }
+}
+
+// 性能调试Hook
+function useRenderCount() {
+  const renderCount = useRef(0)
+  
+  useEffect(() =&gt; {
+    renderCount.current++
+  })
+  
+  useDebugValue(renderCount.current, &#39;Render Count&#39;)
+  
+  return renderCount.current
+}
+</code></pre>
+<h2>性能分析工具</h2>
+<h3>React Profiler</h3>
+<pre><code class="language-jsx">// 使用React Profiler进行性能分析
+import { Profiler } from &#39;react&#39;
+
+function App() {
+  const handleRender = (id, phase, actualDuration, baseDuration, startTime, commitTime) =&gt; {
+    console.log(&#39;性能数据:&#39;, {
+      id,
+      phase,
+      actualDuration, // 实际渲染时间
+      baseDuration,   // 估算渲染时间
+      startTime,      // 开始时间
+      commitTime      // 提交时间
+    })
+  }
+
+  return (
+    &lt;Profiler id=&quot;App&quot; onRender={handleRender}&gt;
+      &lt;Header /&gt;
+      &lt;MainContent /&gt;
+    &lt;/Profiler&gt;
+  )
+}
+</code></pre>
+<h3>自定义性能监控</h3>
+<pre><code class="language-jsx">// 性能监控Hook
+function usePerformanceMonitor(componentName) {
+  const renderStart = useRef()
+  const renderCount = useRef(0)
+  
+  useEffect(() =&gt; {
+    renderStart.current = performance.now()
+    renderCount.current++
+  })
+  
+  useEffect(() =&gt; {
+    const renderEnd = performance.now()
+    const renderTime = renderEnd - renderStart.current
+    
+    if (renderTime &gt; 16) { // 超过16ms的渲染
+      console.warn(`${componentName} 渲染时间过长: ${renderTime}ms`)
+    }
+    
+    if (renderCount.current &gt; 10) { // 频繁渲染
+      console.warn(`${componentName} 渲染次数过多: ${renderCount.current}`)
+    }
+  })
+}
+
+// 使用示例
+function MyComponent() {
+  usePerformanceMonitor(&#39;MyComponent&#39;)
+  
+  return &lt;div&gt;内容&lt;/div&gt;
+}
+</code></pre>
+<h2>代码质量工具</h2>
+<h3>ESLint配置</h3>
+<pre><code class="language-javascript">// .eslintrc.js
+module.exports = {
+  extends: [
+    &#39;react-app&#39;,
+    &#39;react-app/jest&#39;,
+    &#39;plugin:react-hooks/recommended&#39;
+  ],
+  rules: {
+    &#39;react-hooks/rules-of-hooks&#39;: &#39;error&#39;,
+    &#39;react-hooks/exhaustive-deps&#39;: &#39;warn&#39;,
+    &#39;no-unused-vars&#39;: &#39;warn&#39;,
+    &#39;no-console&#39;: process.env.NODE_ENV === &#39;production&#39; ? &#39;error&#39; : &#39;warn&#39;
+  },
+  settings: {
+    react: {
+      version: &#39;detect&#39;
+    }
+  }
+}
+</code></pre>
+<h3>Prettier配置</h3>
+<pre><code class="language-javascript">// .prettierrc
+{
+  &quot;semi&quot;: false,
+  &quot;trailingComma&quot;: &quot;es5&quot;,
+  &quot;singleQuote&quot;: true,
+  &quot;printWidth&quot;: 80,
+  &quot;tabWidth&quot;: 2,
+  &quot;useTabs&quot;: false
+}
+</code></pre>
+<h3>Husky + lint-staged</h3>
+<pre><code class="language-json">// package.json
+{
+  &quot;scripts&quot;: {
+    &quot;prepare&quot;: &quot;husky install&quot;
+  },
+  &quot;lint-staged&quot;: {
+    &quot;src/**/*.{js,jsx,ts,tsx}&quot;: [
+      &quot;eslint --fix&quot;,
+      &quot;prettier --write&quot;
+    ]
+  }
+}
+</code></pre>
+<pre><code class="language-bash"># .husky/pre-commit
+#!/bin/sh
+. &quot;$(dirname &quot;$0&quot;)/_/husky.sh&quot;
+
+npx lint-staged
+</code></pre>
+<h2>测试工具</h2>
+<h3>Jest配置</h3>
+<pre><code class="language-javascript">// jest.config.js
+module.exports = {
+  testEnvironment: &#39;jsdom&#39;,
+  setupFilesAfterEnv: [&#39;&lt;rootDir&gt;/src/setupTests.js&#39;],
+  moduleNameMapping: {
+    &#39;\\.(css|less|scss|sass)$&#39;: &#39;identity-obj-proxy&#39;,
+    &#39;^@/(.*)$&#39;: &#39;&lt;rootDir&gt;/src/$1&#39;
+  },
+  collectCoverageFrom: [
+    &#39;src/**/*.{js,jsx}&#39;,
+    &#39;!src/index.js&#39;,
+    &#39;!src/reportWebVitals.js&#39;
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80
+    }
+  }
+}
+</code></pre>
+<h3>测试工具函数</h3>
+<pre><code class="language-javascript">// src/utils/testUtils.js
+import { render } from &#39;@testing-library/react&#39;
+import { BrowserRouter } from &#39;react-router-dom&#39;
+import { ThemeProvider } from &#39;styled-components&#39;
+import { theme } from &#39;../styles/theme&#39;
+
+const AllTheProviders = ({ children }) =&gt; {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;ThemeProvider theme={theme}&gt;
+        {children}
+      &lt;/ThemeProvider&gt;
+    &lt;/BrowserRouter&gt;
+  )
+}
+
+const customRender = (ui, options) =&gt;
+  render(ui, { wrapper: AllTheProviders, ...options })
+
+export * from &#39;@testing-library/react&#39;
+export { customRender as render }
+</code></pre>
+<h2>状态管理工具</h2>
+<h3>Redux DevTools</h3>
+<pre><code class="language-javascript">// store配置
+import { configureStore } from &#39;@reduxjs/toolkit&#39;
+import { composeWithDevTools } from &#39;redux-devtools-extension&#39;
+
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: (getDefaultMiddleware) =&gt;
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [&#39;persist/PERSIST&#39;]
+      }
+    }),
+  devTools: process.env.NODE_ENV !== &#39;production&#39;
+})
+
+export default store
+</code></pre>
+<h3>Zustand DevTools</h3>
+<pre><code class="language-javascript">// Zustand with DevTools
+import { create } from &#39;zustand&#39;
+import { devtools } from &#39;zustand/middleware&#39;
+
+const useStore = create(
+  devtools(
+    (set, get) =&gt; ({
+      count: 0,
+      increment: () =&gt; set(state =&gt; ({ count: state.count + 1 })),
+      decrement: () =&gt; set(state =&gt; ({ count: state.count - 1 }))
+    }),
+    {
+      name: &#39;counter-store&#39;
+    }
+  )
+)
+</code></pre>
+<h2>构建工具</h2>
+<h3>Webpack Bundle Analyzer</h3>
+<pre><code class="language-javascript">// 分析打包文件
+const BundleAnalyzerPlugin = require(&#39;webpack-bundle-analyzer&#39;).BundleAnalyzerPlugin
+
+module.exports = {
+  plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: &#39;server&#39;,
+      openAnalyzer: false
+    })
+  ]
+}
+</code></pre>
+<h3>Vite Bundle Analyzer</h3>
+<pre><code class="language-javascript">// vite.config.js
+import { defineConfig } from &#39;vite&#39;
+import { visualizer } from &#39;rollup-plugin-visualizer&#39;
+
+export default defineConfig({
+  plugins: [
+    visualizer({
+      filename: &#39;dist/stats.html&#39;,
+      open: true
+    })
+  ]
+})
+</code></pre>
+<h2>生产力工具</h2>
+<h3>自动化脚本</h3>
+<pre><code class="language-javascript">// scripts/component-generator.js
+const fs = require(&#39;fs&#39;)
+const path = require(&#39;path&#39;)
+
+const componentTemplate = (name) =&gt; `
+import React from &#39;react&#39;
+import &#39;./${name}.css&#39;
+
+function ${name}() {
+  return (
+    &lt;div className=&quot;${name.toLowerCase()}&quot;&gt;
+      &lt;h1&gt;${name}&lt;/h1&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default ${name}
+`
+
+const cssTemplate = (name) =&gt; `
+.${name.toLowerCase()} {
+  /* Add your styles here */
+}
+`
+
+const testTemplate = (name) =&gt; `
+import React from &#39;react&#39;
+import { render, screen } from &#39;@testing-library/react&#39;
+import ${name} from &#39;./${name}&#39;
+
+describe(&#39;${name}&#39;, () =&gt; {
+  test(&#39;renders correctly&#39;, () =&gt; {
+    render(&lt;${name} /&gt;)
+    expect(screen.getByText(&#39;${name}&#39;)).toBeInTheDocument()
+  })
+})
+`
+
+function generateComponent(name) {
+  const dir = path.join(__dirname, `../src/components/${name}`)
+  
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true })
+  }
+  
+  fs.writeFileSync(path.join(dir, `${name}.jsx`), componentTemplate(name))
+  fs.writeFileSync(path.join(dir, `${name}.css`), cssTemplate(name))
+  fs.writeFileSync(path.join(dir, `${name}.test.jsx`), testTemplate(name))
+  
+  console.log(`Component ${name} generated successfully!`)
+}
+
+const componentName = process.argv[2]
+if (!componentName) {
+  console.error(&#39;Please provide a component name&#39;)
+  process.exit(1)
+}
+
+generateComponent(componentName)
+</code></pre>
+<h3>开发服务器配置</h3>
+<pre><code class="language-javascript">// package.json
+{
+  &quot;scripts&quot;: {
+    &quot;dev&quot;: &quot;react-scripts start&quot;,
+    &quot;dev:https&quot;: &quot;HTTPS=true react-scripts start&quot;,
+    &quot;dev:host&quot;: &quot;HOST=0.0.0.0 react-scripts start&quot;,
+    &quot;generate&quot;: &quot;node scripts/component-generator.js&quot;,
+    &quot;analyze&quot;: &quot;npm run build &amp;&amp; npx webpack-bundle-analyzer build/static/js/*.js&quot;
+  }
+}
+</code></pre>
+<h2>调试最佳实践</h2>
+<h3>1. 分层调试</h3>
+<pre><code class="language-javascript">// 数据层调试
+const api = {
+  fetchData: async (endpoint) =&gt; {
+    console.log(&#39;🔍 API调用:&#39;, endpoint)
+    const response = await fetch(endpoint)
+    console.log(&#39;📦 API响应:&#39;, response)
+    return response.json()
+  }
+}
+
+// 业务逻辑层调试
+const useData = (endpoint) =&gt; {
+  const [data, setData] = useState(null)
+  
+  useEffect(() =&gt; {
+    console.log(&#39;⚡ 开始获取数据:&#39;, endpoint)
+    api.fetchData(endpoint).then(result =&gt; {
+      console.log(&#39;✅ 数据获取成功:&#39;, result)
+      setData(result)
+    })
+  }, [endpoint])
+  
+  return data
+}
+
+// 视图层调试
+function DataDisplay({ endpoint }) {
+  const data = useData(endpoint)
+  
+  console.log(&#39;🎨 组件渲染:&#39;, { endpoint, data })
+  
+  return data ? &lt;div&gt;{JSON.stringify(data)}&lt;/div&gt; : &lt;div&gt;Loading...&lt;/div&gt;
+}
+</code></pre>
+<h3>2. 环境特定调试</h3>
+<pre><code class="language-javascript">// 开发环境调试工具
+const debug = {
+  log: (...args) =&gt; {
+    if (process.env.NODE_ENV === &#39;development&#39;) {
+      console.log(...args)
+    }
+  },
+  
+  error: (...args) =&gt; {
+    if (process.env.NODE_ENV === &#39;development&#39;) {
+      console.error(...args)
+    }
+  },
+  
+  table: (data) =&gt; {
+    if (process.env.NODE_ENV === &#39;development&#39;) {
+      console.table(data)
+    }
+  }
+}
+</code></pre>
+<h3>3. 性能调试</h3>
+<pre><code class="language-javascript">// 性能调试工具
+const perf = {
+  start: (label) =&gt; {
+    if (process.env.NODE_ENV === &#39;development&#39;) {
+      console.time(label)
+    }
+  },
+  
+  end: (label) =&gt; {
+    if (process.env.NODE_ENV === &#39;development&#39;) {
+      console.timeEnd(label)
+    }
+  },
+  
+  measure: (fn, label) =&gt; {
+    return (...args) =&gt; {
+      perf.start(label)
+      const result = fn(...args)
+      perf.end(label)
+      return result
+    }
+  }
+}
+</code></pre>
+<h2>工具链整合</h2>
+<h3>完整的开发环境配置</h3>
+<pre><code class="language-json">// package.json
+{
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;react-scripts start&quot;,
+    &quot;build&quot;: &quot;react-scripts build&quot;,
+    &quot;test&quot;: &quot;react-scripts test&quot;,
+    &quot;eject&quot;: &quot;react-scripts eject&quot;,
+    &quot;lint&quot;: &quot;eslint src --ext .js,.jsx,.ts,.tsx&quot;,
+    &quot;lint:fix&quot;: &quot;eslint src --ext .js,.jsx,.ts,.tsx --fix&quot;,
+    &quot;format&quot;: &quot;prettier --write src/**/*.{js,jsx,ts,tsx,json,css,md}&quot;,
+    &quot;analyze&quot;: &quot;npm run build &amp;&amp; npx webpack-bundle-analyzer build/static/js/*.js&quot;,
+    &quot;generate&quot;: &quot;node scripts/component-generator.js&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@testing-library/react&quot;: &quot;^13.4.0&quot;,
+    &quot;@testing-library/user-event&quot;: &quot;^14.4.3&quot;,
+    &quot;eslint&quot;: &quot;^8.57.0&quot;,
+    &quot;prettier&quot;: &quot;^2.8.8&quot;,
+    &quot;husky&quot;: &quot;^8.0.3&quot;,
+    &quot;lint-staged&quot;: &quot;^13.2.2&quot;
+  }
+}
+</code></pre>
+<p>通过合理使用这些开发者工具，可以大大提高React开发效率，减少bug，提升代码质量。选择适合自己项目的工具组合，并建立良好的开发工作流程，是成功开发React应用的关键。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="30-生产部署.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">生产部署</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="32-调试技巧.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">调试技巧</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

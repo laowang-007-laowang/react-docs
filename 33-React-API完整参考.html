@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React-API完整参考 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">React-API完整参考</span>
+            </div>
+            <h1 class="doc-title">React-API完整参考</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #fbc2eb">
+                📖 API参考
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>React API 完整参考</h1>
+<h2>React 顶级 API</h2>
+<h3>React.Component</h3>
+<pre><code class="language-javascript">class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+  
+  render() {
+    return &lt;div&gt;{this.state.count}&lt;/div&gt;;
+  }
+}
+</code></pre>
+<h3>React.PureComponent</h3>
+<pre><code class="language-javascript">class MyPureComponent extends React.PureComponent {
+  render() {
+    return &lt;div&gt;{this.props.name}&lt;/div&gt;;
+  }
+}
+// 自动进行浅层比较，避免不必要的重新渲染
+</code></pre>
+<h3>React.memo()</h3>
+<pre><code class="language-javascript">const MyComponent = React.memo(function MyComponent({ name }) {
+  return &lt;div&gt;{name}&lt;/div&gt;;
+});
+
+// 带自定义比较函数
+const MyComponent = React.memo(function MyComponent(props) {
+  return &lt;div&gt;{props.name}&lt;/div&gt;;
+}, (prevProps, nextProps) =&gt; {
+  return prevProps.name === nextProps.name;
+});
+</code></pre>
+<h3>React.createElement()</h3>
+<pre><code class="language-javascript">// JSX: &lt;div className=&quot;container&quot;&gt;Hello&lt;/div&gt;
+// 等价于:
+React.createElement(
+  &#39;div&#39;,
+  { className: &#39;container&#39; },
+  &#39;Hello&#39;
+);
+
+// 嵌套元素
+React.createElement(
+  &#39;div&#39;,
+  { className: &#39;container&#39; },
+  React.createElement(&#39;h1&#39;, null, &#39;Title&#39;),
+  React.createElement(&#39;p&#39;, null, &#39;Content&#39;)
+);
+</code></pre>
+<h3>React.cloneElement()</h3>
+<pre><code class="language-javascript">function ParentComponent({ children }) {
+  return React.cloneElement(children, { 
+    additionalProp: &#39;value&#39;,
+    className: &#39;enhanced&#39;
+  });
+}
+
+// 使用
+&lt;ParentComponent&gt;
+  &lt;ChildComponent originalProp=&quot;test&quot; /&gt;
+&lt;/ParentComponent&gt;
+// ChildComponent 将收到 originalProp, additionalProp 和 className
+</code></pre>
+<h3>React.Children</h3>
+<pre><code class="language-javascript">function ParentComponent({ children }) {
+  // 遍历children
+  React.Children.forEach(children, (child, index) =&gt; {
+    console.log(`Child ${index}:`, child);
+  });
+  
+  // 映射children
+  const enhancedChildren = React.Children.map(children, (child, index) =&gt; {
+    return React.cloneElement(child, { key: index, index });
+  });
+  
+  // 计算children数量
+  const childCount = React.Children.count(children);
+  
+  // 将children转换为数组
+  const childArray = React.Children.toArray(children);
+  
+  // 验证只有一个child
+  const onlyChild = React.Children.only(children); // 如果children不是单个元素会抛出错误
+  
+  return &lt;div&gt;{enhancedChildren}&lt;/div&gt;;
+}
+</code></pre>
+<h3>React.Fragment</h3>
+<pre><code class="language-javascript">// 完整写法
+function Component() {
+  return (
+    &lt;React.Fragment&gt;
+      &lt;h1&gt;Title&lt;/h1&gt;
+      &lt;p&gt;Content&lt;/p&gt;
+    &lt;/React.Fragment&gt;
+  );
+}
+
+// 简写
+function Component() {
+  return (
+    &lt;&gt;
+      &lt;h1&gt;Title&lt;/h1&gt;
+      &lt;p&gt;Content&lt;/p&gt;
+    &lt;/&gt;
+  );
+}
+
+// 带key的Fragment（用于列表）
+function Component({ items }) {
+  return (
+    &lt;div&gt;
+      {items.map(item =&gt; (
+        &lt;React.Fragment key={item.id}&gt;
+          &lt;h3&gt;{item.title}&lt;/h3&gt;
+          &lt;p&gt;{item.content}&lt;/p&gt;
+        &lt;/React.Fragment&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>React.createRef()</h3>
+<pre><code class="language-javascript">class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.inputRef = React.createRef();
+  }
+  
+  focusInput = () =&gt; {
+    this.inputRef.current.focus();
+  }
+  
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;input ref={this.inputRef} /&gt;
+        &lt;button onClick={this.focusInput}&gt;Focus&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h3>React.forwardRef()</h3>
+<pre><code class="language-javascript">const FancyButton = React.forwardRef((props, ref) =&gt; (
+  &lt;button ref={ref} className=&quot;fancy-button&quot;&gt;
+    {props.children}
+  &lt;/button&gt;
+));
+
+// 使用
+function App() {
+  const buttonRef = React.createRef();
+  
+  return (
+    &lt;FancyButton ref={buttonRef}&gt;
+      Click me!
+    &lt;/FancyButton&gt;
+  );
+}
+</code></pre>
+<h3>React.lazy()</h3>
+<pre><code class="language-javascript">// 动态导入组件
+const LazyComponent = React.lazy(() =&gt; import(&#39;./LazyComponent&#39;));
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;React.Suspense fallback={&lt;div&gt;Loading...&lt;/div&gt;}&gt;
+        &lt;LazyComponent /&gt;
+      &lt;/React.Suspense&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>React.Suspense</h3>
+<pre><code class="language-javascript">function App() {
+  return (
+    &lt;div&gt;
+      &lt;React.Suspense 
+        fallback={&lt;div&gt;Loading...&lt;/div&gt;}
+        // 可选：错误边界
+      &gt;
+        &lt;LazyComponent /&gt;
+        &lt;AnotherLazyComponent /&gt;
+      &lt;/React.Suspense&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>React.Component 实例方法</h2>
+<h3>setState()</h3>
+<pre><code class="language-javascript">class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+  
+  increment = () =&gt; {
+    // 对象形式
+    this.setState({ count: this.state.count + 1 });
+    
+    // 函数形式（推荐）
+    this.setState(prevState =&gt; ({
+      count: prevState.count + 1
+    }));
+    
+    // 带回调
+    this.setState(
+      prevState =&gt; ({ count: prevState.count + 1 }),
+      () =&gt; {
+        console.log(&#39;State updated:&#39;, this.state.count);
+      }
+    );
+  }
+  
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;div&gt;Count: {this.state.count}&lt;/div&gt;
+        &lt;button onClick={this.increment}&gt;+&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h3>forceUpdate()</h3>
+<pre><code class="language-javascript">class MyComponent extends React.Component {
+  handleClick = () =&gt; {
+    // 强制更新（不推荐使用）
+    this.forceUpdate();
+  }
+  
+  render() {
+    return (
+      &lt;button onClick={this.handleClick}&gt;
+        Force Update
+      &lt;/button&gt;
+    );
+  }
+}
+</code></pre>
+<h2>生命周期方法</h2>
+<h3>挂载阶段</h3>
+<pre><code class="language-javascript">class LifecycleComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log(&#39;1. constructor&#39;);
+    this.state = { data: null };
+  }
+  
+  static getDerivedStateFromProps(props, state) {
+    console.log(&#39;2. getDerivedStateFromProps&#39;);
+    // 返回对象来更新state，或返回null不更新
+    return props.initialData ? { data: props.initialData } : null;
+  }
+  
+  componentDidMount() {
+    console.log(&#39;4. componentDidMount&#39;);
+    // 适合进行API调用、设置订阅等
+    this.fetchData();
+  }
+  
+  render() {
+    console.log(&#39;3. render&#39;);
+    return &lt;div&gt;{this.state.data}&lt;/div&gt;;
+  }
+  
+  fetchData = async () =&gt; {
+    const response = await fetch(&#39;/api/data&#39;);
+    const data = await response.json();
+    this.setState({ data });
+  }
+}
+</code></pre>
+<h3>更新阶段</h3>
+<pre><code class="language-javascript">class UpdateComponent extends React.Component {
+  static getDerivedStateFromProps(props, state) {
+    console.log(&#39;1. getDerivedStateFromProps (update)&#39;);
+    return null;
+  }
+  
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(&#39;2. shouldComponentUpdate&#39;);
+    // 返回false可以阻止更新
+    return nextProps.value !== this.props.value;
+  }
+  
+  render() {
+    console.log(&#39;3. render (update)&#39;);
+    return &lt;div&gt;{this.props.value}&lt;/div&gt;;
+  }
+  
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log(&#39;4. getSnapshotBeforeUpdate&#39;);
+    // 返回值会传递给componentDidUpdate
+    return { scrollPosition: window.scrollY };
+  }
+  
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(&#39;5. componentDidUpdate&#39;);
+    console.log(&#39;Previous scroll position:&#39;, snapshot.scrollPosition);
+  }
+}
+</code></pre>
+<h3>卸载阶段</h3>
+<pre><code class="language-javascript">class CleanupComponent extends React.Component {
+  componentDidMount() {
+    this.timer = setInterval(() =&gt; {
+      console.log(&#39;Timer tick&#39;);
+    }, 1000);
+    
+    document.addEventListener(&#39;resize&#39;, this.handleResize);
+  }
+  
+  componentWillUnmount() {
+    console.log(&#39;componentWillUnmount&#39;);
+    // 清理工作
+    clearInterval(this.timer);
+    document.removeEventListener(&#39;resize&#39;, this.handleResize);
+  }
+  
+  handleResize = () =&gt; {
+    console.log(&#39;Window resized&#39;);
+  }
+  
+  render() {
+    return &lt;div&gt;Component with cleanup&lt;/div&gt;;
+  }
+}
+</code></pre>
+<h3>错误处理</h3>
+<pre><code class="language-javascript">class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+  
+  static getDerivedStateFromError(error) {
+    // 更新state以显示错误UI
+    return { hasError: true, error };
+  }
+  
+  componentDidCatch(error, errorInfo) {
+    // 记录错误信息
+    console.error(&#39;Error caught by boundary:&#39;, error, errorInfo);
+    // 可以将错误信息发送到错误报告服务
+  }
+  
+  render() {
+    if (this.state.hasError) {
+      return (
+        &lt;div&gt;
+          &lt;h2&gt;出错了！&lt;/h2&gt;
+          &lt;details&gt;
+            &lt;summary&gt;错误详情&lt;/summary&gt;
+            &lt;pre&gt;{this.state.error.toString()}&lt;/pre&gt;
+          &lt;/details&gt;
+        &lt;/div&gt;
+      );
+    }
+    
+    return this.props.children;
+  }
+}
+
+// 使用错误边界
+function App() {
+  return (
+    &lt;ErrorBoundary&gt;
+      &lt;ComponentThatMightThrow /&gt;
+    &lt;/ErrorBoundary&gt;
+  );
+}
+</code></pre>
+<h2>Context API</h2>
+<h3>React.createContext()</h3>
+<pre><code class="language-javascript">// 创建Context
+const ThemeContext = React.createContext(&#39;light&#39;); // 默认值
+
+// 带默认值的复杂Context
+const UserContext = React.createContext({
+  user: null,
+  login: () =&gt; {},
+  logout: () =&gt; {}
+});
+</code></pre>
+<h3>Context.Provider</h3>
+<pre><code class="language-javascript">function App() {
+  const [theme, setTheme] = useState(&#39;light&#39;);
+  const [user, setUser] = useState(null);
+  
+  const themeValue = {
+    theme,
+    toggleTheme: () =&gt; setTheme(prev =&gt; prev === &#39;light&#39; ? &#39;dark&#39; : &#39;light&#39;)
+  };
+  
+  const userValue = {
+    user,
+    login: (userData) =&gt; setUser(userData),
+    logout: () =&gt; setUser(null)
+  };
+  
+  return (
+    &lt;ThemeContext.Provider value={themeValue}&gt;
+      &lt;UserContext.Provider value={userValue}&gt;
+        &lt;MainApp /&gt;
+      &lt;/UserContext.Provider&gt;
+    &lt;/ThemeContext.Provider&gt;
+  );
+}
+</code></pre>
+<h3>Context.Consumer</h3>
+<pre><code class="language-javascript">function ThemedButton() {
+  return (
+    &lt;ThemeContext.Consumer&gt;
+      {({ theme, toggleTheme }) =&gt; (
+        &lt;button 
+          style={{ 
+            backgroundColor: theme === &#39;light&#39; ? &#39;#fff&#39; : &#39;#333&#39;,
+            color: theme === &#39;light&#39; ? &#39;#333&#39; : &#39;#fff&#39;
+          }}
+          onClick={toggleTheme}
+        &gt;
+          Toggle Theme
+        &lt;/button&gt;
+      )}
+    &lt;/ThemeContext.Consumer&gt;
+  );
+}
+</code></pre>
+<h3>useContext Hook</h3>
+<pre><code class="language-javascript">function ThemedComponent() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { user, login, logout } = useContext(UserContext);
+  
+  return (
+    &lt;div className={`theme-${theme}`}&gt;
+      {user ? (
+        &lt;div&gt;
+          &lt;span&gt;Welcome, {user.name}!&lt;/span&gt;
+          &lt;button onClick={logout}&gt;Logout&lt;/button&gt;
+        &lt;/div&gt;
+      ) : (
+        &lt;button onClick={() =&gt; login({ name: &#39;User&#39; })}&gt;Login&lt;/button&gt;
+      )}
+      &lt;button onClick={toggleTheme}&gt;Toggle Theme&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>Hooks API</h2>
+<h3>useState</h3>
+<pre><code class="language-javascript">function StateExample() {
+  // 基本用法
+  const [count, setCount] = useState(0);
+  const [name, setName] = useState(&#39;&#39;);
+  
+  // 对象状态
+  const [user, setUser] = useState({
+    name: &#39;&#39;,
+    email: &#39;&#39;,
+    age: 0
+  });
+  
+  // 数组状态
+  const [items, setItems] = useState([]);
+  
+  // 函数初始化（惰性初始化）
+  const [expensiveValue, setExpensiveValue] = useState(() =&gt; {
+    console.log(&#39;Computing expensive initial value&#39;);
+    return someExpensiveComputation();
+  });
+  
+  // 更新方法
+  const updateUser = (field, value) =&gt; {
+    setUser(prev =&gt; ({
+      ...prev,
+      [field]: value
+    }));
+  };
+  
+  const addItem = (item) =&gt; {
+    setItems(prev =&gt; [...prev, item]);
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;Count: {count}&lt;/div&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;Increment&lt;/button&gt;
+      &lt;button onClick={() =&gt; setCount(prev =&gt; prev + 1)}&gt;Increment (functional)&lt;/button&gt;
+      
+      &lt;input 
+        value={name}
+        onChange={e =&gt; setName(e.target.value)}
+        placeholder=&quot;Name&quot;
+      /&gt;
+      
+      &lt;input 
+        value={user.email}
+        onChange={e =&gt; updateUser(&#39;email&#39;, e.target.value)}
+        placeholder=&quot;Email&quot;
+      /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>useEffect</h3>
+<pre><code class="language-javascript">function EffectExample({ userId }) {
+  const [user, setUser] = useState(null);
+  const [posts, setPosts] = useState([]);
+  
+  // 组件挂载时执行
+  useEffect(() =&gt; {
+    console.log(&#39;Component mounted&#39;);
+    return () =&gt; console.log(&#39;Component unmounted&#39;);
+  }, []);
+  
+  // 依赖变化时执行
+  useEffect(() =&gt; {
+    if (userId) {
+      fetchUser(userId).then(setUser);
+    }
+  }, [userId]);
+  
+  // 多个副作用
+  useEffect(() =&gt; {
+    document.title = user ? `${user.name}&#39;s Profile` : &#39;Loading...&#39;;
+  }, [user]);
+  
+  // 清理副作用
+  useEffect(() =&gt; {
+    const subscription = subscribeToUserUpdates(userId, (updatedUser) =&gt; {
+      setUser(updatedUser);
+    });
+    
+    return () =&gt; {
+      subscription.unsubscribe();
+    };
+  }, [userId]);
+  
+  // 条件执行
+  useEffect(() =&gt; {
+    if (user &amp;&amp; !posts.length) {
+      fetchUserPosts(user.id).then(setPosts);
+    }
+  }, [user, posts.length]);
+  
+  return (
+    &lt;div&gt;
+      {user ? (
+        &lt;div&gt;
+          &lt;h1&gt;{user.name}&lt;/h1&gt;
+          &lt;div&gt;Posts: {posts.length}&lt;/div&gt;
+        &lt;/div&gt;
+      ) : (
+        &lt;div&gt;Loading...&lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>useReducer</h3>
+<pre><code class="language-javascript">// 复杂reducer示例
+function appReducer(state, action) {
+  switch (action.type) {
+    case &#39;SET_LOADING&#39;:
+      return { ...state, loading: action.payload };
+    
+    case &#39;SET_ERROR&#39;:
+      return { ...state, error: action.payload, loading: false };
+    
+    case &#39;SET_DATA&#39;:
+      return { ...state, data: action.payload, loading: false, error: null };
+    
+    case &#39;UPDATE_FILTER&#39;:
+      return { ...state, filter: action.payload };
+    
+    case &#39;RESET&#39;:
+      return initialState;
+    
+    default:
+      throw new Error(`Unknown action type: ${action.type}`);
+  }
+}
+
+const initialState = {
+  data: [],
+  loading: false,
+  error: null,
+  filter: &#39;&#39;
+};
+
+function DataComponent() {
+  const [state, dispatch] = useReducer(appReducer, initialState);
+  
+  // 异步action creator
+  const fetchData = useCallback(async () =&gt; {
+    dispatch({ type: &#39;SET_LOADING&#39;, payload: true });
+    try {
+      const response = await fetch(&#39;/api/data&#39;);
+      const data = await response.json();
+      dispatch({ type: &#39;SET_DATA&#39;, payload: data });
+    } catch (error) {
+      dispatch({ type: &#39;SET_ERROR&#39;, payload: error.message });
+    }
+  }, []);
+  
+  useEffect(() =&gt; {
+    fetchData();
+  }, [fetchData]);
+  
+  const filteredData = useMemo(() =&gt; {
+    return state.data.filter(item =&gt; 
+      item.name.toLowerCase().includes(state.filter.toLowerCase())
+    );
+  }, [state.data, state.filter]);
+  
+  if (state.loading) return &lt;div&gt;Loading...&lt;/div&gt;;
+  if (state.error) return &lt;div&gt;Error: {state.error}&lt;/div&gt;;
+  
+  return (
+    &lt;div&gt;
+      &lt;input 
+        value={state.filter}
+        onChange={e =&gt; dispatch({ type: &#39;UPDATE_FILTER&#39;, payload: e.target.value })}
+        placeholder=&quot;Filter...&quot;
+      /&gt;
+      &lt;button onClick={() =&gt; dispatch({ type: &#39;RESET&#39; })}&gt;Reset&lt;/button&gt;
+      
+      &lt;ul&gt;
+        {filteredData.map(item =&gt; (
+          &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>useMemo 和 useCallback</h3>
+<pre><code class="language-javascript">function OptimizedComponent({ items, onItemClick }) {
+  const [filter, setFilter] = useState(&#39;&#39;);
+  const [sortOrder, setSortOrder] = useState(&#39;asc&#39;);
+  
+  // 记忆化计算
+  const processedItems = useMemo(() =&gt; {
+    console.log(&#39;Processing items...&#39;);
+    
+    // 过滤
+    let filtered = items.filter(item =&gt; 
+      item.name.toLowerCase().includes(filter.toLowerCase())
+    );
+    
+    // 排序
+    filtered.sort((a, b) =&gt; {
+      return sortOrder === &#39;asc&#39; 
+        ? a.name.localeCompare(b.name)
+        : b.name.localeCompare(a.name);
+    });
+    
+    return filtered;
+  }, [items, filter, sortOrder]);
+  
+  // 记忆化回调
+  const handleItemClick = useCallback((itemId) =&gt; {
+    console.log(&#39;Item clicked:&#39;, itemId);
+    onItemClick(itemId);
+  }, [onItemClick]);
+  
+  // 记忆化事件处理器
+  const handleFilterChange = useCallback((e) =&gt; {
+    setFilter(e.target.value);
+  }, []);
+  
+  const handleSortChange = useCallback((e) =&gt; {
+    setSortOrder(e.target.value);
+  }, []);
+  
+  return (
+    &lt;div&gt;
+      &lt;input 
+        value={filter}
+        onChange={handleFilterChange}
+        placeholder=&quot;Filter items...&quot;
+      /&gt;
+      
+      &lt;select value={sortOrder} onChange={handleSortChange}&gt;
+        &lt;option value=&quot;asc&quot;&gt;A-Z&lt;/option&gt;
+        &lt;option value=&quot;desc&quot;&gt;Z-A&lt;/option&gt;
+      &lt;/select&gt;
+      
+      &lt;div&gt;Showing {processedItems.length} items&lt;/div&gt;
+      
+      &lt;ul&gt;
+        {processedItems.map(item =&gt; (
+          &lt;li key={item.id}&gt;
+            &lt;button onClick={() =&gt; handleItemClick(item.id)}&gt;
+              {item.name}
+            &lt;/button&gt;
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>useRef</h3>
+<pre><code class="language-javascript">function RefAdvancedExample() {
+  const inputRef = useRef(null);
+  const intervalRef = useRef(null);
+  const renderCountRef = useRef(0);
+  const previousValueRef = useRef();
+  
+  const [count, setCount] = useState(0);
+  const [inputValue, setInputValue] = useState(&#39;&#39;);
+  
+  // 记录渲染次数
+  renderCountRef.current += 1;
+  
+  // 记录前一个值
+  useEffect(() =&gt; {
+    previousValueRef.current = count;
+  });
+  
+  // 启动定时器
+  const startTimer = () =&gt; {
+    if (intervalRef.current) return;
+    
+    intervalRef.current = setInterval(() =&gt; {
+      setCount(prev =&gt; prev + 1);
+    }, 1000);
+  };
+  
+  // 停止定时器
+  const stopTimer = () =&gt; {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+  
+  // 组件卸载时清理
+  useEffect(() =&gt; {
+    return () =&gt; {
+      stopTimer();
+    };
+  }, []);
+  
+  // 聚焦输入框
+  const focusInput = () =&gt; {
+    inputRef.current?.focus();
+  };
+  
+  // 获取输入框的值（不通过state）
+  const getInputValue = () =&gt; {
+    alert(inputRef.current?.value || &#39;No value&#39;);
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;
+        &lt;div&gt;Current count: {count}&lt;/div&gt;
+        &lt;div&gt;Previous count: {previousValueRef.current}&lt;/div&gt;
+        &lt;div&gt;Render count: {renderCountRef.current}&lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;div&gt;
+        &lt;button onClick={startTimer}&gt;Start Timer&lt;/button&gt;
+        &lt;button onClick={stopTimer}&gt;Stop Timer&lt;/button&gt;
+      &lt;/div&gt;
+      
+      &lt;div&gt;
+        &lt;input 
+          ref={inputRef}
+          value={inputValue}
+          onChange={e =&gt; setInputValue(e.target.value)}
+          placeholder=&quot;Type something...&quot;
+        /&gt;
+        &lt;button onClick={focusInput}&gt;Focus Input&lt;/button&gt;
+        &lt;button onClick={getInputValue}&gt;Get Input Value&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>自定义 Hooks 高级模式</h2>
+<h3>useDebounce</h3>
+<pre><code class="language-javascript">function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  
+  useEffect(() =&gt; {
+    const handler = setTimeout(() =&gt; {
+      setDebouncedValue(value);
+    }, delay);
+    
+    return () =&gt; {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+  
+  return debouncedValue;
+}
+
+// 使用
+function SearchComponent() {
+  const [searchTerm, setSearchTerm] = useState(&#39;&#39;);
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+  
+  useEffect(() =&gt; {
+    if (debouncedSearchTerm) {
+      // 执行搜索
+      console.log(&#39;Searching for:&#39;, debouncedSearchTerm);
+    }
+  }, [debouncedSearchTerm]);
+  
+  return (
+    &lt;input 
+      value={searchTerm}
+      onChange={e =&gt; setSearchTerm(e.target.value)}
+      placeholder=&quot;Search...&quot;
+    /&gt;
+  );
+}
+</code></pre>
+<h3>useInterval</h3>
+<pre><code class="language-javascript">function useInterval(callback, delay) {
+  const savedCallback = useRef();
+  
+  // 记住最新的回调
+  useEffect(() =&gt; {
+    savedCallback.current = callback;
+  }, [callback]);
+  
+  // 设置定时器
+  useEffect(() =&gt; {
+    function tick() {
+      savedCallback.current();
+    }
+    
+    if (delay !== null) {
+      const id = setInterval(tick, delay);
+      return () =&gt; clearInterval(id);
+    }
+  }, [delay]);
+}
+
+// 使用
+function Timer() {
+  const [count, setCount] = useState(0);
+  const [isRunning, setIsRunning] = useState(true);
+  
+  useInterval(() =&gt; {
+    setCount(count + 1);
+  }, isRunning ? 1000 : null);
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;Count: {count}&lt;/div&gt;
+      &lt;button onClick={() =&gt; setIsRunning(!isRunning)}&gt;
+        {isRunning ? &#39;Stop&#39; : &#39;Start&#39;}
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>usePrevious</h3>
+<pre><code class="language-javascript">function usePrevious(value) {
+  const ref = useRef();
+  
+  useEffect(() =&gt; {
+    ref.current = value;
+  });
+  
+  return ref.current;
+}
+
+// 使用
+function Counter() {
+  const [count, setCount] = useState(0);
+  const prevCount = usePrevious(count);
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;Current: {count}&lt;/div&gt;
+      &lt;div&gt;Previous: {prevCount}&lt;/div&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;Increment&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<p>这个API参考文档涵盖了React的所有主要API和使用模式。每个API都包含了详细的使用示例和最佳实践，可以作为日常开发的参考手册。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="32-调试技巧.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">调试技巧</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="34-DOM元素属性.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">DOM元素属性</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

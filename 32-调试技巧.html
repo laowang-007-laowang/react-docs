@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>调试技巧 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">调试技巧</span>
+            </div>
+            <h1 class="doc-title">调试技巧</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #a18cd1">
+                🛠️ 开发工具
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>32-调试技巧</h1>
+<p>React调试是开发过程中的重要技能。本文档提供了各种调试技巧、工具使用方法和问题排查策略，帮助开发者快速定位和解决问题。</p>
+<h2>基础调试技巧</h2>
+<h3>1. 控制台日志调试</h3>
+<pre><code class="language-jsx">// 基础日志输出
+function UserProfile({ user }) {
+  console.log(&#39;UserProfile 渲染:&#39;, user)
+  
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{user.name}&lt;/h1&gt;
+      &lt;p&gt;{user.email}&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+
+// 带标签的日志输出
+function DataProcessor({ data }) {
+  console.log(&#39;🔍 [DataProcessor] 输入数据:&#39;, data)
+  
+  const processedData = data.map(item =&gt; {
+    console.log(&#39;⚡ [DataProcessor] 处理项目:&#39;, item)
+    return { ...item, processed: true }
+  })
+  
+  console.log(&#39;✅ [DataProcessor] 处理完成:&#39;, processedData)
+  
+  return &lt;div&gt;{/* 渲染处理后的数据 */}&lt;/div&gt;
+}
+</code></pre>
+<h3>2. 条件日志输出</h3>
+<pre><code class="language-jsx">const DEBUG = process.env.NODE_ENV === &#39;development&#39;
+
+function debug(message, data) {
+  if (DEBUG) {
+    console.log(`[DEBUG] ${message}`, data)
+  }
+}
+
+function MyComponent({ props }) {
+  debug(&#39;Component rendered with props:&#39;, props)
+  
+  const handleClick = () =&gt; {
+    debug(&#39;Button clicked&#39;, { timestamp: Date.now() })
+  }
+  
+  return &lt;button onClick={handleClick}&gt;Click me&lt;/button&gt;
+}
+</code></pre>
+<h3>3. 错误边界调试</h3>
+<pre><code class="language-jsx">class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { hasError: false, error: null, errorInfo: null }
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true }
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error(&#39;❌ Error Boundary 捕获错误:&#39;, error)
+    console.error(&#39;📍 错误信息:&#39;, errorInfo)
+    
+    // 记录错误的组件栈
+    console.error(&#39;🔍 组件栈:&#39;, errorInfo.componentStack)
+    
+    this.setState({
+      error: error,
+      errorInfo: errorInfo
+    })
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        &lt;div style={{ padding: &#39;20px&#39;, border: &#39;2px solid red&#39; }}&gt;
+          &lt;h2&gt;🚨 组件发生错误&lt;/h2&gt;
+          &lt;details&gt;
+            &lt;summary&gt;错误详情&lt;/summary&gt;
+            &lt;pre&gt;{this.state.error &amp;&amp; this.state.error.toString()}&lt;/pre&gt;
+            &lt;pre&gt;{this.state.errorInfo.componentStack}&lt;/pre&gt;
+          &lt;/details&gt;
+        &lt;/div&gt;
+      )
+    }
+
+    return this.props.children
+  }
+}
+</code></pre>
+<h2>Hook调试技巧</h2>
+<h3>1. useEffect调试</h3>
+<pre><code class="language-jsx">function useDebugEffect(effect, deps, label) {
+  useEffect(() =&gt; {
+    console.log(`🔄 [${label}] Effect 运行`, deps)
+    
+    const cleanup = effect()
+    
+    return () =&gt; {
+      console.log(`🧹 [${label}] Effect 清理`, deps)
+      if (cleanup) cleanup()
+    }
+  }, deps)
+}
+
+function MyComponent({ userId }) {
+  const [user, setUser] = useState(null)
+  
+  useDebugEffect(() =&gt; {
+    console.log(&#39;📡 开始获取用户数据&#39;)
+    
+    fetchUser(userId).then(userData =&gt; {
+      console.log(&#39;✅ 用户数据获取成功:&#39;, userData)
+      setUser(userData)
+    })
+  }, [userId], &#39;FetchUser&#39;)
+  
+  return user ? &lt;div&gt;{user.name}&lt;/div&gt; : &lt;div&gt;Loading...&lt;/div&gt;
+}
+</code></pre>
+<h3>2. useState调试</h3>
+<pre><code class="language-jsx">function useDebugState(initialValue, label) {
+  const [value, setValue] = useState(initialValue)
+  
+  const setDebugValue = (newValue) =&gt; {
+    console.log(`📝 [${label}] 状态更新:`, value, &#39;-&gt;&#39;, newValue)
+    setValue(newValue)
+  }
+  
+  return [value, setDebugValue]
+}
+
+function Counter() {
+  const [count, setCount] = useDebugState(0, &#39;Counter&#39;)
+  
+  return (
+    &lt;div&gt;
+      &lt;p&gt;计数: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;增加&lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>3. useRef调试</h3>
+<pre><code class="language-jsx">function useDebugRef(initialValue, label) {
+  const ref = useRef(initialValue)
+  
+  // 代理 ref 的 current 属性
+  return new Proxy(ref, {
+    set(target, prop, value) {
+      if (prop === &#39;current&#39;) {
+        console.log(`📌 [${label}] Ref 更新:`, target.current, &#39;-&gt;&#39;, value)
+      }
+      target[prop] = value
+      return true
+    }
+  })
+}
+
+function FocusInput() {
+  const inputRef = useDebugRef(null, &#39;InputRef&#39;)
+  
+  const handleFocus = () =&gt; {
+    inputRef.current?.focus()
+  }
+  
+  return (
+    &lt;div&gt;
+      &lt;input ref={inputRef} /&gt;
+      &lt;button onClick={handleFocus}&gt;聚焦&lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>渲染调试</h2>
+<h3>1. 渲染计数器</h3>
+<pre><code class="language-jsx">function useRenderCounter(componentName) {
+  const renderCount = useRef(0)
+  
+  useEffect(() =&gt; {
+    renderCount.current++
+    console.log(`🔄 [${componentName}] 渲染次数: ${renderCount.current}`)
+  })
+  
+  return renderCount.current
+}
+
+function MyComponent() {
+  const renderCount = useRenderCounter(&#39;MyComponent&#39;)
+  
+  return &lt;div&gt;渲染次数: {renderCount}&lt;/div&gt;
+}
+</code></pre>
+<h3>2. 渲染原因追踪</h3>
+<pre><code class="language-jsx">function useWhyDidYouUpdate(name, props) {
+  const previous = useRef()
+  
+  useEffect(() =&gt; {
+    if (previous.current) {
+      const allKeys = Object.keys({ ...previous.current, ...props })
+      const changedProps = {}
+      
+      allKeys.forEach(key =&gt; {
+        if (previous.current[key] !== props[key]) {
+          changedProps[key] = {
+            from: previous.current[key],
+            to: props[key]
+          }
+        }
+      })
+      
+      if (Object.keys(changedProps).length) {
+        console.log(&#39;🔍 [WhyDidYouUpdate]&#39;, name, changedProps)
+      }
+    }
+    
+    previous.current = props
+  })
+}
+
+function ExpensiveComponent(props) {
+  useWhyDidYouUpdate(&#39;ExpensiveComponent&#39;, props)
+  
+  return &lt;div&gt;{/* 组件内容 */}&lt;/div&gt;
+}
+</code></pre>
+<h3>3. 性能监控</h3>
+<pre><code class="language-jsx">function usePerformanceMonitor(componentName) {
+  const renderStart = useRef()
+  const mountTime = useRef()
+  
+  // 记录挂载时间
+  useEffect(() =&gt; {
+    mountTime.current = performance.now()
+    console.log(`⏱️ [${componentName}] 组件挂载时间: ${mountTime.current}ms`)
+  }, [])
+  
+  // 记录每次渲染时间
+  useEffect(() =&gt; {
+    renderStart.current = performance.now()
+  })
+  
+  useEffect(() =&gt; {
+    const renderTime = performance.now() - renderStart.current
+    console.log(`⚡ [${componentName}] 渲染时间: ${renderTime}ms`)
+    
+    if (renderTime &gt; 16) { // 超过一帧的时间
+      console.warn(`⚠️ [${componentName}] 渲染时间过长: ${renderTime}ms`)
+    }
+  })
+}
+
+function HeavyComponent() {
+  usePerformanceMonitor(&#39;HeavyComponent&#39;)
+  
+  // 昂贵的渲染逻辑
+  const heavyCalculation = useMemo(() =&gt; {
+    return Array.from({ length: 1000 }, (_, i) =&gt; i * 2)
+  }, [])
+  
+  return &lt;div&gt;{heavyCalculation.length}&lt;/div&gt;
+}
+</code></pre>
+<h2>异步调试</h2>
+<h3>1. Promise调试</h3>
+<pre><code class="language-jsx">function useAsyncDebug(asyncFunction, deps, label) {
+  const [state, setState] = useState({ loading: false, data: null, error: null })
+  
+  useEffect(() =&gt; {
+    console.log(`🚀 [${label}] 开始异步操作`)
+    
+    setState({ loading: true, data: null, error: null })
+    
+    asyncFunction()
+      .then(data =&gt; {
+        console.log(`✅ [${label}] 异步操作成功:`, data)
+        setState({ loading: false, data, error: null })
+      })
+      .catch(error =&gt; {
+        console.error(`❌ [${label}] 异步操作失败:`, error)
+        setState({ loading: false, data: null, error })
+      })
+  }, deps)
+  
+  return state
+}
+
+function DataFetcher({ userId }) {
+  const { loading, data, error } = useAsyncDebug(
+    () =&gt; fetchUser(userId),
+    [userId],
+    &#39;UserFetch&#39;
+  )
+  
+  if (loading) return &lt;div&gt;Loading...&lt;/div&gt;
+  if (error) return &lt;div&gt;Error: {error.message}&lt;/div&gt;
+  return &lt;div&gt;{data?.name}&lt;/div&gt;
+}
+</code></pre>
+<h3>2. 网络请求调试</h3>
+<pre><code class="language-jsx">// 增强的 fetch 函数
+const debugFetch = (url, options = {}) =&gt; {
+  const requestId = Math.random().toString(36).substr(2, 9)
+  
+  console.log(`📡 [Request ${requestId}] 开始:`, {
+    url,
+    method: options.method || &#39;GET&#39;,
+    headers: options.headers,
+    body: options.body
+  })
+  
+  const startTime = performance.now()
+  
+  return fetch(url, options)
+    .then(response =&gt; {
+      const endTime = performance.now()
+      const duration = endTime - startTime
+      
+      console.log(`📦 [Request ${requestId}] 响应:`, {
+        status: response.status,
+        statusText: response.statusText,
+        duration: `${duration}ms`,
+        url
+      })
+      
+      // 克隆响应以便调试
+      const clonedResponse = response.clone()
+      
+      // 如果是 JSON 响应，打印内容
+      if (response.headers.get(&#39;content-type&#39;)?.includes(&#39;application/json&#39;)) {
+        clonedResponse.json().then(data =&gt; {
+          console.log(`📄 [Request ${requestId}] 响应内容:`, data)
+        })
+      }
+      
+      return response
+    })
+    .catch(error =&gt; {
+      const endTime = performance.now()
+      const duration = endTime - startTime
+      
+      console.error(`❌ [Request ${requestId}] 错误:`, {
+        error: error.message,
+        duration: `${duration}ms`,
+        url
+      })
+      
+      throw error
+    })
+}
+
+// 使用示例
+function ApiComponent() {
+  const [data, setData] = useState(null)
+  
+  useEffect(() =&gt; {
+    debugFetch(&#39;/api/users&#39;)
+      .then(response =&gt; response.json())
+      .then(setData)
+  }, [])
+  
+  return &lt;div&gt;{data ? JSON.stringify(data) : &#39;Loading...&#39;}&lt;/div&gt;
+}
+</code></pre>
+<h2>状态调试</h2>
+<h3>1. Redux调试</h3>
+<pre><code class="language-jsx">// 增强的 Redux store
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(
+    applyMiddleware(
+      // 自定义调试中间件
+      store =&gt; next =&gt; action =&gt; {
+        console.log(&#39;📮 [Redux] 派发 Action:&#39;, action)
+        const result = next(action)
+        console.log(&#39;📊 [Redux] 新状态:&#39;, store.getState())
+        return result
+      }
+    )
+  )
+)
+
+// 状态变化监听
+store.subscribe(() =&gt; {
+  const state = store.getState()
+  console.log(&#39;🔄 [Redux] 状态更新:&#39;, state)
+})
+</code></pre>
+<h3>2. Context调试</h3>
+<pre><code class="language-jsx">// 调试版本的 Context Provider
+function DebugContextProvider({ children, value, contextName }) {
+  const previousValue = useRef(value)
+  
+  useEffect(() =&gt; {
+    if (previousValue.current !== value) {
+      console.log(`🔄 [${contextName}] Context 值更新:`, {
+        previous: previousValue.current,
+        current: value
+      })
+      previousValue.current = value
+    }
+  }, [value, contextName])
+  
+  return (
+    &lt;MyContext.Provider value={value}&gt;
+      {children}
+    &lt;/MyContext.Provider&gt;
+  )
+}
+
+// 调试版本的 useContext
+function useDebugContext(context, contextName) {
+  const value = useContext(context)
+  
+  useEffect(() =&gt; {
+    console.log(`📖 [${contextName}] Context 值读取:`, value)
+  }, [value, contextName])
+  
+  return value
+}
+</code></pre>
+<h2>事件调试</h2>
+<h3>1. 事件处理器调试</h3>
+<pre><code class="language-jsx">function debugEventHandler(handler, eventName) {
+  return (event) =&gt; {
+    console.log(`🖱️ [Event] ${eventName} 触发:`, {
+      type: event.type,
+      target: event.target,
+      currentTarget: event.currentTarget,
+      timeStamp: event.timeStamp
+    })
+    
+    try {
+      return handler(event)
+    } catch (error) {
+      console.error(`❌ [Event] ${eventName} 处理错误:`, error)
+      throw error
+    }
+  }
+}
+
+function Button({ onClick, children }) {
+  const handleClick = debugEventHandler(onClick, &#39;Button Click&#39;)
+  
+  return &lt;button onClick={handleClick}&gt;{children}&lt;/button&gt;
+}
+</code></pre>
+<h3>2. 表单调试</h3>
+<pre><code class="language-jsx">function useFormDebug(formName) {
+  const logFormData = (formData) =&gt; {
+    console.log(`📝 [Form ${formName}] 表单数据:`, formData)
+  }
+  
+  const logValidationError = (field, error) =&gt; {
+    console.error(`❌ [Form ${formName}] 验证错误:`, { field, error })
+  }
+  
+  const logSubmission = (data) =&gt; {
+    console.log(`📤 [Form ${formName}] 提交数据:`, data)
+  }
+  
+  return { logFormData, logValidationError, logSubmission }
+}
+
+function ContactForm() {
+  const { logFormData, logValidationError, logSubmission } = useFormDebug(&#39;Contact&#39;)
+  const [formData, setFormData] = useState({ name: &#39;&#39;, email: &#39;&#39; })
+  
+  const handleChange = (e) =&gt; {
+    const newData = { ...formData, [e.target.name]: e.target.value }
+    setFormData(newData)
+    logFormData(newData)
+  }
+  
+  const handleSubmit = (e) =&gt; {
+    e.preventDefault()
+    
+    // 验证
+    if (!formData.name) {
+      logValidationError(&#39;name&#39;, &#39;Name is required&#39;)
+      return
+    }
+    
+    logSubmission(formData)
+  }
+  
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input
+        name=&quot;name&quot;
+        value={formData.name}
+        onChange={handleChange}
+        placeholder=&quot;Name&quot;
+      /&gt;
+      &lt;input
+        name=&quot;email&quot;
+        value={formData.email}
+        onChange={handleChange}
+        placeholder=&quot;Email&quot;
+      /&gt;
+      &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  )
+}
+</code></pre>
+<h2>内存泄漏调试</h2>
+<h3>1. 组件卸载检测</h3>
+<pre><code class="language-jsx">function useUnmountDetection(componentName) {
+  const isMounted = useRef(true)
+  
+  useEffect(() =&gt; {
+    return () =&gt; {
+      isMounted.current = false
+      console.log(`🗑️ [${componentName}] 组件卸载`)
+    }
+  }, [componentName])
+  
+  return isMounted
+}
+
+function MyComponent() {
+  const isMounted = useUnmountDetection(&#39;MyComponent&#39;)
+  const [data, setData] = useState(null)
+  
+  useEffect(() =&gt; {
+    const timer = setTimeout(() =&gt; {
+      if (isMounted.current) {
+        setData(&#39;Updated data&#39;)
+      } else {
+        console.warn(&#39;⚠️ 尝试更新已卸载组件的状态&#39;)
+      }
+    }, 1000)
+    
+    return () =&gt; clearTimeout(timer)
+  }, [])
+  
+  return &lt;div&gt;{data}&lt;/div&gt;
+}
+</code></pre>
+<h3>2. 监听器清理检测</h3>
+<pre><code class="language-jsx">function useEventListenerDebug(eventName, handler, element = window) {
+  useEffect(() =&gt; {
+    console.log(`👂 [EventListener] 添加监听器: ${eventName}`)
+    
+    element.addEventListener(eventName, handler)
+    
+    return () =&gt; {
+      console.log(`🔇 [EventListener] 移除监听器: ${eventName}`)
+      element.removeEventListener(eventName, handler)
+    }
+  }, [eventName, handler, element])
+}
+
+function ScrollTracker() {
+  const handleScroll = useCallback(() =&gt; {
+    console.log(&#39;Scroll position:&#39;, window.scrollY)
+  }, [])
+  
+  useEventListenerDebug(&#39;scroll&#39;, handleScroll)
+  
+  return &lt;div&gt;滚动跟踪器&lt;/div&gt;
+}
+</code></pre>
+<h2>生产环境调试</h2>
+<h3>1. 生产错误捕获</h3>
+<pre><code class="language-jsx">// 全局错误处理
+window.addEventListener(&#39;error&#39;, (event) =&gt; {
+  console.error(&#39;Global error:&#39;, event.error)
+  // 发送错误到监控服务
+  sendErrorToService(event.error)
+})
+
+window.addEventListener(&#39;unhandledrejection&#39;, (event) =&gt; {
+  console.error(&#39;Unhandled promise rejection:&#39;, event.reason)
+  // 发送错误到监控服务
+  sendErrorToService(event.reason)
+})
+
+// 错误服务
+function sendErrorToService(error) {
+  if (process.env.NODE_ENV === &#39;production&#39;) {
+    // 发送到 Sentry、LogRocket 等服务
+    fetch(&#39;/api/errors&#39;, {
+      method: &#39;POST&#39;,
+      headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },
+      body: JSON.stringify({
+        message: error.message,
+        stack: error.stack,
+        url: window.location.href,
+        userAgent: navigator.userAgent,
+        timestamp: new Date().toISOString()
+      })
+    })
+  }
+}
+</code></pre>
+<h3>2. 功能开关调试</h3>
+<pre><code class="language-jsx">// 功能开关
+const Features = {
+  DEBUG_MODE: process.env.NODE_ENV === &#39;development&#39; || 
+              localStorage.getItem(&#39;debug&#39;) === &#39;true&#39;,
+  
+  PERFORMANCE_MONITORING: process.env.REACT_APP_PERF_MONITORING === &#39;true&#39;,
+  
+  VERBOSE_LOGGING: localStorage.getItem(&#39;verbose&#39;) === &#39;true&#39;
+}
+
+// 条件调试
+function conditionalLog(feature, message, ...args) {
+  if (Features[feature]) {
+    console.log(message, ...args)
+  }
+}
+
+function MyComponent() {
+  conditionalLog(&#39;DEBUG_MODE&#39;, &#39;组件渲染&#39;)
+  conditionalLog(&#39;VERBOSE_LOGGING&#39;, &#39;详细日志&#39;, { props, state })
+  
+  return &lt;div&gt;Content&lt;/div&gt;
+}
+</code></pre>
+<h2>调试工具集成</h2>
+<h3>1. React DevTools集成</h3>
+<pre><code class="language-jsx">// 为组件添加显示名称
+const MyComponent = () =&gt; {
+  return &lt;div&gt;Content&lt;/div&gt;
+}
+
+MyComponent.displayName = &#39;MyComponent&#39;
+
+// 使用 useDebugValue 为自定义 Hook 添加调试信息
+function useCounter() {
+  const [count, setCount] = useState(0)
+  
+  useDebugValue(count &gt; 10 ? &#39;High&#39; : &#39;Low&#39;)
+  
+  return { count, setCount }
+}
+</code></pre>
+<h3>2. 浏览器扩展集成</h3>
+<pre><code class="language-jsx">// 与 React DevTools 集成
+function useDevToolsIntegration() {
+  useEffect(() =&gt; {
+    if (window.__REACT_DEVTOOLS_GLOBAL_HOOK__) {
+      console.log(&#39;React DevTools detected&#39;)
+      
+      // 可以向 DevTools 发送自定义消息
+      window.__REACT_DEVTOOLS_GLOBAL_HOOK__.onCommitFiberRoot = (id, root) =&gt; {
+        console.log(&#39;Fiber tree committed:&#39;, id, root)
+      }
+    }
+  }, [])
+}
+</code></pre>
+<h2>调试最佳实践</h2>
+<h3>1. 结构化日志</h3>
+<pre><code class="language-jsx">const Logger = {
+  levels: {
+    ERROR: 0,
+    WARN: 1,
+    INFO: 2,
+    DEBUG: 3
+  },
+  
+  currentLevel: process.env.NODE_ENV === &#39;development&#39; ? 3 : 1,
+  
+  log(level, category, message, data) {
+    if (level &lt;= this.currentLevel) {
+      const prefix = `[${category}] ${message}`
+      const method = level === 0 ? &#39;error&#39; : level === 1 ? &#39;warn&#39; : &#39;log&#39;
+      
+      console[method](prefix, data || &#39;&#39;)
+    }
+  },
+  
+  error: (category, message, data) =&gt; Logger.log(0, category, message, data),
+  warn: (category, message, data) =&gt; Logger.log(1, category, message, data),
+  info: (category, message, data) =&gt; Logger.log(2, category, message, data),
+  debug: (category, message, data) =&gt; Logger.log(3, category, message, data)
+}
+
+// 使用示例
+function UserComponent({ userId }) {
+  Logger.info(&#39;UserComponent&#39;, &#39;Component rendered&#39;, { userId })
+  
+  const [user, setUser] = useState(null)
+  
+  useEffect(() =&gt; {
+    Logger.debug(&#39;UserComponent&#39;, &#39;Fetching user data&#39;, { userId })
+    
+    fetchUser(userId)
+      .then(userData =&gt; {
+        Logger.info(&#39;UserComponent&#39;, &#39;User data loaded&#39;, userData)
+        setUser(userData)
+      })
+      .catch(error =&gt; {
+        Logger.error(&#39;UserComponent&#39;, &#39;Failed to load user&#39;, error)
+      })
+  }, [userId])
+  
+  return user ? &lt;div&gt;{user.name}&lt;/div&gt; : &lt;div&gt;Loading...&lt;/div&gt;
+}
+</code></pre>
+<h3>2. 调试环境设置</h3>
+<pre><code class="language-jsx">// 调试配置
+const DebugConfig = {
+  enabled: process.env.NODE_ENV === &#39;development&#39;,
+  
+  features: {
+    componentTracing: true,
+    performanceMonitoring: true,
+    stateLogging: true,
+    eventLogging: false
+  },
+  
+  toggle(feature) {
+    this.features[feature] = !this.features[feature]
+    localStorage.setItem(&#39;debug-config&#39;, JSON.stringify(this.features))
+  },
+  
+  load() {
+    const saved = localStorage.getItem(&#39;debug-config&#39;)
+    if (saved) {
+      this.features = { ...this.features, ...JSON.parse(saved) }
+    }
+  }
+}
+
+// 初始化调试配置
+DebugConfig.load()
+
+// 全局调试工具
+window.debug = {
+  config: DebugConfig,
+  enableAll: () =&gt; {
+    Object.keys(DebugConfig.features).forEach(feature =&gt; {
+      DebugConfig.features[feature] = true
+    })
+  },
+  disableAll: () =&gt; {
+    Object.keys(DebugConfig.features).forEach(feature =&gt; {
+      DebugConfig.features[feature] = false
+    })
+  }
+}
+</code></pre>
+<p>通过这些调试技巧和工具，开发者可以更有效地诊断和解决React应用中的问题，提高开发效率和应用质量。记住，良好的调试习惯是成功开发的关键。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="31-开发者工具.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">开发者工具</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="33-React-API完整参考.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">React-API完整参考</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

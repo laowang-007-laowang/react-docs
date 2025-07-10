@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>useReducer - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">useReducer</span>
+            </div>
+            <h1 class="doc-title">useReducer</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #4facfe">
+                🎣 Hooks API
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>13-useReducer</h1>
+<p><code>useReducer</code> 是React Hooks中用于管理复杂状态逻辑的钩子。它是 <code>useState</code> 的替代方案，特别适用于状态逻辑较复杂且包含多个子值，或者下一个状态依赖于之前状态的场景。</p>
+<h2>基础概念</h2>
+<h3>什么是useReducer</h3>
+<p><code>useReducer</code> 接受一个形如 <code>(state, action) =&gt; newState</code> 的 reducer，并返回当前的 state 以及与其配套的 <code>dispatch</code> 方法。</p>
+<pre><code class="language-jsx">import React, { useReducer } from &#39;react&#39;;
+
+// Reducer函数
+function counterReducer(state, action) {
+  switch (action.type) {
+    case &#39;increment&#39;:
+      return { count: state.count + 1 };
+    case &#39;decrement&#39;:
+      return { count: state.count - 1 };
+    case &#39;reset&#39;:
+      return { count: 0 };
+    default:
+      throw new Error(`Unknown action type: ${action.type}`);
+  }
+}
+
+function Counter() {
+  // 使用useReducer
+  const [state, dispatch] = useReducer(counterReducer, { count: 0 });
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;计数: {state.count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; dispatch({ type: &#39;increment&#39; })}&gt;
+        +1
+      &lt;/button&gt;
+      &lt;button onClick={() =&gt; dispatch({ type: &#39;decrement&#39; })}&gt;
+        -1
+      &lt;/button&gt;
+      &lt;button onClick={() =&gt; dispatch({ type: &#39;reset&#39; })}&gt;
+        重置
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>基本语法</h2>
+<pre><code class="language-jsx">const [state, dispatch] = useReducer(reducer, initialArg, init);
+</code></pre>
+<ul>
+<li><strong>reducer</strong>: <code>(state, action) =&gt; newState</code> 的函数</li>
+<li><strong>initialArg</strong>: 初始state的值</li>
+<li><strong>init</strong>: 可选的初始化函数</li>
+</ul>
+<h2>复杂状态管理</h2>
+<h3>多字段状态</h3>
+<pre><code class="language-jsx">const initialState = {
+  name: &#39;&#39;,
+  email: &#39;&#39;,
+  age: 0,
+  errors: {},
+  isSubmitting: false
+};
+
+function formReducer(state, action) {
+  switch (action.type) {
+    case &#39;SET_FIELD&#39;:
+      return {
+        ...state,
+        [action.field]: action.value,
+        errors: {
+          ...state.errors,
+          [action.field]: null // 清除错误
+        }
+      };
+    
+    case &#39;SET_ERROR&#39;:
+      return {
+        ...state,
+        errors: {
+          ...state.errors,
+          [action.field]: action.error
+        }
+      };
+    
+    case &#39;SET_SUBMITTING&#39;:
+      return {
+        ...state,
+        isSubmitting: action.isSubmitting
+      };
+    
+    case &#39;RESET_FORM&#39;:
+      return initialState;
+    
+    default:
+      return state;
+  }
+}
+
+function UserForm() {
+  const [state, dispatch] = useReducer(formReducer, initialState);
+
+  const handleChange = (field, value) =&gt; {
+    dispatch({ type: &#39;SET_FIELD&#39;, field, value });
+  };
+
+  const handleSubmit = async (e) =&gt; {
+    e.preventDefault();
+    
+    // 验证
+    let hasErrors = false;
+    if (!state.name) {
+      dispatch({ type: &#39;SET_ERROR&#39;, field: &#39;name&#39;, error: &#39;姓名是必填的&#39; });
+      hasErrors = true;
+    }
+    if (!state.email) {
+      dispatch({ type: &#39;SET_ERROR&#39;, field: &#39;email&#39;, error: &#39;邮箱是必填的&#39; });
+      hasErrors = true;
+    }
+
+    if (hasErrors) return;
+
+    // 提交
+    dispatch({ type: &#39;SET_SUBMITTING&#39;, isSubmitting: true });
+    try {
+      await submitForm(state);
+      dispatch({ type: &#39;RESET_FORM&#39; });
+    } catch (error) {
+      dispatch({ type: &#39;SET_ERROR&#39;, field: &#39;general&#39;, error: &#39;提交失败&#39; });
+    } finally {
+      dispatch({ type: &#39;SET_SUBMITTING&#39;, isSubmitting: false });
+    }
+  };
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;div&gt;
+        &lt;input
+          type=&quot;text&quot;
+          placeholder=&quot;姓名&quot;
+          value={state.name}
+          onChange={(e) =&gt; handleChange(&#39;name&#39;, e.target.value)}
+        /&gt;
+        {state.errors.name &amp;&amp; (
+          &lt;span className=&quot;error&quot;&gt;{state.errors.name}&lt;/span&gt;
+        )}
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;input
+          type=&quot;email&quot;
+          placeholder=&quot;邮箱&quot;
+          value={state.email}
+          onChange={(e) =&gt; handleChange(&#39;email&#39;, e.target.value)}
+        /&gt;
+        {state.errors.email &amp;&amp; (
+          &lt;span className=&quot;error&quot;&gt;{state.errors.email}&lt;/span&gt;
+        )}
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;input
+          type=&quot;number&quot;
+          placeholder=&quot;年龄&quot;
+          value={state.age}
+          onChange={(e) =&gt; handleChange(&#39;age&#39;, parseInt(e.target.value))}
+        /&gt;
+      &lt;/div&gt;
+
+      {state.errors.general &amp;&amp; (
+        &lt;div className=&quot;error&quot;&gt;{state.errors.general}&lt;/div&gt;
+      )}
+
+      &lt;button type=&quot;submit&quot; disabled={state.isSubmitting}&gt;
+        {state.isSubmitting ? &#39;提交中...&#39; : &#39;提交&#39;}
+      &lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+</code></pre>
+<h2>惰性初始化</h2>
+<h3>使用init函数</h3>
+<pre><code class="language-jsx">function init(initialCount) {
+  return {
+    count: initialCount,
+    history: [initialCount],
+    step: 1
+  };
+}
+
+function counterReducer(state, action) {
+  switch (action.type) {
+    case &#39;increment&#39;:
+      const newCount = state.count + state.step;
+      return {
+        ...state,
+        count: newCount,
+        history: [...state.history, newCount]
+      };
+    
+    case &#39;decrement&#39;:
+      const decrementedCount = state.count - state.step;
+      return {
+        ...state,
+        count: decrementedCount,
+        history: [...state.history, decrementedCount]
+      };
+    
+    case &#39;set_step&#39;:
+      return {
+        ...state,
+        step: action.step
+      };
+    
+    case &#39;reset&#39;:
+      return init(action.initialCount);
+    
+    default:
+      return state;
+  }
+}
+
+function AdvancedCounter({ initialCount = 0 }) {
+  const [state, dispatch] = useReducer(counterReducer, initialCount, init);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;当前值: {state.count}&lt;/p&gt;
+      &lt;p&gt;步长: {state.step}&lt;/p&gt;
+      &lt;p&gt;历史: {state.history.join(&#39; → &#39;)}&lt;/p&gt;
+      
+      &lt;div&gt;
+        &lt;button onClick={() =&gt; dispatch({ type: &#39;increment&#39; })}&gt;
+          +{state.step}
+        &lt;/button&gt;
+        &lt;button onClick={() =&gt; dispatch({ type: &#39;decrement&#39; })}&gt;
+          -{state.step}
+        &lt;/button&gt;
+      &lt;/div&gt;
+      
+      &lt;div&gt;
+        &lt;label&gt;
+          步长:
+          &lt;input
+            type=&quot;number&quot;
+            value={state.step}
+            onChange={(e) =&gt; dispatch({
+              type: &#39;set_step&#39;,
+              step: parseInt(e.target.value) || 1
+            })}
+          /&gt;
+        &lt;/label&gt;
+      &lt;/div&gt;
+      
+      &lt;button onClick={() =&gt; dispatch({ type: &#39;reset&#39;, initialCount })}&gt;
+        重置到初始值
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>Todo应用示例</h2>
+<pre><code class="language-jsx">const todoReducer = (state, action) =&gt; {
+  switch (action.type) {
+    case &#39;ADD_TODO&#39;:
+      return {
+        ...state,
+        todos: [
+          ...state.todos,
+          {
+            id: Date.now(),
+            text: action.text,
+            completed: false,
+            createdAt: new Date()
+          }
+        ]
+      };
+
+    case &#39;TOGGLE_TODO&#39;:
+      return {
+        ...state,
+        todos: state.todos.map(todo =&gt;
+          todo.id === action.id
+            ? { ...todo, completed: !todo.completed }
+            : todo
+        )
+      };
+
+    case &#39;DELETE_TODO&#39;:
+      return {
+        ...state,
+        todos: state.todos.filter(todo =&gt; todo.id !== action.id)
+      };
+
+    case &#39;EDIT_TODO&#39;:
+      return {
+        ...state,
+        todos: state.todos.map(todo =&gt;
+          todo.id === action.id
+            ? { ...todo, text: action.text }
+            : todo
+        )
+      };
+
+    case &#39;SET_FILTER&#39;:
+      return {
+        ...state,
+        filter: action.filter
+      };
+
+    case &#39;CLEAR_COMPLETED&#39;:
+      return {
+        ...state,
+        todos: state.todos.filter(todo =&gt; !todo.completed)
+      };
+
+    default:
+      return state;
+  }
+};
+
+const initialTodoState = {
+  todos: [],
+  filter: &#39;all&#39; // &#39;all&#39;, &#39;active&#39;, &#39;completed&#39;
+};
+
+function TodoApp() {
+  const [state, dispatch] = useReducer(todoReducer, initialTodoState);
+  const [inputValue, setInputValue] = useState(&#39;&#39;);
+
+  const addTodo = () =&gt; {
+    if (inputValue.trim()) {
+      dispatch({ type: &#39;ADD_TODO&#39;, text: inputValue.trim() });
+      setInputValue(&#39;&#39;);
+    }
+  };
+
+  const filteredTodos = state.todos.filter(todo =&gt; {
+    if (state.filter === &#39;active&#39;) return !todo.completed;
+    if (state.filter === &#39;completed&#39;) return todo.completed;
+    return true;
+  });
+
+  const activeCount = state.todos.filter(todo =&gt; !todo.completed).length;
+  const completedCount = state.todos.filter(todo =&gt; todo.completed).length;
+
+  return (
+    &lt;div className=&quot;todo-app&quot;&gt;
+      &lt;div className=&quot;todo-input&quot;&gt;
+        &lt;input
+          type=&quot;text&quot;
+          value={inputValue}
+          onChange={(e) =&gt; setInputValue(e.target.value)}
+          onKeyPress={(e) =&gt; e.key === &#39;Enter&#39; &amp;&amp; addTodo()}
+          placeholder=&quot;添加新任务...&quot;
+        /&gt;
+        &lt;button onClick={addTodo}&gt;添加&lt;/button&gt;
+      &lt;/div&gt;
+
+      &lt;div className=&quot;todo-filters&quot;&gt;
+        {[&#39;all&#39;, &#39;active&#39;, &#39;completed&#39;].map(filter =&gt; (
+          &lt;button
+            key={filter}
+            className={state.filter === filter ? &#39;active&#39; : &#39;&#39;}
+            onClick={() =&gt; dispatch({ type: &#39;SET_FILTER&#39;, filter })}
+          &gt;
+            {filter === &#39;all&#39; ? &#39;全部&#39; : filter === &#39;active&#39; ? &#39;未完成&#39; : &#39;已完成&#39;}
+          &lt;/button&gt;
+        ))}
+      &lt;/div&gt;
+
+      &lt;div className=&quot;todo-stats&quot;&gt;
+        &lt;span&gt;总计: {state.todos.length}&lt;/span&gt;
+        &lt;span&gt;未完成: {activeCount}&lt;/span&gt;
+        &lt;span&gt;已完成: {completedCount}&lt;/span&gt;
+        {completedCount &gt; 0 &amp;&amp; (
+          &lt;button onClick={() =&gt; dispatch({ type: &#39;CLEAR_COMPLETED&#39; })}&gt;
+            清除已完成
+          &lt;/button&gt;
+        )}
+      &lt;/div&gt;
+
+      &lt;ul className=&quot;todo-list&quot;&gt;
+        {filteredTodos.map(todo =&gt; (
+          &lt;TodoItem
+            key={todo.id}
+            todo={todo}
+            onToggle={() =&gt; dispatch({ type: &#39;TOGGLE_TODO&#39;, id: todo.id })}
+            onDelete={() =&gt; dispatch({ type: &#39;DELETE_TODO&#39;, id: todo.id })}
+            onEdit={(text) =&gt; dispatch({ type: &#39;EDIT_TODO&#39;, id: todo.id, text })}
+          /&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+
+function TodoItem({ todo, onToggle, onDelete, onEdit }) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editText, setEditText] = useState(todo.text);
+
+  const handleSave = () =&gt; {
+    if (editText.trim() &amp;&amp; editText !== todo.text) {
+      onEdit(editText.trim());
+    }
+    setIsEditing(false);
+  };
+
+  const handleCancel = () =&gt; {
+    setEditText(todo.text);
+    setIsEditing(false);
+  };
+
+  return (
+    &lt;li className={`todo-item ${todo.completed ? &#39;completed&#39; : &#39;&#39;}`}&gt;
+      &lt;input
+        type=&quot;checkbox&quot;
+        checked={todo.completed}
+        onChange={onToggle}
+      /&gt;
+      
+      {isEditing ? (
+        &lt;div className=&quot;edit-mode&quot;&gt;
+          &lt;input
+            type=&quot;text&quot;
+            value={editText}
+            onChange={(e) =&gt; setEditText(e.target.value)}
+            onKeyPress={(e) =&gt; {
+              if (e.key === &#39;Enter&#39;) handleSave();
+              if (e.key === &#39;Escape&#39;) handleCancel();
+            }}
+            onBlur={handleSave}
+            autoFocus
+          /&gt;
+        &lt;/div&gt;
+      ) : (
+        &lt;span
+          className=&quot;todo-text&quot;
+          onDoubleClick={() =&gt; setIsEditing(true)}
+        &gt;
+          {todo.text}
+        &lt;/span&gt;
+      )}
+      
+      &lt;div className=&quot;todo-actions&quot;&gt;
+        {!isEditing &amp;&amp; (
+          &lt;button onClick={() =&gt; setIsEditing(true)}&gt;编辑&lt;/button&gt;
+        )}
+        &lt;button onClick={onDelete}&gt;删除&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  );
+}
+</code></pre>
+<h2>购物车示例</h2>
+<pre><code class="language-jsx">const cartReducer = (state, action) =&gt; {
+  switch (action.type) {
+    case &#39;ADD_ITEM&#39;:
+      const existingItem = state.items.find(item =&gt; item.id === action.product.id);
+      
+      if (existingItem) {
+        return {
+          ...state,
+          items: state.items.map(item =&gt;
+            item.id === action.product.id
+              ? { ...item, quantity: item.quantity + 1 }
+              : item
+          )
+        };
+      }
+      
+      return {
+        ...state,
+        items: [...state.items, { ...action.product, quantity: 1 }]
+      };
+
+    case &#39;REMOVE_ITEM&#39;:
+      return {
+        ...state,
+        items: state.items.filter(item =&gt; item.id !== action.id)
+      };
+
+    case &#39;UPDATE_QUANTITY&#39;:
+      if (action.quantity &lt;= 0) {
+        return {
+          ...state,
+          items: state.items.filter(item =&gt; item.id !== action.id)
+        };
+      }
+      
+      return {
+        ...state,
+        items: state.items.map(item =&gt;
+          item.id === action.id
+            ? { ...item, quantity: action.quantity }
+            : item
+        )
+      };
+
+    case &#39;CLEAR_CART&#39;:
+      return {
+        ...state,
+        items: []
+      };
+
+    case &#39;APPLY_DISCOUNT&#39;:
+      return {
+        ...state,
+        discount: action.discount
+      };
+
+    case &#39;SET_SHIPPING&#39;:
+      return {
+        ...state,
+        shipping: action.shipping
+      };
+
+    default:
+      return state;
+  }
+};
+
+const initialCartState = {
+  items: [],
+  discount: 0,
+  shipping: 0
+};
+
+function ShoppingCart() {
+  const [cart, dispatch] = useReducer(cartReducer, initialCartState);
+
+  const subtotal = cart.items.reduce(
+    (sum, item) =&gt; sum + item.price * item.quantity,
+    0
+  );
+  
+  const discountAmount = subtotal * (cart.discount / 100);
+  const total = subtotal - discountAmount + cart.shipping;
+
+  const addItem = (product) =&gt; {
+    dispatch({ type: &#39;ADD_ITEM&#39;, product });
+  };
+
+  const removeItem = (id) =&gt; {
+    dispatch({ type: &#39;REMOVE_ITEM&#39;, id });
+  };
+
+  const updateQuantity = (id, quantity) =&gt; {
+    dispatch({ type: &#39;UPDATE_QUANTITY&#39;, id, quantity });
+  };
+
+  const applyDiscount = (discount) =&gt; {
+    dispatch({ type: &#39;APPLY_DISCOUNT&#39;, discount });
+  };
+
+  return (
+    &lt;div className=&quot;shopping-cart&quot;&gt;
+      &lt;h2&gt;购物车&lt;/h2&gt;
+      
+      {cart.items.length === 0 ? (
+        &lt;p&gt;购物车为空&lt;/p&gt;
+      ) : (
+        &lt;div&gt;
+          {cart.items.map(item =&gt; (
+            &lt;div key={item.id} className=&quot;cart-item&quot;&gt;
+              &lt;span&gt;{item.name}&lt;/span&gt;
+              &lt;span&gt;¥{item.price}&lt;/span&gt;
+              &lt;div&gt;
+                &lt;button onClick={() =&gt; updateQuantity(item.id, item.quantity - 1)}&gt;
+                  -
+                &lt;/button&gt;
+                &lt;span&gt;{item.quantity}&lt;/span&gt;
+                &lt;button onClick={() =&gt; updateQuantity(item.id, item.quantity + 1)}&gt;
+                  +
+                &lt;/button&gt;
+              &lt;/div&gt;
+              &lt;span&gt;¥{(item.price * item.quantity).toFixed(2)}&lt;/span&gt;
+              &lt;button onClick={() =&gt; removeItem(item.id)}&gt;删除&lt;/button&gt;
+            &lt;/div&gt;
+          ))}
+          
+          &lt;div className=&quot;cart-summary&quot;&gt;
+            &lt;div&gt;小计: ¥{subtotal.toFixed(2)}&lt;/div&gt;
+            {cart.discount &gt; 0 &amp;&amp; (
+              &lt;div&gt;折扣 ({cart.discount}%): -¥{discountAmount.toFixed(2)}&lt;/div&gt;
+            )}
+            &lt;div&gt;运费: ¥{cart.shipping.toFixed(2)}&lt;/div&gt;
+            &lt;div className=&quot;total&quot;&gt;总计: ¥{total.toFixed(2)}&lt;/div&gt;
+          &lt;/div&gt;
+          
+          &lt;div className=&quot;cart-actions&quot;&gt;
+            &lt;button onClick={() =&gt; applyDiscount(10)}&gt;
+              应用10%折扣
+            &lt;/button&gt;
+            &lt;button onClick={() =&gt; dispatch({ type: &#39;SET_SHIPPING&#39;, shipping: 15 })}&gt;
+              添加运费
+            &lt;/button&gt;
+            &lt;button onClick={() =&gt; dispatch({ type: &#39;CLEAR_CART&#39; })}&gt;
+              清空购物车
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      )}
+      
+      {/* 示例产品 */}
+      &lt;div className=&quot;products&quot;&gt;
+        &lt;h3&gt;商品&lt;/h3&gt;
+        {[
+          { id: 1, name: &#39;笔记本电脑&#39;, price: 5999 },
+          { id: 2, name: &#39;鼠标&#39;, price: 99 },
+          { id: 3, name: &#39;键盘&#39;, price: 299 }
+        ].map(product =&gt; (
+          &lt;div key={product.id} className=&quot;product&quot;&gt;
+            &lt;span&gt;{product.name} - ¥{product.price}&lt;/span&gt;
+            &lt;button onClick={() =&gt; addItem(product)}&gt;
+              加入购物车
+            &lt;/button&gt;
+          &lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>与useState的对比</h2>
+<h3>何时使用useReducer</h3>
+<pre><code class="language-jsx">// ✅ 适合useReducer的场景
+function ComplexComponent() {
+  // 复杂的状态逻辑
+  const [state, dispatch] = useReducer(complexReducer, initialState);
+
+  // 多个相关的状态更新
+  const handleComplexAction = () =&gt; {
+    dispatch({ type: &#39;COMPLEX_ACTION&#39;, payload: data });
+  };
+
+  return (
+    // 组件JSX
+  );
+}
+
+// ❌ 简单状态更适合useState
+function SimpleComponent() {
+  const [count, setCount] = useState(0);
+  const [name, setName] = useState(&#39;&#39;);
+
+  return (
+    &lt;div&gt;
+      &lt;input value={name} onChange={(e) =&gt; setName(e.target.value)} /&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Count: {count}
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>迁移useState到useReducer</h3>
+<pre><code class="language-jsx">// 原始的useState实现
+function TodoList() {
+  const [todos, setTodos] = useState([]);
+  const [filter, setFilter] = useState(&#39;all&#39;);
+
+  const addTodo = (text) =&gt; {
+    setTodos([...todos, { id: Date.now(), text, completed: false }]);
+  };
+
+  const toggleTodo = (id) =&gt; {
+    setTodos(todos.map(todo =&gt;
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    ));
+  };
+
+  // ... 更多逻辑
+}
+
+// 迁移到useReducer
+function TodoList() {
+  const [state, dispatch] = useReducer(todoReducer, initialState);
+
+  const addTodo = (text) =&gt; {
+    dispatch({ type: &#39;ADD_TODO&#39;, text });
+  };
+
+  const toggleTodo = (id) =&gt; {
+    dispatch({ type: &#39;TOGGLE_TODO&#39;, id });
+  };
+
+  // ... 更简洁的逻辑
+}
+</code></pre>
+<h2>结合Context使用</h2>
+<pre><code class="language-jsx">const TodoContext = createContext();
+
+function TodoProvider({ children }) {
+  const [state, dispatch] = useReducer(todoReducer, initialState);
+
+  return (
+    &lt;TodoContext.Provider value={{ state, dispatch }}&gt;
+      {children}
+    &lt;/TodoContext.Provider&gt;
+  );
+}
+
+function useTodos() {
+  const context = useContext(TodoContext);
+  if (!context) {
+    throw new Error(&#39;useTodos must be used within TodoProvider&#39;);
+  }
+  return context;
+}
+
+// 使用
+function TodoInput() {
+  const { dispatch } = useTodos();
+  const [text, setText] = useState(&#39;&#39;);
+
+  const handleSubmit = (e) =&gt; {
+    e.preventDefault();
+    if (text.trim()) {
+      dispatch({ type: &#39;ADD_TODO&#39;, text: text.trim() });
+      setText(&#39;&#39;);
+    }
+  };
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input
+        value={text}
+        onChange={(e) =&gt; setText(e.target.value)}
+        placeholder=&quot;添加新任务&quot;
+      /&gt;
+      &lt;button type=&quot;submit&quot;&gt;添加&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+
+function TodoList() {
+  const { state } = useTodos();
+
+  return (
+    &lt;ul&gt;
+      {state.todos.map(todo =&gt; (
+        &lt;TodoItem key={todo.id} todo={todo} /&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h2>TypeScript支持</h2>
+<pre><code class="language-tsx">// 定义状态类型
+interface State {
+  count: number;
+  step: number;
+  history: number[];
+}
+
+// 定义Action类型
+type Action =
+  | { type: &#39;increment&#39; }
+  | { type: &#39;decrement&#39; }
+  | { type: &#39;set_step&#39;; step: number }
+  | { type: &#39;reset&#39;; initialCount: number };
+
+// Reducer函数
+const counterReducer = (state: State, action: Action): State =&gt; {
+  switch (action.type) {
+    case &#39;increment&#39;:
+      return {
+        ...state,
+        count: state.count + state.step,
+        history: [...state.history, state.count + state.step]
+      };
+    case &#39;decrement&#39;:
+      return {
+        ...state,
+        count: state.count - state.step,
+        history: [...state.history, state.count - state.step]
+      };
+    case &#39;set_step&#39;:
+      return {
+        ...state,
+        step: action.step
+      };
+    case &#39;reset&#39;:
+      return {
+        count: action.initialCount,
+        step: 1,
+        history: [action.initialCount]
+      };
+    default:
+      return state;
+  }
+};
+
+// 组件
+function TypedCounter() {
+  const [state, dispatch] = useReducer(counterReducer, {
+    count: 0,
+    step: 1,
+    history: [0]
+  });
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {state.count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; dispatch({ type: &#39;increment&#39; })}&gt;
+        +{state.step}
+      &lt;/button&gt;
+      &lt;button onClick={() =&gt; dispatch({ type: &#39;decrement&#39; })}&gt;
+        -{state.step}
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>最佳实践</h2>
+<h3>1. Reducer函数应该是纯函数</h3>
+<pre><code class="language-jsx">// ✅ 正确：纯函数
+function goodReducer(state, action) {
+  switch (action.type) {
+    case &#39;ADD_ITEM&#39;:
+      return {
+        ...state,
+        items: [...state.items, action.item]
+      };
+    default:
+      return state;
+  }
+}
+
+// ❌ 错误：有副作用
+function badReducer(state, action) {
+  switch (action.type) {
+    case &#39;ADD_ITEM&#39;:
+      console.log(&#39;Adding item&#39;); // 副作用
+      state.items.push(action.item); // 直接修改状态
+      return state;
+    default:
+      return state;
+  }
+}
+</code></pre>
+<h3>2. 使用对象展开和数组方法</h3>
+<pre><code class="language-jsx">function todoReducer(state, action) {
+  switch (action.type) {
+    case &#39;ADD_TODO&#39;:
+      // ✅ 创建新数组
+      return {
+        ...state,
+        todos: [...state.todos, action.todo]
+      };
+    
+    case &#39;UPDATE_TODO&#39;:
+      // ✅ 使用map创建新数组
+      return {
+        ...state,
+        todos: state.todos.map(todo =&gt;
+          todo.id === action.id
+            ? { ...todo, ...action.updates }
+            : todo
+        )
+      };
+    
+    case &#39;DELETE_TODO&#39;:
+      // ✅ 使用filter创建新数组
+      return {
+        ...state,
+        todos: state.todos.filter(todo =&gt; todo.id !== action.id)
+      };
+    
+    default:
+      return state;
+  }
+}
+</code></pre>
+<h3>3. 处理异步操作</h3>
+<pre><code class="language-jsx">function asyncReducer(state, action) {
+  switch (action.type) {
+    case &#39;FETCH_START&#39;:
+      return {
+        ...state,
+        loading: true,
+        error: null
+      };
+    
+    case &#39;FETCH_SUCCESS&#39;:
+      return {
+        ...state,
+        loading: false,
+        data: action.data
+      };
+    
+    case &#39;FETCH_ERROR&#39;:
+      return {
+        ...state,
+        loading: false,
+        error: action.error
+      };
+    
+    default:
+      return state;
+  }
+}
+
+function DataComponent() {
+  const [state, dispatch] = useReducer(asyncReducer, {
+    data: null,
+    loading: false,
+    error: null
+  });
+
+  const fetchData = async () =&gt; {
+    dispatch({ type: &#39;FETCH_START&#39; });
+    try {
+      const response = await fetch(&#39;/api/data&#39;);
+      const data = await response.json();
+      dispatch({ type: &#39;FETCH_SUCCESS&#39;, data });
+    } catch (error) {
+      dispatch({ type: &#39;FETCH_ERROR&#39;, error: error.message });
+    }
+  };
+
+  return (
+    &lt;div&gt;
+      {state.loading &amp;&amp; &lt;p&gt;加载中...&lt;/p&gt;}
+      {state.error &amp;&amp; &lt;p&gt;错误: {state.error}&lt;/p&gt;}
+      {state.data &amp;&amp; &lt;pre&gt;{JSON.stringify(state.data, null, 2)}&lt;/pre&gt;}
+      &lt;button onClick={fetchData}&gt;获取数据&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>总结</h2>
+<p><code>useReducer</code> 是管理复杂状态的强大工具：</p>
+<ol>
+<li><strong>适用场景</strong>：复杂状态逻辑、多个相关状态、状态依赖关系</li>
+<li><strong>优势</strong>：可预测的状态更新、更好的测试性、状态逻辑集中管理</li>
+<li><strong>最佳实践</strong>：保持reducer纯净、使用TypeScript、结合Context使用</li>
+<li><strong>性能考虑</strong>：避免不必要的对象创建、合理组织状态结构</li>
+</ol>
+<p>正确使用 <code>useReducer</code> 可以让你的React应用状态管理更加清晰和可维护。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="12-useContext.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">useContext</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="14-useMemo和useCallback.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">useMemo和useCallback</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

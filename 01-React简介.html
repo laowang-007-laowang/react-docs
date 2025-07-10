@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React简介 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">React简介</span>
+            </div>
+            <h1 class="doc-title">React简介</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #667eea">
+                📚 基础概念
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>React 简介</h1>
+<h2>什么是 React？</h2>
+<p>React 是由 Facebook（现Meta）开发的一个用于构建用户界面的 JavaScript 库。它主要用于创建可重用的UI组件和管理应用程序的状态。</p>
+<h2>核心特性</h2>
+<h3>1. 组件化架构</h3>
+<pre><code class="language-javascript">// 函数组件
+function Welcome(props) {
+  return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;;
+}
+
+// 类组件
+class Welcome extends React.Component {
+  render() {
+    return &lt;h1&gt;Hello, {this.props.name}!&lt;/h1&gt;;
+  }
+}
+</code></pre>
+<h3>2. Virtual DOM</h3>
+<p>React使用虚拟DOM来提高性能，通过diff算法最小化实际DOM操作。</p>
+<h3>3. 声明式编程</h3>
+<pre><code class="language-javascript">// 声明式：描述UI应该是什么样子
+function TodoList({ todos }) {
+  return (
+    &lt;ul&gt;
+      {todos.map(todo =&gt; (
+        &lt;li key={todo.id} className={todo.completed ? &#39;completed&#39; : &#39;&#39;}&gt;
+          {todo.text}
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h3>4. 单向数据流</h3>
+<p>数据从父组件流向子组件，通过props传递。</p>
+<h2>React 生态系统</h2>
+<h3>核心库</h3>
+<ul>
+<li><strong>react</strong>: 核心库</li>
+<li><strong>react-dom</strong>: DOM渲染器</li>
+<li><strong>react-router</strong>: 路由管理</li>
+<li><strong>react-query/tanstack-query</strong>: 数据获取</li>
+<li><strong>react-hook-form</strong>: 表单处理</li>
+</ul>
+<h3>状态管理</h3>
+<ul>
+<li><strong>Redux</strong>: 可预测的状态容器</li>
+<li><strong>MobX</strong>: 响应式状态管理</li>
+<li><strong>Zustand</strong>: 轻量级状态管理</li>
+<li><strong>Recoil</strong>: Facebook实验性状态管理</li>
+</ul>
+<h3>UI组件库</h3>
+<ul>
+<li><strong>Ant Design</strong>: 企业级UI设计语言</li>
+<li><strong>Material-UI</strong>: Google Material Design</li>
+<li><strong>Chakra UI</strong>: 简洁的组件库</li>
+<li><strong>React Bootstrap</strong>: Bootstrap React组件</li>
+</ul>
+<h2>React 版本历史</h2>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>发布时间</th>
+<th>主要特性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>16.8</td>
+<td>2019.02</td>
+<td>Hooks引入</td>
+</tr>
+<tr>
+<td>17.0</td>
+<td>2020.10</td>
+<td>无新特性，专注升级</td>
+</tr>
+<tr>
+<td>18.0</td>
+<td>2022.03</td>
+<td>并发特性、自动批处理</td>
+</tr>
+</tbody></table>
+<h2>适用场景</h2>
+<h3>✅ 适合使用React的场景</h3>
+<ul>
+<li>复杂的单页应用(SPA)</li>
+<li>需要频繁状态更新的应用</li>
+<li>团队协作的大型项目</li>
+<li>需要服务端渲染的应用</li>
+<li>移动端应用(React Native)</li>
+</ul>
+<h3>❌ 不适合使用React的场景</h3>
+<ul>
+<li>简单的静态网站</li>
+<li>学习成本敏感的小项目</li>
+<li>需要快速原型的场景</li>
+<li>SEO要求极高的营销页面</li>
+</ul>
+<h2>学习路径</h2>
+<h3>入门阶段</h3>
+<ol>
+<li>JavaScript ES6+ 基础</li>
+<li>JSX 语法</li>
+<li>组件概念</li>
+<li>Props 和 State</li>
+<li>事件处理</li>
+</ol>
+<h3>进阶阶段</h3>
+<ol>
+<li>Hooks API</li>
+<li>Context API</li>
+<li>React Router</li>
+<li>状态管理</li>
+<li>性能优化</li>
+</ol>
+<h3>高级阶段</h3>
+<ol>
+<li>自定义Hooks</li>
+<li>高阶组件(HOC)</li>
+<li>Render Props</li>
+<li>错误边界</li>
+<li>服务端渲染(SSR)</li>
+</ol>
+<h2>开发环境要求</h2>
+<h3>必需工具</h3>
+<ul>
+<li><strong>Node.js</strong>: 14.0.0 或更高版本</li>
+<li><strong>npm</strong>: 6.0.0 或更高版本（或yarn、pnpm）</li>
+<li><strong>现代浏览器</strong>: Chrome 60+, Firefox 60+, Safari 12+</li>
+</ul>
+<h3>推荐工具</h3>
+<ul>
+<li><strong>VS Code</strong>: 代码编辑器</li>
+<li><strong>React Developer Tools</strong>: 浏览器扩展</li>
+<li><strong>Create React App</strong>: 官方脚手架</li>
+<li><strong>Vite</strong>: 现代构建工具</li>
+</ul>
+<h2>下一步</h2>
+<p>继续阅读 <a href="./02-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA.md">环境搭建</a> 学习如何搭建React开发环境。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            <div></div>
+            
+            
+              <a href="02-环境搭建.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">环境搭建</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

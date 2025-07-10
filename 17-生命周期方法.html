@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生命周期方法 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">生命周期方法</span>
+            </div>
+            <h1 class="doc-title">生命周期方法</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #43e97b">
+                🔄 生命周期
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>17-生命周期方法</h1>
+<p>React组件的生命周期是指组件从创建到销毁的整个过程。虽然在函数组件和Hooks时代，我们更多使用useEffect来处理副作用，但理解类组件的生命周期方法对于维护老项目和深入理解React仍然很重要。</p>
+<h2>生命周期概览</h2>
+<p>React组件的生命周期可以分为三个主要阶段：</p>
+<ol>
+<li><strong>挂载(Mounting)</strong> - 组件被创建并插入到DOM中</li>
+<li><strong>更新(Updating)</strong> - 组件的props或state发生变化</li>
+<li><strong>卸载(Unmounting)</strong> - 组件从DOM中移除</li>
+</ol>
+<h2>挂载阶段</h2>
+<h3>constructor()</h3>
+<pre><code class="language-jsx">class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    
+    // 初始化状态
+    this.state = {
+      count: 0,
+      isVisible: true
+    };
+    
+    // 绑定方法
+    this.handleClick = this.handleClick.bind(this);
+  }
+  
+  handleClick() {
+    this.setState({ count: this.state.count + 1 });
+  }
+  
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Count: {this.state.count}&lt;/p&gt;
+        &lt;button onClick={this.handleClick}&gt;Increment&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h3>componentDidMount()</h3>
+<p>组件挂载后立即调用，适合进行：</p>
+<ul>
+<li>API调用</li>
+<li>设置订阅</li>
+<li>启动定时器</li>
+<li>访问DOM元素</li>
+</ul>
+<pre><code class="language-jsx">class UserProfile extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null,
+      loading: true,
+      error: null
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      // API调用
+      const response = await fetch(`/api/users/${this.props.userId}`);
+      const user = await response.json();
+      
+      this.setState({ 
+        user, 
+        loading: false 
+      });
+      
+      // 设置定时器
+      this.timer = setInterval(() =&gt; {
+        console.log(&#39;定时器执行&#39;);
+      }, 1000);
+      
+      // 添加事件监听
+      document.addEventListener(&#39;scroll&#39;, this.handleScroll);
+      
+    } catch (error) {
+      this.setState({ 
+        error: error.message, 
+        loading: false 
+      });
+    }
+  }
+
+  handleScroll = () =&gt; {
+    console.log(&#39;页面滚动&#39;);
+  }
+
+  componentWillUnmount() {
+    // 清理工作
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
+    document.removeEventListener(&#39;scroll&#39;, this.handleScroll);
+  }
+
+  render() {
+    const { user, loading, error } = this.state;
+    
+    if (loading) return &lt;div&gt;加载中...&lt;/div&gt;;
+    if (error) return &lt;div&gt;错误: {error}&lt;/div&gt;;
+    if (!user) return &lt;div&gt;用户不存在&lt;/div&gt;;
+
+    return (
+      &lt;div&gt;
+        &lt;h1&gt;{user.name}&lt;/h1&gt;
+        &lt;p&gt;{user.email}&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h2>更新阶段</h2>
+<h3>componentDidUpdate()</h3>
+<pre><code class="language-jsx">class ChatBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      messages: []
+    };
+    this.messagesEndRef = React.createRef();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // 比较props变化
+    if (prevProps.chatId !== this.props.chatId) {
+      // 聊天室ID变化，加载新的消息
+      this.loadMessages(this.props.chatId);
+    }
+    
+    // 比较state变化
+    if (prevState.messages.length !== this.state.messages.length) {
+      // 新消息添加，滚动到底部
+      this.scrollToBottom();
+    }
+    
+    // 比较特定属性
+    if (prevProps.theme !== this.props.theme) {
+      // 主题变化，更新样式
+      document.body.className = `theme-${this.props.theme}`;
+    }
+  }
+
+  loadMessages = async (chatId) =&gt; {
+    try {
+      const response = await fetch(`/api/chats/${chatId}/messages`);
+      const messages = await response.json();
+      this.setState({ messages });
+    } catch (error) {
+      console.error(&#39;加载消息失败:&#39;, error);
+    }
+  }
+
+  scrollToBottom = () =&gt; {
+    this.messagesEndRef.current?.scrollIntoView({ behavior: &#39;smooth&#39; });
+  }
+
+  render() {
+    return (
+      &lt;div className=&quot;chat-box&quot;&gt;
+        &lt;div className=&quot;messages&quot;&gt;
+          {this.state.messages.map(message =&gt; (
+            &lt;div key={message.id} className=&quot;message&quot;&gt;
+              {message.content}
+            &lt;/div&gt;
+          ))}
+          &lt;div ref={this.messagesEndRef} /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h3>getSnapshotBeforeUpdate()</h3>
+<p>在最近一次渲染输出提交给DOM之前调用，可以获取DOM更新前的信息：</p>
+<pre><code class="language-jsx">class ScrollableList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.listRef = React.createRef();
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    // 捕获滚动位置
+    if (prevProps.list.length &lt; this.props.list.length) {
+      const list = this.listRef.current;
+      return list.scrollHeight - list.scrollTop;
+    }
+    return null;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // 如果有快照，调整滚动位置
+    if (snapshot !== null) {
+      const list = this.listRef.current;
+      list.scrollTop = list.scrollHeight - snapshot;
+    }
+  }
+
+  render() {
+    return (
+      &lt;div ref={this.listRef} className=&quot;scrollable-list&quot;&gt;
+        {this.props.list.map(item =&gt; (
+          &lt;div key={item.id}&gt;{item.content}&lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h2>卸载阶段</h2>
+<h3>componentWillUnmount()</h3>
+<p>组件卸载和销毁之前调用，用于清理工作：</p>
+<pre><code class="language-jsx">class Timer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { seconds: 0 };
+  }
+
+  componentDidMount() {
+    // 设置定时器
+    this.interval = setInterval(() =&gt; {
+      this.setState(prevState =&gt; ({
+        seconds: prevState.seconds + 1
+      }));
+    }, 1000);
+
+    // 添加事件监听
+    window.addEventListener(&#39;resize&#39;, this.handleResize);
+    
+    // WebSocket连接
+    this.socket = new WebSocket(&#39;ws://localhost:8080&#39;);
+    this.socket.onmessage = this.handleMessage;
+  }
+
+  componentWillUnmount() {
+    // 清理定时器
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+    
+    // 移除事件监听
+    window.removeEventListener(&#39;resize&#39;, this.handleResize);
+    
+    // 关闭WebSocket连接
+    if (this.socket) {
+      this.socket.close();
+    }
+    
+    // 取消未完成的网络请求
+    if (this.abortController) {
+      this.abortController.abort();
+    }
+  }
+
+  handleResize = () =&gt; {
+    console.log(&#39;窗口大小改变&#39;);
+  }
+
+  handleMessage = (event) =&gt; {
+    console.log(&#39;收到消息:&#39;, event.data);
+  }
+
+  render() {
+    return &lt;div&gt;计时器: {this.state.seconds}秒&lt;/div&gt;;
+  }
+}
+</code></pre>
+<h2>错误边界</h2>
+<h3>componentDidCatch()</h3>
+<pre><code class="language-jsx">class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      hasError: false, 
+      error: null,
+      errorInfo: null 
+    };
+  }
+
+  static getDerivedStateFromError(error) {
+    // 更新state，使下一次渲染能够显示降级后的UI
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // 记录错误信息
+    console.error(&#39;错误边界捕获到错误:&#39;, error, errorInfo);
+    
+    this.setState({
+      error,
+      errorInfo
+    });
+    
+    // 可以将错误日志上报给服务器
+    this.logErrorToService(error, errorInfo);
+  }
+
+  logErrorToService = (error, errorInfo) =&gt; {
+    // 上报错误
+    fetch(&#39;/api/errors&#39;, {
+      method: &#39;POST&#39;,
+      headers: {
+        &#39;Content-Type&#39;: &#39;application/json&#39;,
+      },
+      body: JSON.stringify({
+        message: error.message,
+        stack: error.stack,
+        componentStack: errorInfo.componentStack,
+        timestamp: new Date().toISOString()
+      })
+    });
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // 自定义的错误UI
+      return (
+        &lt;div className=&quot;error-boundary&quot;&gt;
+          &lt;h2&gt;出现了错误&lt;/h2&gt;
+          &lt;details style={{ whiteSpace: &#39;pre-wrap&#39; }}&gt;
+            {this.state.error &amp;&amp; this.state.error.toString()}
+            &lt;br /&gt;
+            {this.state.errorInfo.componentStack}
+          &lt;/details&gt;
+          &lt;button onClick={() =&gt; window.location.reload()}&gt;
+            刷新页面
+          &lt;/button&gt;
+        &lt;/div&gt;
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+// 使用错误边界
+function App() {
+  return (
+    &lt;ErrorBoundary&gt;
+      &lt;Header /&gt;
+      &lt;MainContent /&gt;
+      &lt;Footer /&gt;
+    &lt;/ErrorBoundary&gt;
+  );
+}
+</code></pre>
+<h2>Hooks对应关系</h2>
+<p>在函数组件中，我们使用Hooks来替代生命周期方法：</p>
+<h3>useEffect替代生命周期</h3>
+<pre><code class="language-jsx">// 类组件写法
+class Example extends React.Component {
+  componentDidMount() {
+    document.title = `You clicked ${this.state.count} times`;
+  }
+
+  componentDidUpdate() {
+    document.title = `You clicked ${this.state.count} times`;
+  }
+
+  componentWillUnmount() {
+    // 清理工作
+  }
+}
+
+// 函数组件写法
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // 相当于 componentDidMount 和 componentDidUpdate
+  useEffect(() =&gt; {
+    document.title = `You clicked ${count} times`;
+  });
+
+  // 相当于 componentDidMount
+  useEffect(() =&gt; {
+    // 只在挂载时执行
+    console.log(&#39;组件挂载&#39;);
+  }, []);
+
+  // 相当于 componentWillUnmount
+  useEffect(() =&gt; {
+    return () =&gt; {
+      // 清理工作
+      console.log(&#39;组件卸载&#39;);
+    };
+  }, []);
+
+  // 相当于 componentDidUpdate（当count变化时）
+  useEffect(() =&gt; {
+    console.log(&#39;count变化了:&#39;, count);
+  }, [count]);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;You clicked {count} times&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Click me
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>完整的生命周期对比</h3>
+<pre><code class="language-jsx">// 类组件完整生命周期
+class LifecycleExample extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+    console.log(&#39;1. constructor&#39;);
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    console.log(&#39;2. getDerivedStateFromProps&#39;);
+    return null;
+  }
+
+  componentDidMount() {
+    console.log(&#39;3. componentDidMount&#39;);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log(&#39;4. shouldComponentUpdate&#39;);
+    return true;
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log(&#39;5. getSnapshotBeforeUpdate&#39;);
+    return null;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(&#39;6. componentDidUpdate&#39;);
+  }
+
+  componentWillUnmount() {
+    console.log(&#39;7. componentWillUnmount&#39;);
+  }
+
+  render() {
+    console.log(&#39;render&#39;);
+    return (
+      &lt;div&gt;
+        &lt;p&gt;Count: {this.state.count}&lt;/p&gt;
+        &lt;button onClick={() =&gt; this.setState({ count: this.state.count + 1 })}&gt;
+          Increment
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+// 函数组件对应写法
+function HooksExample() {
+  const [count, setCount] = useState(0);
+  
+  // constructor 对应
+  console.log(&#39;render&#39;);
+
+  // componentDidMount
+  useEffect(() =&gt; {
+    console.log(&#39;componentDidMount equivalent&#39;);
+  }, []);
+
+  // componentDidUpdate
+  useEffect(() =&gt; {
+    console.log(&#39;componentDidUpdate equivalent&#39;);
+  });
+
+  // componentDidUpdate (count变化时)
+  useEffect(() =&gt; {
+    console.log(&#39;count changed:&#39;, count);
+  }, [count]);
+
+  // componentWillUnmount
+  useEffect(() =&gt; {
+    return () =&gt; {
+      console.log(&#39;componentWillUnmount equivalent&#39;);
+    };
+  }, []);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Count: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Increment
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>性能优化相关</h2>
+<h3>shouldComponentUpdate</h3>
+<pre><code class="language-jsx">class OptimizedComponent extends React.Component {
+  shouldComponentUpdate(nextProps, nextState) {
+    // 自定义比较逻辑
+    if (nextProps.importantProp !== this.props.importantProp) {
+      return true;
+    }
+    
+    if (nextState.count !== this.state.count) {
+      return true;
+    }
+    
+    // 其他props和state没有变化，不需要更新
+    return false;
+  }
+
+  render() {
+    console.log(&#39;组件重新渲染&#39;);
+    return (
+      &lt;div&gt;
+        &lt;p&gt;重要属性: {this.props.importantProp}&lt;/p&gt;
+        &lt;p&gt;计数: {this.state.count}&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+// 或者使用PureComponent自动进行浅比较
+class PureExample extends React.PureComponent {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;这个组件会自动进行浅比较&lt;/p&gt;
+        &lt;p&gt;Props: {JSON.stringify(this.props)}&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h3>React.memo (函数组件对应)</h3>
+<pre><code class="language-jsx">// 函数组件的性能优化
+const OptimizedFunctionComponent = React.memo(({ importantProp, count }) =&gt; {
+  console.log(&#39;函数组件重新渲染&#39;);
+  return (
+    &lt;div&gt;
+      &lt;p&gt;重要属性: {importantProp}&lt;/p&gt;
+      &lt;p&gt;计数: {count}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+});
+
+// 自定义比较函数
+const CustomMemoComponent = React.memo(
+  ({ user, settings }) =&gt; {
+    return (
+      &lt;div&gt;
+        &lt;p&gt;用户: {user.name}&lt;/p&gt;
+        &lt;p&gt;主题: {settings.theme}&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  },
+  (prevProps, nextProps) =&gt; {
+    // 返回true表示props相等，不需要重新渲染
+    return (
+      prevProps.user.id === nextProps.user.id &amp;&amp;
+      prevProps.settings.theme === nextProps.settings.theme
+    );
+  }
+);
+</code></pre>
+<h2>实际应用示例</h2>
+<h3>数据获取组件</h3>
+<pre><code class="language-jsx">class DataFetcher extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null,
+      loading: false,
+      error: null
+    };
+    this.abortController = null;
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  componentDidUpdate(prevProps) {
+    // 当URL参数变化时重新获取数据
+    if (prevProps.url !== this.props.url) {
+      this.fetchData();
+    }
+  }
+
+  componentWillUnmount() {
+    // 取消正在进行的请求
+    if (this.abortController) {
+      this.abortController.abort();
+    }
+  }
+
+  fetchData = async () =&gt; {
+    // 取消之前的请求
+    if (this.abortController) {
+      this.abortController.abort();
+    }
+
+    this.abortController = new AbortController();
+
+    this.setState({ loading: true, error: null });
+
+    try {
+      const response = await fetch(this.props.url, {
+        signal: this.abortController.signal
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      this.setState({ data, loading: false });
+    } catch (error) {
+      if (error.name !== &#39;AbortError&#39;) {
+        this.setState({ error: error.message, loading: false });
+      }
+    }
+  }
+
+  render() {
+    const { data, loading, error } = this.state;
+
+    if (loading) return &lt;div&gt;加载中...&lt;/div&gt;;
+    if (error) return &lt;div&gt;错误: {error}&lt;/div&gt;;
+    if (!data) return &lt;div&gt;暂无数据&lt;/div&gt;;
+
+    return (
+      &lt;div&gt;
+        &lt;h3&gt;数据内容&lt;/h3&gt;
+        &lt;pre&gt;{JSON.stringify(data, null, 2)}&lt;/pre&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h2>最佳实践</h2>
+<h3>1. 清理副作用</h3>
+<pre><code class="language-jsx">class BestPractices extends React.Component {
+  componentDidMount() {
+    // ✅ 好的做法：保存引用便于清理
+    this.timer = setInterval(this.updateData, 1000);
+    
+    // ✅ 好的做法：使用AbortController取消请求
+    this.abortController = new AbortController();
+    
+    // ✅ 好的做法：绑定事件监听器
+    window.addEventListener(&#39;resize&#39;, this.handleResize);
+  }
+
+  componentWillUnmount() {
+    // ✅ 清理定时器
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
+    
+    // ✅ 取消网络请求
+    if (this.abortController) {
+      this.abortController.abort();
+    }
+    
+    // ✅ 移除事件监听器
+    window.removeEventListener(&#39;resize&#39;, this.handleResize);
+  }
+}
+</code></pre>
+<h3>2. 避免常见错误</h3>
+<pre><code class="language-jsx">class CommonMistakes extends React.Component {
+  componentDidUpdate(prevProps) {
+    // ❌ 错误：没有条件判断会导致无限循环
+    // this.setState({ data: newData });
+    
+    // ✅ 正确：添加条件判断
+    if (prevProps.userId !== this.props.userId) {
+      this.fetchUserData(this.props.userId);
+    }
+  }
+
+  // ❌ 错误：在componentDidMount中直接调用setState
+  // componentDidMount() {
+  //   this.setState({ mounted: true }); // 会触发额外的渲染
+  // }
+
+  // ✅ 正确：在constructor中初始化状态
+  constructor(props) {
+    super(props);
+    this.state = {
+      mounted: false
+    };
+  }
+
+  componentDidMount() {
+    // ✅ 正确：用于异步操作后更新状态
+    this.fetchData().then(data =&gt; {
+      this.setState({ data });
+    });
+  }
+}
+</code></pre>
+<h2>总结</h2>
+<p>React生命周期方法的要点：</p>
+<ol>
+<li><strong>挂载阶段</strong>：constructor → componentDidMount</li>
+<li><strong>更新阶段</strong>：componentDidUpdate → getSnapshotBeforeUpdate</li>
+<li><strong>卸载阶段</strong>：componentWillUnmount</li>
+<li><strong>错误处理</strong>：componentDidCatch</li>
+</ol>
+<p>在现代React开发中：</p>
+<ul>
+<li>优先使用函数组件和Hooks</li>
+<li>理解生命周期有助于维护老代码</li>
+<li>useEffect可以替代大部分生命周期方法</li>
+<li>始终记得清理副作用，避免内存泄漏</li>
+</ul>
+<p>无论使用类组件还是函数组件，理解组件的生命周期都是编写高质量React代码的基础。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="16-自定义Hooks.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">自定义Hooks</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="18-副作用处理.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">副作用处理</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

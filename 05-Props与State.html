@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Props与State - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">Props与State</span>
+            </div>
+            <h1 class="doc-title">Props与State</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #f093fb">
+                🧩 组件开发
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>Props 与 State</h1>
+<h2>Props 详解</h2>
+<h3>什么是 Props？</h3>
+<p>Props（properties的简写）是React组件的输入。它们是从父组件传递给子组件的数据。Props是只读的，子组件不能修改它们。</p>
+<h3>基本 Props 使用</h3>
+<pre><code class="language-javascript">// 传递基本数据类型
+function Welcome({ name, age, isActive }) {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello, {name}!&lt;/h1&gt;
+      &lt;p&gt;Age: {age}&lt;/p&gt;
+      &lt;span&gt;Status: {isActive ? &#39;Active&#39; : &#39;Inactive&#39;}&lt;/span&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 使用组件
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;Welcome name=&quot;Alice&quot; age={25} isActive={true} /&gt;
+      &lt;Welcome name=&quot;Bob&quot; age={30} isActive={false} /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>传递不同类型的 Props</h3>
+<pre><code class="language-javascript">function ComponentExample({
+  // 基本类型
+  title,          // string
+  count,          // number
+  isVisible,      // boolean
+  
+  // 复杂类型
+  user,           // object
+  items,          // array
+  onClick,        // function
+  
+  // JSX 元素
+  icon,           // JSX element
+  children        // 特殊的 children prop
+}) {
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;{title}&lt;/h2&gt;
+      {icon &amp;&amp; &lt;span className=&quot;icon&quot;&gt;{icon}&lt;/span&gt;}
+      
+      &lt;div&gt;Count: {count}&lt;/div&gt;
+      
+      {isVisible &amp;&amp; (
+        &lt;div&gt;
+          &lt;h3&gt;User: {user.name}&lt;/h3&gt;
+          &lt;ul&gt;
+            {items.map(item =&gt; (
+              &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
+            ))}
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      )}
+      
+      &lt;button onClick={onClick}&gt;Click me&lt;/button&gt;
+      
+      &lt;div className=&quot;content&quot;&gt;
+        {children}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 使用示例
+function App() {
+  const user = { name: &#39;John&#39;, email: &#39;john@example.com&#39; };
+  const items = [
+    { id: 1, name: &#39;Item 1&#39; },
+    { id: 2, name: &#39;Item 2&#39; }
+  ];
+  
+  const handleClick = () =&gt; {
+    console.log(&#39;Button clicked!&#39;);
+  };
+  
+  return (
+    &lt;ComponentExample
+      title=&quot;My Component&quot;
+      count={42}
+      isVisible={true}
+      user={user}
+      items={items}
+      onClick={handleClick}
+      icon={&lt;span&gt;🎯&lt;/span&gt;}
+    &gt;
+      &lt;p&gt;This is children content&lt;/p&gt;
+      &lt;span&gt;More content here&lt;/span&gt;
+    &lt;/ComponentExample&gt;
+  );
+}
+</code></pre>
+<h3>Props 默认值</h3>
+<pre><code class="language-javascript">// 方法 1: 参数默认值（ES6）
+function Button({ text = &#39;Click me&#39;, variant = &#39;primary&#39;, disabled = false }) {
+  return (
+    &lt;button className={`btn btn-${variant}`} disabled={disabled}&gt;
+      {text}
+    &lt;/button&gt;
+  );
+}
+
+// 方法 2: defaultProps（类组件和函数组件都支持）
+function Button({ text, variant, disabled }) {
+  return (
+    &lt;button className={`btn btn-${variant}`} disabled={disabled}&gt;
+      {text}
+    &lt;/button&gt;
+  );
+}
+
+Button.defaultProps = {
+  text: &#39;Click me&#39;,
+  variant: &#39;primary&#39;,
+  disabled: false
+};
+
+// 方法 3: 在组件内部设置默认值
+function Button(props) {
+  const {
+    text = &#39;Click me&#39;,
+    variant = &#39;primary&#39;,
+    disabled = false
+  } = props;
+  
+  return (
+    &lt;button className={`btn btn-${variant}`} disabled={disabled}&gt;
+      {text}
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<h3>Props 验证 (PropTypes)</h3>
+<pre><code class="language-javascript">import PropTypes from &#39;prop-types&#39;;
+
+function UserCard({ user, onEdit, isActive }) {
+  return (
+    &lt;div className={`user-card ${isActive ? &#39;active&#39; : &#39;&#39;}`}&gt;
+      &lt;h3&gt;{user.name}&lt;/h3&gt;
+      &lt;p&gt;{user.email}&lt;/p&gt;
+      &lt;button onClick={() =&gt; onEdit(user.id)}&gt;Edit&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+UserCard.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired
+  }).isRequired,
+  onEdit: PropTypes.func.isRequired,
+  isActive: PropTypes.bool
+};
+
+UserCard.defaultProps = {
+  isActive: false
+};
+</code></pre>
+<h3>TypeScript Props 类型定义</h3>
+<pre><code class="language-typescript">interface User {
+  id: number;
+  name: string;
+  email: string;
+  avatar?: string;
+}
+
+interface UserCardProps {
+  user: User;
+  onEdit: (userId: number) =&gt; void;
+  isActive?: boolean;
+  className?: string;
+}
+
+const UserCard: React.FC&lt;UserCardProps&gt; = ({ 
+  user, 
+  onEdit, 
+  isActive = false, 
+  className = &#39;&#39; 
+}) =&gt; {
+  return (
+    &lt;div className={`user-card ${isActive ? &#39;active&#39; : &#39;&#39;} ${className}`}&gt;
+      &lt;h3&gt;{user.name}&lt;/h3&gt;
+      &lt;p&gt;{user.email}&lt;/p&gt;
+      {user.avatar &amp;&amp; &lt;img src={user.avatar} alt={user.name} /&gt;}
+      &lt;button onClick={() =&gt; onEdit(user.id)}&gt;Edit&lt;/button&gt;
+    &lt;/div&gt;
+  );
+};
+</code></pre>
+<h2>State 详解</h2>
+<h3>什么是 State？</h3>
+<p>State是组件的内部数据，它可以随时间变化。当state发生变化时，组件会重新渲染。</p>
+<h3>useState Hook</h3>
+<pre><code class="language-javascript">import React, { useState } from &#39;react&#39;;
+
+function Counter() {
+  // 声明state变量
+  const [count, setCount] = useState(0);
+  
+  // 多个state变量
+  const [name, setName] = useState(&#39;&#39;);
+  const [isVisible, setIsVisible] = useState(true);
+  
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;Count: {count}&lt;/h2&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;+1&lt;/button&gt;
+      &lt;button onClick={() =&gt; setCount(count - 1)}&gt;-1&lt;/button&gt;
+      
+      &lt;input 
+        value={name}
+        onChange={e =&gt; setName(e.target.value)}
+        placeholder=&quot;Enter name&quot;
+      /&gt;
+      
+      &lt;button onClick={() =&gt; setIsVisible(!isVisible)}&gt;
+        {isVisible ? &#39;Hide&#39; : &#39;Show&#39;}
+      &lt;/button&gt;
+      {isVisible &amp;&amp; &lt;p&gt;Hello, {name}!&lt;/p&gt;}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>复杂 State 管理</h3>
+<pre><code class="language-javascript">// 对象状态
+function UserProfile() {
+  const [user, setUser] = useState({
+    name: &#39;&#39;,
+    email: &#39;&#39;,
+    age: 0,
+    preferences: {
+      theme: &#39;light&#39;,
+      notifications: true
+    }
+  });
+  
+  // 更新对象状态 - 浅层合并
+  const updateUser = (field, value) =&gt; {
+    setUser(prevUser =&gt; ({
+      ...prevUser,
+      [field]: value
+    }));
+  };
+  
+  // 更新嵌套对象
+  const updatePreferences = (prefKey, value) =&gt; {
+    setUser(prevUser =&gt; ({
+      ...prevUser,
+      preferences: {
+        ...prevUser.preferences,
+        [prefKey]: value
+      }
+    }));
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;input 
+        value={user.name}
+        onChange={e =&gt; updateUser(&#39;name&#39;, e.target.value)}
+        placeholder=&quot;Name&quot;
+      /&gt;
+      &lt;input 
+        value={user.email}
+        onChange={e =&gt; updateUser(&#39;email&#39;, e.target.value)}
+        placeholder=&quot;Email&quot;
+      /&gt;
+      &lt;input 
+        type=&quot;number&quot;
+        value={user.age}
+        onChange={e =&gt; updateUser(&#39;age&#39;, parseInt(e.target.value))}
+        placeholder=&quot;Age&quot;
+      /&gt;
+      
+      &lt;label&gt;
+        &lt;input 
+          type=&quot;checkbox&quot;
+          checked={user.preferences.notifications}
+          onChange={e =&gt; updatePreferences(&#39;notifications&#39;, e.target.checked)}
+        /&gt;
+        Enable notifications
+      &lt;/label&gt;
+      
+      &lt;select 
+        value={user.preferences.theme}
+        onChange={e =&gt; updatePreferences(&#39;theme&#39;, e.target.value)}
+      &gt;
+        &lt;option value=&quot;light&quot;&gt;Light&lt;/option&gt;
+        &lt;option value=&quot;dark&quot;&gt;Dark&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>数组状态管理</h3>
+<pre><code class="language-javascript">function TodoList() {
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState(&#39;&#39;);
+  
+  // 添加新项目
+  const addTodo = () =&gt; {
+    if (inputValue.trim()) {
+      setTodos(prevTodos =&gt; [
+        ...prevTodos,
+        {
+          id: Date.now(),
+          text: inputValue,
+          completed: false
+        }
+      ]);
+      setInputValue(&#39;&#39;);
+    }
+  };
+  
+  // 切换完成状态
+  const toggleTodo = (id) =&gt; {
+    setTodos(prevTodos =&gt;
+      prevTodos.map(todo =&gt;
+        todo.id === id 
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      )
+    );
+  };
+  
+  // 删除项目
+  const deleteTodo = (id) =&gt; {
+    setTodos(prevTodos =&gt; prevTodos.filter(todo =&gt; todo.id !== id));
+  };
+  
+  // 编辑项目
+  const editTodo = (id, newText) =&gt; {
+    setTodos(prevTodos =&gt;
+      prevTodos.map(todo =&gt;
+        todo.id === id 
+          ? { ...todo, text: newText }
+          : todo
+      )
+    );
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;input 
+        value={inputValue}
+        onChange={e =&gt; setInputValue(e.target.value)}
+        onKeyPress={e =&gt; e.key === &#39;Enter&#39; &amp;&amp; addTodo()}
+        placeholder=&quot;Add a todo...&quot;
+      /&gt;
+      &lt;button onClick={addTodo}&gt;Add&lt;/button&gt;
+      
+      &lt;ul&gt;
+        {todos.map(todo =&gt; (
+          &lt;li key={todo.id}&gt;
+            &lt;input 
+              type=&quot;checkbox&quot;
+              checked={todo.completed}
+              onChange={() =&gt; toggleTodo(todo.id)}
+            /&gt;
+            &lt;span style={{ 
+              textDecoration: todo.completed ? &#39;line-through&#39; : &#39;none&#39; 
+            }}&gt;
+              {todo.text}
+            &lt;/span&gt;
+            &lt;button onClick={() =&gt; editTodo(todo.id, prompt(&#39;New text:&#39;, todo.text))}&gt;
+              Edit
+            &lt;/button&gt;
+            &lt;button onClick={() =&gt; deleteTodo(todo.id)}&gt;Delete&lt;/button&gt;
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>函数式状态更新</h3>
+<pre><code class="language-javascript">function Counter() {
+  const [count, setCount] = useState(0);
+  
+  // 基于当前状态的更新
+  const increment = () =&gt; {
+    // ❌ 可能出现问题（如果有多次快速点击）
+    setCount(count + 1);
+    
+    // ✅ 推荐：使用函数式更新
+    setCount(prevCount =&gt; prevCount + 1);
+  };
+  
+  // 复杂的状态更新
+  const incrementByAmount = (amount) =&gt; {
+    setCount(prevCount =&gt; {
+      const newCount = prevCount + amount;
+      // 可以在这里添加额外的逻辑
+      console.log(`Count changed from ${prevCount} to ${newCount}`);
+      return newCount;
+    });
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;Count: {count}&lt;/h2&gt;
+      &lt;button onClick={increment}&gt;+1&lt;/button&gt;
+      &lt;button onClick={() =&gt; incrementByAmount(5)}&gt;+5&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>状态初始化</h3>
+<pre><code class="language-javascript">function ExpensiveComponent() {
+  // ❌ 每次渲染都会执行
+  const [data, setData] = useState(expensiveCalculation());
+  
+  // ✅ 只在初始化时执行（惰性初始化）
+  const [data, setData] = useState(() =&gt; expensiveCalculation());
+  
+  // 从localStorage读取初始值
+  const [user, setUser] = useState(() =&gt; {
+    const savedUser = localStorage.getItem(&#39;user&#39;);
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
+  
+  return &lt;div&gt;{/* 组件内容 */}&lt;/div&gt;;
+}
+
+function expensiveCalculation() {
+  console.log(&#39;Performing expensive calculation...&#39;);
+  // 模拟昂贵的计算
+  let result = 0;
+  for (let i = 0; i &lt; 1000000; i++) {
+    result += i;
+  }
+  return result;
+}
+</code></pre>
+<h2>Props vs State</h2>
+<h3>主要区别</h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Props</th>
+<th>State</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据来源</td>
+<td>父组件传递</td>
+<td>组件内部</td>
+</tr>
+<tr>
+<td>可变性</td>
+<td>只读，不可修改</td>
+<td>可修改</td>
+</tr>
+<tr>
+<td>作用域</td>
+<td>跨组件传递</td>
+<td>组件内部</td>
+</tr>
+<tr>
+<td>更新方式</td>
+<td>父组件重新渲染</td>
+<td>setState/useState</td>
+</tr>
+<tr>
+<td>初始化</td>
+<td>父组件提供</td>
+<td>组件内部定义</td>
+</tr>
+</tbody></table>
+<h3>何时使用 Props</h3>
+<pre><code class="language-javascript">// ✅ 用于展示从父组件传递的数据
+function UserDisplay({ user }) {
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;{user.name}&lt;/h3&gt;
+      &lt;p&gt;{user.email}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+// ✅ 用于回调函数
+function Button({ onClick, children }) {
+  return &lt;button onClick={onClick}&gt;{children}&lt;/button&gt;;
+}
+
+// ✅ 用于配置组件行为
+function Modal({ isOpen, title, onClose, children }) {
+  if (!isOpen) return null;
+  
+  return (
+    &lt;div className=&quot;modal&quot;&gt;
+      &lt;div className=&quot;modal-header&quot;&gt;
+        &lt;h2&gt;{title}&lt;/h2&gt;
+        &lt;button onClick={onClose}&gt;×&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;modal-body&quot;&gt;
+        {children}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>何时使用 State</h3>
+<pre><code class="language-javascript">// ✅ 用于组件内部的交互状态
+function SearchBox() {
+  const [query, setQuery] = useState(&#39;&#39;);
+  
+  return (
+    &lt;input 
+      value={query}
+      onChange={e =&gt; setQuery(e.target.value)}
+      placeholder=&quot;Search...&quot;
+    /&gt;
+  );
+}
+
+// ✅ 用于控制组件的可见性
+function Collapsible({ title, children }) {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; setIsOpen(!isOpen)}&gt;
+        {title} {isOpen ? &#39;−&#39; : &#39;+&#39;}
+      &lt;/button&gt;
+      {isOpen &amp;&amp; &lt;div&gt;{children}&lt;/div&gt;}
+    &lt;/div&gt;
+  );
+}
+
+// ✅ 用于表单数据
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: &#39;&#39;,
+    email: &#39;&#39;,
+    message: &#39;&#39;
+  });
+  
+  const handleSubmit = (e) =&gt; {
+    e.preventDefault();
+    console.log(&#39;Form submitted:&#39;, formData);
+  };
+  
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input 
+        value={formData.name}
+        onChange={e =&gt; setFormData({...formData, name: e.target.value})}
+        placeholder=&quot;Name&quot;
+      /&gt;
+      &lt;input 
+        value={formData.email}
+        onChange={e =&gt; setFormData({...formData, email: e.target.value})}
+        placeholder=&quot;Email&quot;
+      /&gt;
+      &lt;textarea 
+        value={formData.message}
+        onChange={e =&gt; setFormData({...formData, message: e.target.value})}
+        placeholder=&quot;Message&quot;
+      /&gt;
+      &lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+</code></pre>
+<h2>状态提升</h2>
+<h3>概念说明</h3>
+<p>当多个组件需要共享同一状态时，应该将状态提升到它们最近的共同父组件中。</p>
+<pre><code class="language-javascript">// 子组件 - 温度输入框
+function TemperatureInput({ scale, temperature, onTemperatureChange }) {
+  return (
+    &lt;fieldset&gt;
+      &lt;legend&gt;Enter temperature in {scale}:&lt;/legend&gt;
+      &lt;input
+        value={temperature}
+        onChange={e =&gt; onTemperatureChange(e.target.value)}
+      /&gt;
+    &lt;/fieldset&gt;
+  );
+}
+
+// 子组件 - 沸点判断
+function BoilingVerdict({ celsius }) {
+  if (celsius &gt;= 100) {
+    return &lt;p&gt;The water would boil.&lt;/p&gt;;
+  }
+  return &lt;p&gt;The water would not boil.&lt;/p&gt;;
+}
+
+// 父组件 - 状态提升到这里
+function Calculator() {
+  const [temperature, setTemperature] = useState(&#39;&#39;);
+  const [scale, setScale] = useState(&#39;c&#39;);
+  
+  const handleCelsiusChange = (temperature) =&gt; {
+    setScale(&#39;c&#39;);
+    setTemperature(temperature);
+  };
+  
+  const handleFahrenheitChange = (temperature) =&gt; {
+    setScale(&#39;f&#39;);
+    setTemperature(temperature);
+  };
+  
+  const celsius = scale === &#39;f&#39; ? tryConvert(temperature, toCelsius) : temperature;
+  const fahrenheit = scale === &#39;c&#39; ? tryConvert(temperature, toFahrenheit) : temperature;
+  
+  return (
+    &lt;div&gt;
+      &lt;TemperatureInput
+        scale=&quot;c&quot;
+        temperature={celsius}
+        onTemperatureChange={handleCelsiusChange}
+      /&gt;
+      &lt;TemperatureInput
+        scale=&quot;f&quot;
+        temperature={fahrenheit}
+        onTemperatureChange={handleFahrenheitChange}
+      /&gt;
+      &lt;BoilingVerdict celsius={parseFloat(celsius)} /&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 辅助函数
+function toCelsius(fahrenheit) {
+  return (fahrenheit - 32) * 5 / 9;
+}
+
+function toFahrenheit(celsius) {
+  return (celsius * 9 / 5) + 32;
+}
+
+function tryConvert(temperature, convert) {
+  const input = parseFloat(temperature);
+  if (Number.isNaN(input)) {
+    return &#39;&#39;;
+  }
+  const output = convert(input);
+  const rounded = Math.round(output * 1000) / 1000;
+  return rounded.toString();
+}
+</code></pre>
+<h2>最佳实践</h2>
+<h3>1. Props 最佳实践</h3>
+<pre><code class="language-javascript">// ✅ 使用具体的props名称
+function Button({ onSubmit, isLoading, variant }) {
+  return (
+    &lt;button 
+      onClick={onSubmit}
+      disabled={isLoading}
+      className={`btn btn-${variant}`}
+    &gt;
+      {isLoading ? &#39;Loading...&#39; : &#39;Submit&#39;}
+    &lt;/button&gt;
+  );
+}
+
+// ❌ 避免过于通用的props名称
+function Button({ onClick, disabled, className }) {
+  // 不够语义化
+}
+
+// ✅ 使用解构来提高可读性
+function UserCard({ user: { name, email, avatar }, onEdit, onDelete }) {
+  return (
+    &lt;div className=&quot;user-card&quot;&gt;
+      &lt;img src={avatar} alt={name} /&gt;
+      &lt;h3&gt;{name}&lt;/h3&gt;
+      &lt;p&gt;{email}&lt;/p&gt;
+      &lt;button onClick={onEdit}&gt;Edit&lt;/button&gt;
+      &lt;button onClick={onDelete}&gt;Delete&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>2. State 最佳实践</h3>
+<pre><code class="language-javascript">// ✅ 保持state结构扁平
+function UserForm() {
+  const [name, setName] = useState(&#39;&#39;);
+  const [email, setEmail] = useState(&#39;&#39;);
+  const [age, setAge] = useState(0);
+  
+  // 而不是
+  // const [user, setUser] = useState({ name: &#39;&#39;, email: &#39;&#39;, age: 0 });
+}
+
+// ✅ 相关状态可以组合
+function UserForm() {
+  const [user, setUser] = useState({
+    name: &#39;&#39;,
+    email: &#39;&#39;,
+    age: 0
+  });
+  
+  const [ui, setUi] = useState({
+    isLoading: false,
+    errors: {},
+    showValidation: false
+  });
+}
+
+// ✅ 使用自定义Hook封装复杂状态逻辑
+function useForm(initialValues) {
+  const [values, setValues] = useState(initialValues);
+  const [errors, setErrors] = useState({});
+  
+  const setValue = (name, value) =&gt; {
+    setValues(prev =&gt; ({ ...prev, [name]: value }));
+  };
+  
+  const setError = (name, error) =&gt; {
+    setErrors(prev =&gt; ({ ...prev, [name]: error }));
+  };
+  
+  const reset = () =&gt; {
+    setValues(initialValues);
+    setErrors({});
+  };
+  
+  return { values, errors, setValue, setError, reset };
+}
+</code></pre>
+<h3>3. 避免常见陷阱</h3>
+<pre><code class="language-javascript">// ❌ 直接修改state（不会触发重新渲染）
+function TodoList() {
+  const [todos, setTodos] = useState([]);
+  
+  const addTodo = (text) =&gt; {
+    todos.push({ id: Date.now(), text }); // 错误！
+    setTodos(todos); // 不会重新渲染
+  };
+}
+
+// ✅ 正确的方式
+function TodoList() {
+  const [todos, setTodos] = useState([]);
+  
+  const addTodo = (text) =&gt; {
+    setTodos(prevTodos =&gt; [
+      ...prevTodos,
+      { id: Date.now(), text }
+    ]);
+  };
+}
+
+// ❌ 在props中传递整个对象（可能导致不必要的渲染）
+function Parent() {
+  const [count, setCount] = useState(0);
+  const data = { count, timestamp: Date.now() }; // 每次渲染都创建新对象
+  
+  return &lt;Child data={data} /&gt;;
+}
+
+// ✅ 只传递需要的数据
+function Parent() {
+  const [count, setCount] = useState(0);
+  
+  return &lt;Child count={count} /&gt;;
+}
+</code></pre>
+<h2>下一步</h2>
+<p>学习完Props与State后，建议继续学习：</p>
+<ol>
+<li><a href="./06-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86.md">事件处理</a> - 了解如何处理用户交互</li>
+<li><a href="./07-%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93.md">条件渲染</a> - 学习条件显示内容</li>
+<li><a href="./08-%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93.md">列表渲染</a> - 掌握动态列表的渲染</li>
+</ol>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="04-组件基础.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">组件基础</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="06-事件处理.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">事件处理</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

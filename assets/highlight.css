@@ -1,0 +1,76 @@
+
+/* highlight.js 样式 - 浅色主题 */
+.hljs {
+  background: #f8fafc !important;
+  color: #475569 !important;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #94a3b8 !important;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: #8b5cf6 !important;
+  font-weight: 600;
+}
+
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: #059669 !important;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #dc2626 !important;
+  font-weight: 600;
+}
+
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #d97706 !important;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: #0ea5e9 !important;
+}
+
+.hljs-built_in,
+.hljs-deletion {
+  color: #dc2626 !important;
+}
+
+.hljs-formula {
+  background: rgba(71, 85, 105, 0.1);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

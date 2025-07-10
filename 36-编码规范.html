@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>编码规范 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">编码规范</span>
+            </div>
+            <h1 class="doc-title">编码规范</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #84fab0">
+                💡 最佳实践
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>36-编码规范</h1>
+<p>良好的编码规范是团队协作和代码维护的基础。本文档提供了React项目的编码规范指南，帮助开发团队编写一致、可维护的代码。</p>
+<h2>文件和目录结构</h2>
+<h3>项目结构</h3>
+<pre><code>src/
+├── components/          # 可复用组件
+│   ├── common/         # 通用组件
+│   │   ├── Button/
+│   │   │   ├── index.ts
+│   │   │   ├── Button.tsx
+│   │   │   ├── Button.test.tsx
+│   │   │   └── Button.module.css
+│   │   └── Modal/
+│   └── layout/         # 布局组件
+├── pages/              # 页面组件
+├── hooks/              # 自定义Hooks
+├── services/           # API服务
+├── store/              # 状态管理
+├── utils/              # 工具函数
+├── types/              # TypeScript类型定义
+├── constants/          # 常量
+├── assets/             # 静态资源
+└── styles/             # 全局样式
+</code></pre>
+<h3>文件命名</h3>
+<pre><code class="language-jsx">// ✅ 好的命名
+UserProfile.tsx         // 组件使用PascalCase
+userService.ts          // 服务使用camelCase
+useUserData.ts          // Hook使用camelCase，以use开头
+Button.module.css       // CSS模块
+constants.ts            // 常量文件
+types.ts               // 类型定义
+
+// ❌ 避免的命名
+userprofile.tsx        // 小写
+User_Profile.tsx       // 下划线
+user-profile.tsx       // 短横线（组件）
+</code></pre>
+<h2>组件规范</h2>
+<h3>函数组件</h3>
+<pre><code class="language-jsx">// ✅ 推荐的组件结构
+import React, { useState, useEffect, useCallback } from &#39;react&#39;;
+import { UserData } from &#39;../types/user&#39;;
+import { Button } from &#39;../components/common&#39;;
+import styles from &#39;./UserProfile.module.css&#39;;
+
+interface UserProfileProps {
+  userId: string;
+  onUserUpdate?: (user: UserData) =&gt; void;
+  className?: string;
+}
+
+const UserProfile: React.FC&lt;UserProfileProps&gt; = ({
+  userId,
+  onUserUpdate,
+  className
+}) =&gt; {
+  // State hooks
+  const [user, setUser] = useState&lt;UserData | null&gt;(null);
+  const [loading, setLoading] = useState(false);
+
+  // Effect hooks
+  useEffect(() =&gt; {
+    fetchUser(userId);
+  }, [userId]);
+
+  // Event handlers
+  const handleUserUpdate = useCallback((updatedUser: UserData) =&gt; {
+    setUser(updatedUser);
+    onUserUpdate?.(updatedUser);
+  }, [onUserUpdate]);
+
+  // Render helpers
+  const renderUserInfo = () =&gt; (
+    &lt;div className={styles.userInfo}&gt;
+      &lt;h2&gt;{user?.name}&lt;/h2&gt;
+      &lt;p&gt;{user?.email}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+
+  // Loading state
+  if (loading) {
+    return &lt;div className={styles.loading}&gt;Loading...&lt;/div&gt;;
+  }
+
+  // Main render
+  return (
+    &lt;div className={`${styles.container} ${className || &#39;&#39;}`}&gt;
+      {user ? renderUserInfo() : &lt;div&gt;No user found&lt;/div&gt;}
+      &lt;Button onClick={() =&gt; handleUserUpdate(user!)}&gt;
+        Update
+      &lt;/Button&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default UserProfile;
+</code></pre>
+<h3>Props定义</h3>
+<pre><code class="language-jsx">// ✅ 清晰的Props接口
+interface ButtonProps {
+  children: React.ReactNode;
+  variant?: &#39;primary&#39; | &#39;secondary&#39; | &#39;danger&#39;;
+  size?: &#39;small&#39; | &#39;medium&#39; | &#39;large&#39;;
+  disabled?: boolean;
+  loading?: boolean;
+  onClick?: (event: React.MouseEvent&lt;HTMLButtonElement&gt;) =&gt; void;
+  className?: string;
+  &#39;data-testid&#39;?: string;
+}
+
+// ✅ 带默认值的Props
+interface CardProps {
+  title: string;
+  children: React.ReactNode;
+  variant?: &#39;elevated&#39; | &#39;outlined&#39;;
+  padding?: &#39;none&#39; | &#39;small&#39; | &#39;medium&#39; | &#39;large&#39;;
+}
+
+const Card: React.FC&lt;CardProps&gt; = ({
+  title,
+  children,
+  variant = &#39;elevated&#39;,
+  padding = &#39;medium&#39;
+}) =&gt; {
+  // 组件实现
+};
+
+// ❌ 避免的Props定义
+interface BadProps {
+  data: any;           // 使用any类型
+  callback: Function;  // 使用Function类型
+  flag: boolean;       // 模糊的命名
+}
+</code></pre>
+<h3>组件导出</h3>
+<pre><code class="language-jsx">// ✅ 默认导出 + 命名导出
+const Button: React.FC&lt;ButtonProps&gt; = ({ ... }) =&gt; {
+  // 实现
+};
+
+Button.displayName = &#39;Button&#39;;
+
+export default Button;
+export type { ButtonProps };
+
+// ✅ 索引文件导出
+// components/common/index.ts
+export { default as Button } from &#39;./Button&#39;;
+export { default as Modal } from &#39;./Modal&#39;;
+export { default as Input } from &#39;./Input&#39;;
+
+// 使用
+import { Button, Modal } from &#39;../components/common&#39;;
+</code></pre>
+<h2>Hooks规范</h2>
+<h3>自定义Hooks</h3>
+<pre><code class="language-jsx">// ✅ 良好的Hook设计
+interface UseApiOptions {
+  immediate?: boolean;
+  onSuccess?: (data: any) =&gt; void;
+  onError?: (error: Error) =&gt; void;
+}
+
+interface UseApiReturn&lt;T&gt; {
+  data: T | null;
+  loading: boolean;
+  error: Error | null;
+  execute: () =&gt; Promise&lt;void&gt;;
+  reset: () =&gt; void;
+}
+
+function useApi&lt;T = any&gt;(
+  url: string,
+  options: UseApiOptions = {}
+): UseApiReturn&lt;T&gt; {
+  const { immediate = true, onSuccess, onError } = options;
+  
+  const [data, setData] = useState&lt;T | null&gt;(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState&lt;Error | null&gt;(null);
+
+  const execute = useCallback(async () =&gt; {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      const response = await fetch(url);
+      const result = await response.json();
+      
+      setData(result);
+      onSuccess?.(result);
+    } catch (err) {
+      const error = err as Error;
+      setError(error);
+      onError?.(error);
+    } finally {
+      setLoading(false);
+    }
+  }, [url, onSuccess, onError]);
+
+  const reset = useCallback(() =&gt; {
+    setData(null);
+    setError(null);
+    setLoading(false);
+  }, []);
+
+  useEffect(() =&gt; {
+    if (immediate) {
+      execute();
+    }
+  }, [immediate, execute]);
+
+  return { data, loading, error, execute, reset };
+}
+
+// 使用示例
+function UserComponent({ userId }: { userId: string }) {
+  const {
+    data: user,
+    loading,
+    error,
+    execute: refetchUser
+  } = useApi&lt;UserData&gt;(`/api/users/${userId}`, {
+    onSuccess: (user) =&gt; console.log(&#39;User loaded:&#39;, user.name),
+    onError: (error) =&gt; console.error(&#39;Failed to load user:&#39;, error)
+  });
+
+  return (
+    &lt;div&gt;
+      {loading &amp;&amp; &lt;div&gt;Loading...&lt;/div&gt;}
+      {error &amp;&amp; &lt;div&gt;Error: {error.message}&lt;/div&gt;}
+      {user &amp;&amp; &lt;div&gt;{user.name}&lt;/div&gt;}
+      &lt;button onClick={refetchUser}&gt;Refresh&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>Hook依赖项</h3>
+<pre><code class="language-jsx">// ✅ 正确的依赖项管理
+function useUserData(userId: string) {
+  const [user, setUser] = useState&lt;UserData | null&gt;(null);
+
+  // 使用useCallback缓存函数
+  const fetchUser = useCallback(async (id: string) =&gt; {
+    const response = await fetch(`/api/users/${id}`);
+    const userData = await response.json();
+    setUser(userData);
+  }, []); // 没有依赖项，函数稳定
+
+  // 正确的依赖项
+  useEffect(() =&gt; {
+    fetchUser(userId);
+  }, [userId, fetchUser]);
+
+  return user;
+}
+
+// ✅ 使用useMemo优化计算
+function useFilteredData(data: Item[], filters: FilterOptions) {
+  return useMemo(() =&gt; {
+    return data.filter(item =&gt; {
+      return Object.entries(filters).every(([key, value]) =&gt; {
+        if (!value) return true;
+        return item[key] === value;
+      });
+    });
+  }, [data, filters]); // 明确的依赖项
+}
+</code></pre>
+<h2>状态管理</h2>
+<h3>useState规范</h3>
+<pre><code class="language-jsx">// ✅ 合理的状态分离
+function UserForm() {
+  // 表单数据
+  const [formData, setFormData] = useState({
+    name: &#39;&#39;,
+    email: &#39;&#39;,
+    age: 0
+  });
+
+  // UI状态
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState&lt;Record&lt;string, string&gt;&gt;({});
+
+  // 避免将所有状态放在一个对象中
+  // ❌ 不推荐
+  const [state, setState] = useState({
+    formData: { name: &#39;&#39;, email: &#39;&#39;, age: 0 },
+    loading: false,
+    errors: {},
+    modal: { open: false, type: &#39;info&#39; },
+    // ... 更多状态
+  });
+}
+</code></pre>
+<h3>useReducer规范</h3>
+<pre><code class="language-jsx">// ✅ 良好的Reducer设计
+interface TodoState {
+  items: Todo[];
+  filter: &#39;all&#39; | &#39;active&#39; | &#39;completed&#39;;
+  loading: boolean;
+}
+
+type TodoAction =
+  | { type: &#39;ADD_TODO&#39;; payload: { text: string } }
+  | { type: &#39;TOGGLE_TODO&#39;; payload: { id: string } }
+  | { type: &#39;DELETE_TODO&#39;; payload: { id: string } }
+  | { type: &#39;SET_FILTER&#39;; payload: { filter: TodoState[&#39;filter&#39;] } }
+  | { type: &#39;SET_LOADING&#39;; payload: { loading: boolean } };
+
+function todoReducer(state: TodoState, action: TodoAction): TodoState {
+  switch (action.type) {
+    case &#39;ADD_TODO&#39;:
+      return {
+        ...state,
+        items: [
+          ...state.items,
+          {
+            id: Date.now().toString(),
+            text: action.payload.text,
+            completed: false
+          }
+        ]
+      };
+
+    case &#39;TOGGLE_TODO&#39;:
+      return {
+        ...state,
+        items: state.items.map(item =&gt;
+          item.id === action.payload.id
+            ? { ...item, completed: !item.completed }
+            : item
+        )
+      };
+
+    case &#39;SET_FILTER&#39;:
+      return {
+        ...state,
+        filter: action.payload.filter
+      };
+
+    default:
+      return state;
+  }
+}
+</code></pre>
+<h2>事件处理</h2>
+<h3>事件处理器命名</h3>
+<pre><code class="language-jsx">// ✅ 清晰的事件处理器命名
+function UserForm() {
+  const handleSubmit = (event: React.FormEvent) =&gt; {
+    event.preventDefault();
+    // 处理提交
+  };
+
+  const handleNameChange = (event: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
+    setName(event.target.value);
+  };
+
+  const handleDeleteClick = (userId: string) =&gt; {
+    // 处理删除
+  };
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input onChange={handleNameChange} /&gt;
+      &lt;button onClick={() =&gt; handleDeleteClick(user.id)}&gt;
+        Delete
+      &lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+
+// ❌ 避免的命名
+function BadForm() {
+  const submit = () =&gt; {}; // 缺少handle前缀
+  const onChange = () =&gt; {}; // 太通用
+  const click = () =&gt; {}; // 不明确
+}
+</code></pre>
+<h3>类型安全的事件处理</h3>
+<pre><code class="language-jsx">// ✅ 明确的事件类型
+interface FormProps {
+  onSubmit: (data: FormData) =&gt; void;
+  onChange: (field: string, value: string) =&gt; void;
+}
+
+const Form: React.FC&lt;FormProps&gt; = ({ onSubmit, onChange }) =&gt; {
+  const handleInputChange = (event: React.ChangeEvent&lt;HTMLInputElement&gt;) =&gt; {
+    const { name, value } = event.target;
+    onChange(name, value);
+  };
+
+  const handleFormSubmit = (event: React.FormEvent&lt;HTMLFormElement&gt;) =&gt; {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    onSubmit(formData);
+  };
+
+  return (
+    &lt;form onSubmit={handleFormSubmit}&gt;
+      &lt;input name=&quot;username&quot; onChange={handleInputChange} /&gt;
+    &lt;/form&gt;
+  );
+};
+</code></pre>
+<h2>样式规范</h2>
+<h3>CSS Modules</h3>
+<pre><code class="language-css">/* UserCard.module.css */
+.container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.statusActive {
+  background-color: #e8f5e8;
+  color: #2d5a2d;
+}
+
+.statusInactive {
+  background-color: #ffeaea;
+  color: #cc2e2e;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+</code></pre>
+<pre><code class="language-jsx">// UserCard.tsx
+import React from &#39;react&#39;;
+import classNames from &#39;classnames&#39;;
+import styles from &#39;./UserCard.module.css&#39;;
+
+interface UserCardProps {
+  user: User;
+  className?: string;
+}
+
+const UserCard: React.FC&lt;UserCardProps&gt; = ({ user, className }) =&gt; {
+  const statusClassName = classNames(styles.status, {
+    [styles.statusActive]: user.isActive,
+    [styles.statusInactive]: !user.isActive
+  });
+
+  return (
+    &lt;div className={classNames(styles.container, className)}&gt;
+      &lt;div className={styles.header}&gt;
+        &lt;h3 className={styles.title}&gt;{user.name}&lt;/h3&gt;
+        &lt;span className={statusClassName}&gt;
+          {user.isActive ? &#39;Active&#39; : &#39;Inactive&#39;}
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;p&gt;{user.email}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};
+</code></pre>
+<h2>错误处理</h2>
+<h3>错误边界</h3>
+<pre><code class="language-jsx">// ErrorBoundary.tsx
+import React, { Component, ErrorInfo, ReactNode } from &#39;react&#39;;
+
+interface Props {
+  children: ReactNode;
+  fallback?: ReactNode;
+  onError?: (error: Error, errorInfo: ErrorInfo) =&gt; void;
+}
+
+interface State {
+  hasError: boolean;
+  error?: Error;
+}
+
+class ErrorBoundary extends Component&lt;Props, State&gt; {
+  constructor(props: Props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error: Error): State {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error(&#39;ErrorBoundary caught an error:&#39;, error, errorInfo);
+    this.props.onError?.(error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback || (
+        &lt;div className=&quot;error-fallback&quot;&gt;
+          &lt;h2&gt;Something went wrong.&lt;/h2&gt;
+          &lt;p&gt;{this.state.error?.message}&lt;/p&gt;
+          &lt;button onClick={() =&gt; this.setState({ hasError: false })}&gt;
+            Try again
+          &lt;/button&gt;
+        &lt;/div&gt;
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+export default ErrorBoundary;
+</code></pre>
+<h3>异步错误处理</h3>
+<pre><code class="language-jsx">// useAsyncError.ts
+import { useCallback, useState } from &#39;react&#39;;
+
+interface AsyncError {
+  message: string;
+  code?: string;
+  details?: any;
+}
+
+function useAsyncError() {
+  const [error, setError] = useState&lt;AsyncError | null&gt;(null);
+
+  const clearError = useCallback(() =&gt; {
+    setError(null);
+  }, []);
+
+  const handleAsyncError = useCallback((error: unknown) =&gt; {
+    if (error instanceof Error) {
+      setError({
+        message: error.message,
+        code: (error as any).code,
+        details: error
+      });
+    } else {
+      setError({
+        message: &#39;An unknown error occurred&#39;,
+        details: error
+      });
+    }
+  }, []);
+
+  return { error, clearError, handleAsyncError };
+}
+
+// 使用示例
+function DataComponent() {
+  const { error, clearError, handleAsyncError } = useAsyncError();
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const fetchData = async () =&gt; {
+    try {
+      setLoading(true);
+      clearError();
+      
+      const response = await fetch(&#39;/api/data&#39;);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      
+      const result = await response.json();
+      setData(result);
+    } catch (error) {
+      handleAsyncError(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    &lt;div&gt;
+      {error &amp;&amp; (
+        &lt;div className=&quot;error-message&quot;&gt;
+          {error.message}
+          &lt;button onClick={clearError}&gt;Dismiss&lt;/button&gt;
+        &lt;/div&gt;
+      )}
+      {/* 其他内容 */}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>性能最佳实践</h2>
+<h3>避免不必要的重渲染</h3>
+<pre><code class="language-jsx">// ✅ 使用React.memo优化
+const ExpensiveComponent = React.memo&lt;Props&gt;(({ data, onUpdate }) =&gt; {
+  // 组件实现
+}, (prevProps, nextProps) =&gt; {
+  // 自定义比较函数
+  return (
+    prevProps.data.id === nextProps.data.id &amp;&amp;
+    prevProps.data.version === nextProps.data.version
+  );
+});
+
+// ✅ 稳定的引用
+function ParentComponent() {
+  const [count, setCount] = useState(0);
+  
+  // 稳定的对象引用
+  const config = useMemo(() =&gt; ({
+    theme: &#39;dark&#39;,
+    locale: &#39;zh-CN&#39;
+  }), []);
+
+  // 稳定的函数引用
+  const handleUpdate = useCallback((data: any) =&gt; {
+    // 处理更新
+  }, []);
+
+  return (
+    &lt;ExpensiveComponent 
+      config={config}
+      onUpdate={handleUpdate}
+    /&gt;
+  );
+}
+</code></pre>
+<h2>测试规范</h2>
+<h3>组件测试</h3>
+<pre><code class="language-jsx">// UserCard.test.tsx
+import React from &#39;react&#39;;
+import { render, screen, fireEvent } from &#39;@testing-library/react&#39;;
+import { UserCard } from &#39;./UserCard&#39;;
+
+const mockUser = {
+  id: &#39;1&#39;,
+  name: &#39;John Doe&#39;,
+  email: &#39;john@example.com&#39;,
+  isActive: true
+};
+
+describe(&#39;UserCard&#39;, () =&gt; {
+  it(&#39;renders user information correctly&#39;, () =&gt; {
+    render(&lt;UserCard user={mockUser} /&gt;);
+    
+    expect(screen.getByText(&#39;John Doe&#39;)).toBeInTheDocument();
+    expect(screen.getByText(&#39;john@example.com&#39;)).toBeInTheDocument();
+    expect(screen.getByText(&#39;Active&#39;)).toBeInTheDocument();
+  });
+
+  it(&#39;shows inactive status for inactive users&#39;, () =&gt; {
+    const inactiveUser = { ...mockUser, isActive: false };
+    render(&lt;UserCard user={inactiveUser} /&gt;);
+    
+    expect(screen.getByText(&#39;Inactive&#39;)).toBeInTheDocument();
+  });
+
+  it(&#39;applies custom className&#39;, () =&gt; {
+    const { container } = render(
+      &lt;UserCard user={mockUser} className=&quot;custom-class&quot; /&gt;
+    );
+    
+    expect(container.firstChild).toHaveClass(&#39;custom-class&#39;);
+  });
+});
+</code></pre>
+<h2>代码质量工具</h2>
+<h3>ESLint配置</h3>
+<pre><code class="language-json">// .eslintrc.json
+{
+  &quot;extends&quot;: [
+    &quot;react-app&quot;,
+    &quot;@typescript-eslint/recommended&quot;,
+    &quot;prettier&quot;
+  ],
+  &quot;rules&quot;: {
+    &quot;react-hooks/exhaustive-deps&quot;: &quot;error&quot;,
+    &quot;react/jsx-boolean-value&quot;: [&quot;error&quot;, &quot;never&quot;],
+    &quot;react/jsx-curly-brace-presence&quot;: [&quot;error&quot;, { &quot;props&quot;: &quot;never&quot; }],
+    &quot;react/self-closing-comp&quot;: &quot;error&quot;,
+    &quot;@typescript-eslint/no-unused-vars&quot;: &quot;error&quot;,
+    &quot;@typescript-eslint/explicit-function-return-type&quot;: &quot;off&quot;,
+    &quot;prefer-const&quot;: &quot;error&quot;,
+    &quot;no-var&quot;: &quot;error&quot;
+  }
+}
+</code></pre>
+<h3>Prettier配置</h3>
+<pre><code class="language-json">// .prettierrc
+{
+  &quot;semi&quot;: true,
+  &quot;trailingComma&quot;: &quot;es5&quot;,
+  &quot;singleQuote&quot;: true,
+  &quot;printWidth&quot;: 80,
+  &quot;tabWidth&quot;: 2,
+  &quot;useTabs&quot;: false
+}
+</code></pre>
+<h2>注释和文档</h2>
+<h3>JSDoc注释</h3>
+<pre><code class="language-jsx">/**
+ * 用户卡片组件，显示用户基本信息
+ * 
+ * @param user - 用户数据对象
+ * @param onEdit - 编辑用户时的回调函数
+ * @param className - 自定义CSS类名
+ * @returns 渲染的用户卡片
+ */
+interface UserCardProps {
+  /** 用户数据 */
+  user: User;
+  /** 编辑回调 */
+  onEdit?: (user: User) =&gt; void;
+  /** 自定义样式类 */
+  className?: string;
+}
+
+const UserCard: React.FC&lt;UserCardProps&gt; = ({ user, onEdit, className }) =&gt; {
+  // 实现
+};
+</code></pre>
+<h3>README文档</h3>
+<pre><code class="language-markdown"># 组件库
+
+## 安装
+
+```bash
+npm install @company/ui-components
+</code></pre>
+<h2>使用</h2>
+<pre><code class="language-jsx">import { Button, Card } from &#39;@company/ui-components&#39;;
+
+function App() {
+  return (
+    &lt;Card title=&quot;示例&quot;&gt;
+      &lt;Button variant=&quot;primary&quot;&gt;点击我&lt;/Button&gt;
+    &lt;/Card&gt;
+  );
+}
+</code></pre>
+<h2>组件列表</h2>
+<ul>
+<li><a href="./src/components/Button/README.md">Button</a></li>
+<li><a href="./src/components/Card/README.md">Card</a></li>
+</ul>
+<pre><code>
+## 总结
+
+良好的编码规范包括：
+
+1. **一致的命名约定**
+2. **清晰的项目结构**
+3. **类型安全的代码**
+4. **适当的错误处理**
+5. **性能最佳实践**
+6. **全面的测试**
+7. **完善的文档**
+
+通过遵循这些规范，可以提高代码质量，增强团队协作效率，并降低维护成本。 
+</code></pre>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="35-合成事件.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">合成事件</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="37-项目架构.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">项目架构</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

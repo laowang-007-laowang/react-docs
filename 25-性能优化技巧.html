@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>性能优化技巧 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">性能优化技巧</span>
+            </div>
+            <h1 class="doc-title">性能优化技巧</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #d299c2">
+                🚀 性能优化
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>25-性能优化技巧</h1>
+<p>React应用的性能优化是构建高质量用户界面的关键。本文将介绍React中各种性能优化技巧和最佳实践。</p>
+<h2>React.memo</h2>
+<h3>基础使用</h3>
+<pre><code class="language-jsx">// 避免不必要的重渲染
+const ExpensiveComponent = React.memo(({ data, config }) =&gt; {
+  console.log(&#39;ExpensiveComponent rendered&#39;);
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;{data.title}&lt;/h3&gt;
+      &lt;p&gt;配置: {config.theme}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+});
+
+// 使用
+function ParentComponent() {
+  const [count, setCount] = useState(0);
+  const [data] = useState({ title: &#39;不变的数据&#39; });
+  const [config] = useState({ theme: &#39;dark&#39; });
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        计数: {count}
+      &lt;/button&gt;
+      {/* ExpensiveComponent不会因为count变化而重渲染 */}
+      &lt;ExpensiveComponent data={data} config={config} /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>自定义比较函数</h3>
+<pre><code class="language-jsx">const UserCard = React.memo(({ user, settings }) =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;{user.name}&lt;/h3&gt;
+      &lt;p&gt;主题: {settings.theme}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}, (prevProps, nextProps) =&gt; {
+  // 自定义比较逻辑
+  return (
+    prevProps.user.id === nextProps.user.id &amp;&amp;
+    prevProps.user.name === nextProps.user.name &amp;&amp;
+    prevProps.settings.theme === nextProps.settings.theme
+  );
+});
+</code></pre>
+<h2>useMemo和useCallback</h2>
+<h3>useMemo优化计算</h3>
+<pre><code class="language-jsx">function ExpensiveCalculation({ items, filter }) {
+  // ❌ 每次渲染都会重新计算
+  const filteredItems = items.filter(item =&gt; 
+    item.category === filter.category
+  );
+
+  // ✅ 只有依赖项变化时才重新计算
+  const memoizedFilteredItems = useMemo(() =&gt; {
+    console.log(&#39;重新计算过滤结果&#39;);
+    return items.filter(item =&gt; item.category === filter.category);
+  }, [items, filter.category]);
+
+  return (
+    &lt;ul&gt;
+      {memoizedFilteredItems.map(item =&gt; (
+        &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h3>useCallback优化函数</h3>
+<pre><code class="language-jsx">function TodoList({ todos, onToggle, onDelete }) {
+  // ❌ 每次渲染都创建新的函数
+  const handleToggle = (id) =&gt; {
+    onToggle(id);
+  };
+
+  // ✅ 缓存函数引用
+  const memoizedHandleToggle = useCallback((id) =&gt; {
+    onToggle(id);
+  }, [onToggle]);
+
+  return (
+    &lt;div&gt;
+      {todos.map(todo =&gt; (
+        &lt;TodoItem
+          key={todo.id}
+          todo={todo}
+          onToggle={memoizedHandleToggle}
+          onDelete={onDelete}
+        /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+
+const TodoItem = React.memo(({ todo, onToggle, onDelete }) =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;span onClick={() =&gt; onToggle(todo.id)}&gt;
+        {todo.text}
+      &lt;/span&gt;
+      &lt;button onClick={() =&gt; onDelete(todo.id)}&gt;删除&lt;/button&gt;
+    &lt;/div&gt;
+  );
+});
+</code></pre>
+<h2>虚拟化长列表</h2>
+<h3>react-window实现</h3>
+<pre><code class="language-jsx">import { FixedSizeList as List } from &#39;react-window&#39;;
+
+function VirtualizedList({ items }) {
+  const Row = ({ index, style }) =&gt; (
+    &lt;div style={style}&gt;
+      &lt;div className=&quot;list-item&quot;&gt;
+        {items[index].name}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+
+  return (
+    &lt;List
+      height={400}
+      itemCount={items.length}
+      itemSize={50}
+      width=&quot;100%&quot;
+    &gt;
+      {Row}
+    &lt;/List&gt;
+  );
+}
+
+// 动态高度列表
+import { VariableSizeList } from &#39;react-window&#39;;
+
+function DynamicList({ items }) {
+  const getItemSize = (index) =&gt; {
+    // 根据内容返回不同高度
+    return items[index].content.length &gt; 100 ? 120 : 80;
+  };
+
+  const Row = ({ index, style }) =&gt; (
+    &lt;div style={style}&gt;
+      &lt;div className=&quot;dynamic-item&quot;&gt;
+        &lt;h4&gt;{items[index].title}&lt;/h4&gt;
+        &lt;p&gt;{items[index].content}&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+
+  return (
+    &lt;VariableSizeList
+      height={400}
+      itemCount={items.length}
+      itemSize={getItemSize}
+      width=&quot;100%&quot;
+    &gt;
+      {Row}
+    &lt;/VariableSizeList&gt;
+  );
+}
+</code></pre>
+<h2>代码分割</h2>
+<h3>路由级分割</h3>
+<pre><code class="language-jsx">import { lazy, Suspense } from &#39;react&#39;;
+import { BrowserRouter, Routes, Route } from &#39;react-router-dom&#39;;
+
+// 懒加载组件
+const Home = lazy(() =&gt; import(&#39;./pages/Home&#39;));
+const About = lazy(() =&gt; import(&#39;./pages/About&#39;));
+const Contact = lazy(() =&gt; import(&#39;./pages/Contact&#39;));
+
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;Suspense fallback={&lt;div&gt;加载中...&lt;/div&gt;}&gt;
+        &lt;Routes&gt;
+          &lt;Route path=&quot;/&quot; element={&lt;Home /&gt;} /&gt;
+          &lt;Route path=&quot;/about&quot; element={&lt;About /&gt;} /&gt;
+          &lt;Route path=&quot;/contact&quot; element={&lt;Contact /&gt;} /&gt;
+        &lt;/Routes&gt;
+      &lt;/Suspense&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}
+</code></pre>
+<h3>组件级分割</h3>
+<pre><code class="language-jsx">import { useState, lazy, Suspense } from &#39;react&#39;;
+
+const HeavyComponent = lazy(() =&gt; import(&#39;./HeavyComponent&#39;));
+
+function ConditionalLoading() {
+  const [showHeavy, setShowHeavy] = useState(false);
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; setShowHeavy(true)}&gt;
+        加载重型组件
+      &lt;/button&gt;
+      
+      {showHeavy &amp;&amp; (
+        &lt;Suspense fallback={&lt;div&gt;加载重型组件中...&lt;/div&gt;}&gt;
+          &lt;HeavyComponent /&gt;
+        &lt;/Suspense&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>图片优化</h2>
+<h3>懒加载图片</h3>
+<pre><code class="language-jsx">import { useState, useRef, useEffect } from &#39;react&#39;;
+
+function LazyImage({ src, alt, placeholder, ...props }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const imgRef = useRef();
+
+  useEffect(() =&gt; {
+    const observer = new IntersectionObserver(
+      ([entry]) =&gt; {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () =&gt; observer.disconnect();
+  }, []);
+
+  return (
+    &lt;div ref={imgRef} {...props}&gt;
+      {isInView &amp;&amp; (
+        &lt;img
+          src={src}
+          alt={alt}
+          onLoad={() =&gt; setIsLoaded(true)}
+          style={{
+            opacity: isLoaded ? 1 : 0,
+            transition: &#39;opacity 0.3s&#39;
+          }}
+        /&gt;
+      )}
+      {!isLoaded &amp;&amp; isInView &amp;&amp; (
+        &lt;div className=&quot;image-placeholder&quot;&gt;
+          {placeholder || &#39;加载中...&#39;}
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>响应式图片</h3>
+<pre><code class="language-jsx">function ResponsiveImage({ src, alt, sizes = [] }) {
+  const generateSrcSet = () =&gt; {
+    return sizes
+      .map(size =&gt; `${src}?w=${size.width} ${size.width}w`)
+      .join(&#39;, &#39;);
+  };
+
+  return (
+    &lt;img
+      src={src}
+      srcSet={generateSrcSet()}
+      sizes=&quot;(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw&quot;
+      alt={alt}
+      loading=&quot;lazy&quot;
+    /&gt;
+  );
+}
+</code></pre>
+<h2>状态管理优化</h2>
+<h3>状态结构优化</h3>
+<pre><code class="language-jsx">// ❌ 不好的状态结构
+function BadComponent() {
+  const [state, setState] = useState({
+    user: { name: &#39;&#39;, email: &#39;&#39; },
+    posts: [],
+    comments: [],
+    ui: { loading: false, error: null }
+  });
+
+  // 任何状态变化都会导致整个对象重新创建
+  const updateUser = (userData) =&gt; {
+    setState(prev =&gt; ({
+      ...prev,
+      user: { ...prev.user, ...userData }
+    }));
+  };
+}
+
+// ✅ 分离状态
+function GoodComponent() {
+  const [user, setUser] = useState({ name: &#39;&#39;, email: &#39;&#39; });
+  const [posts, setPosts] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const updateUser = useCallback((userData) =&gt; {
+    setUser(prev =&gt; ({ ...prev, ...userData }));
+  }, []);
+}
+</code></pre>
+<h3>useReducer优化复杂状态</h3>
+<pre><code class="language-jsx">function stateReducer(state, action) {
+  switch (action.type) {
+    case &#39;SET_LOADING&#39;:
+      return { ...state, loading: action.payload };
+    case &#39;SET_ERROR&#39;:
+      return { ...state, error: action.payload, loading: false };
+    case &#39;SET_DATA&#39;:
+      return { ...state, data: action.payload, loading: false, error: null };
+    case &#39;UPDATE_ITEM&#39;:
+      return {
+        ...state,
+        data: state.data.map(item =&gt;
+          item.id === action.payload.id
+            ? { ...item, ...action.payload.updates }
+            : item
+        )
+      };
+    default:
+      return state;
+  }
+}
+
+function OptimizedComponent() {
+  const [state, dispatch] = useReducer(stateReducer, {
+    data: [],
+    loading: false,
+    error: null
+  });
+
+  const updateItem = useCallback((id, updates) =&gt; {
+    dispatch({ type: &#39;UPDATE_ITEM&#39;, payload: { id, updates } });
+  }, []);
+
+  return (
+    &lt;div&gt;
+      {state.loading &amp;&amp; &lt;div&gt;加载中...&lt;/div&gt;}
+      {state.error &amp;&amp; &lt;div&gt;错误: {state.error}&lt;/div&gt;}
+      {state.data.map(item =&gt; (
+        &lt;Item key={item.id} item={item} onUpdate={updateItem} /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>避免不必要的渲染</h2>
+<h3>稳定的引用</h3>
+<pre><code class="language-jsx">// ❌ 每次渲染都创建新对象
+function BadParent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    &lt;ChildComponent
+      config={{ theme: &#39;dark&#39;, size: &#39;large&#39; }} // 新对象
+      onClick={() =&gt; console.log(&#39;clicked&#39;)} // 新函数
+    /&gt;
+  );
+}
+
+// ✅ 稳定的引用
+function GoodParent() {
+  const [count, setCount] = useState(0);
+
+  const config = useMemo(() =&gt; ({
+    theme: &#39;dark&#39;,
+    size: &#39;large&#39;
+  }), []); // 稳定的对象
+
+  const handleClick = useCallback(() =&gt; {
+    console.log(&#39;clicked&#39;);
+  }, []); // 稳定的函数
+
+  return (
+    &lt;ChildComponent config={config} onClick={handleClick} /&gt;
+  );
+}
+</code></pre>
+<h3>条件渲染优化</h3>
+<pre><code class="language-jsx">// ❌ 每次都创建组件实例
+function BadConditional({ showExpensive, data }) {
+  return (
+    &lt;div&gt;
+      {showExpensive ? &lt;ExpensiveComponent data={data} /&gt; : null}
+    &lt;/div&gt;
+  );
+}
+
+// ✅ 使用key重置组件状态
+function GoodConditional({ showExpensive, data }) {
+  return (
+    &lt;div&gt;
+      {showExpensive &amp;&amp; (
+        &lt;ExpensiveComponent 
+          key={data.id} // 数据变化时重置组件
+          data={data} 
+        /&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>性能监控</h2>
+<h3>React DevTools Profiler</h3>
+<pre><code class="language-jsx">import { Profiler } from &#39;react&#39;;
+
+function onRenderCallback(id, phase, actualDuration, baseDuration, startTime, commitTime) {
+  console.log(&#39;Profiler:&#39;, {
+    id,
+    phase, // &#39;mount&#39; 或 &#39;update&#39;
+    actualDuration, // 实际渲染时间
+    baseDuration, // 预估渲染时间
+    startTime,
+    commitTime
+  });
+}
+
+function App() {
+  return (
+    &lt;Profiler id=&quot;App&quot; onRender={onRenderCallback}&gt;
+      &lt;Header /&gt;
+      &lt;Main /&gt;
+      &lt;Footer /&gt;
+    &lt;/Profiler&gt;
+  );
+}
+</code></pre>
+<h3>自定义性能Hook</h3>
+<pre><code class="language-jsx">function usePerformanceMonitor(componentName) {
+  const renderCountRef = useRef(0);
+  const startTimeRef = useRef();
+
+  useEffect(() =&gt; {
+    renderCountRef.current += 1;
+  });
+
+  useLayoutEffect(() =&gt; {
+    startTimeRef.current = performance.now();
+  });
+
+  useEffect(() =&gt; {
+    const endTime = performance.now();
+    const renderTime = endTime - startTimeRef.current;
+    
+    console.log(`${componentName} - 渲染 #${renderCountRef.current}, 耗时: ${renderTime.toFixed(2)}ms`);
+  });
+
+  return renderCountRef.current;
+}
+
+function MonitoredComponent() {
+  const renderCount = usePerformanceMonitor(&#39;MonitoredComponent&#39;);
+  
+  return &lt;div&gt;渲染次数: {renderCount}&lt;/div&gt;;
+}
+</code></pre>
+<h2>Bundle分析</h2>
+<h3>webpack-bundle-analyzer</h3>
+<pre><code class="language-bash"># 安装分析工具
+npm install --save-dev webpack-bundle-analyzer
+
+# 生成分析报告
+npm run build
+npx webpack-bundle-analyzer build/static/js/*.js
+</code></pre>
+<h3>分析结果优化</h3>
+<pre><code class="language-jsx">// 按需导入
+// ❌ 导入整个库
+import _ from &#39;lodash&#39;;
+import * as utils from &#39;./utils&#39;;
+
+// ✅ 按需导入
+import { debounce } from &#39;lodash&#39;;
+import { formatDate } from &#39;./utils&#39;;
+
+// Tree shaking优化
+// ❌ 导入未使用的代码
+import { Button, Modal, Tooltip, Dropdown } from &#39;antd&#39;;
+
+// ✅ 只导入需要的组件
+import Button from &#39;antd/es/button&#39;;
+import Modal from &#39;antd/es/modal&#39;;
+</code></pre>
+<h2>网络优化</h2>
+<h3>预加载策略</h3>
+<pre><code class="language-jsx">function usePreload() {
+  const preloadRoute = useCallback((routePath) =&gt; {
+    const link = document.createElement(&#39;link&#39;);
+    link.rel = &#39;prefetch&#39;;
+    link.href = routePath;
+    document.head.appendChild(link);
+  }, []);
+
+  const preloadImage = useCallback((src) =&gt; {
+    const img = new Image();
+    img.src = src;
+  }, []);
+
+  return { preloadRoute, preloadImage };
+}
+
+function NavigationMenu() {
+  const { preloadRoute } = usePreload();
+
+  return (
+    &lt;nav&gt;
+      &lt;Link 
+        to=&quot;/about&quot;
+        onMouseEnter={() =&gt; preloadRoute(&#39;/about&#39;)}
+      &gt;
+        关于我们
+      &lt;/Link&gt;
+    &lt;/nav&gt;
+  );
+}
+</code></pre>
+<h3>缓存策略</h3>
+<pre><code class="language-jsx">// 简单缓存Hook
+function useCache(key, fetcher, options = {}) {
+  const { ttl = 5 * 60 * 1000 } = options; // 5分钟TTL
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() =&gt; {
+    const cachedData = localStorage.getItem(key);
+    
+    if (cachedData) {
+      const { data: cached, timestamp } = JSON.parse(cachedData);
+      
+      if (Date.now() - timestamp &lt; ttl) {
+        setData(cached);
+        return;
+      }
+    }
+
+    setLoading(true);
+    fetcher()
+      .then(result =&gt; {
+        setData(result);
+        localStorage.setItem(key, JSON.stringify({
+          data: result,
+          timestamp: Date.now()
+        }));
+      })
+      .finally(() =&gt; setLoading(false));
+  }, [key, fetcher, ttl]);
+
+  return { data, loading };
+}
+</code></pre>
+<h2>最佳实践总结</h2>
+<h3>性能优化清单</h3>
+<pre><code class="language-jsx">// 1. 组件优化
+const OptimizedComponent = React.memo(({ data }) =&gt; {
+  // 2. 计算优化
+  const expensiveValue = useMemo(() =&gt; {
+    return heavyCalculation(data);
+  }, [data]);
+
+  // 3. 函数优化
+  const handleClick = useCallback(() =&gt; {
+    // 处理点击
+  }, []);
+
+  // 4. 避免内联对象
+  const style = useMemo(() =&gt; ({
+    color: &#39;blue&#39;,
+    fontSize: &#39;16px&#39;
+  }), []);
+
+  return (
+    &lt;div style={style}&gt;
+      {expensiveValue}
+    &lt;/div&gt;
+  );
+});
+
+// 5. 列表优化
+function OptimizedList({ items }) {
+  return (
+    &lt;div&gt;
+      {items.map(item =&gt; (
+        &lt;OptimizedItem 
+          key={item.id} // 稳定的key
+          item={item} 
+        /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>性能问题排查步骤</h3>
+<ol>
+<li><strong>使用React DevTools Profiler</strong></li>
+<li><strong>检查不必要的重渲染</strong></li>
+<li><strong>分析Bundle大小</strong></li>
+<li><strong>优化网络请求</strong></li>
+<li><strong>实施代码分割</strong></li>
+<li><strong>监控性能指标</strong></li>
+</ol>
+<p>React性能优化是一个持续的过程，需要根据具体应用场景选择合适的优化策略。关键是要测量和监控性能，避免过早优化。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="24-Zustand状态管理.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">Zustand状态管理</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="26-代码分割.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">代码分割</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

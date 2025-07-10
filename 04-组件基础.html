@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>组件基础 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">组件基础</span>
+            </div>
+            <h1 class="doc-title">组件基础</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #f093fb">
+                🧩 组件开发
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>React 组件基础</h1>
+<h2>什么是组件？</h2>
+<p>组件是React应用的基本构建块。组件让你可以将UI拆分为独立、可复用的代码片段，并对每个片段进行独立思考。</p>
+<h2>函数组件</h2>
+<h3>基本函数组件</h3>
+<pre><code class="language-javascript">// 最简单的函数组件
+function Welcome() {
+  return &lt;h1&gt;Hello, World!&lt;/h1&gt;;
+}
+
+// 使用箭头函数
+const Welcome = () =&gt; {
+  return &lt;h1&gt;Hello, World!&lt;/h1&gt;;
+};
+
+// 简写形式（单行返回）
+const Welcome = () =&gt; &lt;h1&gt;Hello, World!&lt;/h1&gt;;
+</code></pre>
+<h3>带参数的函数组件</h3>
+<pre><code class="language-javascript">function Welcome(props) {
+  return &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;;
+}
+
+// 使用解构赋值
+function Welcome({ name, age }) {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello, {name}!&lt;/h1&gt;
+      &lt;p&gt;You are {age} years old.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 带默认值的解构
+function Welcome({ name = &#39;Guest&#39;, age = 0 }) {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello, {name}!&lt;/h1&gt;
+      &lt;p&gt;You are {age} years old.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>TypeScript 函数组件</h3>
+<pre><code class="language-typescript">interface WelcomeProps {
+  name: string;
+  age?: number; // 可选属性
+  onGreet?: () =&gt; void; // 可选回调函数
+}
+
+const Welcome: React.FC&lt;WelcomeProps&gt; = ({ name, age = 0, onGreet }) =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello, {name}!&lt;/h1&gt;
+      &lt;p&gt;You are {age} years old.&lt;/p&gt;
+      {onGreet &amp;&amp; &lt;button onClick={onGreet}&gt;Greet&lt;/button&gt;}
+    &lt;/div&gt;
+  );
+};
+
+// 或者不使用 React.FC（推荐）
+const Welcome = ({ name, age = 0, onGreet }: WelcomeProps) =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;Hello, {name}!&lt;/h1&gt;
+      &lt;p&gt;You are {age} years old.&lt;/p&gt;
+      {onGreet &amp;&amp; &lt;button onClick={onGreet}&gt;Greet&lt;/button&gt;}
+    &lt;/div&gt;
+  );
+};
+</code></pre>
+<h2>类组件</h2>
+<h3>基本类组件</h3>
+<pre><code class="language-javascript">import React, { Component } from &#39;react&#39;;
+
+class Welcome extends Component {
+  render() {
+    return &lt;h1&gt;Hello, World!&lt;/h1&gt;;
+  }
+}
+
+// 使用 props
+class Welcome extends Component {
+  render() {
+    return &lt;h1&gt;Hello, {this.props.name}!&lt;/h1&gt;;
+  }
+}
+</code></pre>
+<h3>带状态的类组件</h3>
+<pre><code class="language-javascript">class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+  
+  increment = () =&gt; {
+    this.setState({ count: this.state.count + 1 });
+  }
+  
+  decrement = () =&gt; {
+    this.setState(prevState =&gt; ({ count: prevState.count - 1 }));
+  }
+  
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;计数器: {this.state.count}&lt;/h2&gt;
+        &lt;button onClick={this.increment}&gt;+1&lt;/button&gt;
+        &lt;button onClick={this.decrement}&gt;-1&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h3>TypeScript 类组件</h3>
+<pre><code class="language-typescript">interface CounterProps {
+  initialCount?: number;
+}
+
+interface CounterState {
+  count: number;
+}
+
+class Counter extends Component&lt;CounterProps, CounterState&gt; {
+  constructor(props: CounterProps) {
+    super(props);
+    this.state = {
+      count: props.initialCount || 0
+    };
+  }
+  
+  increment = (): void =&gt; {
+    this.setState({ count: this.state.count + 1 });
+  }
+  
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;计数器: {this.state.count}&lt;/h2&gt;
+        &lt;button onClick={this.increment}&gt;+1&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+</code></pre>
+<h2>组件组合</h2>
+<h3>基本组合</h3>
+<pre><code class="language-javascript">function Header() {
+  return &lt;h1&gt;我的应用&lt;/h1&gt;;
+}
+
+function Sidebar() {
+  return (
+    &lt;div className=&quot;sidebar&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;首页&lt;/li&gt;
+        &lt;li&gt;关于&lt;/li&gt;
+        &lt;li&gt;联系&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+
+function Content() {
+  return (
+    &lt;div className=&quot;content&quot;&gt;
+      &lt;p&gt;这里是主要内容&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+function App() {
+  return (
+    &lt;div className=&quot;app&quot;&gt;
+      &lt;Header /&gt;
+      &lt;div className=&quot;main&quot;&gt;
+        &lt;Sidebar /&gt;
+        &lt;Content /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>组件嵌套</h3>
+<pre><code class="language-javascript">function UserCard({ user }) {
+  return (
+    &lt;div className=&quot;user-card&quot;&gt;
+      &lt;UserAvatar src={user.avatar} alt={user.name} /&gt;
+      &lt;UserInfo name={user.name} email={user.email} /&gt;
+      &lt;UserActions userId={user.id} /&gt;
+    &lt;/div&gt;
+  );
+}
+
+function UserAvatar({ src, alt }) {
+  return &lt;img src={src} alt={alt} className=&quot;avatar&quot; /&gt;;
+}
+
+function UserInfo({ name, email }) {
+  return (
+    &lt;div className=&quot;user-info&quot;&gt;
+      &lt;h3&gt;{name}&lt;/h3&gt;
+      &lt;p&gt;{email}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+function UserActions({ userId }) {
+  return (
+    &lt;div className=&quot;user-actions&quot;&gt;
+      &lt;button onClick={() =&gt; followUser(userId)}&gt;关注&lt;/button&gt;
+      &lt;button onClick={() =&gt; messageUser(userId)}&gt;发消息&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>Children 属性</h2>
+<h3>基本 children 使用</h3>
+<pre><code class="language-javascript">function Card({ children }) {
+  return (
+    &lt;div className=&quot;card&quot;&gt;
+      {children}
+    &lt;/div&gt;
+  );
+}
+
+// 使用方式
+function App() {
+  return (
+    &lt;Card&gt;
+      &lt;h2&gt;卡片标题&lt;/h2&gt;
+      &lt;p&gt;卡片内容&lt;/p&gt;
+    &lt;/Card&gt;
+  );
+}
+</code></pre>
+<h3>复杂 children 处理</h3>
+<pre><code class="language-javascript">function Layout({ children, sidebar }) {
+  return (
+    &lt;div className=&quot;layout&quot;&gt;
+      &lt;aside className=&quot;sidebar&quot;&gt;
+        {sidebar}
+      &lt;/aside&gt;
+      &lt;main className=&quot;content&quot;&gt;
+        {children}
+      &lt;/main&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 使用方式
+function App() {
+  return (
+    &lt;Layout 
+      sidebar={
+        &lt;nav&gt;
+          &lt;a href=&quot;/&quot;&gt;首页&lt;/a&gt;
+          &lt;a href=&quot;/about&quot;&gt;关于&lt;/a&gt;
+        &lt;/nav&gt;
+      }
+    &gt;
+      &lt;h1&gt;主要内容&lt;/h1&gt;
+      &lt;p&gt;这里是页面内容&lt;/p&gt;
+    &lt;/Layout&gt;
+  );
+}
+</code></pre>
+<h3>条件渲染 children</h3>
+<pre><code class="language-javascript">function Modal({ isOpen, children, onClose }) {
+  if (!isOpen) return null;
+  
+  return (
+    &lt;div className=&quot;modal-overlay&quot; onClick={onClose}&gt;
+      &lt;div className=&quot;modal-content&quot; onClick={e =&gt; e.stopPropagation()}&gt;
+        &lt;button className=&quot;close-button&quot; onClick={onClose}&gt;×&lt;/button&gt;
+        {children}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 使用方式
+function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; setIsModalOpen(true)}&gt;打开模态框&lt;/button&gt;
+      
+      &lt;Modal isOpen={isModalOpen} onClose={() =&gt; setIsModalOpen(false)}&gt;
+        &lt;h2&gt;模态框标题&lt;/h2&gt;
+        &lt;p&gt;模态框内容&lt;/p&gt;
+      &lt;/Modal&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>组件导入导出</h2>
+<h3>命名导出</h3>
+<pre><code class="language-javascript">// components/Button.js
+export function PrimaryButton({ children, onClick }) {
+  return (
+    &lt;button className=&quot;btn btn-primary&quot; onClick={onClick}&gt;
+      {children}
+    &lt;/button&gt;
+  );
+}
+
+export function SecondaryButton({ children, onClick }) {
+  return (
+    &lt;button className=&quot;btn btn-secondary&quot; onClick={onClick}&gt;
+      {children}
+    &lt;/button&gt;
+  );
+}
+
+// 使用
+import { PrimaryButton, SecondaryButton } from &#39;./components/Button&#39;;
+</code></pre>
+<h3>默认导出</h3>
+<pre><code class="language-javascript">// components/Header.js
+function Header({ title }) {
+  return &lt;h1&gt;{title}&lt;/h1&gt;;
+}
+
+export default Header;
+
+// 使用
+import Header from &#39;./components/Header&#39;;
+
+// 或者重命名
+import AppHeader from &#39;./components/Header&#39;;
+</code></pre>
+<h3>混合导出</h3>
+<pre><code class="language-javascript">// components/Button.js
+export function PrimaryButton({ children, onClick }) {
+  return (
+    &lt;button className=&quot;btn btn-primary&quot; onClick={onClick}&gt;
+      {children}
+    &lt;/button&gt;
+  );
+}
+
+function Button({ variant = &#39;primary&#39;, children, onClick }) {
+  return (
+    &lt;button className={`btn btn-${variant}`} onClick={onClick}&gt;
+      {children}
+    &lt;/button&gt;
+  );
+}
+
+export default Button;
+
+// 使用
+import Button, { PrimaryButton } from &#39;./components/Button&#39;;
+</code></pre>
+<h2>高阶组件 (HOC)</h2>
+<h3>基本 HOC</h3>
+<pre><code class="language-javascript">function withLoading(WrappedComponent) {
+  return function WithLoadingComponent(props) {
+    if (props.isLoading) {
+      return &lt;div&gt;Loading...&lt;/div&gt;;
+    }
+    
+    return &lt;WrappedComponent {...props} /&gt;;
+  };
+}
+
+// 使用 HOC
+const UserList = ({ users }) =&gt; (
+  &lt;ul&gt;
+    {users.map(user =&gt; (
+      &lt;li key={user.id}&gt;{user.name}&lt;/li&gt;
+    ))}
+  &lt;/ul&gt;
+);
+
+const UserListWithLoading = withLoading(UserList);
+
+// 在应用中使用
+function App() {
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  
+  return (
+    &lt;UserListWithLoading 
+      users={users} 
+      isLoading={isLoading} 
+    /&gt;
+  );
+}
+</code></pre>
+<h3>带参数的 HOC</h3>
+<pre><code class="language-javascript">function withAuth(requiredRole) {
+  return function(WrappedComponent) {
+    return function WithAuthComponent(props) {
+      const { user } = props;
+      
+      if (!user || user.role !== requiredRole) {
+        return &lt;div&gt;Access Denied&lt;/div&gt;;
+      }
+      
+      return &lt;WrappedComponent {...props} /&gt;;
+    };
+  };
+}
+
+// 使用
+const AdminPanel = () =&gt; &lt;div&gt;管理员面板&lt;/div&gt;;
+const ProtectedAdminPanel = withAuth(&#39;admin&#39;)(AdminPanel);
+</code></pre>
+<h2>Render Props 模式</h2>
+<h3>基本 Render Props</h3>
+<pre><code class="language-javascript">function DataFetcher({ url, render }) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
+  useEffect(() =&gt; {
+    fetch(url)
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        setData(data);
+        setLoading(false);
+      })
+      .catch(error =&gt; {
+        setError(error);
+        setLoading(false);
+      });
+  }, [url]);
+  
+  return render({ data, loading, error });
+}
+
+// 使用
+function App() {
+  return (
+    &lt;DataFetcher
+      url=&quot;/api/users&quot;
+      render={({ data, loading, error }) =&gt; {
+        if (loading) return &lt;div&gt;Loading...&lt;/div&gt;;
+        if (error) return &lt;div&gt;Error: {error.message}&lt;/div&gt;;
+        return (
+          &lt;ul&gt;
+            {data.map(user =&gt; (
+              &lt;li key={user.id}&gt;{user.name}&lt;/li&gt;
+            ))}
+          &lt;/ul&gt;
+        );
+      }}
+    /&gt;
+  );
+}
+</code></pre>
+<h3>Children 作为 Render Prop</h3>
+<pre><code class="language-javascript">function DataFetcher({ url, children }) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() =&gt; {
+    fetch(url)
+      .then(response =&gt; response.json())
+      .then(data =&gt; {
+        setData(data);
+        setLoading(false);
+      });
+  }, [url]);
+  
+  return children({ data, loading });
+}
+
+// 使用
+function App() {
+  return (
+    &lt;DataFetcher url=&quot;/api/users&quot;&gt;
+      {({ data, loading }) =&gt; (
+        loading ? &lt;div&gt;Loading...&lt;/div&gt; : (
+          &lt;ul&gt;
+            {data.map(user =&gt; (
+              &lt;li key={user.id}&gt;{user.name}&lt;/li&gt;
+            ))}
+          &lt;/ul&gt;
+        )
+      )}
+    &lt;/DataFetcher&gt;
+  );
+}
+</code></pre>
+<h2>组件性能优化</h2>
+<h3>React.memo</h3>
+<pre><code class="language-javascript">// 普通组件（每次父组件更新都会重新渲染）
+function ExpensiveComponent({ data, count }) {
+  console.log(&#39;ExpensiveComponent 渲染&#39;);
+  return &lt;div&gt;{data.name} - {count}&lt;/div&gt;;
+}
+
+// 使用 React.memo 优化
+const OptimizedComponent = React.memo(function ExpensiveComponent({ data, count }) {
+  console.log(&#39;OptimizedComponent 渲染&#39;);
+  return &lt;div&gt;{data.name} - {count}&lt;/div&gt;;
+});
+
+// 自定义比较函数
+const SmartComponent = React.memo(
+  function ExpensiveComponent({ data, count }) {
+    return &lt;div&gt;{data.name} - {count}&lt;/div&gt;;
+  },
+  (prevProps, nextProps) =&gt; {
+    // 返回 true 表示 props 相等，不需要重新渲染
+    return prevProps.data.id === nextProps.data.id &amp;&amp; 
+           prevProps.count === nextProps.count;
+  }
+);
+</code></pre>
+<h3>useMemo 和 useCallback 在组件中的使用</h3>
+<pre><code class="language-javascript">function ParentComponent({ items }) {
+  const [filter, setFilter] = useState(&#39;&#39;);
+  const [count, setCount] = useState(0);
+  
+  // 记忆化计算结果
+  const filteredItems = useMemo(() =&gt; {
+    return items.filter(item =&gt; 
+      item.name.toLowerCase().includes(filter.toLowerCase())
+    );
+  }, [items, filter]);
+  
+  // 记忆化回调函数
+  const handleItemClick = useCallback((item) =&gt; {
+    console.log(&#39;Item clicked:&#39;, item);
+  }, []);
+  
+  return (
+    &lt;div&gt;
+      &lt;input 
+        value={filter}
+        onChange={e =&gt; setFilter(e.target.value)}
+        placeholder=&quot;过滤...&quot;
+      /&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        计数: {count}
+      &lt;/button&gt;
+      &lt;ItemList items={filteredItems} onItemClick={handleItemClick} /&gt;
+    &lt;/div&gt;
+  );
+}
+
+const ItemList = React.memo(({ items, onItemClick }) =&gt; {
+  console.log(&#39;ItemList 渲染&#39;);
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;li key={item.id} onClick={() =&gt; onItemClick(item)}&gt;
+          {item.name}
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+});
+</code></pre>
+<h2>组件最佳实践</h2>
+<h3>1. 组件命名</h3>
+<pre><code class="language-javascript">// ✅ 好的命名
+function UserProfileCard() { }
+function ProductListItem() { }
+function NavigationMenu() { }
+
+// ❌ 避免的命名
+function component() { }  // 首字母小写
+function Comp() { }       // 缩写不清晰
+function div() { }        // 与HTML标签冲突
+</code></pre>
+<h3>2. 组件大小控制</h3>
+<pre><code class="language-javascript">// ✅ 好的做法：小而专注的组件
+function UserAvatar({ src, alt, size }) {
+  return (
+    &lt;img 
+      src={src} 
+      alt={alt} 
+      className={`avatar avatar-${size}`}
+    /&gt;
+  );
+}
+
+function UserName({ name, isOnline }) {
+  return (
+    &lt;span className={`username ${isOnline ? &#39;online&#39; : &#39;offline&#39;}`}&gt;
+      {name}
+    &lt;/span&gt;
+  );
+}
+
+// ❌ 避免：过大的组件
+function MassiveUserComponent() {
+  // 100+ 行代码
+  // 处理多个不相关的功能
+}
+</code></pre>
+<h3>3. Props 设计</h3>
+<pre><code class="language-javascript">// ✅ 好的 props 设计
+function Button({ 
+  children, 
+  variant = &#39;primary&#39;, 
+  size = &#39;medium&#39;,
+  disabled = false,
+  onClick 
+}) {
+  return (
+    &lt;button 
+      className={`btn btn-${variant} btn-${size}`}
+      disabled={disabled}
+      onClick={onClick}
+    &gt;
+      {children}
+    &lt;/button&gt;
+  );
+}
+
+// ❌ 避免：布尔属性前缀
+function Button({ 
+  isDisabled,    // 应该是 disabled
+  isLoading,     // 应该是 loading
+  canSubmit      // 应该是 submittable 或设计得更简洁
+}) {
+  // ...
+}
+</code></pre>
+<h2>下一步</h2>
+<p>学习完组件基础后，建议继续学习：</p>
+<ol>
+<li><a href="./05-Props%E4%B8%8EState.md">Props与State</a> - 深入理解数据流</li>
+<li><a href="./06-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86.md">事件处理</a> - 学习如何处理用户交互</li>
+<li><a href="./09-Hooks%E6%A6%82%E8%BF%B0.md">Hooks概述</a> - 现代React开发的核心</li>
+</ol>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="03-JSX语法.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">JSX语法</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="05-Props与State.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">Props与State</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

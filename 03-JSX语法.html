@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSX语法 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">JSX语法</span>
+            </div>
+            <h1 class="doc-title">JSX语法</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #667eea">
+                📚 基础概念
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>JSX 语法详解</h1>
+<h2>什么是 JSX？</h2>
+<p>JSX (JavaScript XML) 是 React 中用于描述UI结构的语法扩展。它允许我们在JavaScript中编写类似HTML的代码。</p>
+<h2>基本语法</h2>
+<h3>1. JSX 表达式</h3>
+<pre><code class="language-javascript">// 基本JSX
+const element = &lt;h1&gt;Hello, World!&lt;/h1&gt;;
+
+// 包含JavaScript表达式
+const name = &#39;React&#39;;
+const element = &lt;h1&gt;Hello, {name}!&lt;/h1&gt;;
+
+// 表达式可以是任何有效的JavaScript
+const element = &lt;h1&gt;当前时间: {new Date().toLocaleString()}&lt;/h1&gt;;
+</code></pre>
+<h3>2. JSX 属性</h3>
+<pre><code class="language-javascript">// 字符串属性
+const element = &lt;div className=&quot;container&quot;&gt;内容&lt;/div&gt;;
+
+// 表达式属性
+const imageUrl = &#39;https://example.com/image.jpg&#39;;
+const element = &lt;img src={imageUrl} alt=&quot;示例图片&quot; /&gt;;
+
+// 布尔属性
+const element = &lt;input type=&quot;text&quot; disabled={true} required /&gt;;
+</code></pre>
+<h3>3. JSX 子元素</h3>
+<pre><code class="language-javascript">// 单个子元素
+const element = &lt;div&gt;单个文本节点&lt;/div&gt;;
+
+// 多个子元素
+const element = (
+  &lt;div&gt;
+    &lt;h1&gt;标题&lt;/h1&gt;
+    &lt;p&gt;段落内容&lt;/p&gt;
+    &lt;span&gt;行内元素&lt;/span&gt;
+  &lt;/div&gt;
+);
+
+// 子元素为表达式
+const items = [&#39;苹果&#39;, &#39;香蕉&#39;, &#39;橙子&#39;];
+const element = (
+  &lt;ul&gt;
+    {items.map((item, index) =&gt; (
+      &lt;li key={index}&gt;{item}&lt;/li&gt;
+    ))}
+  &lt;/ul&gt;
+);
+</code></pre>
+<h2>JSX 语法规则</h2>
+<h3>1. 必须有根元素</h3>
+<pre><code class="language-javascript">// ❌ 错误：多个根元素
+const element = (
+  &lt;h1&gt;标题&lt;/h1&gt;
+  &lt;p&gt;段落&lt;/p&gt;
+);
+
+// ✅ 正确：单个根元素
+const element = (
+  &lt;div&gt;
+    &lt;h1&gt;标题&lt;/h1&gt;
+    &lt;p&gt;段落&lt;/p&gt;
+  &lt;/div&gt;
+);
+
+// ✅ 正确：使用React Fragment
+const element = (
+  &lt;React.Fragment&gt;
+    &lt;h1&gt;标题&lt;/h1&gt;
+    &lt;p&gt;段落&lt;/p&gt;
+  &lt;/React.Fragment&gt;
+);
+
+// ✅ 正确：Fragment简写
+const element = (
+  &lt;&gt;
+    &lt;h1&gt;标题&lt;/h1&gt;
+    &lt;p&gt;段落&lt;/p&gt;
+  &lt;/&gt;
+);
+</code></pre>
+<h3>2. 标签必须闭合</h3>
+<pre><code class="language-javascript">// ❌ 错误：标签未闭合
+const element = &lt;img src=&quot;image.jpg&quot;&gt;;
+
+// ✅ 正确：自闭合标签
+const element = &lt;img src=&quot;image.jpg&quot; /&gt;;
+
+// ✅ 正确：配对标签
+const element = &lt;div&gt;&lt;/div&gt;;
+</code></pre>
+<h3>3. 属性命名规则</h3>
+<pre><code class="language-javascript">// HTML属性转换为驼峰命名
+const element = (
+  &lt;div 
+    className=&quot;container&quot;        // class → className
+    htmlFor=&quot;input-id&quot;          // for → htmlFor
+    tabIndex={0}                // tabindex → tabIndex
+    onClick={handleClick}       // onclick → onClick
+    onMouseOver={handleHover}   // onmouseover → onMouseOver
+  &gt;
+    内容
+  &lt;/div&gt;
+);
+</code></pre>
+<h2>在 JSX 中使用 JavaScript</h2>
+<h3>1. 嵌入表达式</h3>
+<pre><code class="language-javascript">function UserGreeting({ user }) {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;欢迎, {user.name}!&lt;/h1&gt;
+      &lt;p&gt;今天是 {new Date().toLocaleDateString()}&lt;/p&gt;
+      &lt;p&gt;你有 {user.messages.length} 条未读消息&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>2. 条件渲染</h3>
+<pre><code class="language-javascript">function ConditionalRender({ isLoggedIn, user }) {
+  return (
+    &lt;div&gt;
+      {/* 三元运算符 */}
+      &lt;h1&gt;{isLoggedIn ? `欢迎, ${user.name}!` : &#39;请先登录&#39;}&lt;/h1&gt;
+      
+      {/* 逻辑与运算符 */}
+      {isLoggedIn &amp;&amp; &lt;button&gt;退出登录&lt;/button&gt;}
+      
+      {/* if-else 替代方案 */}
+      {isLoggedIn ? (
+        &lt;div&gt;
+          &lt;p&gt;欢迎回来!&lt;/p&gt;
+          &lt;button&gt;退出&lt;/button&gt;
+        &lt;/div&gt;
+      ) : (
+        &lt;div&gt;
+          &lt;p&gt;请登录&lt;/p&gt;
+          &lt;button&gt;登录&lt;/button&gt;
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>3. 列表渲染</h3>
+<pre><code class="language-javascript">function TodoList({ todos }) {
+  return (
+    &lt;ul&gt;
+      {todos.map(todo =&gt; (
+        &lt;li 
+          key={todo.id}
+          className={todo.completed ? &#39;completed&#39; : &#39;&#39;}
+        &gt;
+          &lt;span&gt;{todo.text}&lt;/span&gt;
+          &lt;button onClick={() =&gt; deleteTodo(todo.id)}&gt;删除&lt;/button&gt;
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+// 处理空列表
+function EmptyState({ items }) {
+  return (
+    &lt;div&gt;
+      {items.length &gt; 0 ? (
+        &lt;ul&gt;
+          {items.map(item =&gt; (
+            &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
+          ))}
+        &lt;/ul&gt;
+      ) : (
+        &lt;p&gt;暂无数据&lt;/p&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>JSX 高级特性</h2>
+<h3>1. 展开运算符</h3>
+<pre><code class="language-javascript">function MyComponent(props) {
+  const additionalProps = {
+    className: &#39;special&#39;,
+    &#39;data-testid&#39;: &#39;my-component&#39;
+  };
+  
+  return (
+    &lt;div {...props} {...additionalProps}&gt;
+      {/* props会被展开到div上 */}
+    &lt;/div&gt;
+  );
+}
+
+// 使用组件
+const element = (
+  &lt;MyComponent 
+    id=&quot;test&quot; 
+    onClick={handleClick}
+    style={{ color: &#39;red&#39; }}
+  /&gt;
+);
+</code></pre>
+<h3>2. 子组件传递</h3>
+<pre><code class="language-javascript">function Layout({ children, sidebar }) {
+  return (
+    &lt;div className=&quot;layout&quot;&gt;
+      &lt;aside&gt;{sidebar}&lt;/aside&gt;
+      &lt;main&gt;{children}&lt;/main&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 使用
+const App = () =&gt; (
+  &lt;Layout sidebar={&lt;Sidebar /&gt;}&gt;
+    &lt;h1&gt;主要内容&lt;/h1&gt;
+    &lt;p&gt;这里是页面内容&lt;/p&gt;
+  &lt;/Layout&gt;
+);
+</code></pre>
+<h3>3. Render Props 模式</h3>
+<pre><code class="language-javascript">function DataProvider({ render }) {
+  const [data, setData] = useState(null);
+  
+  useEffect(() =&gt; {
+    fetchData().then(setData);
+  }, []);
+  
+  return render(data);
+}
+
+// 使用
+const App = () =&gt; (
+  &lt;DataProvider 
+    render={data =&gt; (
+      &lt;div&gt;
+        {data ? (
+          &lt;div&gt;数据: {JSON.stringify(data)}&lt;/div&gt;
+        ) : (
+          &lt;div&gt;加载中...&lt;/div&gt;
+        )}
+      &lt;/div&gt;
+    )}
+  /&gt;
+);
+</code></pre>
+<h2>样式处理</h2>
+<h3>1. 内联样式</h3>
+<pre><code class="language-javascript">function StyledComponent() {
+  const styles = {
+    container: {
+      backgroundColor: &#39;#f0f0f0&#39;,
+      padding: &#39;20px&#39;,
+      borderRadius: &#39;8px&#39;
+    },
+    title: {
+      color: &#39;#333&#39;,
+      fontSize: &#39;24px&#39;,
+      marginBottom: &#39;16px&#39;
+    }
+  };
+  
+  return (
+    &lt;div style={styles.container}&gt;
+      &lt;h1 style={styles.title}&gt;标题&lt;/h1&gt;
+      &lt;p style={{ color: &#39;blue&#39;, fontWeight: &#39;bold&#39; }}&gt;内容&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>2. CSS 类名</h3>
+<pre><code class="language-javascript">// 静态类名
+function Component() {
+  return &lt;div className=&quot;container active&quot;&gt;内容&lt;/div&gt;;
+}
+
+// 动态类名
+function DynamicClass({ isActive, isDisabled }) {
+  const classNames = [
+    &#39;base-class&#39;,
+    isActive &amp;&amp; &#39;active&#39;,
+    isDisabled &amp;&amp; &#39;disabled&#39;
+  ].filter(Boolean).join(&#39; &#39;);
+  
+  return &lt;div className={classNames}&gt;内容&lt;/div&gt;;
+}
+
+// 使用第三方库 (classnames)
+import classNames from &#39;classnames&#39;;
+
+function Component({ isActive, isDisabled }) {
+  return (
+    &lt;div className={classNames(&#39;base-class&#39;, {
+      active: isActive,
+      disabled: isDisabled
+    })}&gt;
+      内容
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>事件处理</h2>
+<h3>1. 基本事件处理</h3>
+<pre><code class="language-javascript">function EventExample() {
+  const handleClick = (e) =&gt; {
+    e.preventDefault();
+    console.log(&#39;按钮被点击了&#39;);
+  };
+  
+  const handleChange = (e) =&gt; {
+    console.log(&#39;输入值:&#39;, e.target.value);
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;button onClick={handleClick}&gt;点击我&lt;/button&gt;
+      &lt;input onChange={handleChange} placeholder=&quot;输入文本&quot; /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>2. 传递参数</h3>
+<pre><code class="language-javascript">function ListComponent({ items, onItemClick }) {
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;li key={item.id}&gt;
+          &lt;button onClick={() =&gt; onItemClick(item.id)}&gt;
+            {item.name}
+          &lt;/button&gt;
+          {/* 或者使用bind */}
+          &lt;button onClick={onItemClick.bind(null, item.id)}&gt;
+            {item.name}
+          &lt;/button&gt;
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h2>注释</h2>
+<h3>1. JSX 中的注释</h3>
+<pre><code class="language-javascript">function CommentExample() {
+  return (
+    &lt;div&gt;
+      {/* 这是JSX注释 */}
+      &lt;h1&gt;标题&lt;/h1&gt;
+      
+      {/* 
+        多行注释
+        可以这样写
+      */}
+      &lt;p&gt;段落&lt;/p&gt;
+      
+      {/* 条件注释 */}
+      {false &amp;&amp; &lt;div&gt;这个不会渲染&lt;/div&gt;}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>常见错误和解决方案</h2>
+<h3>1. key 属性</h3>
+<pre><code class="language-javascript">// ❌ 错误：缺少key或使用index作为key
+{items.map((item, index) =&gt; (
+  &lt;div&gt;{item.name}&lt;/div&gt;  // 缺少key
+))}
+
+{items.map((item, index) =&gt; (
+  &lt;div key={index}&gt;{item.name}&lt;/div&gt;  // 使用index作为key可能有问题
+))}
+
+// ✅ 正确：使用唯一标识符作为key
+{items.map(item =&gt; (
+  &lt;div key={item.id}&gt;{item.name}&lt;/div&gt;
+))}
+</code></pre>
+<h3>2. 事件处理器</h3>
+<pre><code class="language-javascript">// ❌ 错误：直接调用函数
+&lt;button onClick={handleClick()}&gt;点击&lt;/button&gt;
+
+// ✅ 正确：传递函数引用
+&lt;button onClick={handleClick}&gt;点击&lt;/button&gt;
+
+// ✅ 正确：传递匿名函数
+&lt;button onClick={() =&gt; handleClick(param)}&gt;点击&lt;/button&gt;
+</code></pre>
+<h3>3. 条件渲染陷阱</h3>
+<pre><code class="language-javascript">// ❌ 可能出错：falsy值会被渲染
+{items.length &amp;&amp; &lt;div&gt;有 {items.length} 个项目&lt;/div&gt;}
+
+// ✅ 安全做法：显式boolean转换
+{items.length &gt; 0 &amp;&amp; &lt;div&gt;有 {items.length} 个项目&lt;/div&gt;}
+{Boolean(items.length) &amp;&amp; &lt;div&gt;有 {items.length} 个项目&lt;/div&gt;}
+</code></pre>
+<h2>最佳实践</h2>
+<ol>
+<li><strong>组件名大写</strong>: 组件名必须以大写字母开头</li>
+<li><strong>使用Fragment</strong>: 避免不必要的包装div</li>
+<li><strong>Key属性</strong>: 列表渲染时使用唯一且稳定的key</li>
+<li><strong>事件处理</strong>: 避免在JSX中直接调用函数</li>
+<li><strong>条件渲染</strong>: 注意falsy值的渲染行为</li>
+<li><strong>样式组织</strong>: 合理组织CSS类名和内联样式</li>
+</ol>
+<h2>下一步</h2>
+<p>继续学习 <a href="./04-%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80.md">组件基础</a> 了解如何创建和使用React组件。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="02-环境搭建.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">环境搭建</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="04-组件基础.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">组件基础</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

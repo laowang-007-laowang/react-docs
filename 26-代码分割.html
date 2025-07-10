@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>代码分割 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">代码分割</span>
+            </div>
+            <h1 class="doc-title">代码分割</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #d299c2">
+                🚀 性能优化
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>26-代码分割</h1>
+<p>代码分割是一种优化技术，可以将大型应用程序拆分为更小的块，实现按需加载，从而提高应用的首屏加载速度和用户体验。React提供了多种代码分割的方法。</p>
+<h2>基础概念</h2>
+<h3>什么是代码分割</h3>
+<p>代码分割是指将应用程序代码分解成多个独立的包或块，这些块可以在需要时动态加载。主要好处：</p>
+<ul>
+<li><strong>减少初始加载时间</strong> - 只加载当前页面需要的代码</li>
+<li><strong>提高缓存效率</strong> - 未修改的代码块可以继续使用缓存</li>
+<li><strong>优化用户体验</strong> - 更快的首屏渲染</li>
+<li><strong>降低内存占用</strong> - 避免加载不必要的代码</li>
+</ul>
+<h3>代码分割的类型</h3>
+<ol>
+<li><strong>路由级分割</strong> - 按页面/路由分割</li>
+<li><strong>组件级分割</strong> - 按组件分割</li>
+<li><strong>功能级分割</strong> - 按功能模块分割</li>
+<li><strong>第三方库分割</strong> - 分离第三方依赖</li>
+</ol>
+<h2>动态导入</h2>
+<h3>基础语法</h3>
+<pre><code class="language-jsx">// 传统的静态导入
+import MyComponent from &#39;./MyComponent&#39;
+
+// 动态导入
+import(&#39;./MyComponent&#39;).then(module =&gt; {
+  const MyComponent = module.default
+  // 使用组件
+})
+
+// 使用async/await
+async function loadComponent() {
+  const module = await import(&#39;./MyComponent&#39;)
+  const MyComponent = module.default
+  return MyComponent
+}
+</code></pre>
+<h3>动态导入的特点</h3>
+<pre><code class="language-jsx">// 1. 返回Promise
+import(&#39;./utils&#39;).then(utils =&gt; {
+  utils.formatDate(new Date())
+})
+
+// 2. 支持表达式
+const locale = &#39;zh-CN&#39;
+import(`./locales/${locale}.js`).then(messages =&gt; {
+  // 使用语言包
+})
+
+// 3. 可以导入具名导出
+import(&#39;./api&#39;).then(({ fetchUser, fetchPosts }) =&gt; {
+  // 使用导出的函数
+})
+</code></pre>
+<h2>React.lazy()</h2>
+<h3>基础用法</h3>
+<pre><code class="language-jsx">import React, { Suspense } from &#39;react&#39;
+
+// 使用lazy包装组件
+const LazyComponent = React.lazy(() =&gt; import(&#39;./LazyComponent&#39;))
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;我的应用&lt;/h1&gt;
+      &lt;Suspense fallback={&lt;div&gt;加载中...&lt;/div&gt;}&gt;
+        &lt;LazyComponent /&gt;
+      &lt;/Suspense&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>条件加载</h3>
+<pre><code class="language-jsx">import React, { Suspense, useState } from &#39;react&#39;
+
+const HeavyComponent = React.lazy(() =&gt; import(&#39;./HeavyComponent&#39;))
+
+function App() {
+  const [showHeavy, setShowHeavy] = useState(false)
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; setShowHeavy(!showHeavy)}&gt;
+        {showHeavy ? &#39;隐藏&#39; : &#39;显示&#39;}重组件
+      &lt;/button&gt;
+      
+      {showHeavy &amp;&amp; (
+        &lt;Suspense fallback={&lt;div&gt;加载重组件中...&lt;/div&gt;}&gt;
+          &lt;HeavyComponent /&gt;
+        &lt;/Suspense&gt;
+      )}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>错误处理</h3>
+<pre><code class="language-jsx">import React, { Suspense } from &#39;react&#39;
+
+const LazyComponent = React.lazy(() =&gt; import(&#39;./LazyComponent&#39;))
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { hasError: false }
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true }
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error(&#39;组件加载失败:&#39;, error, errorInfo)
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return &lt;div&gt;组件加载失败，请刷新页面重试&lt;/div&gt;
+    }
+
+    return this.props.children
+  }
+}
+
+function App() {
+  return (
+    &lt;ErrorBoundary&gt;
+      &lt;Suspense fallback={&lt;div&gt;加载中...&lt;/div&gt;}&gt;
+        &lt;LazyComponent /&gt;
+      &lt;/Suspense&gt;
+    &lt;/ErrorBoundary&gt;
+  )
+}
+</code></pre>
+<h2>路由级代码分割</h2>
+<h3>使用React Router</h3>
+<pre><code class="language-jsx">import React, { Suspense } from &#39;react&#39;
+import { BrowserRouter as Router, Routes, Route } from &#39;react-router-dom&#39;
+
+// 懒加载页面组件
+const Home = React.lazy(() =&gt; import(&#39;./pages/Home&#39;))
+const About = React.lazy(() =&gt; import(&#39;./pages/About&#39;))
+const Contact = React.lazy(() =&gt; import(&#39;./pages/Contact&#39;))
+const Profile = React.lazy(() =&gt; import(&#39;./pages/Profile&#39;))
+
+function App() {
+  return (
+    &lt;Router&gt;
+      &lt;div&gt;
+        &lt;nav&gt;
+          &lt;Link to=&quot;/&quot;&gt;首页&lt;/Link&gt;
+          &lt;Link to=&quot;/about&quot;&gt;关于我们&lt;/Link&gt;
+          &lt;Link to=&quot;/contact&quot;&gt;联系我们&lt;/Link&gt;
+          &lt;Link to=&quot;/profile&quot;&gt;个人中心&lt;/Link&gt;
+        &lt;/nav&gt;
+        
+        &lt;main&gt;
+          &lt;Suspense fallback={&lt;div className=&quot;loading&quot;&gt;页面加载中...&lt;/div&gt;}&gt;
+            &lt;Routes&gt;
+              &lt;Route path=&quot;/&quot; element={&lt;Home /&gt;} /&gt;
+              &lt;Route path=&quot;/about&quot; element={&lt;About /&gt;} /&gt;
+              &lt;Route path=&quot;/contact&quot; element={&lt;Contact /&gt;} /&gt;
+              &lt;Route path=&quot;/profile&quot; element={&lt;Profile /&gt;} /&gt;
+            &lt;/Routes&gt;
+          &lt;/Suspense&gt;
+        &lt;/main&gt;
+      &lt;/div&gt;
+    &lt;/Router&gt;
+  )
+}
+</code></pre>
+<h3>嵌套路由分割</h3>
+<pre><code class="language-jsx">// 主页面组件
+const Dashboard = React.lazy(() =&gt; import(&#39;./pages/Dashboard&#39;))
+
+// 子页面组件
+const Analytics = React.lazy(() =&gt; import(&#39;./pages/Analytics&#39;))
+const Settings = React.lazy(() =&gt; import(&#39;./pages/Settings&#39;))
+const UserManagement = React.lazy(() =&gt; import(&#39;./pages/UserManagement&#39;))
+
+function App() {
+  return (
+    &lt;Router&gt;
+      &lt;Suspense fallback={&lt;div&gt;加载中...&lt;/div&gt;}&gt;
+        &lt;Routes&gt;
+          &lt;Route path=&quot;/dashboard&quot; element={&lt;Dashboard /&gt;}&gt;
+            &lt;Route path=&quot;analytics&quot; element={&lt;Analytics /&gt;} /&gt;
+            &lt;Route path=&quot;settings&quot; element={&lt;Settings /&gt;} /&gt;
+            &lt;Route path=&quot;users&quot; element={&lt;UserManagement /&gt;} /&gt;
+          &lt;/Route&gt;
+        &lt;/Routes&gt;
+      &lt;/Suspense&gt;
+    &lt;/Router&gt;
+  )
+}
+</code></pre>
+<h2>组件级代码分割</h2>
+<h3>按需加载大型组件</h3>
+<pre><code class="language-jsx">import React, { Suspense, useState } from &#39;react&#39;
+
+// 大型图表组件
+const ChartComponent = React.lazy(() =&gt; import(&#39;./ChartComponent&#39;))
+
+// 大型表格组件
+const DataTable = React.lazy(() =&gt; import(&#39;./DataTable&#39;))
+
+// 富文本编辑器
+const RichTextEditor = React.lazy(() =&gt; import(&#39;./RichTextEditor&#39;))
+
+function Dashboard() {
+  const [activeTab, setActiveTab] = useState(&#39;overview&#39;)
+
+  return (
+    &lt;div className=&quot;dashboard&quot;&gt;
+      &lt;nav&gt;
+        &lt;button 
+          className={activeTab === &#39;overview&#39; ? &#39;active&#39; : &#39;&#39;}
+          onClick={() =&gt; setActiveTab(&#39;overview&#39;)}
+        &gt;
+          概览
+        &lt;/button&gt;
+        &lt;button 
+          className={activeTab === &#39;chart&#39; ? &#39;active&#39; : &#39;&#39;}
+          onClick={() =&gt; setActiveTab(&#39;chart&#39;)}
+        &gt;
+          图表
+        &lt;/button&gt;
+        &lt;button 
+          className={activeTab === &#39;data&#39; ? &#39;active&#39; : &#39;&#39;}
+          onClick={() =&gt; setActiveTab(&#39;data&#39;)}
+        &gt;
+          数据
+        &lt;/button&gt;
+        &lt;button 
+          className={activeTab === &#39;editor&#39; ? &#39;active&#39; : &#39;&#39;}
+          onClick={() =&gt; setActiveTab(&#39;editor&#39;)}
+        &gt;
+          编辑器
+        &lt;/button&gt;
+      &lt;/nav&gt;
+      
+      &lt;main&gt;
+        {activeTab === &#39;overview&#39; &amp;&amp; (
+          &lt;div&gt;概览页面内容&lt;/div&gt;
+        )}
+        
+        {activeTab === &#39;chart&#39; &amp;&amp; (
+          &lt;Suspense fallback={&lt;div&gt;加载图表中...&lt;/div&gt;}&gt;
+            &lt;ChartComponent /&gt;
+          &lt;/Suspense&gt;
+        )}
+        
+        {activeTab === &#39;data&#39; &amp;&amp; (
+          &lt;Suspense fallback={&lt;div&gt;加载数据表格中...&lt;/div&gt;}&gt;
+            &lt;DataTable /&gt;
+          &lt;/Suspense&gt;
+        )}
+        
+        {activeTab === &#39;editor&#39; &amp;&amp; (
+          &lt;Suspense fallback={&lt;div&gt;加载编辑器中...&lt;/div&gt;}&gt;
+            &lt;RichTextEditor /&gt;
+          &lt;/Suspense&gt;
+        )}
+      &lt;/main&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>模态框和弹窗的懒加载</h3>
+<pre><code class="language-jsx">import React, { Suspense, useState } from &#39;react&#39;
+
+const Modal = React.lazy(() =&gt; import(&#39;./Modal&#39;))
+const SettingsModal = React.lazy(() =&gt; import(&#39;./SettingsModal&#39;))
+const ConfirmDialog = React.lazy(() =&gt; import(&#39;./ConfirmDialog&#39;))
+
+function App() {
+  const [showModal, setShowModal] = useState(false)
+  const [showSettings, setShowSettings] = useState(false)
+  const [showConfirm, setShowConfirm] = useState(false)
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; setShowModal(true)}&gt;打开模态框&lt;/button&gt;
+      &lt;button onClick={() =&gt; setShowSettings(true)}&gt;打开设置&lt;/button&gt;
+      &lt;button onClick={() =&gt; setShowConfirm(true)}&gt;确认对话框&lt;/button&gt;
+
+      {showModal &amp;&amp; (
+        &lt;Suspense fallback={&lt;div&gt;加载模态框...&lt;/div&gt;}&gt;
+          &lt;Modal onClose={() =&gt; setShowModal(false)} /&gt;
+        &lt;/Suspense&gt;
+      )}
+
+      {showSettings &amp;&amp; (
+        &lt;Suspense fallback={&lt;div&gt;加载设置...&lt;/div&gt;}&gt;
+          &lt;SettingsModal onClose={() =&gt; setShowSettings(false)} /&gt;
+        &lt;/Suspense&gt;
+      )}
+
+      {showConfirm &amp;&amp; (
+        &lt;Suspense fallback={&lt;div&gt;加载确认框...&lt;/div&gt;}&gt;
+          &lt;ConfirmDialog onClose={() =&gt; setShowConfirm(false)} /&gt;
+        &lt;/Suspense&gt;
+      )}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>第三方库的代码分割</h2>
+<h3>按需加载图表库</h3>
+<pre><code class="language-jsx">import React, { Suspense, useState } from &#39;react&#39;
+
+// 动态导入图表库
+const loadChartLibrary = async () =&gt; {
+  const [
+    { default: Chart },
+    { default: echarts }
+  ] = await Promise.all([
+    import(&#39;./Chart&#39;),
+    import(&#39;echarts&#39;)
+  ])
+  
+  return { Chart, echarts }
+}
+
+function ChartContainer() {
+  const [chartData, setChartData] = useState(null)
+  const [loading, setLoading] = useState(false)
+
+  const loadChart = async () =&gt; {
+    setLoading(true)
+    try {
+      const { Chart, echarts } = await loadChartLibrary()
+      // 使用图表库
+      setChartData(/* 图表数据 */)
+    } catch (error) {
+      console.error(&#39;图表加载失败:&#39;, error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={loadChart}&gt;加载图表&lt;/button&gt;
+      {loading &amp;&amp; &lt;div&gt;加载图表库中...&lt;/div&gt;}
+      {chartData &amp;&amp; (
+        &lt;Suspense fallback={&lt;div&gt;渲染图表中...&lt;/div&gt;}&gt;
+          {/* 图表组件 */}
+        &lt;/Suspense&gt;
+      )}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>按需加载日期选择器</h3>
+<pre><code class="language-jsx">import React, { Suspense, useState } from &#39;react&#39;
+
+const DatePicker = React.lazy(async () =&gt; {
+  const [
+    { default: DatePickerComponent },
+    { default: dayjs }
+  ] = await Promise.all([
+    import(&#39;./DatePicker&#39;),
+    import(&#39;dayjs&#39;)
+  ])
+  
+  // 可以在这里进行一些初始化配置
+  return { default: DatePickerComponent }
+})
+
+function FormWithDatePicker() {
+  const [showDatePicker, setShowDatePicker] = useState(false)
+  const [selectedDate, setSelectedDate] = useState(null)
+
+  return (
+    &lt;form&gt;
+      &lt;input type=&quot;text&quot; placeholder=&quot;姓名&quot; /&gt;
+      &lt;input type=&quot;email&quot; placeholder=&quot;邮箱&quot; /&gt;
+      
+      &lt;button 
+        type=&quot;button&quot;
+        onClick={() =&gt; setShowDatePicker(true)}
+      &gt;
+        选择日期
+      &lt;/button&gt;
+      
+      {showDatePicker &amp;&amp; (
+        &lt;Suspense fallback={&lt;div&gt;加载日期选择器...&lt;/div&gt;}&gt;
+          &lt;DatePicker
+            value={selectedDate}
+            onChange={setSelectedDate}
+            onClose={() =&gt; setShowDatePicker(false)}
+          /&gt;
+        &lt;/Suspense&gt;
+      )}
+    &lt;/form&gt;
+  )
+}
+</code></pre>
+<h2>预加载策略</h2>
+<h3>鼠标悬停预加载</h3>
+<pre><code class="language-jsx">import React, { Suspense, useState } from &#39;react&#39;
+
+const HeavyComponent = React.lazy(() =&gt; import(&#39;./HeavyComponent&#39;))
+
+function App() {
+  const [showComponent, setShowComponent] = useState(false)
+  const [preloaded, setPreloaded] = useState(false)
+
+  // 预加载组件
+  const preloadComponent = () =&gt; {
+    if (!preloaded) {
+      import(&#39;./HeavyComponent&#39;).then(() =&gt; {
+        setPreloaded(true)
+      })
+    }
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;button
+        onMouseEnter={preloadComponent}
+        onClick={() =&gt; setShowComponent(true)}
+      &gt;
+        显示重组件
+      &lt;/button&gt;
+      
+      {showComponent &amp;&amp; (
+        &lt;Suspense fallback={&lt;div&gt;加载中...&lt;/div&gt;}&gt;
+          &lt;HeavyComponent /&gt;
+        &lt;/Suspense&gt;
+      )}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>空闲时间预加载</h3>
+<pre><code class="language-jsx">import React, { useEffect, useState } from &#39;react&#39;
+
+function useIdlePreload(importFunc) {
+  const [component, setComponent] = useState(null)
+
+  useEffect(() =&gt; {
+    // 使用requestIdleCallback进行空闲时间预加载
+    const idleCallback = (deadline) =&gt; {
+      if (deadline.timeRemaining() &gt; 0) {
+        importFunc().then(module =&gt; {
+          setComponent(module.default)
+        })
+      }
+    }
+
+    if (window.requestIdleCallback) {
+      window.requestIdleCallback(idleCallback)
+    } else {
+      // 降级处理
+      setTimeout(() =&gt; {
+        importFunc().then(module =&gt; {
+          setComponent(module.default)
+        })
+      }, 100)
+    }
+  }, [importFunc])
+
+  return component
+}
+
+function App() {
+  const [showComponent, setShowComponent] = useState(false)
+  
+  // 在空闲时间预加载组件
+  const PreloadedComponent = useIdlePreload(() =&gt; import(&#39;./HeavyComponent&#39;))
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; setShowComponent(true)}&gt;
+        显示组件
+      &lt;/button&gt;
+      
+      {showComponent &amp;&amp; PreloadedComponent &amp;&amp; (
+        &lt;PreloadedComponent /&gt;
+      )}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h2>自定义Hook封装</h2>
+<h3>创建通用的懒加载Hook</h3>
+<pre><code class="language-jsx">import { useState, useEffect, useRef } from &#39;react&#39;
+
+function useLazyComponent(importFunc) {
+  const [component, setComponent] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const mountedRef = useRef(true)
+
+  useEffect(() =&gt; {
+    return () =&gt; {
+      mountedRef.current = false
+    }
+  }, [])
+
+  const loadComponent = async () =&gt; {
+    if (component || loading) return
+
+    setLoading(true)
+    setError(null)
+
+    try {
+      const module = await importFunc()
+      if (mountedRef.current) {
+        setComponent(module.default)
+      }
+    } catch (err) {
+      if (mountedRef.current) {
+        setError(err)
+      }
+    } finally {
+      if (mountedRef.current) {
+        setLoading(false)
+      }
+    }
+  }
+
+  return { component, loading, error, loadComponent }
+}
+
+// 使用示例
+function MyComponent() {
+  const { component: HeavyComponent, loading, error, loadComponent } = useLazyComponent(
+    () =&gt; import(&#39;./HeavyComponent&#39;)
+  )
+
+  if (error) {
+    return &lt;div&gt;加载失败: {error.message}&lt;/div&gt;
+  }
+
+  return (
+    &lt;div&gt;
+      {!HeavyComponent &amp;&amp; (
+        &lt;button onClick={loadComponent}&gt;
+          {loading ? &#39;加载中...&#39; : &#39;加载组件&#39;}
+        &lt;/button&gt;
+      )}
+      
+      {HeavyComponent &amp;&amp; &lt;HeavyComponent /&gt;}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>创建带缓存的懒加载Hook</h3>
+<pre><code class="language-jsx">import { useState, useEffect, useRef } from &#39;react&#39;
+
+// 全局缓存
+const componentCache = new Map()
+
+function useCachedLazyComponent(importFunc, cacheKey) {
+  const [component, setComponent] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const mountedRef = useRef(true)
+
+  useEffect(() =&gt; {
+    return () =&gt; {
+      mountedRef.current = false
+    }
+  }, [])
+
+  useEffect(() =&gt; {
+    // 检查缓存
+    if (componentCache.has(cacheKey)) {
+      setComponent(componentCache.get(cacheKey))
+      return
+    }
+
+    const loadComponent = async () =&gt; {
+      setLoading(true)
+      setError(null)
+
+      try {
+        const module = await importFunc()
+        const Component = module.default
+        
+        // 缓存组件
+        componentCache.set(cacheKey, Component)
+        
+        if (mountedRef.current) {
+          setComponent(Component)
+        }
+      } catch (err) {
+        if (mountedRef.current) {
+          setError(err)
+        }
+      } finally {
+        if (mountedRef.current) {
+          setLoading(false)
+        }
+      }
+    }
+
+    loadComponent()
+  }, [importFunc, cacheKey])
+
+  return { component, loading, error }
+}
+
+// 使用示例
+function App() {
+  const { component: ChartComponent, loading, error } = useCachedLazyComponent(
+    () =&gt; import(&#39;./ChartComponent&#39;),
+    &#39;chart-component&#39;
+  )
+
+  if (loading) return &lt;div&gt;加载中...&lt;/div&gt;
+  if (error) return &lt;div&gt;加载失败&lt;/div&gt;
+  if (!ChartComponent) return null
+
+  return &lt;ChartComponent /&gt;
+}
+</code></pre>
+<h2>性能优化建议</h2>
+<h3>1. 合理的分割粒度</h3>
+<pre><code class="language-jsx">// 不好的做法 - 过度分割
+const Button = React.lazy(() =&gt; import(&#39;./Button&#39;))
+const Input = React.lazy(() =&gt; import(&#39;./Input&#39;))
+
+// 好的做法 - 合理分割
+const FormComponents = React.lazy(() =&gt; import(&#39;./FormComponents&#39;))
+const ChartComponents = React.lazy(() =&gt; import(&#39;./ChartComponents&#39;))
+</code></pre>
+<h3>2. 预加载关键路径</h3>
+<pre><code class="language-jsx">// 在应用启动时预加载关键页面
+const preloadCriticalPages = () =&gt; {
+  import(&#39;./pages/Dashboard&#39;)
+  import(&#39;./pages/Profile&#39;)
+}
+
+// 在用户登录后预加载
+useEffect(() =&gt; {
+  if (user) {
+    preloadCriticalPages()
+  }
+}, [user])
+</code></pre>
+<h3>3. 使用Resource Hints</h3>
+<pre><code class="language-html">&lt;!-- 在HTML中添加预加载提示 --&gt;
+&lt;link rel=&quot;preload&quot; href=&quot;/chunks/dashboard.js&quot; as=&quot;script&quot;&gt;
+&lt;link rel=&quot;prefetch&quot; href=&quot;/chunks/settings.js&quot; as=&quot;script&quot;&gt;
+</code></pre>
+<h3>4. 监控和分析</h3>
+<pre><code class="language-jsx">// 监控组件加载性能
+const LazyComponent = React.lazy(() =&gt; {
+  const start = performance.now()
+  return import(&#39;./Component&#39;).then(module =&gt; {
+    const end = performance.now()
+    console.log(`组件加载时间: ${end - start}ms`)
+    return module
+  })
+})
+</code></pre>
+<h2>构建工具配置</h2>
+<h3>Webpack配置</h3>
+<pre><code class="language-javascript">// webpack.config.js
+module.exports = {
+  optimization: {
+    splitChunks: {
+      chunks: &#39;all&#39;,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: &#39;vendors&#39;,
+          chunks: &#39;all&#39;,
+        },
+        common: {
+          name: &#39;common&#39;,
+          minChunks: 2,
+          chunks: &#39;all&#39;,
+          enforce: true,
+        },
+      },
+    },
+  },
+}
+</code></pre>
+<h3>Vite配置</h3>
+<pre><code class="language-javascript">// vite.config.js
+import { defineConfig } from &#39;vite&#39;
+
+export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: [&#39;react&#39;, &#39;react-dom&#39;],
+          router: [&#39;react-router-dom&#39;],
+          ui: [&#39;antd&#39;, &#39;@ant-design/icons&#39;],
+        },
+      },
+    },
+  },
+})
+</code></pre>
+<h2>测试代码分割</h2>
+<h3>测试懒加载组件</h3>
+<pre><code class="language-jsx">import { render, screen, waitFor } from &#39;@testing-library/react&#39;
+import { Suspense } from &#39;react&#39;
+import App from &#39;./App&#39;
+
+// 模拟动态导入
+jest.mock(&#39;./LazyComponent&#39;, () =&gt; ({
+  __esModule: true,
+  default: () =&gt; &lt;div&gt;懒加载组件&lt;/div&gt;
+}))
+
+test(&#39;应该显示加载状态然后渲染组件&#39;, async () =&gt; {
+  render(
+    &lt;Suspense fallback={&lt;div&gt;加载中...&lt;/div&gt;}&gt;
+      &lt;App /&gt;
+    &lt;/Suspense&gt;
+  )
+
+  // 应该先显示加载状态
+  expect(screen.getByText(&#39;加载中...&#39;)).toBeInTheDocument()
+
+  // 等待组件加载完成
+  await waitFor(() =&gt; {
+    expect(screen.getByText(&#39;懒加载组件&#39;)).toBeInTheDocument()
+  })
+})
+</code></pre>
+<h2>最佳实践总结</h2>
+<ol>
+<li><strong>按路由分割</strong> - 优先考虑路由级别的代码分割</li>
+<li><strong>合理粒度</strong> - 避免过度分割导致网络请求过多</li>
+<li><strong>预加载策略</strong> - 在合适的时机预加载即将用到的代码</li>
+<li><strong>错误处理</strong> - 为懒加载组件提供错误边界</li>
+<li><strong>性能监控</strong> - 监控分割后的加载性能</li>
+<li><strong>缓存策略</strong> - 合理利用浏览器缓存和组件缓存</li>
+<li><strong>用户体验</strong> - 提供友好的加载状态提示</li>
+</ol>
+<p>代码分割是现代React应用的重要优化技术，合理使用可以显著提升应用性能和用户体验。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="25-性能优化技巧.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">性能优化技巧</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="27-单元测试.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">单元测试</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

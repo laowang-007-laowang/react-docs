@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>列表渲染 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">列表渲染</span>
+            </div>
+            <h1 class="doc-title">列表渲染</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #f093fb">
+                🧩 组件开发
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>08-列表渲染</h1>
+<p>在React中渲染数据列表是一个常见需求。React提供了强大的方式来处理动态列表，包括使用map()方法、key属性以及各种优化技巧。</p>
+<h2>基础列表渲染</h2>
+<h3>使用map()方法</h3>
+<pre><code class="language-jsx">function NumberList({ numbers }) {
+  const listItems = numbers.map((number) =&gt;
+    &lt;li key={number.toString()}&gt;
+      {number}
+    &lt;/li&gt;
+  );
+
+  return (
+    &lt;ul&gt;{listItems}&lt;/ul&gt;
+  );
+}
+
+// 使用
+const numbers = [1, 2, 3, 4, 5];
+&lt;NumberList numbers={numbers} /&gt;
+</code></pre>
+<h3>内联map()</h3>
+<pre><code class="language-jsx">function NumberList({ numbers }) {
+  return (
+    &lt;ul&gt;
+      {numbers.map((number) =&gt;
+        &lt;li key={number.toString()}&gt;
+          {number}
+        &lt;/li&gt;
+      )}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h2>Key的重要性</h2>
+<h3>为什么需要key</h3>
+<p>Key帮助React识别哪些元素改变了，比如被添加或删除。因此你应当给数组中的每一个元素赋予一个确定的标识。</p>
+<pre><code class="language-jsx">// ❌ 错误：没有key
+function BadList({ items }) {
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;li&gt;{item.name}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+// ✅ 正确：使用唯一的key
+function GoodList({ items }) {
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h3>Key的选择</h3>
+<pre><code class="language-jsx">function TodoList({ todos }) {
+  return (
+    &lt;ul&gt;
+      {todos.map((todo) =&gt; (
+        &lt;TodoItem
+          key={todo.id}  // ✅ 使用稳定、唯一的ID
+          todo={todo}
+        /&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+// ❌ 避免使用数组索引作为key（除非列表是静态的）
+function BadTodoList({ todos }) {
+  return (
+    &lt;ul&gt;
+      {todos.map((todo, index) =&gt; (
+        &lt;TodoItem
+          key={index}  // ❌ 可能导致性能问题和状态错乱
+          todo={todo}
+        /&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h3>何时可以使用索引作为key</h3>
+<pre><code class="language-jsx">// ✅ 静态列表可以使用索引
+function StaticMenu({ menuItems }) {
+  return (
+    &lt;nav&gt;
+      {menuItems.map((item, index) =&gt; (
+        &lt;a key={index} href={item.url}&gt;
+          {item.label}
+        &lt;/a&gt;
+      ))}
+    &lt;/nav&gt;
+  );
+}
+
+// ✅ 列表不会重新排序、添加或删除时
+function ReadOnlyList({ items }) {
+  return (
+    &lt;ul&gt;
+      {items.map((item, index) =&gt; (
+        &lt;li key={index}&gt;{item}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h2>复杂列表渲染</h2>
+<h3>渲染对象数组</h3>
+<pre><code class="language-jsx">function UserList({ users }) {
+  return (
+    &lt;div className=&quot;user-list&quot;&gt;
+      {users.map(user =&gt; (
+        &lt;div key={user.id} className=&quot;user-card&quot;&gt;
+          &lt;img src={user.avatar} alt={user.name} /&gt;
+          &lt;h3&gt;{user.name}&lt;/h3&gt;
+          &lt;p&gt;{user.email}&lt;/p&gt;
+          &lt;span className={`status ${user.isOnline ? &#39;online&#39; : &#39;offline&#39;}`}&gt;
+            {user.isOnline ? &#39;在线&#39; : &#39;离线&#39;}
+          &lt;/span&gt;
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>嵌套列表</h3>
+<pre><code class="language-jsx">function CategoryList({ categories }) {
+  return (
+    &lt;div&gt;
+      {categories.map(category =&gt; (
+        &lt;div key={category.id} className=&quot;category&quot;&gt;
+          &lt;h2&gt;{category.name}&lt;/h2&gt;
+          &lt;ul&gt;
+            {category.items.map(item =&gt; (
+              &lt;li key={item.id}&gt;
+                &lt;span&gt;{item.name}&lt;/span&gt;
+                &lt;span className=&quot;price&quot;&gt;${item.price}&lt;/span&gt;
+              &lt;/li&gt;
+            ))}
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>条件列表渲染</h3>
+<pre><code class="language-jsx">function ProductList({ products, showOutOfStock }) {
+  const filteredProducts = products.filter(product =&gt; 
+    showOutOfStock || product.inStock
+  );
+
+  return (
+    &lt;div className=&quot;product-grid&quot;&gt;
+      {filteredProducts.map(product =&gt; (
+        &lt;div key={product.id} className=&quot;product-card&quot;&gt;
+          &lt;h3&gt;{product.name}&lt;/h3&gt;
+          &lt;p&gt;${product.price}&lt;/p&gt;
+          {!product.inStock &amp;&amp; (
+            &lt;span className=&quot;out-of-stock&quot;&gt;缺货&lt;/span&gt;
+          )}
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>列表操作</h2>
+<h3>添加项目</h3>
+<pre><code class="language-jsx">function TodoApp() {
+  const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState(&#39;&#39;);
+
+  const addTodo = () =&gt; {
+    if (inputValue.trim()) {
+      const newTodo = {
+        id: Date.now(), // 简单的ID生成，实际项目中使用uuid
+        text: inputValue,
+        completed: false
+      };
+      setTodos([...todos, newTodo]);
+      setInputValue(&#39;&#39;);
+    }
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;input
+        value={inputValue}
+        onChange={(e) =&gt; setInputValue(e.target.value)}
+        onKeyPress={(e) =&gt; e.key === &#39;Enter&#39; &amp;&amp; addTodo()}
+      /&gt;
+      &lt;button onClick={addTodo}&gt;添加&lt;/button&gt;
+      &lt;ul&gt;
+        {todos.map(todo =&gt; (
+          &lt;li key={todo.id}&gt;
+            {todo.text}
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>删除项目</h3>
+<pre><code class="language-jsx">function TodoApp() {
+  const [todos, setTodos] = useState([
+    { id: 1, text: &#39;学习React&#39;, completed: false },
+    { id: 2, text: &#39;练习编程&#39;, completed: true }
+  ]);
+
+  const deleteTodo = (id) =&gt; {
+    setTodos(todos.filter(todo =&gt; todo.id !== id));
+  };
+
+  return (
+    &lt;ul&gt;
+      {todos.map(todo =&gt; (
+        &lt;li key={todo.id}&gt;
+          &lt;span&gt;{todo.text}&lt;/span&gt;
+          &lt;button onClick={() =&gt; deleteTodo(todo.id)}&gt;
+            删除
+          &lt;/button&gt;
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h3>更新项目</h3>
+<pre><code class="language-jsx">function TodoApp() {
+  const [todos, setTodos] = useState([
+    { id: 1, text: &#39;学习React&#39;, completed: false },
+    { id: 2, text: &#39;练习编程&#39;, completed: false }
+  ]);
+
+  const toggleTodo = (id) =&gt; {
+    setTodos(todos.map(todo =&gt;
+      todo.id === id
+        ? { ...todo, completed: !todo.completed }
+        : todo
+    ));
+  };
+
+  const updateTodoText = (id, newText) =&gt; {
+    setTodos(todos.map(todo =&gt;
+      todo.id === id
+        ? { ...todo, text: newText }
+        : todo
+    ));
+  };
+
+  return (
+    &lt;ul&gt;
+      {todos.map(todo =&gt; (
+        &lt;TodoItem
+          key={todo.id}
+          todo={todo}
+          onToggle={toggleTodo}
+          onUpdate={updateTodoText}
+        /&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+function TodoItem({ todo, onToggle, onUpdate }) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editText, setEditText] = useState(todo.text);
+
+  const handleSave = () =&gt; {
+    onUpdate(todo.id, editText);
+    setIsEditing(false);
+  };
+
+  return (
+    &lt;li className={todo.completed ? &#39;completed&#39; : &#39;&#39;}&gt;
+      &lt;input
+        type=&quot;checkbox&quot;
+        checked={todo.completed}
+        onChange={() =&gt; onToggle(todo.id)}
+      /&gt;
+      {isEditing ? (
+        &lt;input
+          value={editText}
+          onChange={(e) =&gt; setEditText(e.target.value)}
+          onBlur={handleSave}
+          onKeyPress={(e) =&gt; e.key === &#39;Enter&#39; &amp;&amp; handleSave()}
+          autoFocus
+        /&gt;
+      ) : (
+        &lt;span onDoubleClick={() =&gt; setIsEditing(true)}&gt;
+          {todo.text}
+        &lt;/span&gt;
+      )}
+    &lt;/li&gt;
+  );
+}
+</code></pre>
+<h2>排序和筛选</h2>
+<h3>排序列表</h3>
+<pre><code class="language-jsx">function UserList({ users }) {
+  const [sortBy, setSortBy] = useState(&#39;name&#39;);
+  const [sortOrder, setSortOrder] = useState(&#39;asc&#39;);
+
+  const sortedUsers = useMemo(() =&gt; {
+    return [...users].sort((a, b) =&gt; {
+      const aValue = a[sortBy];
+      const bValue = b[sortBy];
+      
+      if (sortOrder === &#39;asc&#39;) {
+        return aValue &lt; bValue ? -1 : aValue &gt; bValue ? 1 : 0;
+      } else {
+        return aValue &gt; bValue ? -1 : aValue &lt; bValue ? 1 : 0;
+      }
+    });
+  }, [users, sortBy, sortOrder]);
+
+  const handleSort = (field) =&gt; {
+    if (sortBy === field) {
+      setSortOrder(sortOrder === &#39;asc&#39; ? &#39;desc&#39; : &#39;asc&#39;);
+    } else {
+      setSortBy(field);
+      setSortOrder(&#39;asc&#39;);
+    }
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;div className=&quot;sort-controls&quot;&gt;
+        &lt;button onClick={() =&gt; handleSort(&#39;name&#39;)}&gt;
+          按姓名排序 {sortBy === &#39;name&#39; &amp;&amp; (sortOrder === &#39;asc&#39; ? &#39;↑&#39; : &#39;↓&#39;)}
+        &lt;/button&gt;
+        &lt;button onClick={() =&gt; handleSort(&#39;age&#39;)}&gt;
+          按年龄排序 {sortBy === &#39;age&#39; &amp;&amp; (sortOrder === &#39;asc&#39; ? &#39;↑&#39; : &#39;↓&#39;)}
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;ul&gt;
+        {sortedUsers.map(user =&gt; (
+          &lt;li key={user.id}&gt;
+            {user.name} - {user.age}岁
+          &lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>搜索和筛选</h3>
+<pre><code class="language-jsx">function ProductList({ products }) {
+  const [searchTerm, setSearchTerm] = useState(&#39;&#39;);
+  const [category, setCategory] = useState(&#39;all&#39;);
+  const [priceRange, setPriceRange] = useState([0, 1000]);
+
+  const filteredProducts = useMemo(() =&gt; {
+    return products.filter(product =&gt; {
+      const matchesSearch = product.name
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
+      
+      const matchesCategory = category === &#39;all&#39; || product.category === category;
+      
+      const matchesPrice = product.price &gt;= priceRange[0] &amp;&amp; 
+                          product.price &lt;= priceRange[1];
+
+      return matchesSearch &amp;&amp; matchesCategory &amp;&amp; matchesPrice;
+    });
+  }, [products, searchTerm, category, priceRange]);
+
+  const categories = useMemo(() =&gt; 
+    [...new Set(products.map(p =&gt; p.category))], 
+    [products]
+  );
+
+  return (
+    &lt;div&gt;
+      &lt;div className=&quot;filters&quot;&gt;
+        &lt;input
+          type=&quot;text&quot;
+          placeholder=&quot;搜索产品...&quot;
+          value={searchTerm}
+          onChange={(e) =&gt; setSearchTerm(e.target.value)}
+        /&gt;
+        
+        &lt;select value={category} onChange={(e) =&gt; setCategory(e.target.value)}&gt;
+          &lt;option value=&quot;all&quot;&gt;所有分类&lt;/option&gt;
+          {categories.map(cat =&gt; (
+            &lt;option key={cat} value={cat}&gt;{cat}&lt;/option&gt;
+          ))}
+        &lt;/select&gt;
+
+        &lt;div&gt;
+          价格范围: ${priceRange[0]} - ${priceRange[1]}
+          &lt;input
+            type=&quot;range&quot;
+            min=&quot;0&quot;
+            max=&quot;1000&quot;
+            value={priceRange[1]}
+            onChange={(e) =&gt; setPriceRange([priceRange[0], Number(e.target.value)])}
+          /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div className=&quot;results&quot;&gt;
+        找到 {filteredProducts.length} 个产品
+      &lt;/div&gt;
+
+      &lt;div className=&quot;product-grid&quot;&gt;
+        {filteredProducts.map(product =&gt; (
+          &lt;div key={product.id} className=&quot;product-card&quot;&gt;
+            &lt;h3&gt;{product.name}&lt;/h3&gt;
+            &lt;p&gt;{product.category}&lt;/p&gt;
+            &lt;p&gt;${product.price}&lt;/p&gt;
+          &lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>分页</h2>
+<h3>简单分页</h3>
+<pre><code class="language-jsx">function PaginatedList({ items, itemsPerPage = 10 }) {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+  
+  const currentItems = useMemo(() =&gt; {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    return items.slice(startIndex, startIndex + itemsPerPage);
+  }, [items, currentPage, itemsPerPage]);
+
+  const goToPage = (page) =&gt; {
+    setCurrentPage(Math.max(1, Math.min(page, totalPages)));
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;ul&gt;
+        {currentItems.map(item =&gt; (
+          &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+
+      &lt;div className=&quot;pagination&quot;&gt;
+        &lt;button 
+          onClick={() =&gt; goToPage(currentPage - 1)}
+          disabled={currentPage === 1}
+        &gt;
+          上一页
+        &lt;/button&gt;
+        
+        &lt;span&gt;
+          第 {currentPage} 页，共 {totalPages} 页
+        &lt;/span&gt;
+        
+        &lt;button 
+          onClick={() =&gt; goToPage(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        &gt;
+          下一页
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>虚拟滚动</h3>
+<pre><code class="language-jsx">import { FixedSizeList as List } from &#39;react-window&#39;;
+
+function VirtualizedList({ items }) {
+  const Row = ({ index, style }) =&gt; (
+    &lt;div style={style}&gt;
+      &lt;div className=&quot;list-item&quot;&gt;
+        {items[index].name}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+
+  return (
+    &lt;List
+      height={400}
+      itemCount={items.length}
+      itemSize={50}
+    &gt;
+      {Row}
+    &lt;/List&gt;
+  );
+}
+</code></pre>
+<h2>性能优化</h2>
+<h3>使用React.memo</h3>
+<pre><code class="language-jsx">const ListItem = React.memo(({ item, onDelete, onUpdate }) =&gt; {
+  console.log(&#39;ListItem rendered:&#39;, item.id);
+  
+  return (
+    &lt;div className=&quot;list-item&quot;&gt;
+      &lt;span&gt;{item.name}&lt;/span&gt;
+      &lt;button onClick={() =&gt; onDelete(item.id)}&gt;删除&lt;/button&gt;
+      &lt;button onClick={() =&gt; onUpdate(item.id)}&gt;编辑&lt;/button&gt;
+    &lt;/div&gt;
+  );
+});
+
+function OptimizedList({ items }) {
+  const [list, setList] = useState(items);
+
+  const handleDelete = useCallback((id) =&gt; {
+    setList(prev =&gt; prev.filter(item =&gt; item.id !== id));
+  }, []);
+
+  const handleUpdate = useCallback((id) =&gt; {
+    // 更新逻辑
+  }, []);
+
+  return (
+    &lt;div&gt;
+      {list.map(item =&gt; (
+        &lt;ListItem
+          key={item.id}
+          item={item}
+          onDelete={handleDelete}
+          onUpdate={handleUpdate}
+        /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>延迟加载</h3>
+<pre><code class="language-jsx">function LazyLoadList({ items, loadMore, hasMore, loading }) {
+  const [visibleItems, setVisibleItems] = useState(20);
+  const observerRef = useRef();
+
+  const lastItemRef = useCallback(node =&gt; {
+    if (loading) return;
+    if (observerRef.current) observerRef.current.disconnect();
+    
+    observerRef.current = new IntersectionObserver(entries =&gt; {
+      if (entries[0].isIntersecting &amp;&amp; hasMore) {
+        loadMore();
+      }
+    });
+    
+    if (node) observerRef.current.observe(node);
+  }, [loading, hasMore, loadMore]);
+
+  return (
+    &lt;div&gt;
+      {items.map((item, index) =&gt; {
+        if (index === items.length - 1) {
+          return (
+            &lt;div key={item.id} ref={lastItemRef}&gt;
+              {item.name}
+            &lt;/div&gt;
+          );
+        } else {
+          return (
+            &lt;div key={item.id}&gt;
+              {item.name}
+            &lt;/div&gt;
+          );
+        }
+      })}
+      {loading &amp;&amp; &lt;div&gt;加载中...&lt;/div&gt;}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>拖拽排序</h2>
+<pre><code class="language-jsx">import { DragDropContext, Droppable, Draggable } from &#39;react-beautiful-dnd&#39;;
+
+function DraggableList({ items, onReorder }) {
+  const handleDragEnd = (result) =&gt; {
+    if (!result.destination) return;
+
+    const newItems = Array.from(items);
+    const [reorderedItem] = newItems.splice(result.source.index, 1);
+    newItems.splice(result.destination.index, 0, reorderedItem);
+
+    onReorder(newItems);
+  };
+
+  return (
+    &lt;DragDropContext onDragEnd={handleDragEnd}&gt;
+      &lt;Droppable droppableId=&quot;list&quot;&gt;
+        {(provided) =&gt; (
+          &lt;ul {...provided.droppableProps} ref={provided.innerRef}&gt;
+            {items.map((item, index) =&gt; (
+              &lt;Draggable key={item.id} draggableId={item.id} index={index}&gt;
+                {(provided, snapshot) =&gt; (
+                  &lt;li
+                    ref={provided.innerRef}
+                    {...provided.draggableProps}
+                    {...provided.dragHandleProps}
+                    style={{
+                      ...provided.draggableProps.style,
+                      backgroundColor: snapshot.isDragging ? &#39;#f0f0f0&#39; : &#39;white&#39;
+                    }}
+                  &gt;
+                    {item.name}
+                  &lt;/li&gt;
+                )}
+              &lt;/Draggable&gt;
+            ))}
+            {provided.placeholder}
+          &lt;/ul&gt;
+        )}
+      &lt;/Droppable&gt;
+    &lt;/DragDropContext&gt;
+  );
+}
+</code></pre>
+<h2>异步数据列表</h2>
+<pre><code class="language-jsx">function AsyncDataList() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() =&gt; {
+    const fetchData = async () =&gt; {
+      try {
+        setLoading(true);
+        const response = await fetch(&#39;/api/items&#39;);
+        if (!response.ok) throw new Error(&#39;Failed to fetch&#39;);
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return &lt;div&gt;加载中...&lt;/div&gt;;
+  if (error) return &lt;div&gt;错误: {error}&lt;/div&gt;;
+  if (data.length === 0) return &lt;div&gt;暂无数据&lt;/div&gt;;
+
+  return (
+    &lt;ul&gt;
+      {data.map(item =&gt; (
+        &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h2>最佳实践</h2>
+<h3>1. 选择合适的Key</h3>
+<pre><code class="language-jsx">// ✅ 使用稳定、唯一的标识符
+&lt;li key={user.id}&gt;{user.name}&lt;/li&gt;
+
+// ✅ 如果没有ID，可以组合多个字段
+&lt;li key={`${user.name}-${user.email}`}&gt;{user.name}&lt;/li&gt;
+
+// ❌ 避免使用数组索引（除非列表是静态的）
+&lt;li key={index}&gt;{user.name}&lt;/li&gt;
+
+// ❌ 避免使用随机数
+&lt;li key={Math.random()}&gt;{user.name}&lt;/li&gt;
+</code></pre>
+<h3>2. 优化大列表性能</h3>
+<pre><code class="language-jsx">// 使用useMemo缓存筛选和排序结果
+const filteredItems = useMemo(() =&gt; 
+  items.filter(item =&gt; item.name.includes(searchTerm)),
+  [items, searchTerm]
+);
+
+// 使用React.memo优化列表项
+const ListItem = React.memo(({ item }) =&gt; (
+  &lt;div&gt;{item.name}&lt;/div&gt;
+));
+
+// 使用虚拟滚动处理超大列表
+import { FixedSizeList } from &#39;react-window&#39;;
+</code></pre>
+<h3>3. 处理空状态</h3>
+<pre><code class="language-jsx">function ItemList({ items, loading, error }) {
+  if (loading) return &lt;LoadingSpinner /&gt;;
+  if (error) return &lt;ErrorMessage error={error} /&gt;;
+  if (items.length === 0) return &lt;EmptyState /&gt;;
+
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h2>常见问题</h2>
+<h3>问题1：Key相关的警告</h3>
+<pre><code class="language-jsx">// ❌ React会警告：Each child should have a unique &quot;key&quot; prop
+function BadList({ items }) {
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; &lt;li&gt;{item.name}&lt;/li&gt;)}
+    &lt;/ul&gt;
+  );
+}
+
+// ✅ 添加key属性
+function GoodList({ items }) {
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; &lt;li key={item.id}&gt;{item.name}&lt;/li&gt;)}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h3>问题2：状态在列表重排序时丢失</h3>
+<pre><code class="language-jsx">// ❌ 使用索引作为key可能导致状态错乱
+function BadExample({ users }) {
+  return (
+    &lt;div&gt;
+      {users.map((user, index) =&gt; (
+        &lt;UserComponent key={index} user={user} /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+
+// ✅ 使用稳定的ID作为key
+function GoodExample({ users }) {
+  return (
+    &lt;div&gt;
+      {users.map(user =&gt; (
+        &lt;UserComponent key={user.id} user={user} /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>问题3：在map中直接修改state</h3>
+<pre><code class="language-jsx">// ❌ 直接在map中修改state
+function BadExample({ items }) {
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;li key={item.id}&gt;
+          {item.name}
+          &lt;button onClick={() =&gt; item.completed = true}&gt;
+            完成
+          &lt;/button&gt;
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+// ✅ 通过setState正确更新
+function GoodExample({ items, setItems }) {
+  const toggleItem = (id) =&gt; {
+    setItems(prev =&gt; prev.map(item =&gt;
+      item.id === id ? { ...item, completed: !item.completed } : item
+    ));
+  };
+
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;li key={item.id}&gt;
+          {item.name}
+          &lt;button onClick={() =&gt; toggleItem(item.id)}&gt;
+            {item.completed ? &#39;取消完成&#39; : &#39;完成&#39;}
+          &lt;/button&gt;
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+</code></pre>
+<h2>总结</h2>
+<p>列表渲染是React中的重要概念：</p>
+<ol>
+<li><strong>使用map()方法</strong>：将数组转换为JSX元素</li>
+<li><strong>Key属性</strong>：为每个列表项提供唯一标识</li>
+<li><strong>性能优化</strong>：使用React.memo、useMemo和虚拟滚动</li>
+<li><strong>用户体验</strong>：添加加载状态、错误处理和空状态</li>
+</ol>
+<p>掌握这些技巧，可以构建高效、用户友好的列表界面。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="07-条件渲染.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">条件渲染</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="09-Hooks概述.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">Hooks概述</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

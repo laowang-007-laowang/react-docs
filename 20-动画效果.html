@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动画效果 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">动画效果</span>
+            </div>
+            <h1 class="doc-title">动画效果</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #fa709a">
+                🎨 样式与UI
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>20-动画效果</h1>
+<p>在React应用中添加动画效果可以提升用户体验，使界面更加生动和专业。本文将介绍React中实现动画的各种方法和最佳实践。</p>
+<h2>CSS过渡动画</h2>
+<h3>基础CSS过渡</h3>
+<pre><code class="language-css">/* animations.css */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+.slide-enter {
+  transform: translateX(-100%);
+}
+
+.slide-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-out;
+}
+
+.slide-exit {
+  transform: translateX(0);
+}
+
+.slide-exit-active {
+  transform: translateX(100%);
+  transition: transform 300ms ease-in;
+}
+</code></pre>
+<pre><code class="language-jsx">import { useState } from &#39;react&#39;;
+import &#39;./animations.css&#39;;
+
+function AnimatedBox() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; setIsVisible(!isVisible)}&gt;
+        切换显示
+      &lt;/button&gt;
+      
+      {isVisible &amp;&amp; (
+        &lt;div className=&quot;animated-box fade-enter-active&quot;&gt;
+          这是一个动画盒子
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>React Transition Group</h2>
+<h3>CSSTransition</h3>
+<pre><code class="language-jsx">import { CSSTransition } from &#39;react-transition-group&#39;;
+
+function FadeTransition({ in: inProp, children }) {
+  return (
+    &lt;CSSTransition
+      in={inProp}
+      timeout={300}
+      classNames=&quot;fade&quot;
+      unmountOnExit
+    &gt;
+      {children}
+    &lt;/CSSTransition&gt;
+  );
+}
+
+function Modal({ isOpen, onClose, children }) {
+  return (
+    &lt;CSSTransition
+      in={isOpen}
+      timeout={300}
+      classNames=&quot;modal&quot;
+      unmountOnExit
+    &gt;
+      &lt;div className=&quot;modal-backdrop&quot; onClick={onClose}&gt;
+        &lt;div className=&quot;modal-content&quot; onClick={e =&gt; e.stopPropagation()}&gt;
+          {children}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/CSSTransition&gt;
+  );
+}
+</code></pre>
+<h3>TransitionGroup</h3>
+<pre><code class="language-jsx">import { TransitionGroup, CSSTransition } from &#39;react-transition-group&#39;;
+
+function TodoList({ todos, onDelete }) {
+  return (
+    &lt;TransitionGroup className=&quot;todo-list&quot;&gt;
+      {todos.map(todo =&gt; (
+        &lt;CSSTransition
+          key={todo.id}
+          timeout={300}
+          classNames=&quot;todo&quot;
+        &gt;
+          &lt;div className=&quot;todo-item&quot;&gt;
+            &lt;span&gt;{todo.text}&lt;/span&gt;
+            &lt;button onClick={() =&gt; onDelete(todo.id)}&gt;删除&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/CSSTransition&gt;
+      ))}
+    &lt;/TransitionGroup&gt;
+  );
+}
+</code></pre>
+<h2>Framer Motion</h2>
+<h3>基础动画</h3>
+<pre><code class="language-jsx">import { motion } from &#39;framer-motion&#39;;
+
+function AnimatedComponent() {
+  return (
+    &lt;motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.5 }}
+    &gt;
+      动画内容
+    &lt;/motion.div&gt;
+  );
+}
+
+function HoverButton({ children }) {
+  return (
+    &lt;motion.button
+      whileHover={{ 
+        scale: 1.05,
+        boxShadow: &quot;0px 10px 20px rgba(0,0,0,0.2)&quot; 
+      }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ type: &quot;spring&quot;, stiffness: 300 }}
+    &gt;
+      {children}
+    &lt;/motion.button&gt;
+  );
+}
+</code></pre>
+<h3>页面过渡</h3>
+<pre><code class="language-jsx">import { motion, AnimatePresence } from &#39;framer-motion&#39;;
+
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    x: &quot;-100vw&quot;
+  },
+  in: {
+    opacity: 1,
+    x: 0
+  },
+  out: {
+    opacity: 0,
+    x: &quot;100vw&quot;
+  }
+};
+
+const pageTransition = {
+  type: &quot;tween&quot;,
+  ease: &quot;anticipate&quot;,
+  duration: 0.5
+};
+
+function PageTransition({ children }) {
+  return (
+    &lt;motion.div
+      initial=&quot;initial&quot;
+      animate=&quot;in&quot;
+      exit=&quot;out&quot;
+      variants={pageVariants}
+      transition={pageTransition}
+    &gt;
+      {children}
+    &lt;/motion.div&gt;
+  );
+}
+
+function App() {
+  const [currentPage, setCurrentPage] = useState(&#39;home&#39;);
+
+  return (
+    &lt;AnimatePresence mode=&quot;wait&quot;&gt;
+      &lt;PageTransition key={currentPage}&gt;
+        {currentPage === &#39;home&#39; &amp;&amp; &lt;HomePage /&gt;}
+        {currentPage === &#39;about&#39; &amp;&amp; &lt;AboutPage /&gt;}
+      &lt;/PageTransition&gt;
+    &lt;/AnimatePresence&gt;
+  );
+}
+</code></pre>
+<h3>列表动画</h3>
+<pre><code class="language-jsx">function AnimatedList({ items }) {
+  return (
+    &lt;motion.ul layout&gt;
+      &lt;AnimatePresence&gt;
+        {items.map(item =&gt; (
+          &lt;motion.li
+            key={item.id}
+            layout
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+          &gt;
+            {item.name}
+          &lt;/motion.li&gt;
+        ))}
+      &lt;/AnimatePresence&gt;
+    &lt;/motion.ul&gt;
+  );
+}
+</code></pre>
+<h2>React Spring</h2>
+<h3>基础弹簧动画</h3>
+<pre><code class="language-jsx">import { useSpring, animated } from &#39;@react-spring/web&#39;;
+
+function SpringBox() {
+  const [flip, setFlip] = useState(false);
+  
+  const styles = useSpring({
+    transform: flip ? &#39;scale(1.2) rotate(180deg)&#39; : &#39;scale(1) rotate(0deg)&#39;,
+    backgroundColor: flip ? &#39;#ff6b6b&#39; : &#39;#4ecdc4&#39;,
+    config: { tension: 200, friction: 10 }
+  });
+
+  return (
+    &lt;animated.div
+      style={styles}
+      onClick={() =&gt; setFlip(!flip)}
+      className=&quot;spring-box&quot;
+    &gt;
+      点击我
+    &lt;/animated.div&gt;
+  );
+}
+</code></pre>
+<h3>数字计数动画</h3>
+<pre><code class="language-jsx">import { useSpring, animated } from &#39;@react-spring/web&#39;;
+
+function AnimatedNumber({ value }) {
+  const { number } = useSpring({
+    from: { number: 0 },
+    number: value,
+    delay: 200,
+    config: { mass: 1, tension: 20, friction: 10 }
+  });
+
+  return (
+    &lt;animated.span&gt;
+      {number.to(n =&gt; Math.floor(n))}
+    &lt;/animated.span&gt;
+  );
+}
+</code></pre>
+<h2>自定义动画Hook</h2>
+<h3>useAnimation Hook</h3>
+<pre><code class="language-jsx">import { useState, useEffect } from &#39;react&#39;;
+
+function useAnimation(duration = 1000, easing = &#39;ease-in-out&#39;) {
+  const [progress, setProgress] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const startAnimation = () =&gt; {
+    setIsAnimating(true);
+    setProgress(0);
+  };
+
+  useEffect(() =&gt; {
+    if (!isAnimating) return;
+
+    const startTime = Date.now();
+    
+    const animate = () =&gt; {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      setProgress(progress);
+      
+      if (progress &lt; 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setIsAnimating(false);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [isAnimating, duration]);
+
+  return { progress, isAnimating, startAnimation };
+}
+
+// 使用示例
+function ProgressBar() {
+  const { progress, isAnimating, startAnimation } = useAnimation(2000);
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={startAnimation} disabled={isAnimating}&gt;
+        开始动画
+      &lt;/button&gt;
+      &lt;div className=&quot;progress-bar&quot;&gt;
+        &lt;div 
+          className=&quot;progress-fill&quot;
+          style={{ width: `${progress * 100}%` }}
+        /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>useCountUp Hook</h3>
+<pre><code class="language-jsx">function useCountUp(end, duration = 1000) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() =&gt; {
+    let startTime = null;
+    
+    const animate = (timestamp) =&gt; {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      
+      setCount(Math.floor(progress * end));
+      
+      if (progress &lt; 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [end, duration]);
+
+  return count;
+}
+
+function Counter({ target }) {
+  const count = useCountUp(target, 2000);
+  
+  return &lt;div className=&quot;counter&quot;&gt;{count}&lt;/div&gt;;
+}
+</code></pre>
+<h2>性能优化</h2>
+<h3>动画性能最佳实践</h3>
+<pre><code class="language-jsx">// 使用transform和opacity进行动画（GPU加速）
+const optimizedStyle = {
+  transform: &#39;translateX(100px) scale(1.2)&#39;,
+  opacity: 0.8,
+  willChange: &#39;transform, opacity&#39; // 提示浏览器优化
+};
+
+// 避免动画layout属性
+// ❌ 不好的做法
+const badStyle = {
+  width: isExpanded ? &#39;300px&#39; : &#39;100px&#39;,
+  height: isExpanded ? &#39;200px&#39; : &#39;50px&#39;
+};
+
+// ✅ 好的做法
+const goodStyle = {
+  transform: isExpanded ? &#39;scale(1.5)&#39; : &#39;scale(1)&#39;
+};
+</code></pre>
+<h3>减少重排和重绘</h3>
+<pre><code class="language-jsx">function OptimizedAnimation() {
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  // 使用useLayoutEffect确保同步更新
+  useLayoutEffect(() =&gt; {
+    if (isAnimating) {
+      // 批量DOM操作
+      document.documentElement.style.setProperty(&#39;--animation-state&#39;, &#39;1&#39;);
+    } else {
+      document.documentElement.style.setProperty(&#39;--animation-state&#39;, &#39;0&#39;);
+    }
+  }, [isAnimating]);
+
+  return (
+    &lt;div className=&quot;optimized-container&quot;&gt;
+      &lt;button onClick={() =&gt; setIsAnimating(!isAnimating)}&gt;
+        {isAnimating ? &#39;停止&#39; : &#39;开始&#39;}动画
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>复杂动画示例</h2>
+<h3>加载动画</h3>
+<pre><code class="language-jsx">import { motion } from &#39;framer-motion&#39;;
+
+function LoadingSpinner() {
+  return (
+    &lt;motion.div
+      className=&quot;spinner&quot;
+      animate={{ rotate: 360 }}
+      transition={{
+        duration: 1,
+        repeat: Infinity,
+        ease: &quot;linear&quot;
+      }}
+    /&gt;
+  );
+}
+
+function LoadingDots() {
+  const dotVariants = {
+    initial: { y: 0 },
+    animate: { y: -10 }
+  };
+
+  return (
+    &lt;div className=&quot;loading-dots&quot;&gt;
+      {[0, 1, 2].map(index =&gt; (
+        &lt;motion.div
+          key={index}
+          className=&quot;dot&quot;
+          variants={dotVariants}
+          initial=&quot;initial&quot;
+          animate=&quot;animate&quot;
+          transition={{
+            duration: 0.5,
+            repeat: Infinity,
+            repeatType: &quot;reverse&quot;,
+            delay: index * 0.1
+          }}
+        /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>卡片翻转</h3>
+<pre><code class="language-jsx">function FlipCard({ front, back }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    &lt;div className=&quot;flip-card&quot; onClick={() =&gt; setIsFlipped(!isFlipped)}&gt;
+      &lt;motion.div
+        className=&quot;flip-card-inner&quot;
+        initial={false}
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6 }}
+        style={{ transformStyle: &quot;preserve-3d&quot; }}
+      &gt;
+        &lt;div className=&quot;flip-card-front&quot;&gt;
+          {front}
+        &lt;/div&gt;
+        &lt;div className=&quot;flip-card-back&quot;&gt;
+          {back}
+        &lt;/div&gt;
+      &lt;/motion.div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>手势动画</h2>
+<h3>拖拽动画</h3>
+<pre><code class="language-jsx">import { motion } from &#39;framer-motion&#39;;
+
+function DraggableBox() {
+  return (
+    &lt;motion.div
+      className=&quot;draggable-box&quot;
+      drag
+      dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
+      dragElastic={0.1}
+      whileDrag={{ scale: 1.1 }}
+      onDragEnd={(event, info) =&gt; {
+        console.log(&#39;拖拽结束:&#39;, info.offset);
+      }}
+    &gt;
+      拖拽我
+    &lt;/motion.div&gt;
+  );
+}
+</code></pre>
+<h3>滑动手势</h3>
+<pre><code class="language-jsx">function SwipeCard({ onSwipe, children }) {
+  return (
+    &lt;motion.div
+      className=&quot;swipe-card&quot;
+      drag=&quot;x&quot;
+      dragConstraints={{ left: 0, right: 0 }}
+      onDragEnd={(event, info) =&gt; {
+        const threshold = 100;
+        if (info.offset.x &gt; threshold) {
+          onSwipe(&#39;right&#39;);
+        } else if (info.offset.x &lt; -threshold) {
+          onSwipe(&#39;left&#39;);
+        }
+      }}
+      whileDrag={{ scale: 1.05, rotate: info =&gt; info.offset.x / 10 }}
+    &gt;
+      {children}
+    &lt;/motion.div&gt;
+  );
+}
+</code></pre>
+<h2>总结</h2>
+<p>React动画的核心要点：</p>
+<ol>
+<li><strong>选择合适的动画库</strong> - CSS、React Transition Group、Framer Motion、React Spring</li>
+<li><strong>性能优化</strong> - 使用transform和opacity，避免layout动画</li>
+<li><strong>用户体验</strong> - 适度使用动画，确保可访问性</li>
+<li><strong>响应式设计</strong> - 考虑不同设备的动画表现</li>
+</ol>
+<p>动画应该：</p>
+<ul>
+<li>增强用户体验，而不是分散注意力</li>
+<li>提供视觉反馈和引导</li>
+<li>保持一致的风格和时机</li>
+<li>考虑性能影响，特别是在移动设备上</li>
+</ul>
+<p>通过合理使用动画，可以让React应用更加生动和专业。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="19-样式处理.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">样式处理</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="21-React-Router.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">React-Router</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

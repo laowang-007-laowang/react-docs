@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生产部署 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">生产部署</span>
+            </div>
+            <h1 class="doc-title">生产部署</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #ffd89b">
+                🏗️ 构建与部署
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>30-生产部署</h1>
+<p>生产部署是将React应用从开发环境发布到生产环境的过程。这包括代码构建、资源优化、环境配置、部署策略和监控等多个方面。</p>
+<h2>基础概念</h2>
+<h3>生产环境特点</h3>
+<p>生产环境与开发环境有以下主要区别：</p>
+<ul>
+<li><strong>代码压缩</strong> - 移除空格、注释，压缩代码体积</li>
+<li><strong>资源优化</strong> - 图片压缩、代码分割、缓存策略</li>
+<li><strong>环境变量</strong> - 使用生产环境配置</li>
+<li><strong>错误处理</strong> - 更严格的错误监控和处理</li>
+<li><strong>性能监控</strong> - 实时监控应用性能和用户体验</li>
+</ul>
+<h3>部署准备清单</h3>
+<pre><code class="language-markdown">## 部署前检查清单
+
+### 代码质量
+- [ ] 所有测试通过
+- [ ] 代码审查完成
+- [ ] 无明显性能问题
+- [ ] 错误处理完善
+
+### 配置管理
+- [ ] 环境变量配置正确
+- [ ] API接口地址更新
+- [ ] 安全配置到位
+- [ ] 缓存策略配置
+
+### 资源优化
+- [ ] 图片资源优化
+- [ ] 代码分割配置
+- [ ] 压缩配置启用
+- [ ] CDN配置完成
+
+### 监控与备份
+- [ ] 错误监控配置
+- [ ] 性能监控配置
+- [ ] 日志记录配置
+- [ ] 备份方案就绪
+</code></pre>
+<h2>构建优化</h2>
+<h3>基础构建配置</h3>
+<pre><code class="language-javascript">// webpack.config.js
+const path = require(&#39;path&#39;)
+const HtmlWebpackPlugin = require(&#39;html-webpack-plugin&#39;)
+const MiniCssExtractPlugin = require(&#39;mini-css-extract-plugin&#39;)
+const CssMinimizerPlugin = require(&#39;css-minimizer-webpack-plugin&#39;)
+const TerserPlugin = require(&#39;terser-webpack-plugin&#39;)
+
+module.exports = {
+  mode: &#39;production&#39;,
+  entry: &#39;./src/index.js&#39;,
+  output: {
+    path: path.resolve(__dirname, &#39;dist&#39;),
+    filename: &#39;[name].[contenthash].js&#39;,
+    chunkFilename: &#39;[name].[contenthash].chunk.js&#39;,
+    clean: true,
+    publicPath: &#39;/&#39;
+  },
+  
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true,
+            drop_debugger: true
+          }
+        }
+      }),
+      new CssMinimizerPlugin()
+    ],
+    
+    splitChunks: {
+      chunks: &#39;all&#39;,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: &#39;vendors&#39;,
+          chunks: &#39;all&#39;,
+          priority: 10
+        },
+        common: {
+          name: &#39;common&#39;,
+          minChunks: 2,
+          chunks: &#39;all&#39;,
+          priority: 5
+        }
+      }
+    },
+    
+    runtimeChunk: &#39;single&#39;
+  },
+  
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: &#39;public/index.html&#39;,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
+      }
+    }),
+    
+    new MiniCssExtractPlugin({
+      filename: &#39;[name].[contenthash].css&#39;,
+      chunkFilename: &#39;[id].[contenthash].css&#39;
+    })
+  ],
+  
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: &#39;babel-loader&#39;,
+          options: {
+            presets: [&#39;@babel/preset-env&#39;, &#39;@babel/preset-react&#39;]
+          }
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, &#39;css-loader&#39;]
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: &#39;asset/resource&#39;,
+        generator: {
+          filename: &#39;images/[name].[contenthash][ext]&#39;
+        }
+      }
+    ]
+  }
+}
+</code></pre>
+<h3>Vite构建配置</h3>
+<pre><code class="language-javascript">// vite.config.js
+import { defineConfig } from &#39;vite&#39;
+import react from &#39;@vitejs/plugin-react&#39;
+import { resolve } from &#39;path&#39;
+
+export default defineConfig({
+  plugins: [react()],
+  
+  build: {
+    outDir: &#39;dist&#39;,
+    assetsDir: &#39;assets&#39;,
+    sourcemap: false,
+    minify: &#39;terser&#39;,
+    
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
+    
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: [&#39;react&#39;, &#39;react-dom&#39;],
+          router: [&#39;react-router-dom&#39;],
+          ui: [&#39;antd&#39;, &#39;@ant-design/icons&#39;]
+        }
+      }
+    },
+    
+    chunkSizeWarningLimit: 1600
+  },
+  
+  resolve: {
+    alias: {
+      &#39;@&#39;: resolve(__dirname, &#39;src&#39;)
+    }
+  }
+})
+</code></pre>
+<h2>环境配置</h2>
+<h3>环境变量管理</h3>
+<pre><code class="language-javascript">// .env.production
+REACT_APP_API_URL=https://api.example.com
+REACT_APP_CDN_URL=https://cdn.example.com
+REACT_APP_ENV=production
+REACT_APP_SENTRY_DSN=https://xxx@sentry.io/xxx
+REACT_APP_GOOGLE_ANALYTICS_ID=GA-XXXXX-X
+</code></pre>
+<pre><code class="language-javascript">// src/config/index.js
+const config = {
+  development: {
+    apiUrl: &#39;http://localhost:3000/api&#39;,
+    cdnUrl: &#39;http://localhost:3000&#39;,
+    enableLogging: true,
+    enableMocking: true
+  },
+  
+  production: {
+    apiUrl: process.env.REACT_APP_API_URL,
+    cdnUrl: process.env.REACT_APP_CDN_URL,
+    enableLogging: false,
+    enableMocking: false,
+    sentryDsn: process.env.REACT_APP_SENTRY_DSN,
+    googleAnalyticsId: process.env.REACT_APP_GOOGLE_ANALYTICS_ID
+  }
+}
+
+const currentConfig = config[process.env.NODE_ENV || &#39;development&#39;]
+
+export default currentConfig
+</code></pre>
+<pre><code class="language-javascript">// src/services/api.js
+import config from &#39;../config&#39;
+
+const api = {
+  baseURL: config.apiUrl,
+  
+  request: async (url, options = {}) =&gt; {
+    const response = await fetch(`${api.baseURL}${url}`, {
+      ...options,
+      headers: {
+        &#39;Content-Type&#39;: &#39;application/json&#39;,
+        ...options.headers
+      }
+    })
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    
+    return response.json()
+  }
+}
+
+export default api
+</code></pre>
+<h2>性能优化</h2>
+<h3>代码分割优化</h3>
+<pre><code class="language-javascript">// src/utils/loadable.js
+import { lazy, Suspense } from &#39;react&#39;
+
+export const loadable = (importFunc, fallback = &lt;div&gt;Loading...&lt;/div&gt;) =&gt; {
+  const LazyComponent = lazy(importFunc)
+  
+  return (props) =&gt; (
+    &lt;Suspense fallback={fallback}&gt;
+      &lt;LazyComponent {...props} /&gt;
+    &lt;/Suspense&gt;
+  )
+}
+
+// 使用示例
+export const HomePage = loadable(() =&gt; import(&#39;../pages/Home&#39;))
+export const AboutPage = loadable(() =&gt; import(&#39;../pages/About&#39;))
+</code></pre>
+<h3>资源预加载</h3>
+<pre><code class="language-javascript">// src/utils/preload.js
+export const preloadRoute = (routeComponent) =&gt; {
+  const componentImport = routeComponent()
+  return componentImport
+}
+
+// 在路由组件中使用
+const routes = [
+  {
+    path: &#39;/&#39;,
+    component: HomePage
+  },
+  {
+    path: &#39;/about&#39;,
+    component: AboutPage
+  }
+]
+
+// 预加载关键路由
+const preloadCriticalRoutes = () =&gt; {
+  import(&#39;../pages/Home&#39;)
+  import(&#39;../pages/About&#39;)
+}
+
+// 在应用启动时预加载
+if (process.env.NODE_ENV === &#39;production&#39;) {
+  preloadCriticalRoutes()
+}
+</code></pre>
+<h3>图片优化</h3>
+<pre><code class="language-javascript">// src/components/OptimizedImage.jsx
+import React, { useState, useRef, useEffect } from &#39;react&#39;
+
+function OptimizedImage({ src, alt, className, ...props }) {
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [isInView, setIsInView] = useState(false)
+  const imgRef = useRef()
+
+  useEffect(() =&gt; {
+    const observer = new IntersectionObserver(
+      ([entry]) =&gt; {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current)
+    }
+
+    return () =&gt; observer.disconnect()
+  }, [])
+
+  return (
+    &lt;div ref={imgRef} className={className}&gt;
+      {isInView &amp;&amp; (
+        &lt;img
+          src={src}
+          alt={alt}
+          onLoad={() =&gt; setIsLoaded(true)}
+          style={{
+            opacity: isLoaded ? 1 : 0,
+            transition: &#39;opacity 0.3s ease&#39;
+          }}
+          {...props}
+        /&gt;
+      )}
+    &lt;/div&gt;
+  )
+}
+
+export default OptimizedImage
+</code></pre>
+<h2>部署策略</h2>
+<h3>静态网站部署</h3>
+<pre><code class="language-bash"># 使用 Netlify
+npm run build
+# 将 dist 文件夹上传到 Netlify
+
+# 使用 Vercel
+npm install -g vercel
+vercel --prod
+
+# 使用 GitHub Pages
+npm install --save-dev gh-pages
+</code></pre>
+<pre><code class="language-javascript">// package.json
+{
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;react-scripts build&quot;,
+    &quot;deploy&quot;: &quot;gh-pages -d build&quot;,
+    &quot;predeploy&quot;: &quot;npm run build&quot;
+  }
+}
+</code></pre>
+<h3>Docker部署</h3>
+<pre><code class="language-dockerfile"># Dockerfile
+FROM node:18-alpine as builder
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 80
+CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
+</code></pre>
+<pre><code class="language-nginx"># nginx.conf
+events {
+    worker_connections 1024;
+}
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    server {
+        listen 80;
+        server_name localhost;
+        root /usr/share/nginx/html;
+        index index.html;
+
+        # 启用 gzip 压缩
+        gzip on;
+        gzip_vary on;
+        gzip_min_length 1024;
+        gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+        # 缓存静态资源
+        location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {
+            expires 1y;
+            add_header Cache-Control &quot;public, immutable&quot;;
+        }
+
+        # React Router 支持
+        location / {
+            try_files $uri $uri/ /index.html;
+        }
+
+        # 安全头
+        add_header X-Frame-Options &quot;SAMEORIGIN&quot; always;
+        add_header X-Content-Type-Options &quot;nosniff&quot; always;
+        add_header X-XSS-Protection &quot;1; mode=block&quot; always;
+    }
+}
+</code></pre>
+<h3>AWS S3 + CloudFront部署</h3>
+<pre><code class="language-bash"># 安装 AWS CLI
+npm install -g aws-cli
+
+# 配置 AWS 凭证
+aws configure
+
+# 构建并部署
+npm run build
+aws s3 sync build/ s3://your-bucket-name --delete
+aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths &quot;/*&quot;
+</code></pre>
+<pre><code class="language-javascript">// deploy.js
+const AWS = require(&#39;aws-sdk&#39;)
+const fs = require(&#39;fs&#39;)
+const path = require(&#39;path&#39;)
+const mime = require(&#39;mime-types&#39;)
+
+const s3 = new AWS.S3({
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: process.env.AWS_REGION
+})
+
+const bucketName = process.env.S3_BUCKET_NAME
+const buildDir = path.join(__dirname, &#39;build&#39;)
+
+async function uploadDir(dir) {
+  const files = fs.readdirSync(dir)
+  
+  for (const file of files) {
+    const filePath = path.join(dir, file)
+    const stat = fs.statSync(filePath)
+    
+    if (stat.isDirectory()) {
+      await uploadDir(filePath)
+    } else {
+      const key = path.relative(buildDir, filePath).replace(/\\/g, &#39;/&#39;)
+      const body = fs.readFileSync(filePath)
+      const contentType = mime.lookup(filePath) || &#39;application/octet-stream&#39;
+      
+      await s3.upload({
+        Bucket: bucketName,
+        Key: key,
+        Body: body,
+        ContentType: contentType,
+        CacheControl: key.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg)$/) 
+          ? &#39;max-age=31536000&#39; 
+          : &#39;max-age=0&#39;
+      }).promise()
+      
+      console.log(`Uploaded: ${key}`)
+    }
+  }
+}
+
+uploadDir(buildDir)
+  .then(() =&gt; console.log(&#39;部署完成&#39;))
+  .catch(console.error)
+</code></pre>
+<h2>CI/CD配置</h2>
+<h3>GitHub Actions</h3>
+<pre><code class="language-yaml"># .github/workflows/deploy.yml
+name: Deploy to Production
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: &#39;18&#39;
+        cache: &#39;npm&#39;
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run tests
+      run: npm test -- --coverage --watchAll=false
+    
+    - name: Run linting
+      run: npm run lint
+    
+    - name: Build
+      run: npm run build
+      env:
+        REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+        REACT_APP_SENTRY_DSN: ${{ secrets.REACT_APP_SENTRY_DSN }}
+    
+    - name: Deploy to S3
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}
+        S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+      run: |
+        aws s3 sync build/ s3://$S3_BUCKET_NAME --delete
+        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths &quot;/*&quot;
+</code></pre>
+<h3>Jenkins Pipeline</h3>
+<pre><code class="language-groovy">// Jenkinsfile
+pipeline {
+    agent any
+    
+    environment {
+        NODE_VERSION = &#39;18&#39;
+        REACT_APP_API_URL = credentials(&#39;react-app-api-url&#39;)
+        AWS_ACCESS_KEY_ID = credentials(&#39;aws-access-key-id&#39;)
+        AWS_SECRET_ACCESS_KEY = credentials(&#39;aws-secret-access-key&#39;)
+    }
+    
+    stages {
+        stage(&#39;Checkout&#39;) {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage(&#39;Install Dependencies&#39;) {
+            steps {
+                sh &#39;npm ci&#39;
+            }
+        }
+        
+        stage(&#39;Test&#39;) {
+            steps {
+                sh &#39;npm test -- --coverage --watchAll=false&#39;
+            }
+        }
+        
+        stage(&#39;Build&#39;) {
+            steps {
+                sh &#39;npm run build&#39;
+            }
+        }
+        
+        stage(&#39;Deploy&#39;) {
+            steps {
+                sh &#39;&#39;&#39;
+                    aws s3 sync build/ s3://your-bucket-name --delete
+                    aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths &quot;/*&quot;
+                &#39;&#39;&#39;
+            }
+        }
+    }
+    
+    post {
+        always {
+            publishHTML([
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: &#39;coverage/lcov-report&#39;,
+                reportFiles: &#39;index.html&#39;,
+                reportName: &#39;Coverage Report&#39;
+            ])
+        }
+    }
+}
+</code></pre>
+<h2>监控与日志</h2>
+<h3>错误监控 - Sentry</h3>
+<pre><code class="language-javascript">// src/utils/sentry.js
+import * as Sentry from &#39;@sentry/react&#39;
+import { BrowserTracing } from &#39;@sentry/tracing&#39;
+
+export const initSentry = () =&gt; {
+  if (process.env.NODE_ENV === &#39;production&#39;) {
+    Sentry.init({
+      dsn: process.env.REACT_APP_SENTRY_DSN,
+      integrations: [
+        new BrowserTracing()
+      ],
+      tracesSampleRate: 1.0,
+      environment: process.env.NODE_ENV
+    })
+  }
+}
+
+// 错误边界
+export const SentryErrorBoundary = Sentry.withErrorBoundary(
+  ({ children }) =&gt; children,
+  {
+    fallback: ({ error, resetError }) =&gt; (
+      &lt;div className=&quot;error-boundary&quot;&gt;
+        &lt;h2&gt;应用出现错误&lt;/h2&gt;
+        &lt;p&gt;{error.message}&lt;/p&gt;
+        &lt;button onClick={resetError}&gt;重试&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+)
+</code></pre>
+<h3>性能监控</h3>
+<pre><code class="language-javascript">// src/utils/performance.js
+export const measurePerformance = (name, fn) =&gt; {
+  return async (...args) =&gt; {
+    const start = performance.now()
+    const result = await fn(...args)
+    const end = performance.now()
+    
+    console.log(`${name} took ${end - start} milliseconds`)
+    
+    // 发送性能数据到监控服务
+    if (process.env.NODE_ENV === &#39;production&#39;) {
+      sendPerformanceData(name, end - start)
+    }
+    
+    return result
+  }
+}
+
+const sendPerformanceData = (name, duration) =&gt; {
+  fetch(&#39;/api/performance&#39;, {
+    method: &#39;POST&#39;,
+    headers: {
+      &#39;Content-Type&#39;: &#39;application/json&#39;
+    },
+    body: JSON.stringify({
+      name,
+      duration,
+      timestamp: Date.now(),
+      userAgent: navigator.userAgent
+    })
+  })
+}
+
+// 监控 Web Vitals
+export const measureWebVitals = () =&gt; {
+  if (process.env.NODE_ENV === &#39;production&#39;) {
+    import(&#39;web-vitals&#39;).then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) =&gt; {
+      getCLS(sendToAnalytics)
+      getFID(sendToAnalytics)
+      getFCP(sendToAnalytics)
+      getLCP(sendToAnalytics)
+      getTTFB(sendToAnalytics)
+    })
+  }
+}
+
+const sendToAnalytics = (metric) =&gt; {
+  // 发送到 Google Analytics
+  if (window.gtag) {
+    window.gtag(&#39;event&#39;, metric.name, {
+      event_category: &#39;Web Vitals&#39;,
+      event_label: metric.id,
+      value: Math.round(metric.name === &#39;CLS&#39; ? metric.value * 1000 : metric.value),
+      non_interaction: true
+    })
+  }
+}
+</code></pre>
+<h3>用户行为分析</h3>
+<pre><code class="language-javascript">// src/utils/analytics.js
+class Analytics {
+  constructor() {
+    this.userId = null
+    this.sessionId = this.generateSessionId()
+  }
+  
+  init(userId) {
+    this.userId = userId
+    
+    if (process.env.NODE_ENV === &#39;production&#39;) {
+      // 初始化 Google Analytics
+      window.gtag(&#39;config&#39;, process.env.REACT_APP_GOOGLE_ANALYTICS_ID, {
+        user_id: userId
+      })
+    }
+  }
+  
+  trackEvent(eventName, properties = {}) {
+    if (process.env.NODE_ENV === &#39;production&#39;) {
+      window.gtag(&#39;event&#39;, eventName, {
+        ...properties,
+        user_id: this.userId,
+        session_id: this.sessionId
+      })
+    }
+    
+    console.log(&#39;Event tracked:&#39;, eventName, properties)
+  }
+  
+  trackPageView(path) {
+    if (process.env.NODE_ENV === &#39;production&#39;) {
+      window.gtag(&#39;config&#39;, process.env.REACT_APP_GOOGLE_ANALYTICS_ID, {
+        page_path: path
+      })
+    }
+    
+    console.log(&#39;Page view tracked:&#39;, path)
+  }
+  
+  generateSessionId() {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2)
+  }
+}
+
+export default new Analytics()
+</code></pre>
+<h2>安全配置</h2>
+<h3>内容安全策略 (CSP)</h3>
+<pre><code class="language-html">&lt;!-- public/index.html --&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;
+  default-src &#39;self&#39;;
+  script-src &#39;self&#39; &#39;unsafe-inline&#39; https://www.googletagmanager.com;
+  style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com;
+  img-src &#39;self&#39; data: https:;
+  font-src &#39;self&#39; https://fonts.gstatic.com;
+  connect-src &#39;self&#39; https://api.example.com;
+&quot;&gt;
+</code></pre>
+<h3>环境变量安全</h3>
+<pre><code class="language-javascript">// src/utils/security.js
+export const sanitizeConfig = (config) =&gt; {
+  const allowedKeys = [
+    &#39;apiUrl&#39;,
+    &#39;cdnUrl&#39;,
+    &#39;googleAnalyticsId&#39;
+  ]
+  
+  return Object.keys(config)
+    .filter(key =&gt; allowedKeys.includes(key))
+    .reduce((obj, key) =&gt; {
+      obj[key] = config[key]
+      return obj
+    }, {})
+}
+
+// 不要在客户端暴露敏感信息
+export const getPublicConfig = () =&gt; {
+  return sanitizeConfig({
+    apiUrl: process.env.REACT_APP_API_URL,
+    cdnUrl: process.env.REACT_APP_CDN_URL,
+    googleAnalyticsId: process.env.REACT_APP_GOOGLE_ANALYTICS_ID
+  })
+}
+</code></pre>
+<h2>缓存策略</h2>
+<h3>浏览器缓存</h3>
+<pre><code class="language-javascript">// src/utils/cache.js
+export const getCacheHeaders = (fileType) =&gt; {
+  const cacheHeaders = {
+    &#39;js&#39;: &#39;max-age=31536000, immutable&#39;,
+    &#39;css&#39;: &#39;max-age=31536000, immutable&#39;,
+    &#39;html&#39;: &#39;max-age=0, must-revalidate&#39;,
+    &#39;images&#39;: &#39;max-age=2592000&#39;
+  }
+  
+  return cacheHeaders[fileType] || &#39;max-age=86400&#39;
+}
+
+// Service Worker 缓存
+export const registerServiceWorker = () =&gt; {
+  if (&#39;serviceWorker&#39; in navigator &amp;&amp; process.env.NODE_ENV === &#39;production&#39;) {
+    navigator.serviceWorker.register(&#39;/sw.js&#39;)
+      .then(registration =&gt; {
+        console.log(&#39;SW registered: &#39;, registration)
+      })
+      .catch(registrationError =&gt; {
+        console.log(&#39;SW registration failed: &#39;, registrationError)
+      })
+  }
+}
+</code></pre>
+<pre><code class="language-javascript">// public/sw.js
+const CACHE_NAME = &#39;my-app-v1&#39;
+const urlsToCache = [
+  &#39;/&#39;,
+  &#39;/static/js/bundle.js&#39;,
+  &#39;/static/css/main.css&#39;
+]
+
+self.addEventListener(&#39;install&#39;, event =&gt; {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache =&gt; cache.addAll(urlsToCache))
+  )
+})
+
+self.addEventListener(&#39;fetch&#39;, event =&gt; {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response =&gt; {
+        if (response) {
+          return response
+        }
+        return fetch(event.request)
+      })
+  )
+})
+</code></pre>
+<h2>部署最佳实践</h2>
+<h3>1. 渐进式部署</h3>
+<pre><code class="language-javascript">// 蓝绿部署示例
+const deploymentStrategy = {
+  type: &#39;blue-green&#39;,
+  healthCheck: &#39;/health&#39;,
+  rollbackThreshold: 5, // 5% 错误率触发回滚
+  
+  deploy: async (newVersion) =&gt; {
+    // 部署到绿色环境
+    await deployToGreen(newVersion)
+    
+    // 健康检查
+    const isHealthy = await performHealthCheck()
+    if (!isHealthy) {
+      throw new Error(&#39;健康检查失败&#39;)
+    }
+    
+    // 切换流量
+    await switchTraffic(&#39;green&#39;)
+    
+    // 监控指标
+    await monitorMetrics()
+  }
+}
+</code></pre>
+<h3>2. 版本管理</h3>
+<pre><code class="language-javascript">// src/utils/version.js
+export const getVersion = () =&gt; {
+  return {
+    version: process.env.REACT_APP_VERSION || &#39;unknown&#39;,
+    buildTime: process.env.REACT_APP_BUILD_TIME || &#39;unknown&#39;,
+    gitHash: process.env.REACT_APP_GIT_HASH || &#39;unknown&#39;
+  }
+}
+
+// 显示版本信息
+export const VersionInfo = () =&gt; {
+  const version = getVersion()
+  
+  return (
+    &lt;div className=&quot;version-info&quot;&gt;
+      &lt;p&gt;版本: {version.version}&lt;/p&gt;
+      &lt;p&gt;构建时间: {version.buildTime}&lt;/p&gt;
+      &lt;p&gt;Git哈希: {version.gitHash}&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+<h3>3. 健康检查</h3>
+<pre><code class="language-javascript">// src/utils/health.js
+export const healthCheck = async () =&gt; {
+  const checks = [
+    checkAPI,
+    checkDependencies,
+    checkPerformance
+  ]
+  
+  const results = await Promise.allSettled(checks.map(check =&gt; check()))
+  
+  const isHealthy = results.every(result =&gt; result.status === &#39;fulfilled&#39;)
+  
+  return {
+    healthy: isHealthy,
+    checks: results.map((result, index) =&gt; ({
+      name: checks[index].name,
+      status: result.status,
+      message: result.reason?.message || &#39;OK&#39;
+    }))
+  }
+}
+
+const checkAPI = async () =&gt; {
+  const response = await fetch(&#39;/api/health&#39;)
+  if (!response.ok) {
+    throw new Error(&#39;API健康检查失败&#39;)
+  }
+}
+
+const checkDependencies = async () =&gt; {
+  // 检查关键依赖是否可用
+  if (!window.fetch) {
+    throw new Error(&#39;Fetch API不可用&#39;)
+  }
+}
+
+const checkPerformance = async () =&gt; {
+  if (performance.now() &gt; 10000) {
+    throw new Error(&#39;页面加载时间过长&#39;)
+  }
+}
+</code></pre>
+<h2>总结</h2>
+<p>生产部署是一个复杂的过程，需要考虑多个方面：</p>
+<ol>
+<li><strong>构建优化</strong> - 代码压缩、资源优化、缓存策略</li>
+<li><strong>环境配置</strong> - 环境变量、API配置、安全设置</li>
+<li><strong>部署策略</strong> - 自动化部署、版本管理、回滚机制</li>
+<li><strong>监控体系</strong> - 错误监控、性能监控、用户行为分析</li>
+<li><strong>安全防护</strong> - CSP配置、数据加密、权限控制</li>
+</ol>
+<p>通过完善的部署流程和监控体系，可以确保React应用在生产环境中稳定、高效地运行。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="29-项目构建.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">项目构建</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="31-开发者工具.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">开发者工具</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

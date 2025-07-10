@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>useMemo和useCallback - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">useMemo和useCallback</span>
+            </div>
+            <h1 class="doc-title">useMemo和useCallback</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #4facfe">
+                🎣 Hooks API
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>14-useMemo和useCallback</h1>
+<p><code>useMemo</code> 和 <code>useCallback</code> 是React中用于性能优化的重要Hooks。它们通过缓存计算结果和函数来避免不必要的重新计算和重新渲染。</p>
+<h2>useMemo</h2>
+<h3>基础概念</h3>
+<p><code>useMemo</code> 返回一个记忆化的值，只有在依赖项改变时才会重新计算。</p>
+<pre><code class="language-jsx">import React, { useMemo, useState } from &#39;react&#39;;
+
+function ExpensiveComponent({ items, multiplier }) {
+  // 昂贵的计算
+  const expensiveValue = useMemo(() =&gt; {
+    console.log(&#39;正在进行昂贵的计算...&#39;);
+    return items.reduce((sum, item) =&gt; sum + item * multiplier, 0);
+  }, [items, multiplier]); // 依赖项数组
+
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;计算结果: {expensiveValue}&lt;/h3&gt;
+    &lt;/div&gt;
+  );
+}
+
+function App() {
+  const [items, setItems] = useState([1, 2, 3, 4, 5]);
+  const [multiplier, setMultiplier] = useState(1);
+  const [count, setCount] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;ExpensiveComponent items={items} multiplier={multiplier} /&gt;
+      
+      {/* 这个按钮点击不会触发昂贵计算的重新执行 */}
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Count: {count}
+      &lt;/button&gt;
+      
+      {/* 这些按钮会触发重新计算 */}
+      &lt;button onClick={() =&gt; setMultiplier(multiplier + 1)}&gt;
+        增加倍数: {multiplier}
+      &lt;/button&gt;
+      
+      &lt;button onClick={() =&gt; setItems([...items, items.length + 1])}&gt;
+        添加项目
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>复杂计算缓存</h3>
+<pre><code class="language-jsx">function DataAnalytics({ data, filters, sortBy }) {
+  // 过滤数据
+  const filteredData = useMemo(() =&gt; {
+    console.log(&#39;过滤数据...&#39;);
+    return data.filter(item =&gt; {
+      return Object.keys(filters).every(key =&gt; {
+        if (!filters[key]) return true;
+        return String(item[key]).toLowerCase().includes(
+          String(filters[key]).toLowerCase()
+        );
+      });
+    });
+  }, [data, filters]);
+
+  // 排序数据
+  const sortedData = useMemo(() =&gt; {
+    console.log(&#39;排序数据...&#39;);
+    if (!sortBy) return filteredData;
+    
+    return [...filteredData].sort((a, b) =&gt; {
+      const aValue = a[sortBy];
+      const bValue = b[sortBy];
+      
+      if (typeof aValue === &#39;string&#39;) {
+        return aValue.localeCompare(bValue);
+      }
+      return aValue - bValue;
+    });
+  }, [filteredData, sortBy]);
+
+  // 统计信息
+  const statistics = useMemo(() =&gt; {
+    console.log(&#39;计算统计信息...&#39;);
+    return {
+      total: sortedData.length,
+      average: sortedData.reduce((sum, item) =&gt; sum + item.value, 0) / sortedData.length,
+      max: Math.max(...sortedData.map(item =&gt; item.value)),
+      min: Math.min(...sortedData.map(item =&gt; item.value))
+    };
+  }, [sortedData]);
+
+  return (
+    &lt;div&gt;
+      &lt;div className=&quot;statistics&quot;&gt;
+        &lt;p&gt;总数: {statistics.total}&lt;/p&gt;
+        &lt;p&gt;平均值: {statistics.average.toFixed(2)}&lt;/p&gt;
+        &lt;p&gt;最大值: {statistics.max}&lt;/p&gt;
+        &lt;p&gt;最小值: {statistics.min}&lt;/p&gt;
+      &lt;/div&gt;
+      
+      &lt;div className=&quot;data-list&quot;&gt;
+        {sortedData.map(item =&gt; (
+          &lt;div key={item.id} className=&quot;data-item&quot;&gt;
+            &lt;span&gt;{item.name}&lt;/span&gt;
+            &lt;span&gt;{item.value}&lt;/span&gt;
+          &lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>对象和数组的缓存</h3>
+<pre><code class="language-jsx">function UserProfile({ userId }) {
+  const [userData, setUserData] = useState(null);
+  const [preferences, setPreferences] = useState({});
+
+  // 缓存用户配置对象
+  const userConfig = useMemo(() =&gt; ({
+    theme: preferences.theme || &#39;light&#39;,
+    language: preferences.language || &#39;zh&#39;,
+    notifications: preferences.notifications !== false,
+    layout: preferences.layout || &#39;grid&#39;
+  }), [preferences]);
+
+  // 缓存格式化的用户数据
+  const formattedUserData = useMemo(() =&gt; {
+    if (!userData) return null;
+    
+    return {
+      ...userData,
+      fullName: `${userData.firstName} ${userData.lastName}`,
+      joinedDate: new Date(userData.createdAt).toLocaleDateString(),
+      isActive: userData.lastLoginAt &gt; Date.now() - 30 * 24 * 60 * 60 * 1000
+    };
+  }, [userData]);
+
+  // 缓存菜单项
+  const menuItems = useMemo(() =&gt; [
+    { id: &#39;profile&#39;, label: &#39;个人资料&#39;, icon: &#39;👤&#39; },
+    { id: &#39;settings&#39;, label: &#39;设置&#39;, icon: &#39;⚙️&#39; },
+    { id: &#39;help&#39;, label: &#39;帮助&#39;, icon: &#39;❓&#39; },
+    ...(userConfig.notifications ? [
+      { id: &#39;notifications&#39;, label: &#39;通知&#39;, icon: &#39;🔔&#39; }
+    ] : [])
+  ], [userConfig.notifications]);
+
+  return (
+    &lt;div className={`user-profile theme-${userConfig.theme}`}&gt;
+      {formattedUserData &amp;&amp; (
+        &lt;div className=&quot;user-info&quot;&gt;
+          &lt;h2&gt;{formattedUserData.fullName}&lt;/h2&gt;
+          &lt;p&gt;加入时间: {formattedUserData.joinedDate}&lt;/p&gt;
+          &lt;span className={`status ${formattedUserData.isActive ? &#39;active&#39; : &#39;inactive&#39;}`}&gt;
+            {formattedUserData.isActive ? &#39;活跃&#39; : &#39;非活跃&#39;}
+          &lt;/span&gt;
+        &lt;/div&gt;
+      )}
+      
+      &lt;nav className=&quot;user-menu&quot;&gt;
+        {menuItems.map(item =&gt; (
+          &lt;button key={item.id} className=&quot;menu-item&quot;&gt;
+            &lt;span&gt;{item.icon}&lt;/span&gt;
+            &lt;span&gt;{item.label}&lt;/span&gt;
+          &lt;/button&gt;
+        ))}
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>useCallback</h2>
+<h3>基础概念</h3>
+<p><code>useCallback</code> 返回一个记忆化的回调函数，只有在依赖项改变时才会返回新的函数。</p>
+<pre><code class="language-jsx">function TodoList({ todos, onToggle, onDelete }) {
+  const [filter, setFilter] = useState(&#39;all&#39;);
+
+  // 缓存过滤函数
+  const handleFilterChange = useCallback((newFilter) =&gt; {
+    setFilter(newFilter);
+  }, []);
+
+  // 缓存切换完成状态的函数
+  const handleToggle = useCallback((id) =&gt; {
+    onToggle(id);
+  }, [onToggle]);
+
+  // 缓存删除函数
+  const handleDelete = useCallback((id) =&gt; {
+    onDelete(id);
+  }, [onDelete]);
+
+  const filteredTodos = useMemo(() =&gt; {
+    switch (filter) {
+      case &#39;active&#39;:
+        return todos.filter(todo =&gt; !todo.completed);
+      case &#39;completed&#39;:
+        return todos.filter(todo =&gt; todo.completed);
+      default:
+        return todos;
+    }
+  }, [todos, filter]);
+
+  return (
+    &lt;div&gt;
+      &lt;FilterButtons 
+        currentFilter={filter}
+        onFilterChange={handleFilterChange}
+      /&gt;
+      
+      &lt;ul&gt;
+        {filteredTodos.map(todo =&gt; (
+          &lt;TodoItem
+            key={todo.id}
+            todo={todo}
+            onToggle={handleToggle}
+            onDelete={handleDelete}
+          /&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 使用React.memo优化的子组件
+const TodoItem = React.memo(({ todo, onToggle, onDelete }) =&gt; {
+  console.log(`TodoItem ${todo.id} 重新渲染`);
+  
+  return (
+    &lt;li className={todo.completed ? &#39;completed&#39; : &#39;&#39;}&gt;
+      &lt;span&gt;{todo.text}&lt;/span&gt;
+      &lt;button onClick={() =&gt; onToggle(todo.id)}&gt;
+        {todo.completed ? &#39;取消完成&#39; : &#39;完成&#39;}
+      &lt;/button&gt;
+      &lt;button onClick={() =&gt; onDelete(todo.id)}&gt;
+        删除
+      &lt;/button&gt;
+    &lt;/li&gt;
+  );
+});
+
+const FilterButtons = React.memo(({ currentFilter, onFilterChange }) =&gt; {
+  console.log(&#39;FilterButtons 重新渲染&#39;);
+  
+  const filters = [&#39;all&#39;, &#39;active&#39;, &#39;completed&#39;];
+  const filterLabels = { all: &#39;全部&#39;, active: &#39;未完成&#39;, completed: &#39;已完成&#39; };
+
+  return (
+    &lt;div className=&quot;filter-buttons&quot;&gt;
+      {filters.map(filter =&gt; (
+        &lt;button
+          key={filter}
+          className={currentFilter === filter ? &#39;active&#39; : &#39;&#39;}
+          onClick={() =&gt; onFilterChange(filter)}
+        &gt;
+          {filterLabels[filter]}
+        &lt;/button&gt;
+      ))}
+    &lt;/div&gt;
+  );
+});
+</code></pre>
+<h3>事件处理函数优化</h3>
+<pre><code class="language-jsx">function UserForm({ initialData, onSubmit }) {
+  const [formData, setFormData] = useState(initialData || {});
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // 缓存字段更新函数
+  const handleFieldChange = useCallback((fieldName, value) =&gt; {
+    setFormData(prev =&gt; ({
+      ...prev,
+      [fieldName]: value
+    }));
+    
+    // 清除该字段的错误
+    if (errors[fieldName]) {
+      setErrors(prev =&gt; ({
+        ...prev,
+        [fieldName]: null
+      }));
+    }
+  }, [errors]);
+
+  // 缓存验证函数
+  const validateField = useCallback((fieldName, value) =&gt; {
+    const validationRules = {
+      name: (val) =&gt; val?.length &gt;= 2 ? null : &#39;姓名至少需要2个字符&#39;,
+      email: (val) =&gt; /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val) ? null : &#39;请输入有效的邮箱地址&#39;,
+      age: (val) =&gt; val &gt;= 18 ? null : &#39;年龄必须大于等于18岁&#39;
+    };
+
+    const rule = validationRules[fieldName];
+    return rule ? rule(value) : null;
+  }, []);
+
+  // 缓存表单提交函数
+  const handleSubmit = useCallback(async (e) =&gt; {
+    e.preventDefault();
+    
+    // 验证所有字段
+    const newErrors = {};
+    Object.keys(formData).forEach(fieldName =&gt; {
+      const error = validateField(fieldName, formData[fieldName]);
+      if (error) {
+        newErrors[fieldName] = error;
+      }
+    });
+
+    if (Object.keys(newErrors).length &gt; 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await onSubmit(formData);
+    } catch (error) {
+      setErrors({ general: &#39;提交失败，请重试&#39; });
+    } finally {
+      setIsSubmitting(false);
+    }
+  }, [formData, validateField, onSubmit]);
+
+  // 缓存重置函数
+  const handleReset = useCallback(() =&gt; {
+    setFormData(initialData || {});
+    setErrors({});
+  }, [initialData]);
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;FormField
+        name=&quot;name&quot;
+        label=&quot;姓名&quot;
+        value={formData.name || &#39;&#39;}
+        error={errors.name}
+        onChange={handleFieldChange}
+        onValidate={validateField}
+      /&gt;
+      
+      &lt;FormField
+        name=&quot;email&quot;
+        label=&quot;邮箱&quot;
+        type=&quot;email&quot;
+        value={formData.email || &#39;&#39;}
+        error={errors.email}
+        onChange={handleFieldChange}
+        onValidate={validateField}
+      /&gt;
+      
+      &lt;FormField
+        name=&quot;age&quot;
+        label=&quot;年龄&quot;
+        type=&quot;number&quot;
+        value={formData.age || &#39;&#39;}
+        error={errors.age}
+        onChange={handleFieldChange}
+        onValidate={validateField}
+      /&gt;
+
+      {errors.general &amp;&amp; (
+        &lt;div className=&quot;error&quot;&gt;{errors.general}&lt;/div&gt;
+      )}
+
+      &lt;div className=&quot;form-actions&quot;&gt;
+        &lt;button type=&quot;submit&quot; disabled={isSubmitting}&gt;
+          {isSubmitting ? &#39;提交中...&#39; : &#39;提交&#39;}
+        &lt;/button&gt;
+        &lt;button type=&quot;button&quot; onClick={handleReset}&gt;
+          重置
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  );
+}
+
+const FormField = React.memo(({ 
+  name, 
+  label, 
+  type = &#39;text&#39;, 
+  value, 
+  error, 
+  onChange, 
+  onValidate 
+}) =&gt; {
+  console.log(`FormField ${name} 重新渲染`);
+
+  const handleChange = useCallback((e) =&gt; {
+    const newValue = type === &#39;number&#39; ? Number(e.target.value) : e.target.value;
+    onChange(name, newValue);
+  }, [name, type, onChange]);
+
+  const handleBlur = useCallback(() =&gt; {
+    const validationError = onValidate(name, value);
+    if (validationError) {
+      // 这里可以设置字段级别的错误
+    }
+  }, [name, value, onValidate]);
+
+  return (
+    &lt;div className=&quot;form-field&quot;&gt;
+      &lt;label htmlFor={name}&gt;{label}&lt;/label&gt;
+      &lt;input
+        id={name}
+        type={type}
+        value={value}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        className={error ? &#39;error&#39; : &#39;&#39;}
+      /&gt;
+      {error &amp;&amp; &lt;span className=&quot;error-message&quot;&gt;{error}&lt;/span&gt;}
+    &lt;/div&gt;
+  );
+});
+</code></pre>
+<h2>组合使用</h2>
+<h3>数据获取和缓存</h3>
+<pre><code class="language-jsx">function DataVisualization({ endpoint, filters, refreshInterval }) {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  // 缓存API调用函数
+  const fetchData = useCallback(async () =&gt; {
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const queryParams = new URLSearchParams(filters).toString();
+      const url = `${endpoint}?${queryParams}`;
+      const response = await fetch(url);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const result = await response.json();
+      setData(result);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }, [endpoint, filters]);
+
+  // 自动刷新
+  useEffect(() =&gt; {
+    fetchData();
+    
+    if (refreshInterval &gt; 0) {
+      const interval = setInterval(fetchData, refreshInterval);
+      return () =&gt; clearInterval(interval);
+    }
+  }, [fetchData, refreshInterval]);
+
+  // 缓存图表数据
+  const chartData = useMemo(() =&gt; {
+    if (!data.length) return null;
+    
+    return {
+      labels: data.map(item =&gt; item.label),
+      datasets: [{
+        data: data.map(item =&gt; item.value),
+        backgroundColor: data.map((_, index) =&gt; 
+          `hsl(${(index * 360) / data.length}, 70%, 50%)`
+        )
+      }]
+    };
+  }, [data]);
+
+  // 缓存统计信息
+  const statistics = useMemo(() =&gt; {
+    if (!data.length) return null;
+    
+    const values = data.map(item =&gt; item.value);
+    return {
+      total: values.reduce((sum, val) =&gt; sum + val, 0),
+      average: values.reduce((sum, val) =&gt; sum + val, 0) / values.length,
+      max: Math.max(...values),
+      min: Math.min(...values),
+      count: values.length
+    };
+  }, [data]);
+
+  // 缓存重新获取函数
+  const handleRefresh = useCallback(() =&gt; {
+    fetchData();
+  }, [fetchData]);
+
+  // 缓存导出函数
+  const handleExport = useCallback(() =&gt; {
+    const csvContent = [
+      [&#39;Label&#39;, &#39;Value&#39;],
+      ...data.map(item =&gt; [item.label, item.value])
+    ].map(row =&gt; row.join(&#39;,&#39;)).join(&#39;\n&#39;);
+    
+    const blob = new Blob([csvContent], { type: &#39;text/csv&#39; });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement(&#39;a&#39;);
+    a.href = url;
+    a.download = &#39;data.csv&#39;;
+    a.click();
+    URL.revokeObjectURL(url);
+  }, [data]);
+
+  if (loading) return &lt;div&gt;加载中...&lt;/div&gt;;
+  if (error) return &lt;div&gt;错误: {error}&lt;/div&gt;;
+
+  return (
+    &lt;div className=&quot;data-visualization&quot;&gt;
+      &lt;div className=&quot;controls&quot;&gt;
+        &lt;button onClick={handleRefresh}&gt;刷新&lt;/button&gt;
+        &lt;button onClick={handleExport} disabled={!data.length}&gt;
+          导出CSV
+        &lt;/button&gt;
+      &lt;/div&gt;
+      
+      {statistics &amp;&amp; (
+        &lt;StatisticsPanel statistics={statistics} /&gt;
+      )}
+      
+      {chartData &amp;&amp; (
+        &lt;Chart data={chartData} /&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+
+const StatisticsPanel = React.memo(({ statistics }) =&gt; {
+  console.log(&#39;StatisticsPanel 重新渲染&#39;);
+  
+  return (
+    &lt;div className=&quot;statistics-panel&quot;&gt;
+      &lt;div className=&quot;stat&quot;&gt;
+        &lt;label&gt;总计:&lt;/label&gt;
+        &lt;span&gt;{statistics.total}&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;stat&quot;&gt;
+        &lt;label&gt;平均:&lt;/label&gt;
+        &lt;span&gt;{statistics.average.toFixed(2)}&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;stat&quot;&gt;
+        &lt;label&gt;最大:&lt;/label&gt;
+        &lt;span&gt;{statistics.max}&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;stat&quot;&gt;
+        &lt;label&gt;最小:&lt;/label&gt;
+        &lt;span&gt;{statistics.min}&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div className=&quot;stat&quot;&gt;
+        &lt;label&gt;数量:&lt;/label&gt;
+        &lt;span&gt;{statistics.count}&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+});
+</code></pre>
+<h2>性能对比示例</h2>
+<pre><code class="language-jsx">// 未优化版本
+function UnoptimizedComponent({ items, multiplier }) {
+  const [count, setCount] = useState(0);
+
+  // ❌ 每次渲染都会重新计算
+  const expensiveValue = items.reduce((sum, item) =&gt; {
+    console.log(&#39;计算中...&#39;);
+    return sum + item * multiplier;
+  }, 0);
+
+  // ❌ 每次渲染都会创建新函数
+  const handleClick = () =&gt; {
+    console.log(&#39;点击&#39;);
+  };
+
+  // ❌ 每次渲染都会创建新对象
+  const itemsWithId = items.map(item =&gt; ({
+    id: Math.random(),
+    value: item
+  }));
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;昂贵计算结果: {expensiveValue}&lt;/p&gt;
+      &lt;p&gt;计数: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;增加计数&lt;/button&gt;
+      &lt;ItemList items={itemsWithId} onClick={handleClick} /&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 优化版本
+function OptimizedComponent({ items, multiplier }) {
+  const [count, setCount] = useState(0);
+
+  // ✅ 只在依赖项改变时重新计算
+  const expensiveValue = useMemo(() =&gt; {
+    console.log(&#39;计算中...&#39;);
+    return items.reduce((sum, item) =&gt; sum + item * multiplier, 0);
+  }, [items, multiplier]);
+
+  // ✅ 缓存函数，避免子组件不必要的重新渲染
+  const handleClick = useCallback(() =&gt; {
+    console.log(&#39;点击&#39;);
+  }, []);
+
+  // ✅ 缓存对象数组
+  const itemsWithId = useMemo(() =&gt; 
+    items.map((item, index) =&gt; ({
+      id: index, // 使用稳定的ID
+      value: item
+    })),
+    [items]
+  );
+
+  // ✅ 缓存计数增加函数
+  const incrementCount = useCallback(() =&gt; {
+    setCount(prev =&gt; prev + 1);
+  }, []);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;昂贵计算结果: {expensiveValue}&lt;/p&gt;
+      &lt;p&gt;计数: {count}&lt;/p&gt;
+      &lt;button onClick={incrementCount}&gt;增加计数&lt;/button&gt;
+      &lt;ItemList items={itemsWithId} onClick={handleClick} /&gt;
+    &lt;/div&gt;
+  );
+}
+
+const ItemList = React.memo(({ items, onClick }) =&gt; {
+  console.log(&#39;ItemList 重新渲染&#39;);
+  
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;li key={item.id} onClick={onClick}&gt;
+          {item.value}
+        &lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+});
+</code></pre>
+<h2>常见陷阱和最佳实践</h2>
+<h3>1. 依赖项数组</h3>
+<pre><code class="language-jsx">function Component({ user, settings }) {
+  // ❌ 忘记添加依赖项
+  const userInfo = useMemo(() =&gt; ({
+    name: user.name,
+    theme: settings.theme
+  }), []); // 缺少依赖项
+
+  // ✅ 正确的依赖项
+  const userInfo = useMemo(() =&gt; ({
+    name: user.name,
+    theme: settings.theme
+  }), [user.name, settings.theme]);
+
+  // ❌ 过度依赖
+  const expensiveCalc = useMemo(() =&gt; {
+    return user.scores.reduce((sum, score) =&gt; sum + score, 0);
+  }, [user]); // user对象的任何变化都会重新计算
+
+  // ✅ 精确依赖
+  const expensiveCalc = useMemo(() =&gt; {
+    return user.scores.reduce((sum, score) =&gt; sum + score, 0);
+  }, [user.scores]); // 只有scores变化才重新计算
+}
+</code></pre>
+<h3>2. 过度优化</h3>
+<pre><code class="language-jsx">// ❌ 不必要的useMemo
+function SimpleComponent({ name }) {
+  const greeting = useMemo(() =&gt; `Hello, ${name}!`, [name]);
+  return &lt;div&gt;{greeting}&lt;/div&gt;;
+}
+
+// ✅ 简单计算不需要useMemo
+function SimpleComponent({ name }) {
+  const greeting = `Hello, ${name}!`;
+  return &lt;div&gt;{greeting}&lt;/div&gt;;
+}
+
+// ❌ 不必要的useCallback（没有传递给子组件）
+function Component() {
+  const [count, setCount] = useState(0);
+  
+  const handleClick = useCallback(() =&gt; {
+    setCount(count + 1);
+  }, [count]);
+
+  return &lt;button onClick={handleClick}&gt;Count: {count}&lt;/button&gt;;
+}
+
+// ✅ 简单事件处理不需要useCallback
+function Component() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+      Count: {count}
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<h3>3. 正确使用React.memo</h3>
+<pre><code class="language-jsx">// ✅ 配合useCallback和useMemo使用React.memo
+const ExpensiveChild = React.memo(({ data, onAction }) =&gt; {
+  console.log(&#39;ExpensiveChild 渲染&#39;);
+  
+  return (
+    &lt;div&gt;
+      {data.map(item =&gt; (
+        &lt;div key={item.id} onClick={() =&gt; onAction(item.id)}&gt;
+          {item.name}
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+});
+
+function Parent() {
+  const [count, setCount] = useState(0);
+  const [items, setItems] = useState([
+    { id: 1, name: &#39;Item 1&#39; },
+    { id: 2, name: &#39;Item 2&#39; }
+  ]);
+
+  // 缓存数据
+  const processedItems = useMemo(() =&gt; 
+    items.map(item =&gt; ({
+      ...item,
+      displayName: item.name.toUpperCase()
+    })),
+    [items]
+  );
+
+  // 缓存回调函数
+  const handleAction = useCallback((id) =&gt; {
+    console.log(&#39;Action on item:&#39;, id);
+  }, []);
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;
+        Count: {count}
+      &lt;/button&gt;
+      
+      {/* 由于使用了缓存，这个组件不会因为count变化而重新渲染 */}
+      &lt;ExpensiveChild data={processedItems} onAction={handleAction} /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>性能测试</h2>
+<pre><code class="language-jsx">function PerformanceTest() {
+  const [data, setData] = useState([]);
+  const [filter, setFilter] = useState(&#39;&#39;);
+  const [renderCount, setRenderCount] = useState(0);
+
+  // 生成大量测试数据
+  useEffect(() =&gt; {
+    const testData = Array.from({ length: 10000 }, (_, i) =&gt; ({
+      id: i,
+      name: `Item ${i}`,
+      value: Math.random() * 100,
+      category: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;][i % 3]
+    }));
+    setData(testData);
+  }, []);
+
+  // 跟踪渲染次数
+  useEffect(() =&gt; {
+    setRenderCount(prev =&gt; prev + 1);
+  });
+
+  // 缓存过滤后的数据
+  const filteredData = useMemo(() =&gt; {
+    console.time(&#39;过滤数据&#39;);
+    const result = data.filter(item =&gt; 
+      item.name.toLowerCase().includes(filter.toLowerCase())
+    );
+    console.timeEnd(&#39;过滤数据&#39;);
+    return result;
+  }, [data, filter]);
+
+  // 缓存统计信息
+  const stats = useMemo(() =&gt; {
+    console.time(&#39;计算统计&#39;);
+    const result = {
+      total: filteredData.length,
+      averageValue: filteredData.reduce((sum, item) =&gt; sum + item.value, 0) / filteredData.length || 0,
+      categories: filteredData.reduce((acc, item) =&gt; {
+        acc[item.category] = (acc[item.category] || 0) + 1;
+        return acc;
+      }, {})
+    };
+    console.timeEnd(&#39;计算统计&#39;);
+    return result;
+  }, [filteredData]);
+
+  return (
+    &lt;div&gt;
+      &lt;div className=&quot;performance-info&quot;&gt;
+        &lt;p&gt;渲染次数: {renderCount}&lt;/p&gt;
+        &lt;p&gt;总数据量: {data.length}&lt;/p&gt;
+        &lt;p&gt;过滤后数量: {filteredData.length}&lt;/p&gt;
+      &lt;/div&gt;
+      
+      &lt;input
+        type=&quot;text&quot;
+        placeholder=&quot;搜索...&quot;
+        value={filter}
+        onChange={(e) =&gt; setFilter(e.target.value)}
+      /&gt;
+      
+      &lt;div className=&quot;stats&quot;&gt;
+        &lt;p&gt;平均值: {stats.averageValue.toFixed(2)}&lt;/p&gt;
+        &lt;p&gt;分类统计: {JSON.stringify(stats.categories)}&lt;/p&gt;
+      &lt;/div&gt;
+      
+      &lt;div className=&quot;data-list&quot;&gt;
+        {filteredData.slice(0, 100).map(item =&gt; (
+          &lt;div key={item.id}&gt;
+            {item.name} - {item.value.toFixed(2)}
+          &lt;/div&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>总结</h2>
+<p><code>useMemo</code> 和 <code>useCallback</code> 是强大的性能优化工具：</p>
+<ol>
+<li><p><strong>useMemo</strong>: 缓存计算结果，避免重复的昂贵计算</p>
+</li>
+<li><p><strong>useCallback</strong>: 缓存函数引用，避免子组件不必要的重新渲染</p>
+</li>
+<li><p><strong>最佳实践</strong>: </p>
+<ul>
+<li>只在真正需要时使用</li>
+<li>正确设置依赖项数组</li>
+<li>配合React.memo使用</li>
+<li>测量性能改进效果</li>
+</ul>
+</li>
+<li><p><strong>注意事项</strong>:</p>
+<ul>
+<li>过度优化可能适得其反</li>
+<li>依赖项要准确完整</li>
+<li>缓存本身也有成本</li>
+</ul>
+</li>
+</ol>
+<p>合理使用这些Hooks可以显著提升React应用的性能。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="13-useReducer.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">useReducer</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="15-useRef.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">useRef</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

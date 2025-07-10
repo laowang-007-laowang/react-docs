@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React-Router - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">React-Router</span>
+            </div>
+            <h1 class="doc-title">React-Router</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #ffecd2">
+                🗺️ 路由管理
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>21-React Router</h1>
+<p>React Router 是React应用中最流行的路由库，它允许你构建单页应用（SPA）中的导航和路由功能。</p>
+<h2>安装和基础设置</h2>
+<h3>安装</h3>
+<pre><code class="language-bash">npm install react-router-dom
+# 或
+yarn add react-router-dom
+</code></pre>
+<h3>基础路由设置</h3>
+<pre><code class="language-jsx">import { BrowserRouter, Routes, Route, Link } from &#39;react-router-dom&#39;;
+
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;nav&gt;
+        &lt;Link to=&quot;/&quot;&gt;首页&lt;/Link&gt;
+        &lt;Link to=&quot;/about&quot;&gt;关于&lt;/Link&gt;
+        &lt;Link to=&quot;/contact&quot;&gt;联系&lt;/Link&gt;
+      &lt;/nav&gt;
+      
+      &lt;Routes&gt;
+        &lt;Route path=&quot;/&quot; element={&lt;Home /&gt;} /&gt;
+        &lt;Route path=&quot;/about&quot; element={&lt;About /&gt;} /&gt;
+        &lt;Route path=&quot;/contact&quot; element={&lt;Contact /&gt;} /&gt;
+      &lt;/Routes&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}
+
+function Home() {
+  return &lt;h1&gt;首页&lt;/h1&gt;;
+}
+
+function About() {
+  return &lt;h1&gt;关于我们&lt;/h1&gt;;
+}
+
+function Contact() {
+  return &lt;h1&gt;联系我们&lt;/h1&gt;;
+}
+</code></pre>
+<h2>核心组件</h2>
+<h3>BrowserRouter vs HashRouter</h3>
+<pre><code class="language-jsx">// BrowserRouter - 使用HTML5 history API
+import { BrowserRouter } from &#39;react-router-dom&#39;;
+
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      {/* 路由配置 */}
+    &lt;/BrowserRouter&gt;
+  );
+}
+
+// HashRouter - 使用URL hash
+import { HashRouter } from &#39;react-router-dom&#39;;
+
+function App() {
+  return (
+    &lt;HashRouter&gt;
+      {/* 路由配置 */}
+    &lt;/HashRouter&gt;
+  );
+}
+</code></pre>
+<h3>Routes和Route</h3>
+<pre><code class="language-jsx">function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;Routes&gt;
+        {/* 精确匹配 */}
+        &lt;Route path=&quot;/&quot; element={&lt;Home /&gt;} /&gt;
+        
+        {/* 参数路由 */}
+        &lt;Route path=&quot;/user/:id&quot; element={&lt;UserProfile /&gt;} /&gt;
+        
+        {/* 嵌套路由 */}
+        &lt;Route path=&quot;/dashboard/*&quot; element={&lt;Dashboard /&gt;} /&gt;
+        
+        {/* 404页面 */}
+        &lt;Route path=&quot;*&quot; element={&lt;NotFound /&gt;} /&gt;
+      &lt;/Routes&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}
+</code></pre>
+<h2>导航组件</h2>
+<h3>Link</h3>
+<pre><code class="language-jsx">import { Link } from &#39;react-router-dom&#39;;
+
+function Navigation() {
+  return (
+    &lt;nav&gt;
+      &lt;Link to=&quot;/&quot;&gt;首页&lt;/Link&gt;
+      &lt;Link to=&quot;/about&quot;&gt;关于&lt;/Link&gt;
+      &lt;Link to=&quot;/products/123&quot;&gt;产品详情&lt;/Link&gt;
+      
+      {/* 带状态的链接 */}
+      &lt;Link to=&quot;/profile&quot; state={{ from: &#39;navigation&#39; }}&gt;
+        个人资料
+      &lt;/Link&gt;
+      
+      {/* 替换历史记录 */}
+      &lt;Link to=&quot;/login&quot; replace&gt;
+        登录
+      &lt;/Link&gt;
+    &lt;/nav&gt;
+  );
+}
+</code></pre>
+<h3>NavLink</h3>
+<pre><code class="language-jsx">import { NavLink } from &#39;react-router-dom&#39;;
+
+function Navigation() {
+  return (
+    &lt;nav&gt;
+      &lt;NavLink
+        to=&quot;/&quot;
+        className={({ isActive }) =&gt; 
+          isActive ? &#39;nav-link active&#39; : &#39;nav-link&#39;
+        }
+      &gt;
+        首页
+      &lt;/NavLink&gt;
+      
+      &lt;NavLink
+        to=&quot;/about&quot;
+        style={({ isActive }) =&gt; ({
+          color: isActive ? &#39;#ff6b6b&#39; : &#39;#333&#39;,
+          fontWeight: isActive ? &#39;bold&#39; : &#39;normal&#39;
+        })}
+      &gt;
+        关于
+      &lt;/NavLink&gt;
+    &lt;/nav&gt;
+  );
+}
+</code></pre>
+<h2>路由参数</h2>
+<h3>URL参数</h3>
+<pre><code class="language-jsx">import { useParams } from &#39;react-router-dom&#39;;
+
+function UserProfile() {
+  const { id } = useParams();
+  
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;用户资料&lt;/h1&gt;
+      &lt;p&gt;用户ID: {id}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 路由配置
+&lt;Route path=&quot;/user/:id&quot; element={&lt;UserProfile /&gt;} /&gt;
+
+// 可选参数
+&lt;Route path=&quot;/posts/:id?&quot; element={&lt;Posts /&gt;} /&gt;
+
+// 多个参数
+&lt;Route path=&quot;/category/:categoryId/product/:productId&quot; element={&lt;Product /&gt;} /&gt;
+</code></pre>
+<h3>查询参数</h3>
+<pre><code class="language-jsx">import { useSearchParams } from &#39;react-router-dom&#39;;
+
+function ProductList() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  
+  const category = searchParams.get(&#39;category&#39;);
+  const sort = searchParams.get(&#39;sort&#39;);
+  const page = searchParams.get(&#39;page&#39;) || &#39;1&#39;;
+
+  const handleFilterChange = (newCategory) =&gt; {
+    setSearchParams({
+      category: newCategory,
+      sort: sort || &#39;name&#39;,
+      page: &#39;1&#39;
+    });
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;产品列表&lt;/h1&gt;
+      &lt;p&gt;分类: {category}&lt;/p&gt;
+      &lt;p&gt;排序: {sort}&lt;/p&gt;
+      &lt;p&gt;页码: {page}&lt;/p&gt;
+      
+      &lt;button onClick={() =&gt; handleFilterChange(&#39;electronics&#39;)}&gt;
+        电子产品
+      &lt;/button&gt;
+      &lt;button onClick={() =&gt; handleFilterChange(&#39;books&#39;)}&gt;
+        图书
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>程序式导航</h2>
+<h3>useNavigate</h3>
+<pre><code class="language-jsx">import { useNavigate } from &#39;react-router-dom&#39;;
+
+function LoginForm() {
+  const navigate = useNavigate();
+
+  const handleLogin = async (credentials) =&gt; {
+    try {
+      await login(credentials);
+      // 登录成功后导航
+      navigate(&#39;/dashboard&#39;);
+    } catch (error) {
+      console.error(&#39;登录失败&#39;);
+    }
+  };
+
+  const handleCancel = () =&gt; {
+    // 返回上一页
+    navigate(-1);
+  };
+
+  const handleGoHome = () =&gt; {
+    // 替换当前历史记录
+    navigate(&#39;/&#39;, { replace: true });
+  };
+
+  const handleNavigateWithState = () =&gt; {
+    // 传递状态
+    navigate(&#39;/profile&#39;, { 
+      state: { 
+        from: &#39;login&#39;,
+        timestamp: Date.now()
+      }
+    });
+  };
+
+  return (
+    &lt;form onSubmit={handleLogin}&gt;
+      {/* 表单内容 */}
+      &lt;button type=&quot;submit&quot;&gt;登录&lt;/button&gt;
+      &lt;button type=&quot;button&quot; onClick={handleCancel}&gt;取消&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+</code></pre>
+<h2>嵌套路由</h2>
+<h3>基础嵌套路由</h3>
+<pre><code class="language-jsx">import { Routes, Route, Outlet, Link } from &#39;react-router-dom&#39;;
+
+function Dashboard() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;仪表板&lt;/h1&gt;
+      &lt;nav&gt;
+        &lt;Link to=&quot;profile&quot;&gt;个人资料&lt;/Link&gt;
+        &lt;Link to=&quot;settings&quot;&gt;设置&lt;/Link&gt;
+        &lt;Link to=&quot;analytics&quot;&gt;分析&lt;/Link&gt;
+      &lt;/nav&gt;
+      
+      {/* 子路由渲染位置 */}
+      &lt;Outlet /&gt;
+    &lt;/div&gt;
+  );
+}
+
+function Profile() {
+  return &lt;h2&gt;个人资料页面&lt;/h2&gt;;
+}
+
+function Settings() {
+  return &lt;h2&gt;设置页面&lt;/h2&gt;;
+}
+
+function Analytics() {
+  return &lt;h2&gt;分析页面&lt;/h2&gt;;
+}
+
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;Routes&gt;
+        &lt;Route path=&quot;/&quot; element={&lt;Home /&gt;} /&gt;
+        &lt;Route path=&quot;/dashboard&quot; element={&lt;Dashboard /&gt;}&gt;
+          &lt;Route path=&quot;profile&quot; element={&lt;Profile /&gt;} /&gt;
+          &lt;Route path=&quot;settings&quot; element={&lt;Settings /&gt;} /&gt;
+          &lt;Route path=&quot;analytics&quot; element={&lt;Analytics /&gt;} /&gt;
+        &lt;/Route&gt;
+      &lt;/Routes&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}
+</code></pre>
+<h3>索引路由</h3>
+<pre><code class="language-jsx">function Dashboard() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;仪表板&lt;/h1&gt;
+      &lt;nav&gt;
+        &lt;Link to=&quot;&quot;&gt;概览&lt;/Link&gt;
+        &lt;Link to=&quot;profile&quot;&gt;个人资料&lt;/Link&gt;
+        &lt;Link to=&quot;settings&quot;&gt;设置&lt;/Link&gt;
+      &lt;/nav&gt;
+      &lt;Outlet /&gt;
+    &lt;/div&gt;
+  );
+}
+
+function DashboardOverview() {
+  return &lt;h2&gt;仪表板概览&lt;/h2&gt;;
+}
+
+// 路由配置
+&lt;Route path=&quot;/dashboard&quot; element={&lt;Dashboard /&gt;}&gt;
+  &lt;Route index element={&lt;DashboardOverview /&gt;} /&gt;
+  &lt;Route path=&quot;profile&quot; element={&lt;Profile /&gt;} /&gt;
+  &lt;Route path=&quot;settings&quot; element={&lt;Settings /&gt;} /&gt;
+&lt;/Route&gt;
+</code></pre>
+<h2>路由守卫</h2>
+<h3>私有路由保护</h3>
+<pre><code class="language-jsx">import { Navigate, useLocation } from &#39;react-router-dom&#39;;
+
+function PrivateRoute({ children }) {
+  const isAuthenticated = useAuth(); // 自定义认证Hook
+  const location = useLocation();
+
+  if (!isAuthenticated) {
+    // 重定向到登录页，并保存当前位置
+    return &lt;Navigate to=&quot;/login&quot; state={{ from: location }} replace /&gt;;
+  }
+
+  return children;
+}
+
+// 使用
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;Routes&gt;
+        &lt;Route path=&quot;/login&quot; element={&lt;Login /&gt;} /&gt;
+        &lt;Route path=&quot;/dashboard&quot; element={
+          &lt;PrivateRoute&gt;
+            &lt;Dashboard /&gt;
+          &lt;/PrivateRoute&gt;
+        } /&gt;
+      &lt;/Routes&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}
+</code></pre>
+<h3>角色权限保护</h3>
+<pre><code class="language-jsx">function RoleBasedRoute({ children, requiredRole }) {
+  const { user } = useAuth();
+  const location = useLocation();
+
+  if (!user) {
+    return &lt;Navigate to=&quot;/login&quot; state={{ from: location }} replace /&gt;;
+  }
+
+  if (requiredRole &amp;&amp; !user.roles.includes(requiredRole)) {
+    return &lt;Navigate to=&quot;/unauthorized&quot; replace /&gt;;
+  }
+
+  return children;
+}
+
+// 使用
+&lt;Route path=&quot;/admin&quot; element={
+  &lt;RoleBasedRoute requiredRole=&quot;admin&quot;&gt;
+    &lt;AdminPanel /&gt;
+  &lt;/RoleBasedRoute&gt;
+} /&gt;
+</code></pre>
+<h2>获取路由信息</h2>
+<h3>useLocation</h3>
+<pre><code class="language-jsx">import { useLocation } from &#39;react-router-dom&#39;;
+
+function CurrentLocation() {
+  const location = useLocation();
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;当前路径: {location.pathname}&lt;/p&gt;
+      &lt;p&gt;查询参数: {location.search}&lt;/p&gt;
+      &lt;p&gt;Hash: {location.hash}&lt;/p&gt;
+      &lt;p&gt;状态: {JSON.stringify(location.state)}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>useParams</h3>
+<pre><code class="language-jsx">import { useParams } from &#39;react-router-dom&#39;;
+
+function ProductDetail() {
+  const { categoryId, productId } = useParams();
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;产品详情&lt;/h1&gt;
+      &lt;p&gt;分类ID: {categoryId}&lt;/p&gt;
+      &lt;p&gt;产品ID: {productId}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 路由配置
+&lt;Route path=&quot;/category/:categoryId/product/:productId&quot; element={&lt;ProductDetail /&gt;} /&gt;
+</code></pre>
+<h2>数据加载</h2>
+<h3>Loader函数（React Router v6.4+）</h3>
+<pre><code class="language-jsx">import { createBrowserRouter, useLoaderData } from &#39;react-router-dom&#39;;
+
+// 数据加载函数
+async function productLoader({ params }) {
+  const response = await fetch(`/api/products/${params.productId}`);
+  if (!response.ok) {
+    throw new Response(&#39;Not Found&#39;, { status: 404 });
+  }
+  return response.json();
+}
+
+function ProductDetail() {
+  const product = useLoaderData();
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{product.name}&lt;/h1&gt;
+      &lt;p&gt;{product.description}&lt;/p&gt;
+      &lt;p&gt;价格: ${product.price}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 路由配置
+const router = createBrowserRouter([
+  {
+    path: &quot;/products/:productId&quot;,
+    element: &lt;ProductDetail /&gt;,
+    loader: productLoader
+  }
+]);
+</code></pre>
+<h3>错误边界</h3>
+<pre><code class="language-jsx">import { useRouteError } from &#39;react-router-dom&#39;;
+
+function ErrorBoundary() {
+  const error = useRouteError();
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;出错了！&lt;/h1&gt;
+      &lt;p&gt;{error.statusText || error.message}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 路由配置
+const router = createBrowserRouter([
+  {
+    path: &quot;/products/:productId&quot;,
+    element: &lt;ProductDetail /&gt;,
+    loader: productLoader,
+    errorElement: &lt;ErrorBoundary /&gt;
+  }
+]);
+</code></pre>
+<h2>完整应用示例</h2>
+<pre><code class="language-jsx">import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  Navigate,
+  useNavigate,
+  useLocation
+} from &#39;react-router-dom&#39;;
+
+// 认证上下文
+const AuthContext = createContext();
+
+function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() =&gt; {
+    // 检查用户登录状态
+    checkAuthStatus().then(user =&gt; {
+      setUser(user);
+      setLoading(false);
+    });
+  }, []);
+
+  const login = async (credentials) =&gt; {
+    const user = await loginAPI(credentials);
+    setUser(user);
+    return user;
+  };
+
+  const logout = () =&gt; {
+    setUser(null);
+    logoutAPI();
+  };
+
+  return (
+    &lt;AuthContext.Provider value={{ user, login, logout, loading }}&gt;
+      {children}
+    &lt;/AuthContext.Provider&gt;
+  );
+}
+
+function useAuth() {
+  return useContext(AuthContext);
+}
+
+// 私有路由组件
+function PrivateRoute({ children }) {
+  const { user, loading } = useAuth();
+  const location = useLocation();
+
+  if (loading) {
+    return &lt;div&gt;加载中...&lt;/div&gt;;
+  }
+
+  if (!user) {
+    return &lt;Navigate to=&quot;/login&quot; state={{ from: location }} replace /&gt;;
+  }
+
+  return children;
+}
+
+// 导航组件
+function Navigation() {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () =&gt; {
+    logout();
+    navigate(&#39;/&#39;);
+  };
+
+  return (
+    &lt;nav className=&quot;navbar&quot;&gt;
+      &lt;Link to=&quot;/&quot; className=&quot;logo&quot;&gt;MyApp&lt;/Link&gt;
+      
+      &lt;div className=&quot;nav-links&quot;&gt;
+        &lt;Link to=&quot;/&quot;&gt;首页&lt;/Link&gt;
+        &lt;Link to=&quot;/about&quot;&gt;关于&lt;/Link&gt;
+        
+        {user ? (
+          &lt;&gt;
+            &lt;Link to=&quot;/dashboard&quot;&gt;仪表板&lt;/Link&gt;
+            &lt;Link to=&quot;/profile&quot;&gt;个人资料&lt;/Link&gt;
+            &lt;button onClick={handleLogout}&gt;退出&lt;/button&gt;
+          &lt;/&gt;
+        ) : (
+          &lt;&gt;
+            &lt;Link to=&quot;/login&quot;&gt;登录&lt;/Link&gt;
+            &lt;Link to=&quot;/register&quot;&gt;注册&lt;/Link&gt;
+          &lt;/&gt;
+        )}
+      &lt;/div&gt;
+    &lt;/nav&gt;
+  );
+}
+
+// 登录组件
+function Login() {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  const from = location.state?.from?.pathname || &#39;/dashboard&#39;;
+
+  const handleSubmit = async (e) =&gt; {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const credentials = {
+      email: formData.get(&#39;email&#39;),
+      password: formData.get(&#39;password&#39;)
+    };
+
+    try {
+      await login(credentials);
+      navigate(from, { replace: true });
+    } catch (error) {
+      console.error(&#39;登录失败&#39;);
+    }
+  };
+
+  return (
+    &lt;div className=&quot;login-page&quot;&gt;
+      &lt;h1&gt;登录&lt;/h1&gt;
+      &lt;form onSubmit={handleSubmit}&gt;
+        &lt;input name=&quot;email&quot; type=&quot;email&quot; placeholder=&quot;邮箱&quot; required /&gt;
+        &lt;input name=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;密码&quot; required /&gt;
+        &lt;button type=&quot;submit&quot;&gt;登录&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 仪表板组件
+function Dashboard() {
+  return (
+    &lt;div className=&quot;dashboard&quot;&gt;
+      &lt;h1&gt;仪表板&lt;/h1&gt;
+      &lt;div className=&quot;dashboard-nav&quot;&gt;
+        &lt;Link to=&quot;overview&quot;&gt;概览&lt;/Link&gt;
+        &lt;Link to=&quot;analytics&quot;&gt;分析&lt;/Link&gt;
+        &lt;Link to=&quot;settings&quot;&gt;设置&lt;/Link&gt;
+      &lt;/div&gt;
+      &lt;Outlet /&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 主应用
+function App() {
+  return (
+    &lt;AuthProvider&gt;
+      &lt;BrowserRouter&gt;
+        &lt;div className=&quot;app&quot;&gt;
+          &lt;Navigation /&gt;
+          
+          &lt;main className=&quot;main-content&quot;&gt;
+            &lt;Routes&gt;
+              &lt;Route path=&quot;/&quot; element={&lt;Home /&gt;} /&gt;
+              &lt;Route path=&quot;/about&quot; element={&lt;About /&gt;} /&gt;
+              &lt;Route path=&quot;/login&quot; element={&lt;Login /&gt;} /&gt;
+              &lt;Route path=&quot;/register&quot; element={&lt;Register /&gt;} /&gt;
+              
+              &lt;Route path=&quot;/dashboard&quot; element={
+                &lt;PrivateRoute&gt;
+                  &lt;Dashboard /&gt;
+                &lt;/PrivateRoute&gt;
+              }&gt;
+                &lt;Route index element={&lt;DashboardOverview /&gt;} /&gt;
+                &lt;Route path=&quot;overview&quot; element={&lt;DashboardOverview /&gt;} /&gt;
+                &lt;Route path=&quot;analytics&quot; element={&lt;Analytics /&gt;} /&gt;
+                &lt;Route path=&quot;settings&quot; element={&lt;Settings /&gt;} /&gt;
+              &lt;/Route&gt;
+              
+              &lt;Route path=&quot;/profile&quot; element={
+                &lt;PrivateRoute&gt;
+                  &lt;Profile /&gt;
+                &lt;/PrivateRoute&gt;
+              } /&gt;
+              
+              &lt;Route path=&quot;*&quot; element={&lt;NotFound /&gt;} /&gt;
+            &lt;/Routes&gt;
+          &lt;/main&gt;
+        &lt;/div&gt;
+      &lt;/BrowserRouter&gt;
+    &lt;/AuthProvider&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<h2>最佳实践</h2>
+<h3>1. 路由组织</h3>
+<pre><code class="language-jsx">// 将路由配置单独管理
+const routes = [
+  { path: &#39;/&#39;, element: &lt;Home /&gt; },
+  { path: &#39;/about&#39;, element: &lt;About /&gt; },
+  { 
+    path: &#39;/dashboard&#39;, 
+    element: &lt;Dashboard /&gt;,
+    children: [
+      { index: true, element: &lt;DashboardOverview /&gt; },
+      { path: &#39;profile&#39;, element: &lt;Profile /&gt; },
+      { path: &#39;settings&#39;, element: &lt;Settings /&gt; }
+    ]
+  }
+];
+</code></pre>
+<h3>2. 代码分割</h3>
+<pre><code class="language-jsx">import { lazy, Suspense } from &#39;react&#39;;
+
+// 懒加载组件
+const Dashboard = lazy(() =&gt; import(&#39;./pages/Dashboard&#39;));
+const Profile = lazy(() =&gt; import(&#39;./pages/Profile&#39;));
+
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;Suspense fallback={&lt;div&gt;加载中...&lt;/div&gt;}&gt;
+        &lt;Routes&gt;
+          &lt;Route path=&quot;/dashboard&quot; element={&lt;Dashboard /&gt;} /&gt;
+          &lt;Route path=&quot;/profile&quot; element={&lt;Profile /&gt;} /&gt;
+        &lt;/Routes&gt;
+      &lt;/Suspense&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}
+</code></pre>
+<h3>3. 错误处理</h3>
+<pre><code class="language-jsx">function ErrorBoundary() {
+  const error = useRouteError();
+  
+  if (error.status === 404) {
+    return &lt;NotFound /&gt;;
+  }
+  
+  if (error.status === 401) {
+    return &lt;Navigate to=&quot;/login&quot; /&gt;;
+  }
+  
+  return &lt;GenericError error={error} /&gt;;
+}
+</code></pre>
+<h2>总结</h2>
+<p>React Router提供了：</p>
+<ol>
+<li><strong>声明式路由</strong>：通过组件配置路由</li>
+<li><strong>嵌套路由</strong>：构建复杂的路由结构</li>
+<li><strong>程序式导航</strong>：在代码中控制导航</li>
+<li><strong>路由守卫</strong>：保护需要权限的路由</li>
+<li><strong>数据加载</strong>：与路由关联的数据获取</li>
+</ol>
+<p>掌握这些概念可以构建功能完整的单页应用。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="20-动画效果.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">动画效果</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="22-Context-API.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">Context-API</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

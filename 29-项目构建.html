@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>项目构建 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">项目构建</span>
+            </div>
+            <h1 class="doc-title">项目构建</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #ffd89b">
+                🏗️ 构建与部署
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>29-项目构建</h1>
+<p>React项目构建是将开发环境的代码转换为生产环境可用代码的过程。本文档将介绍React项目构建的完整流程、工具配置和最佳实践。</p>
+<h2>构建工具概览</h2>
+<h3>现代构建工具</h3>
+<pre><code class="language-jsx">// 主流构建工具对比
+const buildTools = {
+  webpack: {
+    优点: [&#39;成熟稳定&#39;, &#39;生态丰富&#39;, &#39;配置灵活&#39;],
+    缺点: [&#39;配置复杂&#39;, &#39;构建较慢&#39;],
+    适用: &#39;大型复杂项目&#39;
+  },
+  vite: {
+    优点: [&#39;开发快速&#39;, &#39;现代化&#39;, &#39;ES模块原生支持&#39;],
+    缺点: [&#39;生态相对较新&#39;],
+    适用: &#39;现代项目、快速原型&#39;
+  },
+  rollup: {
+    优点: [&#39;Bundle体积小&#39;, &#39;Tree shaking好&#39;],
+    缺点: [&#39;配置相对复杂&#39;],
+    适用: &#39;库开发、组件库&#39;
+  }
+};
+</code></pre>
+<h2>Create React App (CRA)</h2>
+<h3>基础使用</h3>
+<pre><code class="language-bash"># 创建新项目
+npx create-react-app my-app
+cd my-app
+
+# 启动开发服务器
+npm start
+
+# 生产构建
+npm run build
+
+# 运行测试
+npm test
+</code></pre>
+<h3>项目结构</h3>
+<pre><code>my-app/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── manifest.json
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   ├── utils/
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── index.css
+├── package.json
+├── README.md
+└── .gitignore
+</code></pre>
+<h3>环境变量配置</h3>
+<pre><code class="language-bash"># .env.local
+REACT_APP_API_BASE_URL=http://localhost:3001
+REACT_APP_APP_VERSION=$npm_package_version
+REACT_APP_GOOGLE_ANALYTICS_ID=GA-XXXXXXXXX
+
+# .env.development
+REACT_APP_API_BASE_URL=http://localhost:3001
+REACT_APP_DEBUG=true
+
+# .env.production  
+REACT_APP_API_BASE_URL=https://api.production.com
+REACT_APP_DEBUG=false
+</code></pre>
+<pre><code class="language-jsx">// 在代码中使用环境变量
+const config = {
+  apiBaseUrl: process.env.REACT_APP_API_BASE_URL,
+  version: process.env.REACT_APP_APP_VERSION,
+  isDevelopment: process.env.NODE_ENV === &#39;development&#39;,
+  isProduction: process.env.NODE_ENV === &#39;production&#39;
+};
+
+export default config;
+</code></pre>
+<h2>Vite构建</h2>
+<h3>项目初始化</h3>
+<pre><code class="language-bash"># 使用Vite创建React项目
+npm create vite@latest my-react-app -- --template react-ts
+cd my-react-app
+npm install
+
+# 启动开发服务器
+npm run dev
+
+# 生产构建
+npm run build
+
+# 预览构建结果
+npm run preview
+</code></pre>
+<h3>Vite配置</h3>
+<pre><code class="language-javascript">// vite.config.js
+import { defineConfig } from &#39;vite&#39;;
+import react from &#39;@vitejs/plugin-react&#39;;
+import { resolve } from &#39;path&#39;;
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      &#39;@&#39;: resolve(__dirname, &#39;src&#39;),
+      &#39;@components&#39;: resolve(__dirname, &#39;src/components&#39;),
+      &#39;@utils&#39;: resolve(__dirname, &#39;src/utils&#39;),
+      &#39;@assets&#39;: resolve(__dirname, &#39;src/assets&#39;)
+    }
+  },
+  define: {
+    __APP_VERSION__: JSON.stringify(process.env.npm_package_version)
+  },
+  server: {
+    port: 3000,
+    proxy: {
+      &#39;/api&#39;: {
+        target: &#39;http://localhost:8080&#39;,
+        changeOrigin: true,
+        rewrite: (path) =&gt; path.replace(/^\/api/, &#39;&#39;)
+      }
+    }
+  },
+  build: {
+    outDir: &#39;dist&#39;,
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: [&#39;react&#39;, &#39;react-dom&#39;],
+          router: [&#39;react-router-dom&#39;],
+          ui: [&#39;antd&#39;]
+        }
+      }
+    }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import &quot;@/styles/variables.scss&quot;;`
+      }
+    }
+  }
+});
+</code></pre>
+<h2>Webpack自定义配置</h2>
+<h3>弹出CRA配置</h3>
+<pre><code class="language-bash"># ⚠️ 不可逆操作
+npm run eject
+</code></pre>
+<h3>使用CRACO自定义</h3>
+<pre><code class="language-bash"># 安装CRACO
+npm install @craco/craco
+
+# 安装额外插件
+npm install craco-alias @craco/craco-less
+</code></pre>
+<pre><code class="language-javascript">// craco.config.js
+const CracoAlias = require(&#39;craco-alias&#39;);
+const CracoLessPlugin = require(&#39;@craco/craco-less&#39;);
+
+module.exports = {
+  plugins: [
+    {
+      plugin: CracoAlias,
+      options: {
+        source: &#39;tsconfig&#39;,
+        baseUrl: &#39;./src&#39;,
+        tsConfigPath: &#39;./tsconfig.paths.json&#39;
+      }
+    },
+    {
+      plugin: CracoLessPlugin,
+      options: {
+        lessLoaderOptions: {
+          lessOptions: {
+            modifyVars: {
+              &#39;@primary-color&#39;: &#39;#1DA57A&#39;,
+              &#39;@border-radius-base&#39;: &#39;4px&#39;
+            },
+            javascriptEnabled: true
+          }
+        }
+      }
+    }
+  ],
+  webpack: {
+    alias: {
+      &#39;@&#39;: path.resolve(__dirname, &#39;src&#39;)
+    },
+    configure: (webpackConfig) =&gt; {
+      // 自定义webpack配置
+      return webpackConfig;
+    }
+  },
+  devServer: {
+    proxy: {
+      &#39;/api&#39;: {
+        target: &#39;http://localhost:8080&#39;,
+        changeOrigin: true
+      }
+    }
+  }
+};
+</code></pre>
+<pre><code class="language-json">// package.json
+{
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;craco start&quot;,
+    &quot;build&quot;: &quot;craco build&quot;,
+    &quot;test&quot;: &quot;craco test&quot;
+  }
+}
+</code></pre>
+<h2>代码分割和懒加载</h2>
+<h3>路由级分割</h3>
+<pre><code class="language-jsx">// App.jsx
+import { lazy, Suspense } from &#39;react&#39;;
+import { BrowserRouter, Routes, Route } from &#39;react-router-dom&#39;;
+import Loading from &#39;./components/Loading&#39;;
+
+// 懒加载页面组件
+const Home = lazy(() =&gt; import(&#39;./pages/Home&#39;));
+const About = lazy(() =&gt; import(&#39;./pages/About&#39;));
+const Dashboard = lazy(() =&gt; import(&#39;./pages/Dashboard&#39;));
+
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;Suspense fallback={&lt;Loading /&gt;}&gt;
+        &lt;Routes&gt;
+          &lt;Route path=&quot;/&quot; element={&lt;Home /&gt;} /&gt;
+          &lt;Route path=&quot;/about&quot; element={&lt;About /&gt;} /&gt;
+          &lt;Route path=&quot;/dashboard&quot; element={&lt;Dashboard /&gt;} /&gt;
+        &lt;/Routes&gt;
+      &lt;/Suspense&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<h3>组件级分割</h3>
+<pre><code class="language-jsx">// 条件加载重型组件
+import { useState, lazy, Suspense } from &#39;react&#39;;
+
+const HeavyChart = lazy(() =&gt; import(&#39;./HeavyChart&#39;));
+
+function Dashboard() {
+  const [showChart, setShowChart] = useState(false);
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;仪表板&lt;/h1&gt;
+      &lt;button onClick={() =&gt; setShowChart(true)}&gt;
+        加载图表
+      &lt;/button&gt;
+      
+      {showChart &amp;&amp; (
+        &lt;Suspense fallback={&lt;div&gt;加载图表中...&lt;/div&gt;}&gt;
+          &lt;HeavyChart /&gt;
+        &lt;/Suspense&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>第三方库分割</h3>
+<pre><code class="language-jsx">// utils/dynamicImports.js
+export const loadChartLibrary = () =&gt; {
+  return import(&#39;chart.js&#39;).then(Chart =&gt; Chart.default);
+};
+
+export const loadDateLibrary = () =&gt; {
+  return import(&#39;date-fns&#39;);
+};
+
+// 使用动态导入
+function ChartComponent({ data }) {
+  const [Chart, setChart] = useState(null);
+
+  useEffect(() =&gt; {
+    loadChartLibrary().then(setChart);
+  }, []);
+
+  if (!Chart) {
+    return &lt;div&gt;加载图表库中...&lt;/div&gt;;
+  }
+
+  return &lt;Chart data={data} /&gt;;
+}
+</code></pre>
+<h2>资源优化</h2>
+<h3>图片优化</h3>
+<pre><code class="language-jsx">// 图片压缩和格式优化
+const ImageOptimization = () =&gt; {
+  return (
+    &lt;picture&gt;
+      &lt;source 
+        srcSet=&quot;image.webp&quot; 
+        type=&quot;image/webp&quot; 
+      /&gt;
+      &lt;source 
+        srcSet=&quot;image.avif&quot; 
+        type=&quot;image/avif&quot; 
+      /&gt;
+      &lt;img 
+        src=&quot;image.jpg&quot; 
+        alt=&quot;描述&quot;
+        loading=&quot;lazy&quot;
+        width=&quot;300&quot;
+        height=&quot;200&quot;
+      /&gt;
+    &lt;/picture&gt;
+  );
+};
+
+// 响应式图片
+const ResponsiveImage = ({ src, alt }) =&gt; {
+  return (
+    &lt;img
+      src={src}
+      srcSet={`
+        ${src}?w=400 400w,
+        ${src}?w=800 800w,
+        ${src}?w=1200 1200w
+      `}
+      sizes=&quot;(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px&quot;
+      alt={alt}
+      loading=&quot;lazy&quot;
+    /&gt;
+  );
+};
+</code></pre>
+<h3>CSS优化</h3>
+<pre><code class="language-javascript">// webpack配置CSS优化
+const MiniCssExtractPlugin = require(&#39;mini-css-extract-plugin&#39;);
+const CssMinimizerPlugin = require(&#39;css-minimizer-webpack-plugin&#39;);
+
+module.exports = {
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: &#39;css/[name].[contenthash].css&#39;
+    })
+  ],
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin()
+    ]
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          &#39;css-loader&#39;,
+          &#39;postcss-loader&#39;
+        ]
+      }
+    ]
+  }
+};
+</code></pre>
+<pre><code class="language-javascript">// postcss.config.js
+module.exports = {
+  plugins: [
+    require(&#39;autoprefixer&#39;),
+    require(&#39;cssnano&#39;)({
+      preset: &#39;default&#39;
+    })
+  ]
+};
+</code></pre>
+<h2>构建优化</h2>
+<h3>Bundle分析</h3>
+<pre><code class="language-bash"># 安装分析工具
+npm install --save-dev webpack-bundle-analyzer
+
+# 分析bundle
+npm run build
+npx webpack-bundle-analyzer build/static/js/*.js
+</code></pre>
+<pre><code class="language-javascript">// webpack配置
+const BundleAnalyzerPlugin = require(&#39;webpack-bundle-analyzer&#39;).BundleAnalyzerPlugin;
+
+module.exports = {
+  plugins: [
+    process.env.ANALYZE &amp;&amp; new BundleAnalyzerPlugin()
+  ].filter(Boolean)
+};
+
+// package.json
+{
+  &quot;scripts&quot;: {
+    &quot;analyze&quot;: &quot;ANALYZE=true npm run build&quot;
+  }
+}
+</code></pre>
+<h3>Tree Shaking</h3>
+<pre><code class="language-javascript">// 确保package.json中设置sideEffects
+{
+  &quot;sideEffects&quot;: [
+    &quot;*.css&quot;,
+    &quot;*.scss&quot;,
+    &quot;./src/polyfills.js&quot;
+  ]
+}
+
+// 使用ES模块导入
+// ✅ 好的做法 - 按需导入
+import { debounce } from &#39;lodash-es&#39;;
+import { Button } from &#39;antd&#39;;
+
+// ❌ 避免 - 导入整个库
+import _ from &#39;lodash&#39;;
+import * as antd from &#39;antd&#39;;
+</code></pre>
+<h3>代码压缩</h3>
+<pre><code class="language-javascript">// webpack配置
+const TerserPlugin = require(&#39;terser-webpack-plugin&#39;);
+
+module.exports = {
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true, // 移除console
+            drop_debugger: true, // 移除debugger
+            pure_funcs: [&#39;console.log&#39;] // 移除特定函数
+          },
+          mangle: {
+            safari10: true
+          }
+        }
+      })
+    ]
+  }
+};
+</code></pre>
+<h2>多环境构建</h2>
+<h3>环境配置</h3>
+<pre><code class="language-javascript">// config/webpack.config.js
+const isDevelopment = process.env.NODE_ENV === &#39;development&#39;;
+const isProduction = process.env.NODE_ENV === &#39;production&#39;;
+
+module.exports = {
+  mode: isDevelopment ? &#39;development&#39; : &#39;production&#39;,
+  devtool: isDevelopment ? &#39;eval-source-map&#39; : &#39;source-map&#39;,
+  optimization: {
+    minimize: isProduction,
+    splitChunks: isProduction ? {
+      chunks: &#39;all&#39;,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: &#39;vendors&#39;,
+          chunks: &#39;all&#39;
+        }
+      }
+    } : false
+  }
+};
+</code></pre>
+<h3>构建脚本</h3>
+<pre><code class="language-json">// package.json
+{
+  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;cross-env NODE_ENV=development webpack serve&quot;,
+    &quot;build&quot;: &quot;cross-env NODE_ENV=production webpack&quot;,
+    &quot;build:dev&quot;: &quot;cross-env NODE_ENV=development webpack&quot;,
+    &quot;build:staging&quot;: &quot;cross-env NODE_ENV=staging webpack&quot;,
+    &quot;build:analyze&quot;: &quot;cross-env ANALYZE=true npm run build&quot;
+  }
+}
+</code></pre>
+<pre><code class="language-bash">#!/bin/bash
+# scripts/build.sh
+
+set -e
+
+echo &quot;开始构建...&quot;
+
+# 清理旧文件
+rm -rf build/
+
+# 设置环境变量
+export NODE_ENV=production
+export GENERATE_SOURCEMAP=false
+
+# 构建
+npm run build
+
+# 构建成功
+echo &quot;构建完成！&quot;
+
+# 显示文件大小
+du -sh build/
+</code></pre>
+<h2>PWA构建</h2>
+<h3>Service Worker</h3>
+<pre><code class="language-javascript">// public/sw.js
+const CACHE_NAME = &#39;my-app-v1&#39;;
+const urlsToCache = [
+  &#39;/&#39;,
+  &#39;/static/css/main.css&#39;,
+  &#39;/static/js/main.js&#39;
+];
+
+self.addEventListener(&#39;install&#39;, (event) =&gt; {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) =&gt; cache.addAll(urlsToCache))
+  );
+});
+
+self.addEventListener(&#39;fetch&#39;, (event) =&gt; {
+  event.respondWith(
+    caches.match(event.request)
+      .then((response) =&gt; {
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      })
+  );
+});
+</code></pre>
+<h3>Workbox配置</h3>
+<pre><code class="language-javascript">// webpack.config.js
+const WorkboxWebpackPlugin = require(&#39;workbox-webpack-plugin&#39;);
+
+module.exports = {
+  plugins: [
+    new WorkboxWebpackPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: /^https:\/\/api\./,
+          handler: &#39;NetworkFirst&#39;,
+          options: {
+            cacheName: &#39;api-cache&#39;
+          }
+        }
+      ]
+    })
+  ]
+};
+</code></pre>
+<h2>Docker构建</h2>
+<h3>Dockerfile</h3>
+<pre><code class="language-dockerfile"># 多阶段构建
+FROM node:16-alpine AS builder
+
+WORKDIR /app
+
+# 复制依赖文件
+COPY package*.json ./
+RUN npm ci --only=production
+
+# 复制源代码
+COPY . .
+
+# 构建应用
+RUN npm run build
+
+# 生产镜像
+FROM nginx:alpine
+
+# 复制构建结果
+COPY --from=builder /app/build /usr/share/nginx/html
+
+# 复制nginx配置
+COPY nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 80
+
+CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
+</code></pre>
+<h3>Nginx配置</h3>
+<pre><code class="language-nginx"># nginx.conf
+server {
+    listen 80;
+    server_name localhost;
+    
+    root /usr/share/nginx/html;
+    index index.html;
+    
+    # 处理SPA路由
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+    
+    # 静态资源缓存
+    location /static/ {
+        expires 1y;
+        add_header Cache-Control &quot;public, immutable&quot;;
+    }
+    
+    # API代理
+    location /api/ {
+        proxy_pass http://backend:8080/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+    
+    # 压缩
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml;
+}
+</code></pre>
+<h2>CI/CD集成</h2>
+<h3>GitHub Actions</h3>
+<pre><code class="language-yaml"># .github/workflows/build.yml
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: &#39;16&#39;
+        cache: &#39;npm&#39;
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run tests
+      run: npm test -- --coverage --watchAll=false
+    
+    - name: Build application
+      run: npm run build
+      
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-files
+        path: build/
+        
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == &#39;refs/heads/main&#39;
+    
+    steps:
+    - name: Download build artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: build-files
+        path: build/
+        
+    - name: Deploy to S3
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      run: |
+        aws s3 sync build/ s3://my-app-bucket --delete
+        aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_ID }} --paths &quot;/*&quot;
+</code></pre>
+<h3>部署脚本</h3>
+<pre><code class="language-javascript">// scripts/deploy.js
+const AWS = require(&#39;aws-sdk&#39;);
+const fs = require(&#39;fs&#39;);
+const path = require(&#39;path&#39;);
+const mime = require(&#39;mime-types&#39;);
+
+const s3 = new AWS.S3();
+const buildDir = path.join(__dirname, &#39;../build&#39;);
+
+async function uploadFiles() {
+  const files = getAllFiles(buildDir);
+  
+  for (const file of files) {
+    const key = path.relative(buildDir, file);
+    const body = fs.readFileSync(file);
+    const contentType = mime.lookup(file) || &#39;application/octet-stream&#39;;
+    
+    await s3.upload({
+      Bucket: process.env.S3_BUCKET,
+      Key: key,
+      Body: body,
+      ContentType: contentType,
+      CacheControl: key.includes(&#39;static/&#39;) ? &#39;max-age=31536000&#39; : &#39;max-age=0&#39;
+    }).promise();
+    
+    console.log(`上传完成: ${key}`);
+  }
+}
+
+function getAllFiles(dir) {
+  const files = [];
+  const items = fs.readdirSync(dir);
+  
+  for (const item of items) {
+    const fullPath = path.join(dir, item);
+    if (fs.statSync(fullPath).isDirectory()) {
+      files.push(...getAllFiles(fullPath));
+    } else {
+      files.push(fullPath);
+    }
+  }
+  
+  return files;
+}
+
+uploadFiles().catch(console.error);
+</code></pre>
+<h2>构建监控</h2>
+<h3>构建性能监控</h3>
+<pre><code class="language-javascript">// scripts/build-monitor.js
+const webpack = require(&#39;webpack&#39;);
+const config = require(&#39;../webpack.config&#39;);
+
+const compiler = webpack(config);
+
+compiler.run((err, stats) =&gt; {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  const info = stats.toJson();
+  
+  console.log(&#39;构建统计:&#39;);
+  console.log(`- 总时间: ${info.time}ms`);
+  console.log(`- 文件数量: ${info.assets.length}`);
+  console.log(`- 总大小: ${formatBytes(info.assets.reduce((sum, asset) =&gt; sum + asset.size, 0))}`);
+  
+  // 分析大文件
+  const largeAssets = info.assets
+    .filter(asset =&gt; asset.size &gt; 500000)
+    .sort((a, b) =&gt; b.size - a.size);
+    
+  if (largeAssets.length &gt; 0) {
+    console.log(&#39;\n大文件警告:&#39;);
+    largeAssets.forEach(asset =&gt; {
+      console.log(`- ${asset.name}: ${formatBytes(asset.size)}`);
+    });
+  }
+});
+
+function formatBytes(bytes) {
+  return (bytes / 1024 / 1024).toFixed(2) + &#39; MB&#39;;
+}
+</code></pre>
+<h2>最佳实践</h2>
+<h3>构建优化清单</h3>
+<pre><code class="language-javascript">// 构建优化检查清单
+const buildOptimizations = {
+  代码分割: {
+    路由级分割: &#39;✅ 实施&#39;,
+    组件级分割: &#39;✅ 实施&#39;,
+    第三方库分割: &#39;✅ 实施&#39;
+  },
+  资源优化: {
+    图片压缩: &#39;✅ 实施&#39;,
+    CSS压缩: &#39;✅ 实施&#39;,
+    JS压缩: &#39;✅ 实施&#39;
+  },
+  缓存策略: {
+    文件名哈希: &#39;✅ 实施&#39;,
+    CDN缓存: &#39;✅ 实施&#39;,
+    浏览器缓存: &#39;✅ 实施&#39;
+  },
+  性能监控: {
+    Bundle分析: &#39;✅ 实施&#39;,
+    构建时间监控: &#39;✅ 实施&#39;,
+    文件大小监控: &#39;✅ 实施&#39;
+  }
+};
+</code></pre>
+<h3>环境配置管理</h3>
+<pre><code class="language-javascript">// config/index.js
+const configs = {
+  development: {
+    API_BASE_URL: &#39;http://localhost:3001&#39;,
+    DEBUG: true,
+    SOURCEMAP: true
+  },
+  staging: {
+    API_BASE_URL: &#39;https://staging-api.example.com&#39;,
+    DEBUG: false,
+    SOURCEMAP: true
+  },
+  production: {
+    API_BASE_URL: &#39;https://api.example.com&#39;,
+    DEBUG: false,
+    SOURCEMAP: false
+  }
+};
+
+const env = process.env.NODE_ENV || &#39;development&#39;;
+module.exports = configs[env];
+</code></pre>
+<h2>总结</h2>
+<p>React项目构建的关键要点：</p>
+<ol>
+<li><strong>选择合适的构建工具</strong> - 根据项目需求选择</li>
+<li><strong>代码分割和懒加载</strong> - 提升首屏加载速度</li>
+<li><strong>资源优化</strong> - 压缩图片、CSS、JS</li>
+<li><strong>缓存策略</strong> - 合理设置文件缓存</li>
+<li><strong>多环境支持</strong> - 开发、测试、生产环境配置</li>
+<li><strong>CI/CD集成</strong> - 自动化构建和部署</li>
+<li><strong>性能监控</strong> - 持续优化构建性能</li>
+</ol>
+<p>良好的构建配置可以显著提升应用性能和用户体验，同时提高开发效率。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="28-集成测试.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">集成测试</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="30-生产部署.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">生产部署</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

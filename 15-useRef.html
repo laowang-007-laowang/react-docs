@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>useRef - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">useRef</span>
+            </div>
+            <h1 class="doc-title">useRef</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #4facfe">
+                🎣 Hooks API
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>15-useRef</h1>
+<p><code>useRef</code> 是React Hooks中用于访问DOM元素和保存可变值的钩子。它返回一个可变的ref对象，其<code>.current</code>属性被初始化为传入的参数。</p>
+<h2>基础用法</h2>
+<h3>访问DOM元素</h3>
+<pre><code class="language-jsx">import React, { useRef, useEffect } from &#39;react&#39;;
+
+function TextInputWithFocusButton() {
+  const inputEl = useRef(null);
+
+  const onButtonClick = () =&gt; {
+    // `current` 指向已挂载到 DOM 上的文本输入元素
+    inputEl.current.focus();
+  };
+
+  return (
+    &lt;&gt;
+      &lt;input ref={inputEl} type=&quot;text&quot; /&gt;
+      &lt;button onClick={onButtonClick}&gt;聚焦输入框&lt;/button&gt;
+    &lt;/&gt;
+  );
+}
+</code></pre>
+<h3>保存可变值</h3>
+<pre><code class="language-jsx">function Timer() {
+  const [count, setCount] = useState(0);
+  const intervalRef = useRef(null);
+
+  useEffect(() =&gt; {
+    intervalRef.current = setInterval(() =&gt; {
+      setCount(prev =&gt; prev + 1);
+    }, 1000);
+
+    return () =&gt; clearInterval(intervalRef.current);
+  }, []);
+
+  const handleStop = () =&gt; {
+    clearInterval(intervalRef.current);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;计时: {count}秒&lt;/p&gt;
+      &lt;button onClick={handleStop}&gt;停止&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>常见应用场景</h2>
+<h3>表单处理</h3>
+<pre><code class="language-jsx">function Form() {
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+
+  const handleSubmit = (e) =&gt; {
+    e.preventDefault();
+    
+    const formData = {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      password: passwordRef.current.value
+    };
+    
+    console.log(formData);
+  };
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input ref={nameRef} placeholder=&quot;姓名&quot; /&gt;
+      &lt;input ref={emailRef} type=&quot;email&quot; placeholder=&quot;邮箱&quot; /&gt;
+      &lt;input ref={passwordRef} type=&quot;password&quot; placeholder=&quot;密码&quot; /&gt;
+      &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+</code></pre>
+<h3>前一个值的跟踪</h3>
+<pre><code class="language-jsx">function usePrevious(value) {
+  const ref = useRef();
+  
+  useEffect(() =&gt; {
+    ref.current = value;
+  });
+  
+  return ref.current;
+}
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  const prevCount = usePrevious(count);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;当前值: {count}&lt;/p&gt;
+      &lt;p&gt;前一个值: {prevCount}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;+1&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>避免闭包陷阱</h3>
+<pre><code class="language-jsx">function CallbackTimer() {
+  const [count, setCount] = useState(0);
+  const countRef = useRef(count);
+
+  // 保持ref与state同步
+  useEffect(() =&gt; {
+    countRef.current = count;
+  }, [count]);
+
+  useEffect(() =&gt; {
+    const timer = setInterval(() =&gt; {
+      // 使用ref确保获取最新值
+      console.log(&#39;当前计数:&#39;, countRef.current);
+    }, 1000);
+
+    return () =&gt; clearInterval(timer);
+  }, []); // 空依赖数组
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;计数: {count}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setCount(count + 1)}&gt;增加&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>转发Ref</h2>
+<h3>forwardRef的使用</h3>
+<pre><code class="language-jsx">const FancyButton = React.forwardRef((props, ref) =&gt; (
+  &lt;button ref={ref} className=&quot;fancy-button&quot;&gt;
+    {props.children}
+  &lt;/button&gt;
+));
+
+function App() {
+  const buttonRef = useRef();
+
+  const handleClick = () =&gt; {
+    buttonRef.current.focus();
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;FancyButton ref={buttonRef}&gt;点击我&lt;/FancyButton&gt;
+      &lt;button onClick={handleClick}&gt;聚焦按钮&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>复杂组件的ref转发</h3>
+<pre><code class="language-jsx">const CustomInput = React.forwardRef(({ label, error, ...props }, ref) =&gt; {
+  return (
+    &lt;div className=&quot;input-group&quot;&gt;
+      &lt;label&gt;{label}&lt;/label&gt;
+      &lt;input ref={ref} {...props} /&gt;
+      {error &amp;&amp; &lt;span className=&quot;error&quot;&gt;{error}&lt;/span&gt;}
+    &lt;/div&gt;
+  );
+});
+
+function ContactForm() {
+  const nameInputRef = useRef();
+
+  useEffect(() =&gt; {
+    // 组件挂载后自动聚焦第一个输入框
+    nameInputRef.current.focus();
+  }, []);
+
+  return (
+    &lt;form&gt;
+      &lt;CustomInput
+        ref={nameInputRef}
+        label=&quot;姓名&quot;
+        placeholder=&quot;请输入姓名&quot;
+      /&gt;
+    &lt;/form&gt;
+  );
+}
+</code></pre>
+<h2>与useState的区别</h2>
+<pre><code class="language-jsx">function RefVsState() {
+  const [stateCount, setStateCount] = useState(0);
+  const refCount = useRef(0);
+
+  const handleStateIncrement = () =&gt; {
+    setStateCount(prev =&gt; prev + 1); // 触发重新渲染
+  };
+
+  const handleRefIncrement = () =&gt; {
+    refCount.current += 1; // 不触发重新渲染
+    console.log(&#39;Ref count:&#39;, refCount.current);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;State计数: {stateCount}&lt;/p&gt;
+      &lt;p&gt;Ref计数: {refCount.current}&lt;/p&gt;
+      &lt;button onClick={handleStateIncrement}&gt;增加State&lt;/button&gt;
+      &lt;button onClick={handleRefIncrement}&gt;增加Ref&lt;/button&gt;
+      &lt;button onClick={() =&gt; window.location.reload()}&gt;强制重新渲染&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>实际应用示例</h2>
+<h3>滚动到元素</h3>
+<pre><code class="language-jsx">function ScrollToElement() {
+  const elementRef = useRef();
+
+  const scrollToElement = () =&gt; {
+    elementRef.current.scrollIntoView({ 
+      behavior: &#39;smooth&#39;,
+      block: &#39;center&#39;
+    });
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={scrollToElement}&gt;滚动到目标元素&lt;/button&gt;
+      
+      &lt;div style={{ height: &#39;1000px&#39; }}&gt;
+        {/* 一些内容 */}
+      &lt;/div&gt;
+      
+      &lt;div ref={elementRef} style={{ 
+        backgroundColor: &#39;yellow&#39;, 
+        padding: &#39;20px&#39; 
+      }}&gt;
+        目标元素
+      &lt;/div&gt;
+      
+      &lt;div style={{ height: &#39;1000px&#39; }}&gt;
+        {/* 更多内容 */}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>文件上传</h3>
+<pre><code class="language-jsx">function FileUpload() {
+  const fileInputRef = useRef();
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileSelect = () =&gt; {
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (e) =&gt; {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+  };
+
+  const handleReset = () =&gt; {
+    fileInputRef.current.value = &#39;&#39;;
+    setSelectedFile(null);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;input
+        ref={fileInputRef}
+        type=&quot;file&quot;
+        onChange={handleFileChange}
+        style={{ display: &#39;none&#39; }}
+      /&gt;
+      
+      &lt;button onClick={handleFileSelect}&gt;选择文件&lt;/button&gt;
+      
+      {selectedFile &amp;&amp; (
+        &lt;div&gt;
+          &lt;p&gt;已选择: {selectedFile.name}&lt;/p&gt;
+          &lt;button onClick={handleReset}&gt;重置&lt;/button&gt;
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>动态高度文本域</h3>
+<pre><code class="language-jsx">function AutoResizeTextarea() {
+  const textareaRef = useRef();
+
+  const handleInput = () =&gt; {
+    const textarea = textareaRef.current;
+    textarea.style.height = &#39;auto&#39;;
+    textarea.style.height = `${textarea.scrollHeight}px`;
+  };
+
+  return (
+    &lt;textarea
+      ref={textareaRef}
+      onInput={handleInput}
+      placeholder=&quot;输入文本，高度会自动调整...&quot;
+      style={{
+        width: &#39;100%&#39;,
+        minHeight: &#39;60px&#39;,
+        resize: &#39;none&#39;,
+        overflow: &#39;hidden&#39;
+      }}
+    /&gt;
+  );
+}
+</code></pre>
+<h2>自定义Hooks with useRef</h2>
+<h3>useClickOutside</h3>
+<pre><code class="language-jsx">function useClickOutside(callback) {
+  const ref = useRef();
+
+  useEffect(() =&gt; {
+    const handleClick = (event) =&gt; {
+      if (ref.current &amp;&amp; !ref.current.contains(event.target)) {
+        callback();
+      }
+    };
+
+    document.addEventListener(&#39;mousedown&#39;, handleClick);
+    return () =&gt; {
+      document.removeEventListener(&#39;mousedown&#39;, handleClick);
+    };
+  }, [callback]);
+
+  return ref;
+}
+
+function Dropdown() {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useClickOutside(() =&gt; setIsOpen(false));
+
+  return (
+    &lt;div ref={dropdownRef}&gt;
+      &lt;button onClick={() =&gt; setIsOpen(!isOpen)}&gt;
+        切换下拉菜单
+      &lt;/button&gt;
+      {isOpen &amp;&amp; (
+        &lt;div className=&quot;dropdown-menu&quot;&gt;
+          &lt;div&gt;选项 1&lt;/div&gt;
+          &lt;div&gt;选项 2&lt;/div&gt;
+          &lt;div&gt;选项 3&lt;/div&gt;
+        &lt;/div&gt;
+      )}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>useHover</h3>
+<pre><code class="language-jsx">function useHover() {
+  const [isHovered, setIsHovered] = useState(false);
+  const ref = useRef();
+
+  useEffect(() =&gt; {
+    const element = ref.current;
+    if (!element) return;
+
+    const handleMouseEnter = () =&gt; setIsHovered(true);
+    const handleMouseLeave = () =&gt; setIsHovered(false);
+
+    element.addEventListener(&#39;mouseenter&#39;, handleMouseEnter);
+    element.addEventListener(&#39;mouseleave&#39;, handleMouseLeave);
+
+    return () =&gt; {
+      element.removeEventListener(&#39;mouseenter&#39;, handleMouseEnter);
+      element.removeEventListener(&#39;mouseleave&#39;, handleMouseLeave);
+    };
+  }, []);
+
+  return [ref, isHovered];
+}
+
+function HoverableCard() {
+  const [cardRef, isHovered] = useHover();
+
+  return (
+    &lt;div
+      ref={cardRef}
+      style={{
+        padding: &#39;20px&#39;,
+        backgroundColor: isHovered ? &#39;#f0f0f0&#39; : &#39;#ffffff&#39;,
+        transition: &#39;background-color 0.3s&#39;
+      }}
+    &gt;
+      悬停我试试
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>注意事项</h2>
+<h3>不要在条件语句中使用</h3>
+<pre><code class="language-jsx">// ❌ 错误：在条件语句中使用useRef
+function BadComponent({ showInput }) {
+  if (showInput) {
+    const inputRef = useRef(); // 违反Hook规则
+    return &lt;input ref={inputRef} /&gt;;
+  }
+  return &lt;div&gt;没有输入框&lt;/div&gt;;
+}
+
+// ✅ 正确：在组件顶层使用useRef
+function GoodComponent({ showInput }) {
+  const inputRef = useRef();
+  
+  return (
+    &lt;div&gt;
+      {showInput &amp;&amp; &lt;input ref={inputRef} /&gt;}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h3>避免在渲染中读取ref.current</h3>
+<pre><code class="language-jsx">// ❌ 错误：在渲染中读取ref
+function BadComponent() {
+  const ref = useRef(0);
+  
+  // 渲染时读取ref可能导致不一致
+  return &lt;div&gt;值: {ref.current}&lt;/div&gt;;
+}
+
+// ✅ 正确：在事件处理或effect中读取ref
+function GoodComponent() {
+  const ref = useRef(0);
+  const [value, setValue] = useState(0);
+  
+  const handleClick = () =&gt; {
+    ref.current += 1;
+    setValue(ref.current); // 更新state触发重新渲染
+  };
+  
+  return (
+    &lt;div&gt;
+      &lt;div&gt;值: {value}&lt;/div&gt;
+      &lt;button onClick={handleClick}&gt;增加&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<h2>总结</h2>
+<p><code>useRef</code> 的主要用途：</p>
+<ol>
+<li><strong>DOM访问</strong>：获取DOM元素引用</li>
+<li><strong>保存可变值</strong>：存储不需要触发重新渲染的值</li>
+<li><strong>避免闭包陷阱</strong>：在异步回调中访问最新值</li>
+<li><strong>转发引用</strong>：配合forwardRef传递ref</li>
+</ol>
+<p>记住：修改ref.current不会触发组件重新渲染，这是它与useState的主要区别。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="14-useMemo和useCallback.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">useMemo和useCallback</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="16-自定义Hooks.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">自定义Hooks</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

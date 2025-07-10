@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>集成测试 - React 中文文档</title>
+  <meta name="description" content="从入门到精通，全面掌握React开发技能">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">⚛️</span>
+          <div class="logo-text">
+            <h1>React 中文文档</h1>
+            <p>现代化的React学习指南</p>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <a href="index.html" class="nav-link">首页</a>
+          <a href="#" class="nav-link" onclick="toggleSidebar()">目录</a>
+          <a href="https://github.com/facebook/react" target="_blank" class="nav-link">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main-layout">
+      <!-- 侧边栏 -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="search-box">
+            <input type="text" placeholder="搜索文档..." id="searchInput" onkeyup="searchDocs()">
+            <span class="search-icon">🔍</span>
+          </div>
+          <nav class="doc-nav">
+            
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📚</span>
+          基础概念
+        </h3>
+        <ul class="category-docs">
+          <li><a href="01-React简介.html" class="doc-link">React简介</a></li><li><a href="02-环境搭建.html" class="doc-link">环境搭建</a></li><li><a href="03-JSX语法.html" class="doc-link">JSX语法</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧩</span>
+          组件开发
+        </h3>
+        <ul class="category-docs">
+          <li><a href="04-组件基础.html" class="doc-link">组件基础</a></li><li><a href="05-Props与State.html" class="doc-link">Props与State</a></li><li><a href="06-事件处理.html" class="doc-link">事件处理</a></li><li><a href="07-条件渲染.html" class="doc-link">条件渲染</a></li><li><a href="08-列表渲染.html" class="doc-link">列表渲染</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎣</span>
+          Hooks API
+        </h3>
+        <ul class="category-docs">
+          <li><a href="09-Hooks概述.html" class="doc-link">Hooks概述</a></li><li><a href="10-useState.html" class="doc-link">useState</a></li><li><a href="11-useEffect.html" class="doc-link">useEffect</a></li><li><a href="12-useContext.html" class="doc-link">useContext</a></li><li><a href="13-useReducer.html" class="doc-link">useReducer</a></li><li><a href="14-useMemo和useCallback.html" class="doc-link">useMemo和useCallback</a></li><li><a href="15-useRef.html" class="doc-link">useRef</a></li><li><a href="16-自定义Hooks.html" class="doc-link">自定义Hooks</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🔄</span>
+          生命周期
+        </h3>
+        <ul class="category-docs">
+          <li><a href="17-生命周期方法.html" class="doc-link">生命周期方法</a></li><li><a href="18-副作用处理.html" class="doc-link">副作用处理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🎨</span>
+          样式与UI
+        </h3>
+        <ul class="category-docs">
+          <li><a href="19-样式处理.html" class="doc-link">样式处理</a></li><li><a href="20-动画效果.html" class="doc-link">动画效果</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🗺️</span>
+          路由管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="21-React-Router.html" class="doc-link">React-Router</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📦</span>
+          状态管理
+        </h3>
+        <ul class="category-docs">
+          <li><a href="22-Context-API.html" class="doc-link">Context-API</a></li><li><a href="23-Redux集成.html" class="doc-link">Redux集成</a></li><li><a href="24-Zustand状态管理.html" class="doc-link">Zustand状态管理</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🚀</span>
+          性能优化
+        </h3>
+        <ul class="category-docs">
+          <li><a href="25-性能优化技巧.html" class="doc-link">性能优化技巧</a></li><li><a href="26-代码分割.html" class="doc-link">代码分割</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🧪</span>
+          测试
+        </h3>
+        <ul class="category-docs">
+          <li><a href="27-单元测试.html" class="doc-link">单元测试</a></li><li><a href="28-集成测试.html" class="doc-link">集成测试</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🏗️</span>
+          构建与部署
+        </h3>
+        <ul class="category-docs">
+          <li><a href="29-项目构建.html" class="doc-link">项目构建</a></li><li><a href="30-生产部署.html" class="doc-link">生产部署</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">🛠️</span>
+          开发工具
+        </h3>
+        <ul class="category-docs">
+          <li><a href="31-开发者工具.html" class="doc-link">开发者工具</a></li><li><a href="32-调试技巧.html" class="doc-link">调试技巧</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">📖</span>
+          API参考
+        </h3>
+        <ul class="category-docs">
+          <li><a href="33-React-API完整参考.html" class="doc-link">React-API完整参考</a></li><li><a href="34-DOM元素属性.html" class="doc-link">DOM元素属性</a></li><li><a href="35-合成事件.html" class="doc-link">合成事件</a></li><li><a href="React-Hooks完整参考.html" class="doc-link">React-Hooks完整参考</a></li>
+        </ul>
+      </div>
+      <div class="nav-category">
+        <h3 class="category-title">
+          <span class="category-icon">💡</span>
+          最佳实践
+        </h3>
+        <ul class="category-docs">
+          <li><a href="36-编码规范.html" class="doc-link">编码规范</a></li><li><a href="37-项目架构.html" class="doc-link">项目架构</a></li><li><a href="38-常见问题.html" class="doc-link">常见问题</a></li>
+        </ul>
+      </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- 主内容区 -->
+      <main class="content">
+        <article class="doc-article">
+          <div class="doc-header">
+            <div class="breadcrumb">
+              <a href="index.html">首页</a>
+              <span class="separator">></span>
+              <span class="current">集成测试</span>
+            </div>
+            <h1 class="doc-title">集成测试</h1>
+            <div class="doc-meta">
+              <span class="category" style="background: #fad0c4">
+                🧪 测试
+              </span>
+            </div>
+          </div>
+          
+          <div class="doc-content">
+            <h1>28-集成测试</h1>
+<p>集成测试是验证多个组件或模块协同工作的测试方法。在React应用中，集成测试关注组件之间的交互、数据流和用户工作流程，确保应用的各个部分能够正确集成。</p>
+<h2>基础概念</h2>
+<h3>什么是集成测试</h3>
+<p>集成测试是介于单元测试和端到端测试之间的测试层级，主要验证：</p>
+<ul>
+<li><strong>组件间交互</strong> - 父子组件之间的数据传递和事件处理</li>
+<li><strong>状态管理</strong> - 全局状态的变化和组件的响应</li>
+<li><strong>路由导航</strong> - 页面之间的跳转和参数传递</li>
+<li><strong>API集成</strong> - 组件与后端服务的交互</li>
+<li><strong>用户流程</strong> - 完整的用户操作流程</li>
+</ul>
+<h3>集成测试的优势</h3>
+<ol>
+<li><strong>真实场景模拟</strong> - 更接近用户实际使用情况</li>
+<li><strong>接口验证</strong> - 确保组件间接口的正确性</li>
+<li><strong>数据流验证</strong> - 验证数据在组件间的正确流动</li>
+<li><strong>用户体验保证</strong> - 确保用户操作的完整性</li>
+<li><strong>回归测试</strong> - 防止功能间的相互影响</li>
+</ol>
+<h2>测试工具和框架</h2>
+<h3>主要测试工具</h3>
+<pre><code class="language-bash"># 安装测试依赖
+npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
+npm install --save-dev jest-environment-jsdom
+</code></pre>
+<h3>测试环境配置</h3>
+<pre><code class="language-javascript">// jest.config.js
+module.exports = {
+  testEnvironment: &#39;jsdom&#39;,
+  setupFilesAfterEnv: [&#39;&lt;rootDir&gt;/src/setupTests.js&#39;],
+  moduleNameMapping: {
+    &#39;\\.(css|less|scss|sass)$&#39;: &#39;identity-obj-proxy&#39;,
+  },
+  transform: {
+    &#39;^.+\\.(js|jsx|ts|tsx)$&#39;: &#39;babel-jest&#39;,
+  },
+}
+</code></pre>
+<pre><code class="language-javascript">// src/setupTests.js
+import &#39;@testing-library/jest-dom&#39;
+
+// 模拟IntersectionObserver
+global.IntersectionObserver = class IntersectionObserver {
+  constructor() {}
+  disconnect() {}
+  observe() {}
+  unobserve() {}
+}
+
+// 模拟ResizeObserver
+global.ResizeObserver = class ResizeObserver {
+  constructor() {}
+  disconnect() {}
+  observe() {}
+  unobserve() {}
+}
+</code></pre>
+<h2>组件间交互测试</h2>
+<h3>父子组件交互</h3>
+<pre><code class="language-jsx">// ParentComponent.jsx
+import React, { useState } from &#39;react&#39;
+import ChildComponent from &#39;./ChildComponent&#39;
+
+function ParentComponent() {
+  const [count, setCount] = useState(0)
+  const [message, setMessage] = useState(&#39;&#39;)
+
+  const handleChildClick = (newMessage) =&gt; {
+    setCount(count + 1)
+    setMessage(newMessage)
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;父组件&lt;/h1&gt;
+      &lt;p&gt;点击次数: {count}&lt;/p&gt;
+      &lt;p&gt;消息: {message}&lt;/p&gt;
+      &lt;ChildComponent onChildClick={handleChildClick} /&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default ParentComponent
+</code></pre>
+<pre><code class="language-jsx">// ChildComponent.jsx
+import React from &#39;react&#39;
+
+function ChildComponent({ onChildClick }) {
+  const handleClick = () =&gt; {
+    onChildClick(&#39;子组件被点击了!&#39;)
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;子组件&lt;/h2&gt;
+      &lt;button onClick={handleClick}&gt;点击我&lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default ChildComponent
+</code></pre>
+<pre><code class="language-jsx">// ParentComponent.test.jsx
+import React from &#39;react&#39;
+import { render, screen } from &#39;@testing-library/react&#39;
+import userEvent from &#39;@testing-library/user-event&#39;
+import ParentComponent from &#39;./ParentComponent&#39;
+
+describe(&#39;ParentComponent 集成测试&#39;, () =&gt; {
+  test(&#39;父子组件交互正常&#39;, async () =&gt; {
+    const user = userEvent.setup()
+    
+    render(&lt;ParentComponent /&gt;)
+    
+    // 验证初始状态
+    expect(screen.getByText(&#39;点击次数: 0&#39;)).toBeInTheDocument()
+    expect(screen.getByText(&#39;消息:&#39;)).toBeInTheDocument()
+    
+    // 点击子组件按钮
+    const childButton = screen.getByText(&#39;点击我&#39;)
+    await user.click(childButton)
+    
+    // 验证父组件状态更新
+    expect(screen.getByText(&#39;点击次数: 1&#39;)).toBeInTheDocument()
+    expect(screen.getByText(&#39;消息: 子组件被点击了!&#39;)).toBeInTheDocument()
+    
+    // 再次点击验证状态继续更新
+    await user.click(childButton)
+    expect(screen.getByText(&#39;点击次数: 2&#39;)).toBeInTheDocument()
+  })
+})
+</code></pre>
+<h3>兄弟组件通信</h3>
+<pre><code class="language-jsx">// Container.jsx
+import React, { useState } from &#39;react&#39;
+import SenderComponent from &#39;./SenderComponent&#39;
+import ReceiverComponent from &#39;./ReceiverComponent&#39;
+
+function Container() {
+  const [sharedData, setSharedData] = useState(&#39;&#39;)
+
+  return (
+    &lt;div&gt;
+      &lt;SenderComponent onDataChange={setSharedData} /&gt;
+      &lt;ReceiverComponent data={sharedData} /&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default Container
+</code></pre>
+<pre><code class="language-jsx">// SenderComponent.jsx
+import React, { useState } from &#39;react&#39;
+
+function SenderComponent({ onDataChange }) {
+  const [input, setInput] = useState(&#39;&#39;)
+
+  const handleSubmit = (e) =&gt; {
+    e.preventDefault()
+    onDataChange(input)
+    setInput(&#39;&#39;)
+  }
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input
+        type=&quot;text&quot;
+        value={input}
+        onChange={(e) =&gt; setInput(e.target.value)}
+        placeholder=&quot;输入数据&quot;
+      /&gt;
+      &lt;button type=&quot;submit&quot;&gt;发送&lt;/button&gt;
+    &lt;/form&gt;
+  )
+}
+
+export default SenderComponent
+</code></pre>
+<pre><code class="language-jsx">// ReceiverComponent.jsx
+import React from &#39;react&#39;
+
+function ReceiverComponent({ data }) {
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;接收到的数据:&lt;/h3&gt;
+      &lt;p data-testid=&quot;received-data&quot;&gt;{data || &#39;暂无数据&#39;}&lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default ReceiverComponent
+</code></pre>
+<pre><code class="language-jsx">// Container.test.jsx
+import React from &#39;react&#39;
+import { render, screen } from &#39;@testing-library/react&#39;
+import userEvent from &#39;@testing-library/user-event&#39;
+import Container from &#39;./Container&#39;
+
+describe(&#39;Container 兄弟组件通信测试&#39;, () =&gt; {
+  test(&#39;兄弟组件间数据传递正常&#39;, async () =&gt; {
+    const user = userEvent.setup()
+    
+    render(&lt;Container /&gt;)
+    
+    // 验证初始状态
+    expect(screen.getByTestId(&#39;received-data&#39;)).toHaveTextContent(&#39;暂无数据&#39;)
+    
+    // 在发送组件中输入数据
+    const input = screen.getByPlaceholderText(&#39;输入数据&#39;)
+    await user.type(input, &#39;Hello World&#39;)
+    
+    // 点击发送按钮
+    const sendButton = screen.getByText(&#39;发送&#39;)
+    await user.click(sendButton)
+    
+    // 验证接收组件显示数据
+    expect(screen.getByTestId(&#39;received-data&#39;)).toHaveTextContent(&#39;Hello World&#39;)
+    
+    // 验证输入框已清空
+    expect(input).toHaveValue(&#39;&#39;)
+  })
+})
+</code></pre>
+<h2>状态管理集成测试</h2>
+<h3>Context API集成测试</h3>
+<pre><code class="language-jsx">// AuthContext.jsx
+import React, { createContext, useContext, useState } from &#39;react&#39;
+
+const AuthContext = createContext()
+
+export function useAuth() {
+  const context = useContext(AuthContext)
+  if (!context) {
+    throw new Error(&#39;useAuth must be used within an AuthProvider&#39;)
+  }
+  return context
+}
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(false)
+
+  const login = async (credentials) =&gt; {
+    setLoading(true)
+    try {
+      // 模拟登录API调用
+      await new Promise(resolve =&gt; setTimeout(resolve, 1000))
+      setUser({ id: 1, name: credentials.username })
+    } catch (error) {
+      throw error
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const logout = () =&gt; {
+    setUser(null)
+  }
+
+  const value = {
+    user,
+    loading,
+    login,
+    logout,
+    isAuthenticated: !!user
+  }
+
+  return (
+    &lt;AuthContext.Provider value={value}&gt;
+      {children}
+    &lt;/AuthContext.Provider&gt;
+  )
+}
+</code></pre>
+<pre><code class="language-jsx">// LoginForm.jsx
+import React, { useState } from &#39;react&#39;
+import { useAuth } from &#39;./AuthContext&#39;
+
+function LoginForm() {
+  const [username, setUsername] = useState(&#39;&#39;)
+  const [password, setPassword] = useState(&#39;&#39;)
+  const { login, loading } = useAuth()
+
+  const handleSubmit = async (e) =&gt; {
+    e.preventDefault()
+    await login({ username, password })
+  }
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input
+        type=&quot;text&quot;
+        value={username}
+        onChange={(e) =&gt; setUsername(e.target.value)}
+        placeholder=&quot;用户名&quot;
+        required
+      /&gt;
+      &lt;input
+        type=&quot;password&quot;
+        value={password}
+        onChange={(e) =&gt; setPassword(e.target.value)}
+        placeholder=&quot;密码&quot;
+        required
+      /&gt;
+      &lt;button type=&quot;submit&quot; disabled={loading}&gt;
+        {loading ? &#39;登录中...&#39; : &#39;登录&#39;}
+      &lt;/button&gt;
+    &lt;/form&gt;
+  )
+}
+
+export default LoginForm
+</code></pre>
+<pre><code class="language-jsx">// UserProfile.jsx
+import React from &#39;react&#39;
+import { useAuth } from &#39;./AuthContext&#39;
+
+function UserProfile() {
+  const { user, logout } = useAuth()
+
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;用户信息&lt;/h2&gt;
+      &lt;p&gt;用户名: {user.name}&lt;/p&gt;
+      &lt;button onClick={logout}&gt;退出登录&lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default UserProfile
+</code></pre>
+<pre><code class="language-jsx">// App.jsx
+import React from &#39;react&#39;
+import { AuthProvider, useAuth } from &#39;./AuthContext&#39;
+import LoginForm from &#39;./LoginForm&#39;
+import UserProfile from &#39;./UserProfile&#39;
+
+function AppContent() {
+  const { isAuthenticated } = useAuth()
+
+  return (
+    &lt;div&gt;
+      {isAuthenticated ? &lt;UserProfile /&gt; : &lt;LoginForm /&gt;}
+    &lt;/div&gt;
+  )
+}
+
+function App() {
+  return (
+    &lt;AuthProvider&gt;
+      &lt;AppContent /&gt;
+    &lt;/AuthProvider&gt;
+  )
+}
+
+export default App
+</code></pre>
+<pre><code class="language-jsx">// App.test.jsx
+import React from &#39;react&#39;
+import { render, screen, waitFor } from &#39;@testing-library/react&#39;
+import userEvent from &#39;@testing-library/user-event&#39;
+import App from &#39;./App&#39;
+
+describe(&#39;App 认证集成测试&#39;, () =&gt; {
+  test(&#39;完整的登录流程&#39;, async () =&gt; {
+    const user = userEvent.setup()
+    
+    render(&lt;App /&gt;)
+    
+    // 验证初始显示登录表单
+    expect(screen.getByPlaceholderText(&#39;用户名&#39;)).toBeInTheDocument()
+    expect(screen.getByPlaceholderText(&#39;密码&#39;)).toBeInTheDocument()
+    expect(screen.getByText(&#39;登录&#39;)).toBeInTheDocument()
+    
+    // 填写登录信息
+    await user.type(screen.getByPlaceholderText(&#39;用户名&#39;), &#39;testuser&#39;)
+    await user.type(screen.getByPlaceholderText(&#39;密码&#39;), &#39;password123&#39;)
+    
+    // 点击登录按钮
+    const loginButton = screen.getByText(&#39;登录&#39;)
+    await user.click(loginButton)
+    
+    // 验证加载状态
+    expect(screen.getByText(&#39;登录中...&#39;)).toBeInTheDocument()
+    
+    // 等待登录完成，验证用户信息显示
+    await waitFor(() =&gt; {
+      expect(screen.getByText(&#39;用户信息&#39;)).toBeInTheDocument()
+    })
+    
+    expect(screen.getByText(&#39;用户名: testuser&#39;)).toBeInTheDocument()
+    expect(screen.getByText(&#39;退出登录&#39;)).toBeInTheDocument()
+    
+    // 测试退出登录
+    await user.click(screen.getByText(&#39;退出登录&#39;))
+    
+    // 验证返回到登录页面
+    expect(screen.getByPlaceholderText(&#39;用户名&#39;)).toBeInTheDocument()
+    expect(screen.getByText(&#39;登录&#39;)).toBeInTheDocument()
+  })
+})
+</code></pre>
+<h2>路由集成测试</h2>
+<h3>路由导航测试</h3>
+<pre><code class="language-jsx">// Router.jsx
+import React from &#39;react&#39;
+import { BrowserRouter as Router, Routes, Route, Link } from &#39;react-router-dom&#39;
+import Home from &#39;./pages/Home&#39;
+import About from &#39;./pages/About&#39;
+import Contact from &#39;./pages/Contact&#39;
+import NotFound from &#39;./pages/NotFound&#39;
+
+function AppRouter() {
+  return (
+    &lt;Router&gt;
+      &lt;nav&gt;
+        &lt;Link to=&quot;/&quot;&gt;首页&lt;/Link&gt;
+        &lt;Link to=&quot;/about&quot;&gt;关于&lt;/Link&gt;
+        &lt;Link to=&quot;/contact&quot;&gt;联系&lt;/Link&gt;
+      &lt;/nav&gt;
+      
+      &lt;main&gt;
+        &lt;Routes&gt;
+          &lt;Route path=&quot;/&quot; element={&lt;Home /&gt;} /&gt;
+          &lt;Route path=&quot;/about&quot; element={&lt;About /&gt;} /&gt;
+          &lt;Route path=&quot;/contact&quot; element={&lt;Contact /&gt;} /&gt;
+          &lt;Route path=&quot;*&quot; element={&lt;NotFound /&gt;} /&gt;
+        &lt;/Routes&gt;
+      &lt;/main&gt;
+    &lt;/Router&gt;
+  )
+}
+
+export default AppRouter
+</code></pre>
+<pre><code class="language-jsx">// pages/Home.jsx
+import React from &#39;react&#39;
+import { useNavigate } from &#39;react-router-dom&#39;
+
+function Home() {
+  const navigate = useNavigate()
+
+  const handleGetStarted = () =&gt; {
+    navigate(&#39;/about&#39;)
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;首页&lt;/h1&gt;
+      &lt;p&gt;欢迎来到我们的网站&lt;/p&gt;
+      &lt;button onClick={handleGetStarted}&gt;开始了解&lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default Home
+</code></pre>
+<pre><code class="language-jsx">// pages/About.jsx
+import React from &#39;react&#39;
+import { Link } from &#39;react-router-dom&#39;
+
+function About() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;关于我们&lt;/h1&gt;
+      &lt;p&gt;这是关于页面&lt;/p&gt;
+      &lt;Link to=&quot;/contact&quot;&gt;联系我们&lt;/Link&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default About
+</code></pre>
+<pre><code class="language-jsx">// AppRouter.test.jsx
+import React from &#39;react&#39;
+import { render, screen } from &#39;@testing-library/react&#39;
+import userEvent from &#39;@testing-library/user-event&#39;
+import AppRouter from &#39;./AppRouter&#39;
+
+describe(&#39;AppRouter 路由集成测试&#39;, () =&gt; {
+  test(&#39;路由导航正常工作&#39;, async () =&gt; {
+    const user = userEvent.setup()
+    
+    render(&lt;AppRouter /&gt;)
+    
+    // 验证初始页面是首页
+    expect(screen.getByText(&#39;首页&#39;)).toBeInTheDocument()
+    expect(screen.getByText(&#39;欢迎来到我们的网站&#39;)).toBeInTheDocument()
+    
+    // 点击&quot;开始了解&quot;按钮导航到关于页面
+    const getStartedButton = screen.getByText(&#39;开始了解&#39;)
+    await user.click(getStartedButton)
+    
+    // 验证导航到关于页面
+    expect(screen.getByText(&#39;关于我们&#39;)).toBeInTheDocument()
+    expect(screen.getByText(&#39;这是关于页面&#39;)).toBeInTheDocument()
+    
+    // 点击&quot;联系我们&quot;链接
+    const contactLink = screen.getByText(&#39;联系我们&#39;)
+    await user.click(contactLink)
+    
+    // 验证导航到联系页面
+    expect(screen.getByText(&#39;联系我们&#39;)).toBeInTheDocument()
+    
+    // 使用导航链接返回首页
+    const homeLink = screen.getByText(&#39;首页&#39;)
+    await user.click(homeLink)
+    
+    // 验证返回到首页
+    expect(screen.getByText(&#39;首页&#39;)).toBeInTheDocument()
+  })
+  
+  test(&#39;404页面正常显示&#39;, async () =&gt; {
+    const user = userEvent.setup()
+    
+    render(&lt;AppRouter /&gt;)
+    
+    // 直接访问不存在的路由
+    window.history.pushState({}, &#39;&#39;, &#39;/nonexistent&#39;)
+    
+    // 触发路由更新
+    const homeLink = screen.getByText(&#39;首页&#39;)
+    await user.click(homeLink)
+    await user.click(screen.getByText(&#39;关于&#39;))
+    
+    // 手动导航到不存在的路由
+    window.history.pushState({}, &#39;&#39;, &#39;/nonexistent&#39;)
+    window.dispatchEvent(new PopStateEvent(&#39;popstate&#39;))
+    
+    // 验证404页面显示
+    expect(screen.getByText(&#39;页面未找到&#39;)).toBeInTheDocument()
+  })
+})
+</code></pre>
+<h2>API集成测试</h2>
+<h3>Mock API测试</h3>
+<pre><code class="language-jsx">// api/userApi.js
+export const fetchUsers = async () =&gt; {
+  const response = await fetch(&#39;/api/users&#39;)
+  if (!response.ok) {
+    throw new Error(&#39;Failed to fetch users&#39;)
+  }
+  return response.json()
+}
+
+export const createUser = async (userData) =&gt; {
+  const response = await fetch(&#39;/api/users&#39;, {
+    method: &#39;POST&#39;,
+    headers: {
+      &#39;Content-Type&#39;: &#39;application/json&#39;,
+    },
+    body: JSON.stringify(userData),
+  })
+  
+  if (!response.ok) {
+    throw new Error(&#39;Failed to create user&#39;)
+  }
+  
+  return response.json()
+}
+</code></pre>
+<pre><code class="language-jsx">// UserManager.jsx
+import React, { useState, useEffect } from &#39;react&#39;
+import { fetchUsers, createUser } from &#39;./api/userApi&#39;
+
+function UserManager() {
+  const [users, setUsers] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [newUserName, setNewUserName] = useState(&#39;&#39;)
+
+  useEffect(() =&gt; {
+    loadUsers()
+  }, [])
+
+  const loadUsers = async () =&gt; {
+    try {
+      setLoading(true)
+      setError(null)
+      const userData = await fetchUsers()
+      setUsers(userData)
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const handleCreateUser = async (e) =&gt; {
+    e.preventDefault()
+    if (!newUserName.trim()) return
+
+    try {
+      const newUser = await createUser({ name: newUserName })
+      setUsers([...users, newUser])
+      setNewUserName(&#39;&#39;)
+    } catch (err) {
+      setError(err.message)
+    }
+  }
+
+  if (loading) return &lt;div&gt;加载中...&lt;/div&gt;
+  if (error) return &lt;div&gt;错误: {error}&lt;/div&gt;
+
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;用户管理&lt;/h2&gt;
+      
+      &lt;form onSubmit={handleCreateUser}&gt;
+        &lt;input
+          type=&quot;text&quot;
+          value={newUserName}
+          onChange={(e) =&gt; setNewUserName(e.target.value)}
+          placeholder=&quot;用户名&quot;
+        /&gt;
+        &lt;button type=&quot;submit&quot;&gt;添加用户&lt;/button&gt;
+      &lt;/form&gt;
+      
+      &lt;ul&gt;
+        {users.map(user =&gt; (
+          &lt;li key={user.id}&gt;{user.name}&lt;/li&gt;
+        ))}
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default UserManager
+</code></pre>
+<pre><code class="language-jsx">// UserManager.test.jsx
+import React from &#39;react&#39;
+import { render, screen, waitFor } from &#39;@testing-library/react&#39;
+import userEvent from &#39;@testing-library/user-event&#39;
+import UserManager from &#39;./UserManager&#39;
+import * as userApi from &#39;./api/userApi&#39;
+
+// Mock API
+jest.mock(&#39;./api/userApi&#39;)
+
+describe(&#39;UserManager API集成测试&#39;, () =&gt; {
+  beforeEach(() =&gt; {
+    jest.clearAllMocks()
+  })
+
+  test(&#39;成功加载和显示用户列表&#39;, async () =&gt; {
+    const mockUsers = [
+      { id: 1, name: &#39;Alice&#39; },
+      { id: 2, name: &#39;Bob&#39; }
+    ]
+    
+    userApi.fetchUsers.mockResolvedValue(mockUsers)
+    
+    render(&lt;UserManager /&gt;)
+    
+    // 验证加载状态
+    expect(screen.getByText(&#39;加载中...&#39;)).toBeInTheDocument()
+    
+    // 等待数据加载完成
+    await waitFor(() =&gt; {
+      expect(screen.getByText(&#39;用户管理&#39;)).toBeInTheDocument()
+    })
+    
+    // 验证用户列表显示
+    expect(screen.getByText(&#39;Alice&#39;)).toBeInTheDocument()
+    expect(screen.getByText(&#39;Bob&#39;)).toBeInTheDocument()
+    
+    // 验证API被调用
+    expect(userApi.fetchUsers).toHaveBeenCalledTimes(1)
+  })
+
+  test(&#39;创建新用户功能&#39;, async () =&gt; {
+    const user = userEvent.setup()
+    const mockUsers = [{ id: 1, name: &#39;Alice&#39; }]
+    const newUser = { id: 2, name: &#39;Charlie&#39; }
+    
+    userApi.fetchUsers.mockResolvedValue(mockUsers)
+    userApi.createUser.mockResolvedValue(newUser)
+    
+    render(&lt;UserManager /&gt;)
+    
+    // 等待初始加载完成
+    await waitFor(() =&gt; {
+      expect(screen.getByText(&#39;Alice&#39;)).toBeInTheDocument()
+    })
+    
+    // 输入新用户名
+    const input = screen.getByPlaceholderText(&#39;用户名&#39;)
+    await user.type(input, &#39;Charlie&#39;)
+    
+    // 提交表单
+    const submitButton = screen.getByText(&#39;添加用户&#39;)
+    await user.click(submitButton)
+    
+    // 验证新用户被添加到列表
+    await waitFor(() =&gt; {
+      expect(screen.getByText(&#39;Charlie&#39;)).toBeInTheDocument()
+    })
+    
+    // 验证API被调用
+    expect(userApi.createUser).toHaveBeenCalledWith({ name: &#39;Charlie&#39; })
+    
+    // 验证输入框被清空
+    expect(input).toHaveValue(&#39;&#39;)
+  })
+
+  test(&#39;处理API错误&#39;, async () =&gt; {
+    const errorMessage = &#39;Failed to fetch users&#39;
+    userApi.fetchUsers.mockRejectedValue(new Error(errorMessage))
+    
+    render(&lt;UserManager /&gt;)
+    
+    // 等待错误信息显示
+    await waitFor(() =&gt; {
+      expect(screen.getByText(`错误: ${errorMessage}`)).toBeInTheDocument()
+    })
+    
+    // 验证API被调用
+    expect(userApi.fetchUsers).toHaveBeenCalledTimes(1)
+  })
+})
+</code></pre>
+<h2>表单集成测试</h2>
+<h3>复杂表单验证</h3>
+<pre><code class="language-jsx">// ContactForm.jsx
+import React, { useState } from &#39;react&#39;
+
+function ContactForm({ onSubmit }) {
+  const [formData, setFormData] = useState({
+    name: &#39;&#39;,
+    email: &#39;&#39;,
+    message: &#39;&#39;
+  })
+  const [errors, setErrors] = useState({})
+  const [submitted, setSubmitted] = useState(false)
+
+  const validateForm = () =&gt; {
+    const newErrors = {}
+    
+    if (!formData.name.trim()) {
+      newErrors.name = &#39;姓名是必填项&#39;
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = &#39;邮箱是必填项&#39;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = &#39;请输入有效的邮箱地址&#39;
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = &#39;消息是必填项&#39;
+    } else if (formData.message.length &lt; 10) {
+      newErrors.message = &#39;消息至少需要10个字符&#39;
+    }
+    
+    return newErrors
+  }
+
+  const handleChange = (e) =&gt; {
+    const { name, value } = e.target
+    setFormData(prev =&gt; ({
+      ...prev,
+      [name]: value
+    }))
+    
+    // 清除对应字段的错误
+    if (errors[name]) {
+      setErrors(prev =&gt; ({
+        ...prev,
+        [name]: &#39;&#39;
+      }))
+    }
+  }
+
+  const handleSubmit = async (e) =&gt; {
+    e.preventDefault()
+    
+    const validationErrors = validateForm()
+    if (Object.keys(validationErrors).length &gt; 0) {
+      setErrors(validationErrors)
+      return
+    }
+    
+    try {
+      await onSubmit(formData)
+      setSubmitted(true)
+    } catch (error) {
+      setErrors({ submit: error.message })
+    }
+  }
+
+  if (submitted) {
+    return (
+      &lt;div className=&quot;success-message&quot;&gt;
+        &lt;h3&gt;提交成功!&lt;/h3&gt;
+        &lt;p&gt;感谢您的反馈，我们会尽快回复您。&lt;/p&gt;
+      &lt;/div&gt;
+    )
+  }
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;div&gt;
+        &lt;label htmlFor=&quot;name&quot;&gt;姓名&lt;/label&gt;
+        &lt;input
+          type=&quot;text&quot;
+          id=&quot;name&quot;
+          name=&quot;name&quot;
+          value={formData.name}
+          onChange={handleChange}
+        /&gt;
+        {errors.name &amp;&amp; &lt;span className=&quot;error&quot;&gt;{errors.name}&lt;/span&gt;}
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;label htmlFor=&quot;email&quot;&gt;邮箱&lt;/label&gt;
+        &lt;input
+          type=&quot;email&quot;
+          id=&quot;email&quot;
+          name=&quot;email&quot;
+          value={formData.email}
+          onChange={handleChange}
+        /&gt;
+        {errors.email &amp;&amp; &lt;span className=&quot;error&quot;&gt;{errors.email}&lt;/span&gt;}
+      &lt;/div&gt;
+
+      &lt;div&gt;
+        &lt;label htmlFor=&quot;message&quot;&gt;消息&lt;/label&gt;
+        &lt;textarea
+          id=&quot;message&quot;
+          name=&quot;message&quot;
+          value={formData.message}
+          onChange={handleChange}
+        /&gt;
+        {errors.message &amp;&amp; &lt;span className=&quot;error&quot;&gt;{errors.message}&lt;/span&gt;}
+      &lt;/div&gt;
+
+      {errors.submit &amp;&amp; &lt;div className=&quot;error&quot;&gt;{errors.submit}&lt;/div&gt;}
+
+      &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;
+    &lt;/form&gt;
+  )
+}
+
+export default ContactForm
+</code></pre>
+<pre><code class="language-jsx">// ContactForm.test.jsx
+import React from &#39;react&#39;
+import { render, screen, waitFor } from &#39;@testing-library/react&#39;
+import userEvent from &#39;@testing-library/user-event&#39;
+import ContactForm from &#39;./ContactForm&#39;
+
+describe(&#39;ContactForm 集成测试&#39;, () =&gt; {
+  test(&#39;成功提交表单&#39;, async () =&gt; {
+    const user = userEvent.setup()
+    const mockSubmit = jest.fn().mockResolvedValue()
+    
+    render(&lt;ContactForm onSubmit={mockSubmit} /&gt;)
+    
+    // 填写表单
+    await user.type(screen.getByLabelText(&#39;姓名&#39;), &#39;John Doe&#39;)
+    await user.type(screen.getByLabelText(&#39;邮箱&#39;), &#39;john@example.com&#39;)
+    await user.type(screen.getByLabelText(&#39;消息&#39;), &#39;This is a test message for the contact form&#39;)
+    
+    // 提交表单
+    await user.click(screen.getByText(&#39;提交&#39;))
+    
+    // 验证提交函数被调用
+    await waitFor(() =&gt; {
+      expect(mockSubmit).toHaveBeenCalledWith({
+        name: &#39;John Doe&#39;,
+        email: &#39;john@example.com&#39;,
+        message: &#39;This is a test message for the contact form&#39;
+      })
+    })
+    
+    // 验证成功消息显示
+    expect(screen.getByText(&#39;提交成功!&#39;)).toBeInTheDocument()
+    expect(screen.getByText(&#39;感谢您的反馈，我们会尽快回复您。&#39;)).toBeInTheDocument()
+  })
+
+  test(&#39;表单验证错误处理&#39;, async () =&gt; {
+    const user = userEvent.setup()
+    const mockSubmit = jest.fn()
+    
+    render(&lt;ContactForm onSubmit={mockSubmit} /&gt;)
+    
+    // 直接提交空表单
+    await user.click(screen.getByText(&#39;提交&#39;))
+    
+    // 验证错误消息显示
+    expect(screen.getByText(&#39;姓名是必填项&#39;)).toBeInTheDocument()
+    expect(screen.getByText(&#39;邮箱是必填项&#39;)).toBeInTheDocument()
+    expect(screen.getByText(&#39;消息是必填项&#39;)).toBeInTheDocument()
+    
+    // 验证提交函数未被调用
+    expect(mockSubmit).not.toHaveBeenCalled()
+  })
+
+  test(&#39;邮箱格式验证&#39;, async () =&gt; {
+    const user = userEvent.setup()
+    const mockSubmit = jest.fn()
+    
+    render(&lt;ContactForm onSubmit={mockSubmit} /&gt;)
+    
+    // 输入无效邮箱
+    await user.type(screen.getByLabelText(&#39;邮箱&#39;), &#39;invalid-email&#39;)
+    await user.click(screen.getByText(&#39;提交&#39;))
+    
+    // 验证邮箱格式错误
+    expect(screen.getByText(&#39;请输入有效的邮箱地址&#39;)).toBeInTheDocument()
+    expect(mockSubmit).not.toHaveBeenCalled()
+  })
+
+  test(&#39;消息长度验证&#39;, async () =&gt; {
+    const user = userEvent.setup()
+    const mockSubmit = jest.fn()
+    
+    render(&lt;ContactForm onSubmit={mockSubmit} /&gt;)
+    
+    // 输入过短的消息
+    await user.type(screen.getByLabelText(&#39;消息&#39;), &#39;short&#39;)
+    await user.click(screen.getByText(&#39;提交&#39;))
+    
+    // 验证消息长度错误
+    expect(screen.getByText(&#39;消息至少需要10个字符&#39;)).toBeInTheDocument()
+    expect(mockSubmit).not.toHaveBeenCalled()
+  })
+
+  test(&#39;实时验证 - 错误消息清除&#39;, async () =&gt; {
+    const user = userEvent.setup()
+    const mockSubmit = jest.fn()
+    
+    render(&lt;ContactForm onSubmit={mockSubmit} /&gt;)
+    
+    // 先触发验证错误
+    await user.click(screen.getByText(&#39;提交&#39;))
+    expect(screen.getByText(&#39;姓名是必填项&#39;)).toBeInTheDocument()
+    
+    // 输入姓名，验证错误消息消失
+    await user.type(screen.getByLabelText(&#39;姓名&#39;), &#39;John&#39;)
+    expect(screen.queryByText(&#39;姓名是必填项&#39;)).not.toBeInTheDocument()
+  })
+})
+</code></pre>
+<h2>性能集成测试</h2>
+<h3>组件渲染性能测试</h3>
+<pre><code class="language-jsx">// PerformanceTest.jsx
+import React, { useState, useMemo } from &#39;react&#39;
+
+function ExpensiveComponent({ data }) {
+  const processedData = useMemo(() =&gt; {
+    // 模拟昂贵的计算
+    return data.map(item =&gt; ({
+      ...item,
+      processed: item.value * 2
+    }))
+  }, [data])
+
+  return (
+    &lt;div&gt;
+      {processedData.map(item =&gt; (
+        &lt;div key={item.id}&gt;{item.processed}&lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  )
+}
+
+function PerformanceTest() {
+  const [data, setData] = useState([])
+  const [counter, setCounter] = useState(0)
+
+  const generateData = () =&gt; {
+    const newData = Array.from({ length: 1000 }, (_, i) =&gt; ({
+      id: i,
+      value: Math.random() * 100
+    }))
+    setData(newData)
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={generateData}&gt;生成数据&lt;/button&gt;
+      &lt;button onClick={() =&gt; setCounter(c =&gt; c + 1)}&gt;
+        计数器: {counter}
+      &lt;/button&gt;
+      &lt;ExpensiveComponent data={data} /&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default PerformanceTest
+</code></pre>
+<pre><code class="language-jsx">// PerformanceTest.test.jsx
+import React from &#39;react&#39;
+import { render, screen } from &#39;@testing-library/react&#39;
+import userEvent from &#39;@testing-library/user-event&#39;
+import PerformanceTest from &#39;./PerformanceTest&#39;
+
+describe(&#39;PerformanceTest 性能集成测试&#39;, () =&gt; {
+  test(&#39;组件渲染性能&#39;, async () =&gt; {
+    const user = userEvent.setup()
+    
+    render(&lt;PerformanceTest /&gt;)
+    
+    // 测量首次渲染时间
+    const renderStart = performance.now()
+    await user.click(screen.getByText(&#39;生成数据&#39;))
+    const renderEnd = performance.now()
+    
+    console.log(`首次渲染时间: ${renderEnd - renderStart}ms`)
+    
+    // 验证数据渲染
+    expect(screen.getByText(/\d+/)).toBeInTheDocument()
+    
+    // 测量重新渲染时间
+    const reRenderStart = performance.now()
+    await user.click(screen.getByText(/计数器:/))
+    const reRenderEnd = performance.now()
+    
+    console.log(`重新渲染时间: ${reRenderEnd - reRenderStart}ms`)
+    
+    // 验证性能要求
+    expect(renderEnd - renderStart).toBeLessThan(1000) // 首次渲染不超过1秒
+    expect(reRenderEnd - reRenderStart).toBeLessThan(100) // 重新渲染不超过100ms
+  })
+})
+</code></pre>
+<h2>最佳实践</h2>
+<h3>1. 测试策略</h3>
+<pre><code class="language-javascript">// 测试金字塔原则
+// 70% 单元测试 - 测试单个组件或函数
+// 20% 集成测试 - 测试组件间交互
+// 10% 端到端测试 - 测试完整用户流程
+</code></pre>
+<h3>2. 测试文件组织</h3>
+<pre><code>src/
+├── components/
+│   ├── Button/
+│   │   ├── Button.jsx
+│   │   ├── Button.test.jsx          # 单元测试
+│   │   └── Button.integration.test.jsx # 集成测试
+│   └── Form/
+│       ├── Form.jsx
+│       ├── Form.test.jsx
+│       └── Form.integration.test.jsx
+├── pages/
+│   ├── Home/
+│   │   ├── Home.jsx
+│   │   └── Home.integration.test.jsx
+│   └── About/
+│       ├── About.jsx
+│       └── About.integration.test.jsx
+└── __tests__/
+    ├── integration/
+    │   ├── user-flow.test.jsx       # 用户流程测试
+    │   └── api-integration.test.jsx # API集成测试
+    └── e2e/
+        └── app.e2e.test.jsx        # 端到端测试
+</code></pre>
+<h3>3. 测试工具配置</h3>
+<pre><code class="language-javascript">// test-utils.jsx
+import React from &#39;react&#39;
+import { render as rtlRender } from &#39;@testing-library/react&#39;
+import { BrowserRouter } from &#39;react-router-dom&#39;
+import { AuthProvider } from &#39;../contexts/AuthContext&#39;
+
+function render(ui, { initialEntries = [&#39;/&#39;], ...renderOptions } = {}) {
+  function Wrapper({ children }) {
+    return (
+      &lt;BrowserRouter&gt;
+        &lt;AuthProvider&gt;
+          {children}
+        &lt;/AuthProvider&gt;
+      &lt;/BrowserRouter&gt;
+    )
+  }
+  return rtlRender(ui, { wrapper: Wrapper, ...renderOptions })
+}
+
+export * from &#39;@testing-library/react&#39;
+export { render }
+</code></pre>
+<h3>4. 测试数据管理</h3>
+<pre><code class="language-javascript">// test-data.js
+export const mockUsers = [
+  { id: 1, name: &#39;Alice&#39;, email: &#39;alice@example.com&#39; },
+  { id: 2, name: &#39;Bob&#39;, email: &#39;bob@example.com&#39; }
+]
+
+export const mockApiResponse = {
+  users: mockUsers,
+  pagination: { page: 1, total: 2 }
+}
+
+export const createMockUser = (overrides = {}) =&gt; ({
+  id: Math.random(),
+  name: &#39;Test User&#39;,
+  email: &#39;test@example.com&#39;,
+  ...overrides
+})
+</code></pre>
+<h3>5. 异步测试处理</h3>
+<pre><code class="language-jsx">// 使用 waitFor 等待异步操作
+await waitFor(() =&gt; {
+  expect(screen.getByText(&#39;加载完成&#39;)).toBeInTheDocument()
+})
+
+// 使用 findBy 查找异步元素
+const asyncElement = await screen.findByText(&#39;异步内容&#39;)
+
+// 使用 act 包装异步操作
+import { act } from &#39;@testing-library/react&#39;
+
+await act(async () =&gt; {
+  fireEvent.click(button)
+})
+</code></pre>
+<h2>总结</h2>
+<p>集成测试是确保React应用质量的重要环节，它能够：</p>
+<ol>
+<li><strong>验证组件协作</strong> - 确保组件间正确交互</li>
+<li><strong>测试数据流</strong> - 验证状态管理和数据传递</li>
+<li><strong>检查用户体验</strong> - 测试完整的用户操作流程</li>
+<li><strong>捕获集成问题</strong> - 发现单元测试无法发现的问题</li>
+<li><strong>提高信心</strong> - 增强对应用整体功能的信心</li>
+</ol>
+<p>通过合理的测试策略和工具配置，可以建立一个高效的集成测试体系，确保React应用的稳定性和可靠性。 </p>
+
+          </div>
+
+          <!-- 文档导航 -->
+          <div class="doc-navigation">
+            
+              <a href="27-单元测试.html" class="nav-btn prev-btn">
+                <span class="nav-icon">←</span>
+                <div class="nav-text">
+                  <span class="nav-label">上一篇</span>
+                  <span class="nav-title">单元测试</span>
+                </div>
+              </a>
+            
+            
+            
+              <a href="29-项目构建.html" class="nav-btn next-btn">
+                <div class="nav-text">
+                  <span class="nav-label">下一篇</span>
+                  <span class="nav-title">项目构建</span>
+                </div>
+                <span class="nav-icon">→</span>
+              </a>
+            
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+      <span>↑</span>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2024 React 中文文档. 基于 React 18.x 构建</p>
+        <p>Made with ❤️ by React中文社区</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
